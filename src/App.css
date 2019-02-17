@@ -23,24 +23,25 @@ h4 {
   margin: 0;
   padding: 0;
 }
-input {
+.freeSearch {
   margin: 10px;
   width: 70vw;
   font-size: 1.1rem;
 }
 button {
   font-size: 1.1rem;
+  margin: 10px 10px 10px 0;
 }
 .wrapper {
   position: relative;
 }
 .navSpacing {
-  height: 93px;
+  height: 83px;
 }
 nav {
   background-image: linear-gradient(#444a5a, #4d5366);
   color: white;
-  padding: 5px;
+  padding: 0 5px;
   position: absolute;
   z-index: 2;
   width: 100vw;
@@ -71,4 +72,19 @@ footer {
 .white:hover {
   cursor: pointer;
   text-shadow: 0 0 2.5px #ffffffb2;
+}
+.line {
+  height: 1px;
+  background-color: #81848d;
+  width: 80vw;
+  margin: 10px 0;
+}
+.searchOptions {
+  margin: 10px;
+}
+.CaloriesAndCookTime {
+  display: flex;
+}
+.numberInput {
+  width: 40px;
 }
