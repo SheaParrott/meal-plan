@@ -23,7 +23,7 @@ class Home extends Component {
             <button>submit</button>
           </div>
           <div className="tooltip">
-            <div onClick={this.showCategories}>
+            <div className="categories" onClick={this.showCategories}>
               <h4>Categories</h4>
               <i
                 className={`fas fa-angle-down ${
@@ -37,22 +37,22 @@ class Home extends Component {
               />
             </div>
             <span
-              className={`tooltiptext categories ${
+              className={`tooltiptext categoriesBar ${
                 this.state.categoriesBar ? '' : 'hidden'
               }`}
             >
-              <h4>Vegetarian</h4>
-              <h4>Vegan</h4>
-              <h4>Low-Cal</h4>
-              <h4>Nut-free</h4>
+              <h4 className="white">Vegetarian</h4>
+              <h4 className="white">Vegan</h4>
+              <h4 className="white">Low-Cal</h4>
+              <h4 className="white">Nut-free</h4>
             </span>
           </div>
         </nav>
         <img className="home" src={front} alt="cover" />
         <footer>
-          <p>Creator</p>
-          <p>Home</p>
-          <p>&copy;SheaParrott</p>
+          <p className="white">Creator</p>
+          <p className="white">Home</p>
+          <p className="white">&copy;SheaParrott</p>
         </footer>
       </div>
     )

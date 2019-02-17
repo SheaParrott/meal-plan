@@ -36,7 +36,10 @@ nav {
   color: white;
   padding: 5px;
 }
-.categories {
+div.categories {
+  cursor: pointer;
+}
+.categoriesBar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -71,4 +74,11 @@ footer {
   top: 100%;
   left: 50%;
   margin-left: -155px;
+}
+.white {
+  color: #ffffff;
+}
+.white:hover {
+  cursor: pointer;
+  text-shadow: 0 0 2.5px #ffffffb2;
 }
