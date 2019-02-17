@@ -15,39 +15,38 @@ class Home extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <h1>Meal Plan</h1>
         <nav>
           <div>
             <input placeholder="search here!" />
             <button>submit</button>
           </div>
-          <div className="tooltip">
-            <div className="categories" onClick={this.showCategories}>
-              <h4>Categories</h4>
-              <i
-                className={`fas fa-angle-down ${
-                  this.state.categoriesBar ? 'hidden' : ''
-                }`}
-              />
-              <i
-                className={` fas fa-angle-up ${
-                  this.state.categoriesBar ? '' : 'hidden'
-                }`}
-              />
-            </div>
-            <span
-              className={`tooltiptext categoriesBar ${
+          <div className="categories" onClick={this.showCategories}>
+            <h4>Categories</h4>
+            <i
+              className={`fas fa-angle-down ${
+                this.state.categoriesBar ? 'hidden' : ''
+              }`}
+            />
+            <i
+              className={` fas fa-angle-up ${
                 this.state.categoriesBar ? '' : 'hidden'
               }`}
-            >
-              <h4 className="white">Vegetarian</h4>
-              <h4 className="white">Vegan</h4>
-              <h4 className="white">Low-Cal</h4>
-              <h4 className="white">Nut-free</h4>
-            </span>
+            />
           </div>
+          <span
+            className={`categoriesBar ${
+              this.state.categoriesBar ? '' : 'hidden'
+            }`}
+          >
+            <h4 className="white">Vegetarian</h4>
+            <h4 className="white">Vegan</h4>
+            <h4 className="white">Low-Cal</h4>
+            <h4 className="white">Nut-free</h4>
+          </span>
         </nav>
+        <div className="navSpacing" />
         <img className="home" src={front} alt="cover" />
         <footer>
           <p className="white">Creator</p>
