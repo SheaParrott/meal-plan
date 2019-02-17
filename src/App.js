@@ -8,9 +8,16 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Meal Plan</h1>
-        <input placeholder="search here!" />
-        <button>submit</button>
-        <img class="home" src={front} alt="cover" />
+        <nav>
+          <input placeholder="search here!" />
+          <button>submit</button>
+        </nav>
+        <img className="home" src={front} alt="cover" />
+        <footer>
+          <p>Creator</p>
+          <p>Home</p>
+          <p>&copy;SheaParrott</p>
+        </footer>
       </div>
     )
   }
