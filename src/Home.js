@@ -1,70 +1,19 @@
 import React, { Component } from 'react'
 import front from './assets/front.jpg'
 import update from 'immutability-helper'
+import AddOrRemoveForm from './AddOrRemoveForm'
 
 class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      categoriesBar: false,
-      label: '',
-      healthLabels: [
-        'vegan',
-        'vegetarian',
-        'paleo',
-        'dairy-free',
-        'gluten-free',
-        'wheat-free',
-        'fat-free',
-        'low-sugar',
-        'egg-free',
-        'peanut-free',
-        'tree-nut-free',
-        'soy-free',
-        'fish-free',
-        'shellfish-free'
-      ],
-      dietLabels: [
-        'balanced',
-        'high-protein',
-        'high-fiber',
-        'low-fat',
-        'low-carb',
-        'low-sodium'
-      ],
-      showInputLabels: [],
-      selectedLabels: []
+      categoriesBar: false
     }
   }
   showCategories = () => {
     this.setState({
       categoriesBar: !this.state.categoriesBar
     })
-  }
-  matchLabel = event => {
-    this.setState({
-      label: event.target.value,
-      showInputLabels: this.state.healthLabels
-        .concat(this.state.dietLabels)
-        .filter(label => label.match(event.target.value))
-    })
-  }
-  addSelectedLabel = event => {
-    event.preventDefault()
-    let form = event.target
-    const formData = new FormData(form)
-    for (let pair of formData.entries()) {
-      this.setState(
-        {
-          selectedLabels: update(this.state.selectedLabels, {
-            $push: [pair[1]]
-          })
-        },
-        () => {
-          console.log(this.state.selectedLabels)
-        }
-      )
-    }
   }
   render() {
     return (
@@ -94,33 +43,8 @@ class Home extends Component {
               this.state.categoriesBar ? '' : 'hidden'
             }`}
           >
-            <div className="searchOptions">
-              <form onSubmit={this.addSelectedLabel}>
-                <label>Labels: </label>
-                <input
-                  onChange={this.matchLabel}
-                  value={this.state.label}
-                  name="label"
-                  type="text"
-                  list="labels"
-                />
-                <button type="submit">Submit</button>
-                <datalist id="labels">
-                  {this.state.showInputLabels.map((tag, index) => {
-                    return <option key={index}>{tag}</option>
-                  })}
-                </datalist>
-              </form>
-              <div className="displayedLabelbox">
-                {this.state.selectedLabels.map((value, index) => {
-                  return (
-                    <div key={index} className="displayedLabel">
-                      <i className="fas fa-times" />
-                      <p className="Label">{value}</p>
-                    </div>
-                  )
-                })}
-              </div>
+            <div className="searchOptionsForm">
+              {<AddOrRemoveForm name="Labels" showOptions={true} />}
             </div>
             <section className="CaloriesAndCookTime">
               <section className="searchOptions">
@@ -161,23 +85,8 @@ class Home extends Component {
               <input className="numberInput" type="number" placeholder="any" />
             </section>
             <div className="line" />
-            <section className="searchOptions">
-              <label>Exclude: </label>
-              <input placeholder="ingredient" />
-              <div className="displayedLabelbox">
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">ingrediant</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">ingrediant</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">ingrediant</p>
-                </div>
-              </div>
+            <section className="searchOptionsForm">
+              {<AddOrRemoveForm name="Ingredients" showOptions={false} />}
             </section>
           </span>
         </nav>
