@@ -119,3 +119,8 @@ p.Label {
 .formInput {
   margin-right: 10px;
 }
+.red {
+  color: red;
+  font-weight: 700;
+  padding: 5px 0;
+}

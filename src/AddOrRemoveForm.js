@@ -30,6 +30,7 @@ class AddOrRemoveForm extends Component {
         'low-carb',
         'low-sodium'
       ],
+      error: '',
       showOptions: [],
       selected: []
     }
@@ -53,21 +54,28 @@ class AddOrRemoveForm extends Component {
     let form = event.target
     const formData = new FormData(form)
     for (let pair of formData.entries()) {
-      this.setState(
-        {
-          selected: update(this.state.selected, {
-            $push: [pair[1]]
+      if (this.props.showOptions) {
+        let Found = this.state.healthLabels
+          .concat(this.state.dietLabels)
+          .filter(label => label === pair[1])
+        if (Found.length === 0) {
+          this.setState({
+            error: 'Not a searchable label, please try again'
           })
-        },
-        () => {
-          console.log(this.state.selected)
+          return
         }
-      )
+      }
+      this.setState({
+        selected: update(this.state.selected, {
+          $push: [pair[1]]
+        })
+      })
     }
   }
   render() {
     return (
       <div>
+        <div className="red">{this.state.error}</div>
         <form onSubmit={this.addSelectedLabel}>
           <label>{this.props.name}: </label>
           <input
