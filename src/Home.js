@@ -66,7 +66,14 @@ class Home extends Component {
           >
             <div className="searchOptions">
               <label>Tags: </label>
-              <input />
+              <input type="text" list="tags" />
+              <datalist id="tags">
+                {this.state.healthLabels
+                  .concat(this.state.dietLabels)
+                  .map(tag => {
+                    return <option>{tag}</option>
+                  })}
+              </datalist>
             </div>
             <section className="CaloriesAndCookTime">
               <section className="searchOptions">
