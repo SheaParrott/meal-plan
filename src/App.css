@@ -5,6 +5,7 @@
 .App {
   text-align: center;
   min-height: 100vh;
+  font-size: 1rem;
 }
 .home {
   width: 100vw;
@@ -19,24 +20,29 @@ h1 {
   margin: 0;
   background-image: linear-gradient(#92ca64, #92ca64);
 }
+section {
+  margin: 0;
+}
 h4 {
   margin: 0;
   padding: 0;
 }
-.freeSearch {
-  margin: 10px;
+input,
+button {
+  font-size: 1rem;
+}
+.Search {
+  margin-right: 10px;
   width: 70vw;
-  font-size: 1.1rem;
 }
 button {
-  font-size: 1.1rem;
   margin: 10px 10px 10px 0;
 }
 .wrapper {
   position: relative;
 }
 .navSpacing {
-  height: 83px;
+  height: 75px;
 }
 nav {
   background-image: linear-gradient(#444a5a, #4d5366);
@@ -86,5 +92,23 @@ footer {
   display: flex;
 }
 .numberInput {
-  width: 40px;
+  width: 45px;
+}
+.displayedLabelbox {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 5px 0 5px;
+}
+.displayedLabel {
+  display: flex;
+  align-items: center;
+  background-color: #687086;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 2px 2px;
+}
+p.Label {
+  margin: 0;
+  padding-left: 5px;
 }

@@ -29,7 +29,9 @@ class Home extends Component {
         'low-fat',
         'low-carb',
         'low-sodium'
-      ]
+      ],
+      showInputLabels: [],
+      selectedLabels: []
     }
   }
   showCategories = () => {
@@ -43,7 +45,7 @@ class Home extends Component {
         <h1>Meal Plan</h1>
         <nav>
           <div>
-            <input className="freeSearch" placeholder="search here!" />
+            <input className="Search" placeholder="search here!" />
             <button>submit</button>
           </div>
           <div className="categories" onClick={this.showCategories}>
@@ -65,15 +67,58 @@ class Home extends Component {
             }`}
           >
             <div className="searchOptions">
-              <label>Tags: </label>
-              <input type="text" list="tags" />
-              <datalist id="tags">
+              <label>Labels: </label>
+              <input type="text" list="labels" />
+              <datalist id="labels">
                 {this.state.healthLabels
                   .concat(this.state.dietLabels)
-                  .map(tag => {
-                    return <option>{tag}</option>
+                  .map((tag, index) => {
+                    return <option key={index}>{tag}</option>
                   })}
               </datalist>
+
+              <div className="displayedLabelbox">
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">tag</p>
+                </div>
+              </div>
             </div>
             <section className="CaloriesAndCookTime">
               <section className="searchOptions">
@@ -116,7 +161,21 @@ class Home extends Component {
             <div className="line" />
             <section className="searchOptions">
               <label>Exclude: </label>
-              <input placeholder="ingredients to exclude" />
+              <input placeholder="ingredient" />
+              <div className="displayedLabelbox">
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">ingrediant</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">ingrediant</p>
+                </div>
+                <div className="displayedLabel">
+                  <i className="fas fa-times" />
+                  <p className="Label">ingrediant</p>
+                </div>
+              </div>
             </section>
           </span>
         </nav>
