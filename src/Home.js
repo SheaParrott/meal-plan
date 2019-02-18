@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import front from './assets/front.jpg'
+import update from 'immutability-helper'
 
 class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
       categoriesBar: false,
+      label: '',
       healthLabels: [
         'vegan',
         'vegetarian',
@@ -39,14 +41,40 @@ class Home extends Component {
       categoriesBar: !this.state.categoriesBar
     })
   }
+  matchLabel = event => {
+    this.setState({
+      label: event.target.value,
+      showInputLabels: this.state.healthLabels
+        .concat(this.state.dietLabels)
+        .filter(label => label.match(event.target.value))
+    })
+  }
+  addSelectedLabel = event => {
+    event.preventDefault()
+    let form = event.target
+    const formData = new FormData(form)
+    for (let pair of formData.entries()) {
+      this.setState(
+        {
+          selectedLabels: update(this.state.selectedLabels, {
+            $push: [pair[1]]
+          })
+        },
+        () => {
+          console.log(this.state.selectedLabels)
+        }
+      )
+    }
+  }
   render() {
     return (
       <div className="wrapper">
+        <button onClick={this.matchLabel}>test</button>
         <h1>Meal Plan</h1>
         <nav>
           <div>
             <input className="Search" placeholder="search here!" />
-            <button>submit</button>
+            <button type="submit">Submit</button>
           </div>
           <div className="categories" onClick={this.showCategories}>
             <h4>Advanced search</h4>
@@ -67,57 +95,31 @@ class Home extends Component {
             }`}
           >
             <div className="searchOptions">
-              <label>Labels: </label>
-              <input type="text" list="labels" />
-              <datalist id="labels">
-                {this.state.healthLabels
-                  .concat(this.state.dietLabels)
-                  .map((tag, index) => {
+              <form onSubmit={this.addSelectedLabel}>
+                <label>Labels: </label>
+                <input
+                  onChange={this.matchLabel}
+                  value={this.state.label}
+                  name="label"
+                  type="text"
+                  list="labels"
+                />
+                <button type="submit">Submit</button>
+                <datalist id="labels">
+                  {this.state.showInputLabels.map((tag, index) => {
                     return <option key={index}>{tag}</option>
                   })}
-              </datalist>
-
+                </datalist>
+              </form>
               <div className="displayedLabelbox">
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
-                <div className="displayedLabel">
-                  <i className="fas fa-times" />
-                  <p className="Label">tag</p>
-                </div>
+                {this.state.selectedLabels.map((value, index) => {
+                  return (
+                    <div key={index} className="displayedLabel">
+                      <i className="fas fa-times" />
+                      <p className="Label">{value}</p>
+                    </div>
+                  )
+                })}
               </div>
             </div>
             <section className="CaloriesAndCookTime">
