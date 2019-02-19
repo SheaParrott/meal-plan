@@ -7,8 +7,13 @@
   min-height: 100vh;
   font-size: 1rem;
 }
-.home {
-  width: 100vw;
+.hidden {
+  display: none;
+}
+.red {
+  color: red;
+  font-weight: 700;
+  padding: 5px 0;
 }
 h1 {
   font-family: 'good';
@@ -20,9 +25,6 @@ h1 {
   margin: 0;
   background-image: linear-gradient(#92ca64, #92ca64);
 }
-section {
-  margin: 0;
-}
 h4 {
   margin: 0;
   padding: 0;
@@ -31,18 +33,19 @@ input,
 button {
   font-size: 1rem;
 }
-.Search {
-  margin-right: 10px;
-  width: 65vw;
-}
 button {
   margin: 10px 10px 10px 0;
+}
+section {
+  margin: 0;
 }
 .wrapper {
   position: relative;
 }
-.navSpacing {
-  height: 75px;
+.categoriesBar {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 nav {
   background-image: linear-gradient(#444a5a, #4d5366);
@@ -52,25 +55,12 @@ nav {
   width: 100vw;
   padding-bottom: 10px;
 }
-div.categories {
-  cursor: pointer;
+.navSpacing {
+  height: 75px;
 }
-.categoriesBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-image: linear-gradient(#4d5366, #444a5a);
-  margin: -5px 0 0 0;
-  color: white;
-}
-.hidden {
-  display: none;
+.homeButton {
+  padding: 10px;
+  margin: 0;
 }
 .white {
   color: #ffffff;
@@ -79,18 +69,49 @@ footer {
   cursor: pointer;
   text-shadow: 0 0 2.5px #ffffffb2;
 }
+.centerLine {
+  display: flex;
+  justify-content: center;
+}
 .line {
   height: 1px;
   background-color: #81848d;
   width: 80vw;
   margin: 10px 0;
 }
-.searchOptions {
-  margin: 10px;
+.Search {
+  margin-right: 10px;
+  width: 65vw;
+}
+.home {
+  width: 100vw;
+}
+.advancedSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div.categories {
+  cursor: pointer;
+  width: 145px;
 }
 .searchOptionsForm {
   margin: 10px;
   width: 90vw;
+}
+.formArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.formInput {
+  margin-right: 10px;
+  max-width: 70vw;
+}
+.searchOptions {
+  margin: 10px;
 }
 .CaloriesAndCookTime {
   display: flex;
@@ -116,11 +137,14 @@ p.Label {
   margin: 0;
   padding-left: 5px;
 }
-.formInput {
-  margin-right: 10px;
+label {
+  padding-right: 5px;
 }
-.red {
-  color: red;
-  font-weight: 700;
-  padding: 5px 0;
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-image: linear-gradient(#4d5366, #444a5a);
+  margin: -5px 0 0 0;
+  color: white;
 }

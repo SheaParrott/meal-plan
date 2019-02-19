@@ -77,16 +77,20 @@ class AddOrRemoveForm extends Component {
       <div>
         <div className="red">{this.state.error}</div>
         <form onSubmit={this.addSelectedLabel}>
-          <label>{this.props.name}: </label>
-          <input
-            className="formInput"
-            onChange={this.matchLabel}
-            value={this.state.value}
-            name="label"
-            type="text"
-            list="v"
-          />
-          <button type="submit">Submit</button>
+          <div className="formArea">
+            <label>{this.props.name}: </label>
+            <div>
+              <input
+                className="formInput"
+                onChange={this.matchLabel}
+                value={this.state.value}
+                name="label"
+                type="text"
+                list="v"
+              />
+              <button type="submit">Submit</button>
+            </div>
+          </div>
           {this.props.showOptions ? (
             <datalist id="v">
               {this.state.showOptions.map((tag, index) => {
