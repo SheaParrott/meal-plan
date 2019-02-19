@@ -9,30 +9,6 @@ class AddOrRemoveForm extends Component {
     super(props)
     this.state = {
       value: '',
-      healthLabels: [
-        'vegan',
-        'vegetarian',
-        'paleo',
-        'dairy-free',
-        'gluten-free',
-        'wheat-free',
-        'fat-free',
-        'low-sugar',
-        'egg-free',
-        'peanut-free',
-        'tree-nut-free',
-        'soy-free',
-        'fish-free',
-        'shellfish-free'
-      ],
-      dietLabels: [
-        'balanced',
-        'high-protein',
-        'high-fiber',
-        'low-fat',
-        'low-carb',
-        'low-sodium'
-      ],
       error: '',
       showOptions: [],
       selected: []
@@ -40,11 +16,12 @@ class AddOrRemoveForm extends Component {
   }
 
   matchLabel = event => {
+    console.log()
     if (this.props.showOptions) {
       this.setState({
         value: event.target.value,
-        showOptions: this.state.healthLabels
-          .concat(this.state.dietLabels)
+        showOptions: this.props.healthLabels
+          .concat(this.props.dietLabels)
           .filter(label => label.match(event.target.value))
       })
     } else {
@@ -59,8 +36,8 @@ class AddOrRemoveForm extends Component {
     const formData = new FormData(form)
     for (let pair of formData.entries()) {
       if (this.props.showOptions) {
-        let Found = this.state.healthLabels
-          .concat(this.state.dietLabels)
+        let Found = this.props.healthLabels
+          .concat(this.props.dietLabels)
           .filter(label => label === pair[1])
         if (Found.length === 0) {
           this.setState({
