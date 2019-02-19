@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import front from './assets/front.jpg'
-import AddOrRemoveForm from './AddOrRemoveForm'
+import front from '../assets/front.jpg'
+import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 
 class Home extends Component {
   constructor(props) {

@@ -7,9 +7,7 @@
   min-height: 100vh;
   font-size: 1rem;
 }
-.hidden {
-  display: none;
-}
+
 .red {
   color: red;
   font-weight: 700;
@@ -147,6 +145,9 @@ footer {
   background-image: linear-gradient(#4d5366, #444a5a);
   margin: -5px 0 0 0;
   color: white;
+}
+.hidden {
+  display: none;
 }
 
 /* creator page */

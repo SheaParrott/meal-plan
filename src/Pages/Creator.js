@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import CreatorImage from './assets/hmm.jpg'
+import CreatorImage from '../assets/hmm.jpg'
 // import history from '../../history'
-import resume from './assets/resume.png'
+import resume from '../assets/resume.png'
 
 class Creator extends Component {
   componentDidMount = () => {
