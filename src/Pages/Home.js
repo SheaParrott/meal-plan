@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import front from '../assets/front.jpg'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
+import NumberInputs from '../Components/NumberInputs'
 
 class Home extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Home extends Component {
     })
     // can add a form reset here later on
   }
+
   render() {
     return (
       <div className="wrapper">
@@ -56,41 +58,23 @@ class Home extends Component {
             </div>
             <section className="CaloriesAndCookTime">
               <section className="searchOptions">
-                <div>
+                <div className="label">
                   <label>Calories:</label>
                 </div>
-                <input
-                  className="numberInput"
-                  type="number"
-                  placeholder="any"
-                />
-                <span>to</span>
-                <input
-                  className="numberInput"
-                  type="number"
-                  placeholder="any"
-                />
+                <NumberInputs ingredient={false} />
               </section>
               <section className="searchOptions">
-                <div>
+                <div className="label">
                   <label>Cook Time: </label>
                 </div>
-                <input
-                  className="numberInput"
-                  type="number"
-                  placeholder="any"
-                />
-                <span>to</span>
-                <input
-                  className="numberInput"
-                  type="number"
-                  placeholder="any"
-                />
+                <NumberInputs ingredient={false} />
               </section>
             </section>
-            <section className="searchOptions">
-              <label>Max ingredients: </label>
-              <input className="numberInput" type="number" placeholder="any" />
+            <section className="searchOptions row">
+              <div className="label">
+                <label>Max ingredients: </label>
+              </div>
+              <NumberInputs ingredient={true} />
             </section>
             <div className="line" />
             <section className="searchOptionsForm">

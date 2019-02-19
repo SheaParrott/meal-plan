@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
 
+// [] add in option to delete categories chosen
+// [] add guard clause to to prevent adding the same catagory chosen twice
+
 class AddOrRemoveForm extends Component {
   constructor(props) {
     super(props)
@@ -35,6 +38,7 @@ class AddOrRemoveForm extends Component {
       selected: []
     }
   }
+
   matchLabel = event => {
     if (this.props.showOptions) {
       this.setState({
