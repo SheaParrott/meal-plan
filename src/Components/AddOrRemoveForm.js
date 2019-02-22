@@ -68,6 +68,7 @@ class AddOrRemoveForm extends Component {
                 name="label"
                 type="text"
                 list="v"
+                autoComplete="off"
               />
               <button type="submit">Submit</button>
             </div>

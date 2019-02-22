@@ -10,7 +10,6 @@ class Categories extends Component {
       <div className="categoriesCentering">
         <div className="allCategories">
           <div>
-            {/* {this.Categories()} */}
             {categories
               .concat(this.props.dietLabels)
               .splice(0, total / 2)
@@ -25,7 +24,6 @@ class Categories extends Component {
               })}
           </div>
           <div>
-            {/* {this.Categories()} */}
             {categories.splice(total / 2, total).map((category, index) => {
               return (
                 <div key={index} className="CategoriesBar">
