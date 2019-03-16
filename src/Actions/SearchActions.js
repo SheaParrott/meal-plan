@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const UPDATE_RECIPES = 'updateRecipes'
 
-export function getRecipes(url, value) {
+export function getRecipes({ url, value }) {
   // pass in the current url and add the "&q=chicken" here
   // then make the api call
   // can pass in one object with the url and q
@@ -11,8 +11,7 @@ export function getRecipes(url, value) {
 
     const request = axios({
       method: 'GET',
-      url:
-        'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&q=chicken',
+      url: `${url}&q=${value}`,
       headers: []
     })
 
