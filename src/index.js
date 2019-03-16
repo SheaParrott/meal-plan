@@ -5,8 +5,19 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { Provider } from 'react-redux'
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import SearchReducer from './Reducers/SearchReducer'
+
+// const logger = store => next => action => {
+//   console.log('actionFired :' + action)
+//   next(action)
+// }
+
+// const middleware = applyMiddleware(logger)
+
+// store.subscribe(() => {
+//   console.log('store changed', store.getState())
+// })
 
 const store = createStore(
   SearchReducer,
