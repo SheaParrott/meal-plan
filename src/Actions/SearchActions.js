@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const UPDATE_RECIPES = 'updateRecipes'
 
-export function getRecipes(data) {
+export function getRecipes() {
   // pass in the current url and add the "&q=chicken" here
   // then make the api call
   // can pass in one object with the url and q
@@ -13,17 +13,23 @@ export function getRecipes(data) {
       )
       .then(response => {
         console.log(response.data)
-        dispatch(setRecipes(response.data, data))
+        dispatch(setRecipes(response.data))
       })
   }
 }
-export function setRecipes(recipes, data) {
+export function setRecipes(recipes) {
   //pass in the results of the search and clear out previous
   //search selections
   return {
     type: UPDATE_RECIPES,
-    results: recipes,
-    searched: data
+    payload: {
+      results: recipes,
+      searched: 'searched item here to display on page',
+      categories: [],
+      calories: { min: 0, max: 0 },
+      maxIngredients: 0,
+      removeIngredients: []
+    }
   }
 }
 
