@@ -1,15 +1,24 @@
 import React, { Component } from 'react'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 import NumberInputs from '../Components/NumberInputs'
+import { connect } from 'react-redux'
+import { getRecipes } from '../Actions/SearchActions'
 
 class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
+    //bind the dispatch function
+    // this.onUpdateStateCurrentDay = this.onUpdateStateCurrentDay.bind(this)
     this.state = {
       categoriesBar: false,
       url: ''
     }
   }
+
+  // onUpdateStateCurrentDay() {
+  //my dispatch
+  //   this.props.onUpdateStateCurrentDay(this.setDateChosen())
+  // }
   showCategories = () => {
     this.setState({
       categoriesBar: !this.state.categoriesBar
@@ -48,6 +57,16 @@ class AdvancedSearch extends Component {
                 showOptions={true}
               />
             }
+            {/* START - will use this instead */}
+            {/* <select>
+              {this.props.healthLabels
+                .concat(this.props.dietLabels)
+                .map(option => {
+                  return <option>{option}</option>
+                })}
+            </select>
+            <button>Add</button> */}
+            {/* END */}
           </div>
           <section className="CaloriesAndCookTime">
             <section className="searchOptions">
@@ -90,5 +109,17 @@ class AdvancedSearch extends Component {
     )
   }
 }
+const mapStateToProps = state => ({
+  // months: state.months,
+  // map out state
+})
 
-export default AdvancedSearch
+const mapActionsToProps = {
+  // onUpdateStateCurrentDay: updateCurrentDay,
+  // loacalfunction to action function
+}
+
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(AdvancedSearch)
