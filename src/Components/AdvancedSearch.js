@@ -54,24 +54,30 @@ class AdvancedSearch extends Component {
               <div className="label">
                 <label>Calories:</label>
               </div>
-              <NumberInputs ingredient={false} />
+              <NumberInputs ingredient={false} label="calories" />
             </section>
             <section className="searchOptions">
               <div className="label">
                 <label>Cook Time: </label>
               </div>
-              <NumberInputs ingredient={false} />
+              <NumberInputs ingredient={false} label="cookTime" />
             </section>
           </section>
           <section className="searchOptions row">
             <div className="label">
               <label>Max ingredients: </label>
             </div>
-            <NumberInputs ingredient={true} />
+            <NumberInputs ingredient={true} label="maxIngredients" />
           </section>
           <div className="line" />
           <section className="searchOptionsForm">
-            {<AddOrRemoveForm name="Remove Ingredients" showOptions={false} />}
+            {
+              <AddOrRemoveForm
+                name="Remove Ingredients"
+                label="removeIngredients"
+                showOptions={false}
+              />
+            }
           </section>
           <div className="line" />
         </span>

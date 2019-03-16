@@ -8,7 +8,7 @@ class NumberInputs extends Component {
       max: 0
     }
   }
-
+  // create actions depending on the label name and add in validations
   changeMin = event => {
     if (event.target.value <= 0) {
       return

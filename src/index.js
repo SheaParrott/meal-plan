@@ -11,11 +11,15 @@ import SearchReducer from './Reducers/SearchReducer'
 const store = createStore(
   SearchReducer,
   {
+    defaultUrl:
+      'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999',
+    searchUrl: '',
     searched: '',
     categories: [],
     calories: { min: 0, max: 0 },
     maxIngredients: 0,
-    removeIngredients: []
+    removeIngredients: [],
+    results: []
   },
   window.devToolsExtension && window.devToolsExtension()
 )
