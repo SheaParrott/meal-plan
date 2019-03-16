@@ -10,7 +10,7 @@ class NumberInputs extends Component {
   }
 
   changeMin = event => {
-    if (event.target.value < 0) {
+    if (event.target.value <= 0) {
       return
     }
     this.setState({
@@ -18,7 +18,7 @@ class NumberInputs extends Component {
     })
   }
   changeMax = event => {
-    if (event.target.value < 0) {
+    if (event.target.value <= 0) {
       return
     }
     this.setState({

@@ -6,7 +6,8 @@ class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      categoriesBar: false
+      categoriesBar: false,
+      url: ''
     }
   }
   showCategories = () => {
@@ -18,10 +19,6 @@ class AdvancedSearch extends Component {
   render() {
     return (
       <div>
-        <div>
-          <input className="Search" placeholder="search here!" />
-          <button type="submit">Submit</button>
-        </div>
         <div className="advancedSearch">
           <div className="categories " onClick={this.showCategories}>
             <h4>Advanced search</h4>
@@ -76,7 +73,13 @@ class AdvancedSearch extends Component {
           <section className="searchOptionsForm">
             {<AddOrRemoveForm name="Remove Ingredients" showOptions={false} />}
           </section>
+          <div className="line" />
         </span>
+
+        <div>
+          <input className="Search" placeholder="Keywords / Recipees!" />
+          <button type="submit">Submit</button>
+        </div>
       </div>
     )
   }
