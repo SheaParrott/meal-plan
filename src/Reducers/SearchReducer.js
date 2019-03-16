@@ -6,8 +6,9 @@ export default function SearchReducer(state, action) {
   // do work here
   switch (action.type) {
     case UPDATE_RECIPES:
-      console.log(action.payload.results)
-      console.log(action.payload.searched)
+      if (action.payload === {}) {
+        return { ...state }
+      }
       return {
         ...state,
         results: action.payload.results,

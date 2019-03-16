@@ -4,20 +4,15 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { Provider } from 'react-redux'
+import ReduxThunk from 'redux-thunk'
+import logger from 'redux-logger'
 
 import { createStore, applyMiddleware } from 'redux'
 import SearchReducer from './Reducers/SearchReducer'
 
-// const logger = store => next => action => {
-//   console.log('actionFired :' + action)
-//   next(action)
-// }
+const middleware = applyMiddleware(logger, ReduxThunk)
 
-// const middleware = applyMiddleware(logger)
-
-// store.subscribe(() => {
-//   console.log('store changed', store.getState())
-// })
+// window.devToolsExtension && window.devToolsExtension()
 
 const store = createStore(
   SearchReducer,
@@ -32,8 +27,11 @@ const store = createStore(
     removeIngredients: [],
     results: []
   },
-  window.devToolsExtension && window.devToolsExtension()
+  middleware
 )
+store.subscribe(() => {
+  console.log('store changed', store.getState())
+})
 
 ReactDOM.render(
   <Provider store={store}>
