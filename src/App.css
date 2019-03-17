@@ -225,6 +225,11 @@ div.col {
 img.resume:hover {
   cursor: pointer;
 }
+.browseRecipeContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 @media (min-width: 375px) {
   .widthbig {
     width: 360px;
