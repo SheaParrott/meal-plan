@@ -20,12 +20,17 @@ const store = createStore(
     defaultURL:
       'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999',
     searchURL: '',
-    searched: '',
     categories: [], // selected labels given by api
     calories: { min: 0, max: 0 },
     maxIngredients: 0,
     removeIngredients: [],
-    results: []
+    results: {},
+    count: '',
+    from: '',
+    to: '',
+    more: '',
+    q: '',
+    hits: []
   },
   middleware
 )
