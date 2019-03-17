@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const UPDATE_SEARCH_URL = 'updateSearchURL'
+export const UPDATE_SEARCH_URL_PARAMS = 'updateSearchURLParams'
 export const UPDATE_RECIPES = 'updateRecipes'
 export const SINGLE_RECIPE = 'singleViewRecipe'
 
@@ -11,7 +11,7 @@ const fillRange = count => {
     .map((item, index) => start + index)
 }
 
-export function getRecipes(url) {
+export function getRecipes(url_params) {
   // pass in the current url and add the "&q=chicken" here
   // then make the api call
   // can pass in one object with the url and q
@@ -22,7 +22,7 @@ export function getRecipes(url) {
 
     const request = axios({
       method: 'GET',
-      url: url,
+      url: `https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999${url_params}`,
       headers: []
     })
     // need to extract the url update to a seperate action and reducer
@@ -44,11 +44,11 @@ export function getRecipes(url) {
     )
   }
 }
-export function searchURL({ url, value }) {
+export function searchURLParams({ url_params, value }) {
   return {
-    type: UPDATE_SEARCH_URL,
+    type: UPDATE_SEARCH_URL_PARAMS,
     payload: {
-      searchURL: `${url}&q=${value}`
+      searchURLParams: `${url_params}&q=${value}`
     }
   }
 }
@@ -61,7 +61,9 @@ export function singleRecipe(uri) {
   // the single view recipe
   let url =
     'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&r='
-  let encoded = encodeURIComponent(uri).replace(/[!*]/g, function(c) {
+  let encoded = encodeURIComponent(
+    `http://www.edamam.com/ontologies/edamam.owl#recipe_${uri}`
+  ).replace(/[!*]/g, function(c) {
     return '%' + c.charCodeAt(0).toString(16)
   })
 

@@ -5,23 +5,23 @@ import { singleRecipe } from '../Actions/SearchActions'
 class RecipePage extends Component {
   constructor(props) {
     super(props)
-    // this.goToSingleRecipe = this.goToSingleRecipe.bind(this)
+    this.goToSingleRecipe = this.goToSingleRecipe.bind(this)
   }
-  // componentDidMount = () => {
-  //   this.goToSingleRecipe()
-  // }
-  // goToSingleRecipe = event => {
-  //   // onClick we will add the uri to the url
-  //   // this.props.match.params.url will be used to
-  //   // fetch the data for the specific recipe
-  //   // use componentDidMount to fetch
-  //   // uri encoding works!
-
-  //   this.props.goToSingleRecipe(this.props.recipe.uri)
-  // }
-
+  componentDidMount = () => {
+    this.goToSingleRecipe()
+  }
   // for this page display the one specific recipe chosen
   // need to use the state of chosenRecipe from Redux
+
+  goToSingleRecipe = event => {
+    // onClick we will add the uri to the url
+    // this.props.match.params.uri will be used to
+    // fetch the data for the specific recipe
+    // use componentDidMount to fetch
+    // uri encoding works!
+
+    this.props.goToSingleRecipe(this.props.match.params.uri)
+  }
   render() {
     return (
       <div>
@@ -134,16 +134,9 @@ class RecipePage extends Component {
 
 const mapStateToProps = state => ({
   recipe: state.recipe
-  // from: state.from,
-  // to: state.to,
-  // more: state.more,
-  // q: state.q,
-  // hits: state.hits,
-  // pages: state.pages
 })
 const mapActionsToProps = {
-  // _searchRecipe: getRecipes
-  // goToSingleRecipe: singleRecipe
+  goToSingleRecipe: singleRecipe
 }
 export default connect(
   mapStateToProps,

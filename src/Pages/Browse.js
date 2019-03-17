@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Recipe from '../Components/Recipe'
+import { getRecipes, searchURLParams } from '../Actions/SearchActions'
 
 class Browse extends Component {
+  constructor(props) {
+    super(props)
+    this._searchRecipe = this._searchRecipe.bind(this)
+  }
+  componentDidMount = () => {
+    this._searchRecipe()
+  }
+  _searchRecipe = event => {
+    this.props._searchRecipe(this.props.match.params.url_params)
+  }
   render() {
     // determines the pages shown on the bottom
     const pagesLength = Math.ceil(Math.log10(this.props.from + 1))
@@ -56,7 +67,7 @@ const mapStateToProps = state => ({
   pages: state.pages
 })
 const mapActionsToProps = {
-  // _searchRecipe: getRecipes
+  _searchRecipe: getRecipes
 }
 
 export default connect(

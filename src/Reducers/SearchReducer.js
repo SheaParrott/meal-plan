@@ -1,7 +1,7 @@
 import {
   UPDATE_RECIPES,
   SINGLE_RECIPE,
-  UPDATE_SEARCH_URL
+  UPDATE_SEARCH_URL_PARAMS
 } from '../Actions/SearchActions'
 
 //removed state = initial state
@@ -25,10 +25,10 @@ export default function SearchReducer(state, action) {
         ...state,
         recipe: action.payload.recipe ? action.payload.recipe : []
       }
-    case UPDATE_SEARCH_URL:
+    case UPDATE_SEARCH_URL_PARAMS:
       return {
         ...state,
-        searchURL: action.payload.searchURL
+        searchURLParams: action.payload.searchURLParams
       }
     default:
       return state

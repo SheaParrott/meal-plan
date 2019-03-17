@@ -7,6 +7,8 @@ import * as serviceWorker from './serviceWorker'
 import ReduxThunk from 'redux-thunk'
 import logger from 'redux-logger'
 
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
 import { createStore, applyMiddleware } from 'redux'
 import SearchReducer from './Reducers/SearchReducer'
 
@@ -19,8 +21,7 @@ const store = createStore(
   {
     defaultURL:
       'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999',
-    searchURL:
-      'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999',
+    searchURLParams: '',
     categories: [], // selected labels given by api
     calories: { min: 0, max: 0 },
     maxIngredients: 0,
@@ -43,7 +44,9 @@ store.subscribe(() => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root')
 )

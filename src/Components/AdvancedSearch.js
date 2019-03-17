@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 import NumberInputs from '../Components/NumberInputs'
 import { connect } from 'react-redux'
-import { getRecipes, searchURL } from '../Actions/SearchActions'
+import { getRecipes, searchURLParams } from '../Actions/SearchActions'
+import { Link } from 'react-router-dom'
 
 class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
     //bind the dispatch function
-    this._searchRecipe = this._searchRecipe.bind(this)
-    this._searchURL = this._searchURL.bind(this)
+    this._searchURLParams = this._searchURLParams.bind(this)
     this.state = {
       categoriesBar: false,
       url: ''
@@ -26,28 +26,10 @@ class AdvancedSearch extends Component {
     })
     // can add a form reset here later on
   }
-  _searchRecipe = event => {
-    event.preventDefault()
-    const form = event.target
-    const formData = new FormData(form)
 
-    // let array = [this.props.date_id]
-    // for (let pair of formData.entries()) {
-    //   array.push(pair[1])
-    // }
-    let value = ''
-    for (let pair of formData.entries()) {
-      value = pair[1]
-    }
-    console.log(value)
-    // let obj = { URL: this.props.defaultURL, value: event.target.value }
-    // console.log('newOBJ: ' + obj)
-    // console.log(this.props.defaultURL)
-    this.props._searchRecipe(this.props.searchURL)
-  }
-  _searchURL = event => {
-    this.props._searchURL({
-      url: this.props.searchURL,
+  _searchURLParams = event => {
+    this.props._searchURLParams({
+      url_params: this.props.searchURLParams,
       value: event.target.value
     })
   }
@@ -127,29 +109,28 @@ class AdvancedSearch extends Component {
           <div className="line" />
         </span>
 
-        <form onSubmit={this._searchRecipe}>
-          <input
-            onChange={this._searchURL}
-            className="Search"
-            name="recipe"
-            placeholder="Keywords / Recipees!"
-          />
-          <button type="submit">Submit</button>
-        </form>
+        <input
+          onChange={this._searchURLParams}
+          className="Search"
+          name="recipe"
+          placeholder="Keywords / Recipees!"
+        />
+        <Link to={`/browse/${this.props.searchURLParams}`}>
+          <button>Submit</button>
+        </Link>
       </div>
     )
   }
 }
 const mapStateToProps = state => ({
   defaultURL: state.defaultURL,
-  searchURL: state.searchURL
+  searchURLParams: state.searchURLParams
   // months: state.months,
   // map out state
 })
 
 const mapActionsToProps = {
-  _searchRecipe: getRecipes,
-  _searchURL: searchURL
+  _searchURLParams: searchURLParams
 }
 
 export default connect(

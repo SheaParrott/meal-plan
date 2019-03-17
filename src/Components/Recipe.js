@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { singleRecipe } from '../Actions/SearchActions'
+import { Link } from 'react-router-dom'
 
 class Recipe extends Component {
   constructor(props) {
@@ -17,33 +18,41 @@ class Recipe extends Component {
     this.props.goToSingleRecipe(this.props.hit.recipe.uri)
   }
   render() {
+    console.log(this.props.hit.recipe.uri)
     return (
-      <div className="browseRecipeContainer" onClick={this.goToSingleRecipe}>
-        <img
-          className="browseRecipeImage"
-          src={this.props.hit.recipe.image}
-          alt={this.props.hit.recipe.label}
-        />
-        <div className="browseRecipeInfo">
-          <h3>{this.props.hit.recipe.label}</h3>
-          <h6>
-            {(
-              this.props.hit.recipe.calories / this.props.hit.recipe.yield
-            ).toFixed(0)}{' '}
-            Calories Per Serving
-          </h6>
-          <div className="healthAndWarningsContainer">
-            {this.props.hit.recipe.cautions.map(caution => {
-              return <p className="red-bg">{caution}</p>
-            })}
-          </div>
-          <div className="healthAndWarningsContainer">
-            {this.props.hit.recipe.healthLabels.map(label => {
-              return <p className="green-bg">{label}</p>
-            })}
+      <Link
+        to={`/recipe/${this.props.hit.recipe.uri.replace(
+          'http://www.edamam.com/ontologies/edamam.owl#recipe_',
+          ''
+        )}`}
+      >
+        <div className="browseRecipeContainer">
+          <img
+            className="browseRecipeImage"
+            src={this.props.hit.recipe.image}
+            alt={this.props.hit.recipe.label}
+          />
+          <div className="browseRecipeInfo">
+            <h3>{this.props.hit.recipe.label}</h3>
+            <h6>
+              {(
+                this.props.hit.recipe.calories / this.props.hit.recipe.yield
+              ).toFixed(0)}{' '}
+              Calories Per Serving
+            </h6>
+            <div className="healthAndWarningsContainer">
+              {this.props.hit.recipe.cautions.map(caution => {
+                return <p className="red-bg">{caution}</p>
+              })}
+            </div>
+            <div className="healthAndWarningsContainer">
+              {this.props.hit.recipe.healthLabels.map(label => {
+                return <p className="green-bg">{label}</p>
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     )
   }
 }
