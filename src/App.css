@@ -7,7 +7,15 @@
   min-height: 100vh;
   font-size: 1rem;
 }
-
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
 .red {
   color: red;
   font-weight: 700;
@@ -20,11 +28,9 @@ h1 {
   font-size: 5rem;
   font-weight: 500;
   padding: 15px 0 0 0;
-  margin: 0;
   background-image: linear-gradient(#92ca64, #92ca64);
 }
 h4 {
-  margin: 0;
   padding: 0;
 }
 input,
@@ -175,6 +181,46 @@ div.CategoriesBar {
   font-size: 1rem;
 }
 
+.browseRecipeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 7px;
+  box-shadow: 0 0 5px black;
+}
+.browseRecipeImage {
+  width: 25%;
+  height: auto;
+  margin: 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.699);
+}
+.browseRecipeInfo {
+  width: 65%;
+  padding: 0 10px;
+  height: 100%;
+}
+.healthAndWarningsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+p.red-bg,
+p.green-bg {
+  border-radius: 5px;
+  padding: 4px;
+  margin: 3px;
+  color: white;
+  font-size: 0.7rem;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.699);
+}
+.red-bg {
+  background-color: #e40404bd;
+}
+.green-bg {
+  background-color: #0ce404bd;
+}
+
 /* creator page */
 .boxShadow {
   box-shadow: 0 0 5px black;
@@ -225,11 +271,7 @@ div.col {
 img.resume:hover {
   cursor: pointer;
 }
-.browseRecipeContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
+/* end creator page */
 @media (min-width: 375px) {
   .widthbig {
     width: 360px;

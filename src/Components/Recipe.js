@@ -13,27 +13,26 @@ class Recipe extends Component {
     return (
       <div className="browseRecipeContainer" onClick={this.test}>
         <img
+          className="browseRecipeImage"
           src={this.props.hit.recipe.image}
           alt={this.props.hit.recipe.label}
         />
-        <div>
+        <div className="browseRecipeInfo">
           <h3>{this.props.hit.recipe.label}</h3>
-          <h3>
+          <h6>
             {(
               this.props.hit.recipe.calories / this.props.hit.recipe.yield
             ).toFixed(0)}{' '}
-            calories per serving
-          </h3>
-          <h4>Caution:</h4>
-          <div>
+            Calories Per Serving
+          </h6>
+          <div className="healthAndWarningsContainer">
             {this.props.hit.recipe.cautions.map(caution => {
-              return <p>{caution}</p>
+              return <p className="red-bg">{caution}</p>
             })}
           </div>
-          <h4>Health Labels</h4>
-          <div>
+          <div className="healthAndWarningsContainer">
             {this.props.hit.recipe.healthLabels.map(label => {
-              return <p>{label}</p>
+              return <p className="green-bg">{label}</p>
             })}
           </div>
         </div>
