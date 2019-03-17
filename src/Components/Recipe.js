@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 class Recipe extends Component {
   test = event => {
+    // onClick we will add the uri to the url
+    // this.props.match.params.url will be used to
+    // fetch the data for the specific recipe
+    // use componentDidMount to fetch
     let url = this.props.hit.recipe.uri
     // uri encoding works!
     let encodedURI = encodeURIComponent(url).replace(/[!*]/g, function(c) {

@@ -30,7 +30,8 @@ const store = createStore(
     to: '',
     more: '',
     q: '',
-    hits: []
+    hits: [],
+    pages: 0
   },
   middleware
 )
