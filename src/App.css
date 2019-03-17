@@ -2,7 +2,8 @@
   font-family: 'good';
   src: url('./assets/Good\ Vibes\ -\ Demo.ttf');
 }
-.App {
+.App,
+.default {
   text-align: center;
   min-height: 100vh;
   font-size: 1rem;

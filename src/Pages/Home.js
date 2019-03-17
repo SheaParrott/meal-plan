@@ -34,8 +34,9 @@ class Home extends Component {
   }
 
   render() {
+    //create a header component that handles the advanced search
     return (
-      <div className="wrapper">
+      <div className="wrapper default">
         <h1>Meal Plan</h1>
         <nav>
           <div className="categoriesBar">

@@ -9,7 +9,7 @@ class Creator extends Component {
   }
   render() {
     return (
-      <div className="creatorPage">
+      <div className="creatorPage default">
         <div className="header">
           <h1>Shea Parrott</h1>
           {/* <h4
