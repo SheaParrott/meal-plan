@@ -31,7 +31,8 @@ const store = createStore(
     more: '',
     q: '',
     hits: [],
-    pages: 0
+    pages: 0,
+    recipe: []
   },
   middleware
 )

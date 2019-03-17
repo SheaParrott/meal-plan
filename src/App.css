@@ -21,6 +21,10 @@ h6 {
   font-weight: 700;
   padding: 5px 0;
 }
+.white-hv:hover {
+  cursor: pointer;
+  text-shadow: 0 0 5px white;
+}
 h1 {
   font-family: 'good';
   color: white;

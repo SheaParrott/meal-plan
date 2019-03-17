@@ -1,21 +1,24 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { singleRecipe } from '../Actions/SearchActions'
 
 class Recipe extends Component {
-  test = event => {
+  constructor(props) {
+    super(props)
+    this.goToSingleRecipe = this.goToSingleRecipe.bind(this)
+  }
+  goToSingleRecipe = event => {
     // onClick we will add the uri to the url
     // this.props.match.params.url will be used to
     // fetch the data for the specific recipe
     // use componentDidMount to fetch
-    let url = this.props.hit.recipe.uri
     // uri encoding works!
-    let encodedURI = encodeURIComponent(url).replace(/[!*]/g, function(c) {
-      return '%' + c.charCodeAt(0).toString(16)
-    })
-    console.log(encodedURI)
+
+    this.props.goToSingleRecipe(this.props.hit.recipe.uri)
   }
   render() {
     return (
-      <div className="browseRecipeContainer" onClick={this.test}>
+      <div className="browseRecipeContainer" onClick={this.goToSingleRecipe}>
         <img
           className="browseRecipeImage"
           src={this.props.hit.recipe.image}
@@ -44,5 +47,20 @@ class Recipe extends Component {
     )
   }
 }
-
-export default Recipe
+const mapStateToProps = state => ({
+  count: state.count,
+  from: state.from,
+  to: state.to,
+  more: state.more,
+  q: state.q,
+  hits: state.hits,
+  pages: state.pages
+})
+const mapActionsToProps = {
+  // _searchRecipe: getRecipes
+  goToSingleRecipe: singleRecipe
+}
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(Recipe)

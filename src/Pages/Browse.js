@@ -19,21 +19,27 @@ class Browse extends Component {
         <h2>{this.props.q} Results</h2>
         <div>
           {this.props.hits.map((hit, index) => {
-            console.log(hit.recipe)
-            console.log(hit.recipe.uri)
+            // console.log(hit.recipe)
+            // console.log(hit.recipe.uri)
             return <Recipe key={index} hit={hit} />
           })}
         </div>
         <div className="browse">
-          <i className="fas fa-chevron-left" />
+          <i className="fas fa-chevron-left white-hv" />
           {/* filter to return the 5 within range of current
            chosen page */}
           {this.props.pages
-            ? this.props.pages.slice(pagesLength, pagesLength + 5).map(page => {
-                return <p>{page}</p>
-              })
+            ? this.props.pages
+                .slice(pagesLength, pagesLength + 5)
+                .map((page, index) => {
+                  return (
+                    <p key={index} className="white-hv">
+                      {page}
+                    </p>
+                  )
+                })
             : null}
-          <i class="fas fa-chevron-right" />
+          <i class="fas fa-chevron-right white-hv" />
         </div>
       </div>
     )

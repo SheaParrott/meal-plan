@@ -1,5 +1,6 @@
 import axios from 'axios'
 export const UPDATE_RECIPES = 'updateRecipes'
+export const SINGLE_RECIPE = 'singleViewRecipe'
 
 const fillRange = count => {
   let start = 1
@@ -43,4 +44,33 @@ export function getRecipes({ url, value }) {
 
 export function addCategory(category) {
   console.log(category)
+}
+
+export function singleRecipe(uri) {
+  // api call take the uri and encoded uri to return
+  // the single view recipe
+  let url =
+    'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&r='
+  let encoded = encodeURIComponent(uri).replace(/[!*]/g, function(c) {
+    return '%' + c.charCodeAt(0).toString(16)
+  })
+
+  return function action(dispatch) {
+    dispatch({ type: SINGLE_RECIPE, payload: {} })
+
+    const request = axios({
+      method: 'GET',
+      url: `${url}${encoded}`,
+      headers: []
+    })
+
+    return request.then(response =>
+      dispatch({
+        type: SINGLE_RECIPE,
+        payload: {
+          recipe: response.data
+        }
+      })
+    )
+  }
 }
