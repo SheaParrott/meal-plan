@@ -1,4 +1,5 @@
 import axios from 'axios'
+export const UPDATE_SEARCH_URL = 'updateSearchURL'
 export const UPDATE_RECIPES = 'updateRecipes'
 export const SINGLE_RECIPE = 'singleViewRecipe'
 
@@ -10,7 +11,7 @@ const fillRange = count => {
     .map((item, index) => start + index)
 }
 
-export function getRecipes({ url, value }) {
+export function getRecipes(url) {
   // pass in the current url and add the "&q=chicken" here
   // then make the api call
   // can pass in one object with the url and q
@@ -21,9 +22,11 @@ export function getRecipes({ url, value }) {
 
     const request = axios({
       method: 'GET',
-      url: `${url}&q=${value}`,
+      url: url,
       headers: []
     })
+    // need to extract the url update to a seperate action and reducer
+    // to an onChange so the submit button is the Link for react-router-dom
 
     return request.then(response =>
       dispatch({
@@ -41,7 +44,14 @@ export function getRecipes({ url, value }) {
     )
   }
 }
-
+export function searchURL({ url, value }) {
+  return {
+    type: UPDATE_SEARCH_URL,
+    payload: {
+      searchURL: `${url}&q=${value}`
+    }
+  }
+}
 export function addCategory(category) {
   console.log(category)
 }

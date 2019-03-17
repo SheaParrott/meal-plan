@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 import NumberInputs from '../Components/NumberInputs'
 import { connect } from 'react-redux'
-import { getRecipes } from '../Actions/SearchActions'
+import { getRecipes, searchURL } from '../Actions/SearchActions'
 
 class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
     //bind the dispatch function
     this._searchRecipe = this._searchRecipe.bind(this)
+    this._searchURL = this._searchURL.bind(this)
     this.state = {
       categoriesBar: false,
       url: ''
@@ -42,7 +43,13 @@ class AdvancedSearch extends Component {
     // let obj = { URL: this.props.defaultURL, value: event.target.value }
     // console.log('newOBJ: ' + obj)
     // console.log(this.props.defaultURL)
-    this.props._searchRecipe({ url: this.props.defaultURL, value: value })
+    this.props._searchRecipe(this.props.searchURL)
+  }
+  _searchURL = event => {
+    this.props._searchURL({
+      url: this.props.searchURL,
+      value: event.target.value
+    })
   }
   render() {
     return (
@@ -122,6 +129,7 @@ class AdvancedSearch extends Component {
 
         <form onSubmit={this._searchRecipe}>
           <input
+            onChange={this._searchURL}
             className="Search"
             name="recipe"
             placeholder="Keywords / Recipees!"
@@ -133,13 +141,15 @@ class AdvancedSearch extends Component {
   }
 }
 const mapStateToProps = state => ({
-  defaultURL: state.defaultURL
+  defaultURL: state.defaultURL,
+  searchURL: state.searchURL
   // months: state.months,
   // map out state
 })
 
 const mapActionsToProps = {
-  _searchRecipe: getRecipes
+  _searchRecipe: getRecipes,
+  _searchURL: searchURL
 }
 
 export default connect(
