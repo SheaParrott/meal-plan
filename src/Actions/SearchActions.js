@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const UPDATE_SEARCH_URL_PARAMS = 'updateSearchURLParams'
+export const UPDATE_SEARCH_URL_PARAMS = 'updatesearchURLParam'
 export const UPDATE_RECIPES = 'updateRecipes'
 export const SINGLE_RECIPE = 'singleViewRecipe'
 
@@ -44,11 +44,11 @@ export function getRecipes(url_params) {
     )
   }
 }
-export function searchURLParams({ url_params, value }) {
+export function searchURLParam(value) {
   return {
     type: UPDATE_SEARCH_URL_PARAMS,
     payload: {
-      searchURLParams: `${url_params}&q=${value}`
+      searchURLParam: `&q=${value}`
     }
   }
 }

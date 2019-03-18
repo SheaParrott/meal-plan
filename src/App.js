@@ -6,6 +6,7 @@ import Creator from './Pages/Creator'
 import Browse from './Pages/Browse'
 import { Route } from 'react-router-dom'
 import RecipePage from './Pages/RecipePage'
+import Footer from './Components/Footer'
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Route path="/browse/:url_params" component={Browse} />
         <Route path="/creator" component={Creator} />
         <Route path="/recipe/:uri" component={RecipePage} />
+        <Footer />
       </div>
     )
   }

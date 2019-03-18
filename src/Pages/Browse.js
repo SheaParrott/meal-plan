@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Recipe from '../Components/Recipe'
-import { getRecipes, searchURLParams } from '../Actions/SearchActions'
+import { getRecipes, searchURLParam } from '../Actions/SearchActions'
+import Header from '../Components/Header'
 
 class Browse extends Component {
   constructor(props) {
@@ -27,30 +28,40 @@ class Browse extends Component {
     // arrows should add 50? or 60?, will test for this
     return (
       <div>
-        <h2>{this.props.q} Results</h2>
+        <nav>
+          <h1 className="basicHeader">Meal Plan</h1>
+          <Header />
+        </nav>
+        <div className="spacingFromNav" />
         <div>
-          {this.props.hits.map((hit, index) => {
-            // console.log(hit.recipe)
-            // console.log(hit.recipe.uri)
-            return <Recipe key={index} hit={hit} />
-          })}
-        </div>
-        <div className="browse">
-          <i className="fas fa-chevron-left white-hv" />
-          {/* filter to return the 5 within range of current
+          <h2 className="uppercase">{this.props.q} Results</h2>
+          <div className="centerLine">
+            <div className="line" />
+          </div>
+          <div>
+            {this.props.hits.map((hit, index) => {
+              // console.log(hit.recipe)
+              // console.log(hit.recipe.uri)
+              return <Recipe key={index} hit={hit} />
+            })}
+          </div>
+          <div className="browse">
+            <i className="fas fa-chevron-left white-hv" />
+            {/* filter to return the 5 within range of current
            chosen page */}
-          {this.props.pages
-            ? this.props.pages
-                .slice(pagesLength, pagesLength + 5)
-                .map((page, index) => {
-                  return (
-                    <p key={index} className="white-hv">
-                      {page}
-                    </p>
-                  )
-                })
-            : null}
-          <i class="fas fa-chevron-right white-hv" />
+            {this.props.pages
+              ? this.props.pages
+                  .slice(pagesLength, pagesLength + 5)
+                  .map((page, index) => {
+                    return (
+                      <p key={index} className="white-hv">
+                        {page}
+                      </p>
+                    )
+                  })
+              : null}
+            <i class="fas fa-chevron-right white-hv" />
+          </div>
         </div>
       </div>
     )

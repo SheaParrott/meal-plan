@@ -28,7 +28,7 @@ export default function SearchReducer(state, action) {
     case UPDATE_SEARCH_URL_PARAMS:
       return {
         ...state,
-        searchURLParams: action.payload.searchURLParams
+        searchURLParam: action.payload.searchURLParam
       }
     default:
       return state

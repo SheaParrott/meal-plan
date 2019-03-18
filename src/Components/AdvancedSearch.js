@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 import NumberInputs from '../Components/NumberInputs'
 import { connect } from 'react-redux'
-import { getRecipes, searchURLParams } from '../Actions/SearchActions'
+import { getRecipes, searchURLParam } from '../Actions/SearchActions'
 import { Link } from 'react-router-dom'
 
 class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
     //bind the dispatch function
-    this._searchURLParams = this._searchURLParams.bind(this)
+    this._searchURLParam = this._searchURLParam.bind(this)
     this.state = {
       categoriesBar: false,
       url: ''
@@ -27,11 +27,8 @@ class AdvancedSearch extends Component {
     // can add a form reset here later on
   }
 
-  _searchURLParams = event => {
-    this.props._searchURLParams({
-      url_params: this.props.searchURLParams,
-      value: event.target.value
-    })
+  _searchURLParam = event => {
+    this.props._searchURLParam(event.target.value)
   }
   render() {
     return (
@@ -110,12 +107,12 @@ class AdvancedSearch extends Component {
         </span>
 
         <input
-          onChange={this._searchURLParams}
+          onChange={this._searchURLParam}
           className="Search"
           name="recipe"
           placeholder="Keywords / Recipees!"
         />
-        <Link to={`/browse/${this.props.searchURLParams}`}>
+        <Link to={`/browse/${this.props.searchURLParam}`}>
           <button>Submit</button>
         </Link>
       </div>
@@ -124,13 +121,13 @@ class AdvancedSearch extends Component {
 }
 const mapStateToProps = state => ({
   defaultURL: state.defaultURL,
-  searchURLParams: state.searchURLParams
+  searchURLParam: state.searchURLParam
   // months: state.months,
   // map out state
 })
 
 const mapActionsToProps = {
-  _searchURLParams: searchURLParams
+  _searchURLParam: searchURLParam
 }
 
 export default connect(
