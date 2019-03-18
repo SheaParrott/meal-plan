@@ -1,6 +1,7 @@
 # Meal Plan (work in progress)
 
 ## Inspiration
+
 Life is all about balance, right?<br/><br/>
 <strong>Well I think so!</strong>
 <br/><br/>
@@ -10,12 +11,17 @@ precedence in my day to day life. In an effort to better myself for
 a healthier lifestyle and help others <i>Meal Plan</i> was created!
 I hope this helps you as much as it will help me!
 <br/><br/>
-Technologies used:<br/>
+
+## Technologies used:
+
+<br/>
 React.JS <br/>
 HTML<br/>
 CSS<br/>
 
-Dependencies:
+## Dependencies:
+
+<br/>
 Redux <br/>
 react-router-dom<br/>
 logger<br/>
