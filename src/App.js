@@ -27,6 +27,6 @@ export default App
 
 // toDo:
 // [] work on pagination
-// [] create an about page
+// [x] create an about page
 // [] remove selected categories and ingredients
 // [] reset all search fields button?
