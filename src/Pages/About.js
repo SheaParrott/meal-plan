@@ -26,11 +26,13 @@ class About extends Component {
         <div className="aboutParagraph">
           <h2>Inspiration</h2>
           <p>
-            <br />
-            Life is all about balance, right? <br />
+            <br /> Life is all about balance, right?
+          </p>
+          <p>
             <br />
             <strong>Well I think so!</strong>
-            <br />
+          </p>
+          <p>
             <br /> A healthy diet is one of those balances most of us struggle
             with. This is something that I have realized and it has takes
             precedence in my day to day life. In an effort to better myself for
@@ -38,8 +40,8 @@ class About extends Component {
             I hope this helps you as much as it will help me!
             <br />
             <br />
-            -Blessings-
           </p>
+          <p> -Blessings-</p>
         </div>
         <img className="home" src={front} alt="cover" />
       </div>
