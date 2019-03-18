@@ -63,6 +63,7 @@ h1.basicHeader {
   padding: 5px 0 0 0;
   background-image: linear-gradient(#92ca64, #92ca64);
 }
+
 h4 {
   padding: 0;
 }
@@ -334,6 +335,38 @@ a {
 }
 
 /* single view recipe end */
+/* about page start */
+.aboutPage {
+  position: relative;
+}
+.categoriesBarAbout {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.aboutParagraph {
+  background-color: #4d5366ce;
+  border-radius: 20px;
+  border: 1px solid #92ca649c;
+  text-shadow: 0 0 8px black, 1.5px 1.5px 0.5px grey;
+  font-weight: 700;
+  padding: 20px;
+  color: white;
+  position: absolute;
+  top: 210px;
+  margin: 0 15px;
+}
+.thanks {
+  padding-bottom: 10px;
+}
+
+.aboutPageSpacing {
+  height: 180px;
+}
+strong {
+  font-size: 1.1rem;
+}
+/* about page end */
 /* creator page */
 .centering {
   display: flex;

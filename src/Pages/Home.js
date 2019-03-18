@@ -7,6 +7,7 @@ class Home extends Component {
     window.scrollTo(0, 0)
   }
   render() {
+    console.log(window.location)
     //create a header component that handles the advanced search
     return (
       <div className="wrapper default">

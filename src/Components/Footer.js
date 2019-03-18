@@ -9,10 +9,12 @@ class Footer extends Component {
           <p className="white">Creator</p>
         </Link>
         {/* about page not created yet */}
-        <Link to="/">
+        <Link to="/about">
           <p className="white">About</p>
         </Link>
-        <p className="white">&copy;SheaParrott</p>
+        <Link to="/creator">
+          <p className="white">&copy;SheaParrott</p>
+        </Link>
       </footer>
     )
   }

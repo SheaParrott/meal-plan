@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 import './App.css'
-// import PropTypes from 'prop-types'
 import Home from './Pages/Home'
 import Creator from './Pages/Creator'
 import Browse from './Pages/Browse'
 import { Route } from 'react-router-dom'
 import RecipePage from './Pages/RecipePage'
 import Footer from './Components/Footer'
+import About from './Pages/About'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
         <Route path="/browse/:url_params" component={Browse} />
         <Route path="/creator" component={Creator} />
         <Route path="/recipe/:uri" component={RecipePage} />
@@ -21,8 +22,11 @@ class App extends Component {
     )
   }
 }
-// App.propTypes = {
-//   store: PropTypes.object.isRequired
-// }
 
 export default App
+
+// toDo:
+// [] work on pagination
+// [] create an about page
+// [] remove selected categories and ingredients
+// [] reset all search fields button?

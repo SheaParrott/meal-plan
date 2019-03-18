@@ -3,13 +3,20 @@ import { Link } from 'react-router-dom'
 
 class Header extends Component {
   render() {
+    console.log(window.location.pathname)
     return (
-      <div className="categoriesBar">
+      <div
+        className={
+          window.location.pathname == '/about'
+            ? 'categoriesBarAbout'
+            : 'categoriesBar'
+        }
+      >
         <Link to="/">
           <h4 className="homeButton white">HOME</h4>
         </Link>
         {/* about page not created yet */}
-        <Link to="/">
+        <Link to="/about">
           <h4 className="homeButton white">ABOUT</h4>
         </Link>
       </div>
