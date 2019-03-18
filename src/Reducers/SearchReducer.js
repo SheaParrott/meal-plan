@@ -53,7 +53,7 @@ export default function SearchReducer(state, action) {
         ...state,
         maxIngredients: action.payload.maxIngredients
           ? action.payload.maxIngredients
-          : ''
+          : { max: '', params: '' }
       }
     default:
       return state

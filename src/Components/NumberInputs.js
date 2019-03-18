@@ -26,14 +26,10 @@ class NumberInputs extends Component {
     if (min < 0) {
       return
     } else if (min > max && max) {
-      this.setState({
-        error: `Max must be higher than Min`
-      })
+      this.props._numberError(`Max must be higher than Min`)
       return
-    } else if (this.state.error) {
-      this.setState({
-        error: ''
-      })
+    } else if (this.props.errorIsTrue) {
+      this.props._numberError('')
     }
 
     this.props._Min({
@@ -49,7 +45,9 @@ class NumberInputs extends Component {
   _Max = event => {
     let max = ''
     let min = ''
-    if (this.props.label == 'calories') {
+    if (this.props.label == 'maxIngredients') {
+      max = event.target.value
+    } else if (this.props.label == 'calories') {
       min = this.props.calories.min
       max = event.target.value
     } else if (this.props.label == 'cookTime') {
@@ -60,14 +58,13 @@ class NumberInputs extends Component {
     if (min < 0) {
       return
     } else if (min > max && max) {
-      this.setState({
-        error: `Max must be higher than Min`
-      })
+      this.props._numberError(`Max must be higher than Min`)
       return
-    } else if (this.state.error) {
-      this.setState({
-        error: ''
-      })
+    } else if (
+      this.props.errorIsTrue &&
+      this.props.label !== 'maxIngredients'
+    ) {
+      this.props._numberError('')
     }
 
     this.props._Max({
@@ -105,13 +102,17 @@ class NumberInputs extends Component {
                 ? this.props.cookTime.max
                 : this.props.label == 'calories'
                 ? this.props.calories.max
-                : this.props.maxIngredients
+                : this.props.maxIngredients.max
             }
             placeholder="any"
           />
         </div>
-        <br />
-        <h6 className="red">{this.state.error}</h6>
+        {this.props.ingredient ? null : (
+          <div>
+            <br />
+            <h6 className="red">{this.state.error}</h6>
+          </div>
+        )}
       </div>
     )
   }

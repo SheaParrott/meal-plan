@@ -18,8 +18,30 @@ class Browse extends Component {
   }
   render() {
     if (this.props.hits.length <= 0) {
-      return <Loading />
+      return (
+        <div>
+          <nav>
+            <h1 className="basicHeader">Meal Plan</h1>
+            <Header />
+          </nav>
+          <Loading />
+        </div>
+      )
+    } else if (this.props.hits[0] === 'No Results') {
+      return (
+        <div>
+          <nav>
+            <h1 className="basicHeader">Meal Plan</h1>
+            <Header />
+          </nav>
+          <h2 className="uppercase">No Results</h2>
+          <div className="centerLine">
+            <div className="line" />
+          </div>
+        </div>
+      )
     }
+    console.log('hit 1:' + this.props.hits[0])
     // determines the pages shown on the bottom
     const pagesLength = Math.ceil(Math.log10(this.props.from + 1))
     //now need to figure out a way to highlight current page

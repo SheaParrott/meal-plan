@@ -24,7 +24,7 @@ const store = createStore(
     searchURLParam: '',
     calories: { min: '', max: '', params: '' },
     cookTime: { min: '', max: '', params: '' },
-    maxIngredients: '',
+    maxIngredients: { max: '', params: '' },
     categories: [], // selected labels given by api
     removeIngredients: [],
     results: {},

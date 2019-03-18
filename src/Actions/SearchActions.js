@@ -48,7 +48,10 @@ export function getRecipes(url_params) {
           to: response.data.to,
           more: response.data.more,
           q: response.data.q,
-          hits: response.data.hits,
+          hits:
+            response.data.hits.length === 0
+              ? ['No Results']
+              : response.data.hits,
           pages: fillRange(response.data.count)
         }
       })
@@ -57,7 +60,7 @@ export function getRecipes(url_params) {
 }
 export function minAndMaxParams({ theCase, min, max }) {
   let value = ''
-  if (theCase == 'maxIngredients' || (!min && max)) {
+  if (theCase === 'maxIngredients' || (!min && max)) {
     value = max
   } else if (max && max > min) {
     value = `${min}-${max}`
@@ -84,7 +87,7 @@ export function minAndMaxParams({ theCase, min, max }) {
       return {
         type: MAX_INGREDIENTS,
         payload: {
-          maxIngredients: `&ingr=${value}`
+          maxIngredients: { max: max, params: `&ingr=${value}` }
         }
       }
     default:

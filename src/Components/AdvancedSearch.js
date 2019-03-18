@@ -8,18 +8,22 @@ import { Link } from 'react-router-dom'
 class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
-    //bind the dispatch function
     this._searchURLParam = this._searchURLParam.bind(this)
     this.state = {
       categoriesBar: false,
-      url: ''
+      url: '',
+      numberError: ''
     }
   }
+  _numberError = value => {
+    if (value == this.state.error) {
+      return
+    }
+    this.setState({
+      numberError: value
+    })
+  }
 
-  // onUpdateStateCurrentDay() {
-  //my dispatch
-  //   this.props.onUpdateStateCurrentDay(this.setDateChosen())
-  // }
   showCategories = () => {
     this.setState({
       categoriesBar: !this.state.categoriesBar
@@ -32,6 +36,11 @@ class AdvancedSearch extends Component {
   }
   // add values to all inputs and use onchange
   render() {
+    let params =
+      this.props.searchURLParam +
+      this.props.calories.params +
+      this.props.cookTime.params +
+      this.props.maxIngredients.params
     return (
       <div>
         <div className="advancedSearch">
@@ -74,18 +83,29 @@ class AdvancedSearch extends Component {
             <button>Add</button> */}
             {/* END */}
           </div>
+          <h6 className="red">{this.state.numberError}</h6>
           <section className="CaloriesAndCookTime">
             <section className="searchOptions">
               <div className="label">
                 <label>Calories:</label>
               </div>
-              <NumberInputs ingredient={false} label="calories" />
+              <NumberInputs
+                ingredient={false}
+                label="calories"
+                _numberError={this._numberError}
+                errorIsTrue={this.state.numberError ? true : false}
+              />
             </section>
             <section className="searchOptions">
               <div className="label">
                 <label>Cook Time: </label>
               </div>
-              <NumberInputs ingredient={false} label="cookTime" />
+              <NumberInputs
+                ingredient={false}
+                label="cookTime"
+                _numberError={this._numberError}
+                errorIsTrue={this.state.numberError ? true : false}
+              />
             </section>
           </section>
           <section className="searchOptions row">
@@ -113,7 +133,7 @@ class AdvancedSearch extends Component {
           name="recipe"
           placeholder="Keywords / Recipees!"
         />
-        <Link to={`/browse/${this.props.searchURLParam}`}>
+        <Link to={`/browse/${params}`}>
           <button>Submit</button>
         </Link>
       </div>
@@ -122,7 +142,11 @@ class AdvancedSearch extends Component {
 }
 const mapStateToProps = state => ({
   defaultURL: state.defaultURL,
-  searchURLParam: state.searchURLParam
+  searchURLParam: state.searchURLParam,
+  calories: state.calories,
+  cookTime: state.cookTime,
+  maxIngredients: state.maxIngredients
+
   // months: state.months,
   // map out state
 })
