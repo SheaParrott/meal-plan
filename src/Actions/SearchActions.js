@@ -2,10 +2,8 @@ import axios from 'axios'
 export const UPDATE_SEARCH_URL_PARAMS = 'updatesearchURLParam'
 export const UPDATE_RECIPES = 'updateRecipes'
 export const SINGLE_RECIPE = 'singleViewRecipe'
-export const MIN_COOK_TIME = 'minCookTime'
-export const MIN_CALORIES = 'minCalories'
-export const MAX_COOK_TIME = 'maxCookTime'
-export const MAX_CALORIES = 'maxCalories'
+export const COOK_TIME = 'cookTime'
+export const CALORIES = 'calories'
 export const MAX_INGREDIENTS = 'maxIngredients'
 
 const fillRange = count => {
@@ -57,50 +55,40 @@ export function getRecipes(url_params) {
     )
   }
 }
-export function minParams({ theCase, value }) {
+export function minAndMaxParams({ theCase, min, max }) {
+  let value = ''
+  if (theCase == 'maxIngredients' || (!min && max)) {
+    value = max
+  } else if (max && max > min) {
+    value = `${min}-${max}`
+  } else if (!max && min) {
+    value = `${min}+`
+  }
   switch (theCase) {
     case 'cookTime':
       return {
-        type: MIN_COOK_TIME,
+        type: COOK_TIME,
         payload: {
-          minCookTime: `&q=${value}`
+          cookTime: { min: min, max: max, params: `&time=${value}` }
         }
       }
+
     case 'calories':
       return {
-        type: MIN_CALORIES,
+        type: CALORIES,
         payload: {
-          minCalories: `calories=${value}`
+          calories: { min: min, max: max, params: `&calories=${value}` }
         }
       }
-    default:
-      return
-  }
-}
-export function maxParams({ theCase, value }) {
-  switch (theCase) {
     case 'maxIngredients':
       return {
         type: MAX_INGREDIENTS,
         payload: {
-          maxIngredients: `&q=${value}`
-        }
-      }
-    case 'cookTime':
-      return {
-        type: MAX_COOK_TIME,
-        payload: {
-          maxCookTime: `&q=${value}`
-        }
-      }
-    case 'calories':
-      return {
-        type: MAX_CALORIES,
-        payload: {
-          maxCalories: `&q=${value}`
+          maxIngredients: `&ingr=${value}`
         }
       }
     default:
+      //this could break the reducer..
       return
   }
 }

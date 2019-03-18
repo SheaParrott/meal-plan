@@ -1,9 +1,11 @@
 import {
   UPDATE_RECIPES,
   SINGLE_RECIPE,
-  UPDATE_SEARCH_URL_PARAMS
+  UPDATE_SEARCH_URL_PARAMS,
+  COOK_TIME,
+  CALORIES,
+  MAX_INGREDIENTS
 } from '../Actions/SearchActions'
-
 //removed state = initial state
 // may cause issues
 export default function SearchReducer(state, action) {
@@ -29,15 +31,31 @@ export default function SearchReducer(state, action) {
       return {
         ...state,
         searchURLParam: action.payload.searchURLParam
+          ? action.payload.searchURLParam
+          : ''
+      }
+    case COOK_TIME:
+      return {
+        ...state,
+        cookTime: action.payload.cookTime
+          ? action.payload.cookTime
+          : { min: '', max: '', params: '' }
+      }
+    case CALORIES:
+      return {
+        ...state,
+        calories: action.payload.calories
+          ? action.payload.calories
+          : { min: '', max: '', params: '' }
+      }
+    case MAX_INGREDIENTS:
+      return {
+        ...state,
+        maxIngredients: action.payload.maxIngredients
+          ? action.payload.maxIngredients
+          : ''
       }
     default:
       return state
   }
 }
-
-// count: response.data.count,
-// from: response.data.from,
-// to: response.data.to,
-// more: response.data.more,
-// results: response.data,
-// q: response.data.q,
