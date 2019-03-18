@@ -12,21 +12,13 @@ class Creator extends Component {
     return (
       <div>
         <nav>
-          <h1 className="basicHeader">Meal Plan</h1>
+          <h1>Shea Parrott</h1>
           <Header />
         </nav>
-        <div className="spacingFromNav" />
-        <div className="creatorPage default marginFromFooter">
-          <div className="header">
-            <h1>Shea Parrott</h1>
-            {/* <h4
-            className="Font text-secondary boxShadow whiteBackground"
-            onClick={() => history.go(-1)}
-          >
-            Back
-          </h4> */}
-          </div>
+        <div className="creatorSpacingFromNav" />
+        <div className="creatorPage  marginFromFooter">
           <img className="creator boxShadow" src={CreatorImage} alt="Shea" />
+
           <div className="largerViewCreator">
             <div className="col">
               <a className="text-secondary" href="tel://1-904-629-8670">

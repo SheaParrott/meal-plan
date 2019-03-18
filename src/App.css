@@ -85,6 +85,9 @@ nav {
 .spacingFromNav {
   height: 90px;
 }
+.creatorSpacingFromNav {
+  height: 145px;
+}
 .navSpacing {
   height: 116px;
 }
@@ -311,6 +314,11 @@ a {
 
 /* single view recipe end */
 /* creator page */
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .boxShadow {
   box-shadow: 0 0 5px black;
 }
