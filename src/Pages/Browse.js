@@ -41,7 +41,6 @@ class Browse extends Component {
         </div>
       )
     }
-    console.log('hit 1:' + this.props.hits[0])
     // determines the pages shown on the bottom
     const pagesLength = Math.ceil(Math.log10(this.props.from + 1))
     //now need to figure out a way to highlight current page
@@ -66,9 +65,7 @@ class Browse extends Component {
           </div>
           <div>
             {this.props.hits.map((hit, index) => {
-              // console.log(hit.recipe)
-              // console.log(hit.recipe.uri)
-              return <Recipe key={index} hit={hit} />
+              return <Recipe key={hit + index} hit={hit} />
             })}
           </div>
           <div className="browse">
@@ -86,7 +83,7 @@ class Browse extends Component {
                     )
                   })
               : null}
-            <i class="fas fa-chevron-right white-hv" />
+            <i className="fas fa-chevron-right white-hv" />
           </div>
         </div>
       </div>

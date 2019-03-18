@@ -18,7 +18,6 @@ class Recipe extends Component {
     this.props.goToSingleRecipe(this.props.hit.recipe.uri)
   }
   render() {
-    console.log(this.props.hit.recipe.uri)
     return (
       <Link
         to={`/recipe/${this.props.hit.recipe.uri.replace(
@@ -41,13 +40,21 @@ class Recipe extends Component {
               Calories Per Serving
             </h6>
             <div className="healthAndWarningsContainer">
-              {this.props.hit.recipe.cautions.map(caution => {
-                return <p className="red-bg">{caution}</p>
+              {this.props.hit.recipe.cautions.map((caution, index) => {
+                return (
+                  <p key={caution + index} className="red-bg">
+                    {caution}
+                  </p>
+                )
               })}
             </div>
             <div className="healthAndWarningsContainer">
-              {this.props.hit.recipe.healthLabels.map(label => {
-                return <p className="green-bg">{label}</p>
+              {this.props.hit.recipe.healthLabels.map((label, index) => {
+                return (
+                  <p key={label + index} className="green-bg">
+                    {label}
+                  </p>
+                )
               })}
             </div>
           </div>
