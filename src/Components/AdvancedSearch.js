@@ -30,6 +30,7 @@ class AdvancedSearch extends Component {
   _searchURLParam = event => {
     this.props._searchURLParam(event.target.value)
   }
+  // add values to all inputs and use onchange
   render() {
     return (
       <div>
