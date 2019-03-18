@@ -309,10 +309,22 @@ a {
   padding: 5px 5px;
   color: white;
 }
+.shadedRecipeInfoLabel {
+  background-image: linear-gradient(#444a5a, #4d5366);
+  font-size: 1rem;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.418);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.568);
+  padding: 5px 5px;
+  color: #ffffffea;
+}
+.shadedRecipeInfoLabel:hover {
+  cursor: pointer;
+}
 .recipeInfoLabel:hover {
   border: 1px solid rgba(255, 255, 255, 0.418);
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.404);
-  color: #ffffffc7;
+  color: #ffffffea;
   background-image: linear-gradient(#444a5a, #4d5366);
   cursor: pointer;
 }

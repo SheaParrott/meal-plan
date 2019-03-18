@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import front from '../assets/front.jpg'
-import HeaderWithSearch from '../Components/HeaderWithSearch'
+import AdvancedSearch from '../Components/AdvancedSearch'
 
 class Home extends Component {
+  componentDidMount = () => {
+    window.scrollTo(0, 0)
+  }
   render() {
     //create a header component that handles the advanced search
     return (
       <div className="wrapper default">
-        <HeaderWithSearch />
+        <AdvancedSearch />
         <img className="home" src={front} alt="cover" />
       </div>
     )

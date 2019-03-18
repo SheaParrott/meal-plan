@@ -11,6 +11,7 @@ class Browse extends Component {
     this._searchRecipe = this._searchRecipe.bind(this)
   }
   componentDidMount = () => {
+    window.scrollTo(0, 0)
     this._searchRecipe()
   }
   _searchRecipe = event => {

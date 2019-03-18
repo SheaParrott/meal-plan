@@ -9,134 +9,18 @@ class RecipePage extends Component {
     super(props)
     this.goToSingleRecipe = this.goToSingleRecipe.bind(this)
     this.state = {
-      displayedInfo: 'ingredients' // when chosen give it a highlighted color
+      displayedInfo: 'ingredients'
     }
   }
   componentDidMount = () => {
     this.goToSingleRecipe()
   }
-  // for this page display the one specific recipe chosen
-  // need to use the state of chosenRecipe from Redux
 
   goToSingleRecipe = event => {
-    // onClick we will add the uri to the url
-    // this.props.match.params.uri will be used to
-    // fetch the data for the specific recipe
-    // use componentDidMount to fetch
-    // uri encoding works!
-
     this.props.goToSingleRecipe(this.props.match.params.uri)
+    window.scrollTo(0, 0)
   }
-  displayedfacts = info => {
-    switch (this.state.displayedInfo) {
-      case 'digest':
-        return (
-          <div className="recipeInfo">
-            {info.digest.map(label => {
-              return (
-                <div key={label}>
-                  <h5>{label.label}</h5>
-                  <p>
-                    {!label.daily || !label.schemaOrgTag
-                      ? ''
-                      : `${label.daily.toFixed(2)}% ${label.schemaOrgTag}`}
-                  </p>
 
-                  <p>
-                    {!label.total || !label.unit || !label.tag
-                      ? ''
-                      : `${label.total.toFixed(2)}${label.unit} ${label.tag}`}
-                  </p>
-                  <br />
-                  <div>
-                    {label.sub
-                      ? label.sub.map(l => {
-                          return (
-                            <div key={l}>
-                              <h5>{l.label}</h5>
-                              <p>
-                                {!l.daily || !l.schemaOrgTag
-                                  ? ''
-                                  : `${l.daily.toFixed(2)}% ${l.schemaOrgTag}`}
-                              </p>
-                              <p>
-                                {!l.total || !l.unit || !l.tag
-                                  ? ''
-                                  : `${l.total.toFixed(2)}${l.unit} ${l.tag}`}
-                              </p>
-                              <br />
-                            </div>
-                          )
-                        })
-                      : null}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        )
-      case 'totalDaily':
-        return (
-          <div className="recipeInfo">
-            {Object.keys(info.totalDaily).map(key => {
-              return (
-                <div key={key}>
-                  <p>
-                    {info.totalDaily[key].label}:{' '}
-                    {info.totalDaily[key].quantity.toFixed(2)}{' '}
-                    {info.totalDaily[key].unit}
-                  </p>
-                  <br />
-                </div>
-              )
-            })}
-          </div>
-        )
-      case 'totalNutrients':
-        return (
-          <div className="recipeInfo">
-            {Object.keys(info.totalNutrients).map(key => {
-              return (
-                <div key={key}>
-                  <p>
-                    {info.totalNutrients[key].label}:{' '}
-                    {info.totalNutrients[key].quantity.toFixed(2)}
-                    {info.totalNutrients[key].unit}
-                  </p>
-                  <br />
-                </div>
-              )
-            })}
-          </div>
-        )
-      case 'ingredients':
-        return (
-          <div className="recipeInfo">
-            {info.ingredientLines.map(ingredient => {
-              return (
-                <div key={ingredient}>
-                  <h5>{ingredient}</h5> <br />
-                </div>
-              )
-            })}
-          </div>
-        )
-      default:
-        return
-    }
-    // state to determin which.
-    // switch case for what is returned
-  }
-  // display:
-  // calories
-  // servings
-  // cautions
-  // health labels
-  // ingrediants
-
-  // bar:
-  // facts
-  // break down to type of facts display one at a time
   render() {
     if (this.props.recipe.length <= 0) {
       return <Loading />
@@ -186,7 +70,11 @@ class RecipePage extends Component {
                 <section className="RecipeInfoContainer">
                   <div className="RecipeInfoBar">
                     <h3
-                      className="recipeInfoLabel"
+                      className={
+                        this.state.displayedInfo == 'ingredients'
+                          ? 'shadedRecipeInfoLabel'
+                          : 'recipeInfoLabel'
+                      }
                       onClick={() => {
                         this.setState({
                           displayedInfo: 'ingredients'
@@ -197,7 +85,11 @@ class RecipePage extends Component {
                     </h3>
 
                     <h3
-                      className="recipeInfoLabel"
+                      className={
+                        this.state.displayedInfo == 'digest'
+                          ? 'shadedRecipeInfoLabel'
+                          : 'recipeInfoLabel'
+                      }
                       onClick={() => {
                         this.setState({
                           displayedInfo: 'digest'
@@ -208,7 +100,11 @@ class RecipePage extends Component {
                     </h3>
 
                     <h3
-                      className="recipeInfoLabel"
+                      className={
+                        this.state.displayedInfo == 'totalDaily'
+                          ? 'shadedRecipeInfoLabel'
+                          : 'recipeInfoLabel'
+                      }
                       onClick={() => {
                         this.setState({
                           displayedInfo: 'totalDaily'
@@ -219,7 +115,11 @@ class RecipePage extends Component {
                     </h3>
 
                     <h3
-                      className="recipeInfoLabel"
+                      className={
+                        this.state.displayedInfo == 'totalNutrients'
+                          ? 'shadedRecipeInfoLabel'
+                          : 'recipeInfoLabel'
+                      }
                       onClick={() => {
                         this.setState({
                           displayedInfo: 'totalNutrients'
@@ -230,7 +130,102 @@ class RecipePage extends Component {
                     </h3>
                   </div>
 
-                  {this.displayedfacts(info)}
+                  {this.state.displayedInfo == 'digest' ? (
+                    <div className="recipeInfo">
+                      {info.digest.map(label => {
+                        return (
+                          <div key={label.label}>
+                            <h5>{label.label}</h5>
+                            <p>
+                              {!label.daily || !label.schemaOrgTag
+                                ? ''
+                                : `${label.daily.toFixed(2)}% ${
+                                    label.schemaOrgTag
+                                  }`}
+                            </p>
+
+                            <p>
+                              {!label.total || !label.unit || !label.tag
+                                ? ''
+                                : `${label.total.toFixed(2)}${label.unit} ${
+                                    label.tag
+                                  }`}
+                            </p>
+                            <br />
+                            <div>
+                              {label.sub
+                                ? label.sub.map(l => {
+                                    return (
+                                      <div key={l.label}>
+                                        <h5>{l.label}</h5>
+                                        <p>
+                                          {!l.daily || !l.schemaOrgTag
+                                            ? ''
+                                            : `${l.daily.toFixed(2)}% ${
+                                                l.schemaOrgTag
+                                              }`}
+                                        </p>
+                                        <p>
+                                          {!l.total || !l.unit || !l.tag
+                                            ? ''
+                                            : `${l.total.toFixed(2)}${l.unit} ${
+                                                l.tag
+                                              }`}
+                                        </p>
+                                        <br />
+                                      </div>
+                                    )
+                                  })
+                                : null}
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  ) : null}
+                  {this.state.displayedInfo == 'totalDaily' ? (
+                    <div className="recipeInfo">
+                      {Object.keys(info.totalDaily).map((key, index) => {
+                        return (
+                          <div key={key + index}>
+                            <p>
+                              {info.totalDaily[key].label}:{' '}
+                              {info.totalDaily[key].quantity.toFixed(2)}{' '}
+                              {info.totalDaily[key].unit}
+                            </p>
+                            <br />
+                          </div>
+                        )
+                      })}
+                    </div>
+                  ) : null}
+                  {this.state.displayedInfo == 'totalNutrients' ? (
+                    <div className="recipeInfo">
+                      {Object.keys(info.totalNutrients).map((key, index) => {
+                        return (
+                          <div key={key + index}>
+                            <p>
+                              {info.totalNutrients[key].label}:{' '}
+                              {info.totalNutrients[key].quantity.toFixed(2)}
+                              {info.totalNutrients[key].unit}
+                            </p>
+                            <br />
+                          </div>
+                        )
+                      })}
+                    </div>
+                  ) : null}
+                  {this.state.displayedInfo == 'ingredients' ? (
+                    <div className="recipeInfo">
+                      {info.ingredientLines.map((ingredient, index) => {
+                        return (
+                          <div key={ingredient + index}>
+                            <h5>{ingredient}</h5> <br />
+                          </div>
+                        )
+                      })}
+                    </div>
+                  ) : null}
                 </section>
               </div>
             )
