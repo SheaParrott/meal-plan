@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 import NumberInputs from '../Components/NumberInputs'
 import { connect } from 'react-redux'
-import { getRecipes, searchURLParam } from '../Actions/SearchActions'
+import { searchURLParam } from '../Actions/SearchActions'
 import { Link } from 'react-router-dom'
 
 class AdvancedSearch extends Component {
@@ -11,7 +11,6 @@ class AdvancedSearch extends Component {
     this._searchURLParam = this._searchURLParam.bind(this)
     this.state = {
       categoriesBar: false,
-      url: '',
       numberError: ''
     }
   }
@@ -36,11 +35,18 @@ class AdvancedSearch extends Component {
   }
   // add values to all inputs and use onchange
   render() {
+    let string = ''
+    this.props.categories
+      .concat(this.props.removedIngredients)
+      .forEach(category => {
+        string += category.param
+      })
     let params =
       this.props.searchURLParam +
       this.props.calories.params +
       this.props.cookTime.params +
-      this.props.maxIngredients.params
+      this.props.maxIngredients.params +
+      string
     return (
       <div>
         <div className="advancedSearch">
@@ -64,14 +70,7 @@ class AdvancedSearch extends Component {
           }`}
         >
           <div className="searchOptionsForm">
-            {
-              <AddOrRemoveForm
-                healthLabels={this.props.healthLabels}
-                dietLabels={this.props.dietLabels}
-                name="Categories"
-                showOptions={true}
-              />
-            }
+            {<AddOrRemoveForm name="Categories" showOptions={true} />}
           </div>
           <h6 className="red">{this.state.numberError}</h6>
           <section className="CaloriesAndCookTime">
@@ -135,7 +134,9 @@ const mapStateToProps = state => ({
   searchURLParam: state.searchURLParam,
   calories: state.calories,
   cookTime: state.cookTime,
-  maxIngredients: state.maxIngredients
+  maxIngredients: state.maxIngredients,
+  categories: state.categories,
+  removedIngredients: state.removedIngredients
 
   // months: state.months,
   // map out state

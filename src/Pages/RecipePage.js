@@ -34,7 +34,7 @@ class RecipePage extends Component {
           <div className="recipeInfo">
             {info.digest.map(label => {
               return (
-                <div>
+                <div key={label}>
                   <h5>{label.label}</h5>
                   <p>
                     {!label.daily || !label.schemaOrgTag
@@ -52,7 +52,7 @@ class RecipePage extends Component {
                     {label.sub
                       ? label.sub.map(l => {
                           return (
-                            <div>
+                            <div key={l}>
                               <h5>{l.label}</h5>
                               <p>
                                 {!l.daily || !l.schemaOrgTag
@@ -80,7 +80,7 @@ class RecipePage extends Component {
           <div className="recipeInfo">
             {Object.keys(info.totalDaily).map(key => {
               return (
-                <div>
+                <div key={key}>
                   <p>
                     {info.totalDaily[key].label}:{' '}
                     {info.totalDaily[key].quantity.toFixed(2)}{' '}
@@ -97,7 +97,7 @@ class RecipePage extends Component {
           <div className="recipeInfo">
             {Object.keys(info.totalNutrients).map(key => {
               return (
-                <div>
+                <div key={key}>
                   <p>
                     {info.totalNutrients[key].label}:{' '}
                     {info.totalNutrients[key].quantity.toFixed(2)}
@@ -112,10 +112,10 @@ class RecipePage extends Component {
       case 'ingredients':
         return (
           <div className="recipeInfo">
-            {info.ingredientLines.map(ingrediant => {
+            {info.ingredientLines.map(ingredient => {
               return (
-                <div>
-                  <h5>{ingrediant}</h5> <br />
+                <div key={ingredient}>
+                  <h5>{ingredient}</h5> <br />
                 </div>
               )
             })}
@@ -138,7 +138,6 @@ class RecipePage extends Component {
   // facts
   // break down to type of facts display one at a time
   render() {
-    console.log('test :' + this.props.hits)
     if (this.props.recipe.length <= 0) {
       return <Loading />
     }
@@ -150,9 +149,9 @@ class RecipePage extends Component {
         </nav>
         <div className="spacingFromNav" />
         <div className="singleViewRecipe marginFromFooter">
-          {this.props.recipe.map(info => {
+          {this.props.recipe.map((info, index) => {
             return (
-              <div>
+              <div key={index}>
                 <h2>{info.label}</h2>
 
                 <img
@@ -167,12 +166,20 @@ class RecipePage extends Component {
                 <section className="singleViewRecipeHealthAndWarnings">
                   <div className="healthAndWarningsContainer">
                     {info.cautions.map(caution => {
-                      return <p className="red-bg">{caution}</p>
+                      return (
+                        <p key={caution} className="red-bg">
+                          {caution}
+                        </p>
+                      )
                     })}
                   </div>
                   <div className="healthAndWarningsContainer">
                     {info.healthLabels.map(label => {
-                      return <p className="green-bg">{label}</p>
+                      return (
+                        <p key={label} className="green-bg">
+                          {label}
+                        </p>
+                      )
                     })}
                   </div>
                 </section>

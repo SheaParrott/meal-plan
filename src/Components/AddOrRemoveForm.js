@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
+import { connect } from 'react-redux'
+import { addCategory, addRemovedIngredients } from '../Actions/SearchActions'
 
 // [] add in option to delete categories chosen
 // [] add guard clause to to prevent adding the same catagory chosen twice
@@ -7,34 +9,28 @@ import update from 'immutability-helper'
 class AddOrRemoveForm extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      value: '',
-      selectedFilters: []
-    }
+    this._addCategory = this._addCategory.bind(this)
   }
 
-  matchLabel = event => {
-    this.setState({
-      value: event.target.value
-    })
-  }
-  addSelectedLabel = event => {
+  _addRemovedIngredients = event => {
     event.preventDefault()
     let form = event.target
     const formData = new FormData(form)
     for (let pair of formData.entries()) {
-      this.setState({
-        selectedFilters: update(this.state.selectedFilters, {
-          $push: [pair[1]]
-        })
-      })
+      this.props._addRemovedIngredients(pair[1])
     }
+    form.reset()
+  }
+  _addCategory = event => {
+    this.props._addCategory(event.target.value)
   }
   render() {
+    let tagsDisplayed =
+      this.props.name === 'Categories'
+        ? this.props.categories
+        : this.props.removedIngredients
     return (
       <div>
-        <div className="red">{this.state.error}</div>
-
         <div className="formArea">
           <label>{this.props.name}: </label>
 
@@ -42,21 +38,25 @@ class AddOrRemoveForm extends Component {
             <div>
               {/* add on change here */}
               {/* will have separate selectedFilters in state */}
-              <select>
+              <select onChange={this._addCategory}>
+                <option value="">-----</option>
                 {this.props.healthLabels
                   .concat(this.props.dietLabels)
                   .map(option => {
-                    return <option value={option}>{option}</option>
+                    return (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    )
                   })}
               </select>
             </div>
           ) : (
-            <form onSubmit={this.addSelectedLabel}>
+            <form onSubmit={this._addRemovedIngredients}>
               <div>
                 <input
                   className="formInput"
                   onChange={this.matchLabel}
-                  value={this.state.value}
                   name="label"
                   type="text"
                   list="v"
@@ -69,11 +69,11 @@ class AddOrRemoveForm extends Component {
         </div>
 
         <div className="displayedLabelbox">
-          {this.state.selectedFilters.map((value, index) => {
+          {tagsDisplayed.map((value, index) => {
             return (
               <div key={index} className="displayedLabel">
                 <i className="fas fa-times" />
-                <p className="Label">{value}</p>
+                <p className="Label">{value.category}</p>
               </div>
             )
           })}
@@ -83,4 +83,18 @@ class AddOrRemoveForm extends Component {
   }
 }
 
-export default AddOrRemoveForm
+const mapStateToProps = state => ({
+  categories: state.categories,
+  removedIngredients: state.removedIngredients,
+  healthLabels: state.healthLabels,
+  dietLabels: state.dietLabels
+})
+const mapActionsToProps = {
+  _addCategory: addCategory,
+  _addRemovedIngredients: addRemovedIngredients
+}
+
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(AddOrRemoveForm)

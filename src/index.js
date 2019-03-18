@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker'
 import ReduxThunk from 'redux-thunk'
 import logger from 'redux-logger'
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import { createStore, applyMiddleware } from 'redux'
 import SearchReducer from './Reducers/SearchReducer'
@@ -25,8 +25,8 @@ const store = createStore(
     calories: { min: '', max: '', params: '' },
     cookTime: { min: '', max: '', params: '' },
     maxIngredients: { max: '', params: '' },
-    categories: [], // selected labels given by api
-    removeIngredients: [],
+    categories: [],
+    removedIngredients: [],
     results: {},
     count: '',
     from: '',
@@ -35,7 +35,9 @@ const store = createStore(
     q: '',
     hits: [],
     pages: 0,
-    recipe: []
+    recipe: [],
+    healthLabels: ['vegan', 'vegetarian', 'peanut-free', 'tree-nut-free'],
+    dietLabels: ['balanced', 'high-protein', 'low-fat', 'low-carb']
   },
   middleware
 )

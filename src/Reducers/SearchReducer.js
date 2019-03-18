@@ -4,7 +4,9 @@ import {
   UPDATE_SEARCH_URL_PARAMS,
   COOK_TIME,
   CALORIES,
-  MAX_INGREDIENTS
+  MAX_INGREDIENTS,
+  ADD_CATEGORY,
+  ADD_REMOVED_INGREDIENTS
 } from '../Actions/SearchActions'
 //removed state = initial state
 // may cause issues
@@ -55,7 +57,35 @@ export default function SearchReducer(state, action) {
           ? action.payload.maxIngredients
           : { max: '', params: '' }
       }
+    case ADD_CATEGORY:
+      if (!action.payload.categories) {
+        return { ...state }
+      }
+      let category = [...state.healthLabels].includes(action.payload.categories)
+        ? {
+            category: action.payload.categories,
+            param: `&health=${action.payload.categories}`
+          }
+        : {
+            category: action.payload.categories,
+            param: `&diet=${action.payload.categories}`
+          }
+
+      return {
+        ...state,
+        categories: [...state.categories, category]
+      }
+    case ADD_REMOVED_INGREDIENTS:
+      return {
+        ...state,
+        removedIngredients: [
+          ...state.removedIngredients,
+          action.payload.removedIngredients
+        ]
+      }
     default:
       return state
   }
 }
+// healthLabels
+// dietLabels

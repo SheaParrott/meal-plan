@@ -5,6 +5,8 @@ export const SINGLE_RECIPE = 'singleViewRecipe'
 export const COOK_TIME = 'cookTime'
 export const CALORIES = 'calories'
 export const MAX_INGREDIENTS = 'maxIngredients'
+export const ADD_CATEGORY = 'addCategory'
+export const ADD_REMOVED_INGREDIENTS = 'removedIngredients'
 
 const fillRange = count => {
   let start = 1
@@ -20,24 +22,14 @@ export function getRecipes(url_params) {
   // can pass in one object with the url and q
   // then fetch data
 
-  // when using the min and max params:
-  // The format is calories=RANGE where RANGE is replaced
-  //  by the value in kcal. RANGE is in one of MIN+, MIN-MAX
-  //   or MAX, where MIN and MAX are non-negative integer
-  //   numbers. The + symbol needs to be properly encoded.
-  //    Examples: “calories=100-300” will return all recipes
-  //    with which have between 100 and 300 kcal per serving.
-
   return function action(dispatch) {
     dispatch({ type: UPDATE_RECIPES, payload: {} })
 
     const request = axios({
       method: 'GET',
-      url: `https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999${url_params}`,
+      url: `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999${url_params}`,
       headers: []
     })
-    // need to extract the url update to a seperate action and reducer
-    // to an onChange so the submit button is the Link for react-router-dom
 
     return request.then(response =>
       dispatch({
@@ -105,14 +97,31 @@ export function searchURLParam(value) {
   }
 }
 export function addCategory(category) {
-  console.log(category)
+  return {
+    type: ADD_CATEGORY,
+    payload: {
+      categories: category
+    }
+  }
 }
 
+export function addRemovedIngredients(ingredient) {
+  return {
+    type: ADD_REMOVED_INGREDIENTS,
+    payload: {
+      removedIngredients: {
+        category: ingredient,
+        param: `&excluded=${ingredient}`
+      }
+    }
+  }
+}
+
+// api call take the uri and encoded uri to return
+// the single view recipe
 export function singleRecipe(uri) {
-  // api call take the uri and encoded uri to return
-  // the single view recipe
   let url =
-    'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&r='
+    'https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&r='
   let encoded = encodeURIComponent(
     `http://www.edamam.com/ontologies/edamam.owl#recipe_${uri}`
   ).replace(/[!*]/g, function(c) {

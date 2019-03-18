@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Recipe from '../Components/Recipe'
-import { getRecipes, searchURLParam } from '../Actions/SearchActions'
+import { getRecipes } from '../Actions/SearchActions'
 import Header from '../Components/Header'
 import Loading from '../Components/Loading'
 
