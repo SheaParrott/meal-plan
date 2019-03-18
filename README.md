@@ -1,6 +1,6 @@
-## Meal Plan (work in progress)
+# Meal Plan (work in progress)
 
-# Inspiration
+## Inspiration
 Life is all about balance, right?<br/><br/>
 <strong>Well I think so!</strong>
 <br/><br/>
