@@ -2,6 +2,11 @@ import axios from 'axios'
 export const UPDATE_SEARCH_URL_PARAMS = 'updatesearchURLParam'
 export const UPDATE_RECIPES = 'updateRecipes'
 export const SINGLE_RECIPE = 'singleViewRecipe'
+export const MIN_COOK_TIME = 'minCookTime'
+export const MIN_CALORIES = 'minCalories'
+export const MAX_COOK_TIME = 'maxCookTime'
+export const MAX_CALORIES = 'maxCalories'
+export const MAX_INGREDIENTS = 'maxIngredients'
 
 const fillRange = count => {
   let start = 1
@@ -16,6 +21,14 @@ export function getRecipes(url_params) {
   // then make the api call
   // can pass in one object with the url and q
   // then fetch data
+
+  // when using the min and max params:
+  // The format is calories=RANGE where RANGE is replaced
+  //  by the value in kcal. RANGE is in one of MIN+, MIN-MAX
+  //   or MAX, where MIN and MAX are non-negative integer
+  //   numbers. The + symbol needs to be properly encoded.
+  //    Examples: “calories=100-300” will return all recipes
+  //    with which have between 100 and 300 kcal per serving.
 
   return function action(dispatch) {
     dispatch({ type: UPDATE_RECIPES, payload: {} })
@@ -44,6 +57,54 @@ export function getRecipes(url_params) {
     )
   }
 }
+export function minParams({ theCase, value }) {
+  switch (theCase) {
+    case 'cookTime':
+      return {
+        type: MIN_COOK_TIME,
+        payload: {
+          minCookTime: `&q=${value}`
+        }
+      }
+    case 'calories':
+      return {
+        type: MIN_CALORIES,
+        payload: {
+          minCalories: `calories=${value}`
+        }
+      }
+    default:
+      return
+  }
+}
+export function maxParams({ theCase, value }) {
+  switch (theCase) {
+    case 'maxIngredients':
+      return {
+        type: MAX_INGREDIENTS,
+        payload: {
+          maxIngredients: `&q=${value}`
+        }
+      }
+    case 'cookTime':
+      return {
+        type: MAX_COOK_TIME,
+        payload: {
+          maxCookTime: `&q=${value}`
+        }
+      }
+    case 'calories':
+      return {
+        type: MAX_CALORIES,
+        payload: {
+          maxCalories: `&q=${value}`
+        }
+      }
+    default:
+      return
+  }
+}
+
 export function searchURLParam(value) {
   return {
     type: UPDATE_SEARCH_URL_PARAMS,

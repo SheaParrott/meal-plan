@@ -7,7 +7,8 @@ class NumberInputs extends Component {
     super(props)
     this.state = {
       min: '',
-      max: ''
+      max: '',
+      error: ''
     }
   }
   // create actions depending on the label name and add in validations
@@ -15,21 +16,42 @@ class NumberInputs extends Component {
     if (event.target.value <= 0) {
       return
     }
+    if (this.state.min > this.state.max && this.state.max) {
+      this.setState({
+        error: `Minimal value of ${this.props.label} cannot be lower than max`
+      })
+      return
+    } else if (this.state.error) {
+      this.setState({
+        error: ''
+      })
+    }
+    // pass the label name to action and the value
+    // use switch case in action {theCase: , min:, max:}
+
     this.setState({
       min: event.target.value
     })
   }
+  // going to remove this soon.
+  //handling min and max in one action
   changeMax = event => {
     if (event.target.value <= 0) {
       return
     }
+    // pass the label name to action and the value
+    // use switch case in action {theCase: , value:}
+
     this.setState({
       max: event.target.value
     })
   }
   render() {
+    console.log('min : ' + this.state.min)
+    console.log('max : ' + this.state.max)
     return (
       <div>
+        <h5>{this.state.error}</h5>
         <div>
           <input
             className="numberInput"
