@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Recipe from '../Components/Recipe'
 import { getRecipes, searchURLParam } from '../Actions/SearchActions'
 import Header from '../Components/Header'
+import Loading from '../Components/Loading'
 
 class Browse extends Component {
   constructor(props) {
@@ -16,6 +17,9 @@ class Browse extends Component {
     this.props._searchRecipe(this.props.match.params.url_params)
   }
   render() {
+    if (this.props.hits.length <= 0) {
+      return <Loading />
+    }
     // determines the pages shown on the bottom
     const pagesLength = Math.ceil(Math.log10(this.props.from + 1))
     //now need to figure out a way to highlight current page

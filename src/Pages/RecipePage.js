@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { singleRecipe } from '../Actions/SearchActions'
 import Header from '../Components/Header'
+import Loading from '../Components/Loading'
 
 class RecipePage extends Component {
   constructor(props) {
@@ -137,6 +138,10 @@ class RecipePage extends Component {
   // facts
   // break down to type of facts display one at a time
   render() {
+    console.log('test :' + this.props.hits)
+    if (this.props.recipe.length <= 0) {
+      return <Loading />
+    }
     return (
       <div>
         <nav>

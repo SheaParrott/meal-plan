@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { getRecipes, searchURLParam } from '../Actions/SearchActions'
 
 class NumberInputs extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      min: 0,
-      max: 0
+      min: '',
+      max: ''
     }
   }
   // create actions depending on the label name and add in validations
@@ -28,50 +30,44 @@ class NumberInputs extends Component {
   render() {
     return (
       <div>
-        {this.state.min >= 1 || this.state.max >= 1 ? (
-          <div>
-            <input
-              className="numberInput"
-              type="number"
-              onChange={this.changeMin}
-              value={this.state.min}
-            />
-            {this.props.ingredient ? null : (
-              <span>
-                <span className="label">to</span>
-                <input
-                  className="numberInput"
-                  type="number"
-                  onChange={this.changeMax}
-                  value={this.state.max}
-                />
-              </span>
-            )}
-          </div>
-        ) : (
-          <div>
-            <input
-              className="numberInput"
-              type="number"
-              onChange={this.changeMin}
-              placeholder="any"
-            />
-            {this.props.ingredient ? null : (
-              <span>
-                <span className="label">to</span>
-                <input
-                  className="numberInput"
-                  type="number"
-                  onChange={this.changeMax}
-                  placeholder="any"
-                />
-              </span>
-            )}
-          </div>
-        )}
+        <div>
+          <input
+            className="numberInput"
+            type="number"
+            onChange={this.changeMin}
+            value={this.state.min}
+            placeholder="any"
+          />
+          {this.props.ingredient ? null : (
+            <span>
+              <span className="label">to</span>
+              <input
+                className="numberInput"
+                type="number"
+                onChange={this.changeMax}
+                value={this.state.max}
+                placeholder="any"
+              />
+            </span>
+          )}
+        </div>
       </div>
     )
   }
 }
 
-export default NumberInputs
+const mapStateToProps = state => ({
+  // defaultURL: state.defaultURL,
+  // searchURLParam: state.searchURLParam
+  // months: state.months,
+  // map out state
+})
+
+const mapActionsToProps = {
+  // _searchURLParam: searchURLParam
+}
+
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(NumberInputs)
