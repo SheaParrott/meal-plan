@@ -72,16 +72,6 @@ class AdvancedSearch extends Component {
                 showOptions={true}
               />
             }
-            {/* START - will use this instead */}
-            {/* <select>
-              {this.props.healthLabels
-                .concat(this.props.dietLabels)
-                .map(option => {
-                  return <option>{option}</option>
-                })}
-            </select>
-            <button>Add</button> */}
-            {/* END */}
           </div>
           <h6 className="red">{this.state.numberError}</h6>
           <section className="CaloriesAndCookTime">
