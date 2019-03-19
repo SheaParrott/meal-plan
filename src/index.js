@@ -29,7 +29,7 @@ const store = createStore(
     removedIngredients: [],
     results: {},
     count: '',
-    from: '',
+    from: { from: 0, param: `&from=0` },
     to: '',
     more: '',
     q: '',

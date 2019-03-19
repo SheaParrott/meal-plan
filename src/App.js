@@ -26,7 +26,7 @@ class App extends Component {
 export default App
 
 // toDo:
-// [] work on pagination
+// [x] work on pagination
 // [x] create an about page
 // [] remove selected categories and ingredients
 // [] reset all search fields button?

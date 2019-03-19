@@ -230,6 +230,9 @@ div.CategoriesBar {
   border-radius: 5px;
   background-color: white;
 }
+.noResults {
+  margin-top: 85px;
+}
 .browseRecipeImage {
   width: 25%;
   height: auto;

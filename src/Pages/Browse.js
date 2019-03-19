@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import Recipe from '../Components/Recipe'
+import { connect } from 'react-redux'
 import { getRecipes } from '../Actions/SearchActions'
 import Header from '../Components/Header'
 import Loading from '../Components/Loading'
+import Pagination from '../Components/Pagination'
+import history from '../Components/history'
 
 class Browse extends Component {
   constructor(props) {
     super(props)
     this._searchRecipe = this._searchRecipe.bind(this)
+    this._PaginationArrowBack = this._PaginationArrowBack.bind(this)
+    this._PaginationArrowForward = this._PaginationArrowForward.bind(this)
   }
   componentDidMount = () => {
     window.scrollTo(0, 0)
@@ -17,6 +21,45 @@ class Browse extends Component {
   _searchRecipe = event => {
     this.props._searchRecipe(this.props.match.params.url_params)
   }
+
+  _PaginationArrowBack = () => {
+    let string = ''
+    this.props.categories
+      .concat(this.props.removedIngredients)
+      .forEach(category => {
+        string += category.param
+      })
+    let params =
+      this.props.searchURLParam +
+      this.props.calories.params +
+      this.props.cookTime.params +
+      this.props.maxIngredients.params +
+      string +
+      `&from=${parseInt(this.props.from.from) - 10}`
+    this.props._PaginationArrowBack(params)
+    history.push(`/browse/${params}`)
+  }
+  _PaginationArrowForward = () => {
+    if (this.props.from.from >= 90) {
+      return
+    }
+    let string = ''
+    this.props.categories
+      .concat(this.props.removedIngredients)
+      .forEach(category => {
+        string += category.param
+      })
+    let params =
+      this.props.searchURLParam +
+      this.props.calories.params +
+      this.props.cookTime.params +
+      this.props.maxIngredients.params +
+      string +
+      `&from=${parseInt(this.props.from.from) + 10}`
+    this.props._PaginationArrowForward(params)
+    history.push(`/browse/${params}`)
+  }
+
   render() {
     if (this.props.hits.length <= 0) {
       return (
@@ -35,23 +78,38 @@ class Browse extends Component {
             <h1 className="basicHeader">Meal Plan</h1>
             <Header />
           </nav>
-          <h2 className="uppercase">No Results</h2>
+          <h2 className="uppercase noResults">No Results</h2>
           <div className="centerLine">
             <div className="line" />
           </div>
         </div>
       )
     }
-    // determines the pages shown on the bottom
-    const pagesLength = Math.ceil(Math.log10(this.props.from + 1))
-    //now need to figure out a way to highlight current page
-    // from and to explained:
-    // it stops just before the to. shows 10 at one time.
-    // 0-10, 10-20, 20-21
-    // so shows 0-9 and 0 have a value
-    // to paginate need to add 10 to every click or minus
-    // 10 from every page
-    // arrows should add 50? or 60?, will test for this
+    let string = ''
+    this.props.categories
+      .concat(this.props.removedIngredients)
+      .forEach(category => {
+        string += category.param
+      })
+    let params =
+      this.props.searchURLParam +
+      this.props.calories.params +
+      this.props.cookTime.params +
+      this.props.maxIngredients.params +
+      string +
+      this.props.from.param
+    console.log('fromvalue :' + this.props.from.from)
+    console.log('hmmm :' + typeof this.props.from.from, typeof 0)
+    console.log('whyy: ', parseInt(this.props.from.from) > 1)
+    let PaginationArray = this.props.pages
+      ? parseInt(this.props.from.from) < 1
+        ? this.props.pages.slice(0, 5)
+        : this.props.pages.slice(
+            parseInt(this.props.from.from.toString().slice(0, -1)),
+            parseInt(this.props.from.from.toString().slice(0, -1)) + 5
+          )
+      : []
+
     return (
       <div>
         <nav>
@@ -70,21 +128,25 @@ class Browse extends Component {
             })}
           </div>
           <div className="browse">
-            <i className="fas fa-chevron-left white-hv" />
-            {/* filter to return the 5 within range of current
-           chosen page */}
-            {this.props.pages
-              ? this.props.pages
-                  .slice(pagesLength, pagesLength + 5)
-                  .map((page, index) => {
-                    return (
-                      <p key={index} className="white-hv">
-                        {page}
-                      </p>
-                    )
-                  })
-              : null}
-            <i className="fas fa-chevron-right white-hv" />
+            <i
+              className="fas fa-chevron-left white-hv"
+              onClick={this._PaginationArrowBack}
+            />
+
+            {PaginationArray.map((page, index) => {
+              return (
+                <Pagination
+                  key={index}
+                  page={page}
+                  params={params}
+                  _searchRecipe={this._searchRecipe}
+                />
+              )
+            })}
+            <i
+              className="fas fa-chevron-right white-hv"
+              onClick={this._PaginationArrowForward}
+            />
           </div>
         </div>
       </div>
@@ -94,15 +156,24 @@ class Browse extends Component {
 
 const mapStateToProps = state => ({
   count: state.count,
-  from: state.from,
   to: state.to,
   more: state.more,
   q: state.q,
   hits: state.hits,
-  pages: state.pages
+  pages: state.pages,
+  defaultURL: state.defaultURL,
+  searchURLParam: state.searchURLParam,
+  calories: state.calories,
+  cookTime: state.cookTime,
+  maxIngredients: state.maxIngredients,
+  categories: state.categories,
+  removedIngredients: state.removedIngredients,
+  from: state.from
 })
 const mapActionsToProps = {
-  _searchRecipe: getRecipes
+  _searchRecipe: getRecipes,
+  _PaginationArrowBack: getRecipes,
+  _PaginationArrowForward: getRecipes
 }
 
 export default connect(

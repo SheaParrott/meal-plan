@@ -7,6 +7,7 @@ export const CALORIES = 'calories'
 export const MAX_INGREDIENTS = 'maxIngredients'
 export const ADD_CATEGORY = 'addCategory'
 export const ADD_REMOVED_INGREDIENTS = 'removedIngredients'
+export const PAGINATION = 'pagination'
 
 const fillRange = count => {
   let start = 1
@@ -27,7 +28,7 @@ export function getRecipes(url_params) {
 
     const request = axios({
       method: 'GET',
-      url: `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999${url_params}`,
+      url: `https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999${url_params}`,
       headers: []
     })
 
@@ -36,10 +37,14 @@ export function getRecipes(url_params) {
         type: UPDATE_RECIPES,
         payload: {
           count: response.data.count,
-          from: response.data.from,
+          from: {
+            from: response.data.from,
+            param: `&from=${response.data.from}`
+          },
           to: response.data.to,
           more: response.data.more,
           q: response.data.q,
+          searchURLParam: `&q=${response.data.q}`,
           hits:
             response.data.hits.length === 0
               ? ['No Results']
@@ -50,6 +55,11 @@ export function getRecipes(url_params) {
     )
   }
 }
+
+// hits:
+// response.data.hits.length === 0
+//   ? ['No Results']
+//   : response.data.hits,
 export function minAndMaxParams({ theCase, min, max }) {
   let value = ''
   if (theCase === 'maxIngredients' || (!min && max)) {
@@ -121,7 +131,7 @@ export function addRemovedIngredients(ingredient) {
 // the single view recipe
 export function singleRecipe(uri) {
   let url =
-    'https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&r='
+    'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&r='
   let encoded = encodeURIComponent(
     `http://www.edamam.com/ontologies/edamam.owl#recipe_${uri}`
   ).replace(/[!*]/g, function(c) {

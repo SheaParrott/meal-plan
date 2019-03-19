@@ -6,7 +6,8 @@ import {
   CALORIES,
   MAX_INGREDIENTS,
   ADD_CATEGORY,
-  ADD_REMOVED_INGREDIENTS
+  ADD_REMOVED_INGREDIENTS,
+  PAGINATION
 } from '../Actions/SearchActions'
 //removed state = initial state
 // may cause issues
@@ -17,10 +18,15 @@ export default function SearchReducer(state, action) {
       return {
         ...state,
         count: action.payload.count ? action.payload.count : 0,
-        from: action.payload.from ? action.payload.from : 0,
+        from: action.payload.from
+          ? action.payload.from
+          : { from: 0, param: `&from=0` },
         to: action.payload.to ? action.payload.to : 0,
         more: action.payload.more ? action.payload.more : '',
         q: action.payload.q ? action.payload.q : '',
+        searchURLParam: action.payload.searchURLParam
+          ? action.payload.searchURLParam
+          : '',
         hits: action.payload.hits ? action.payload.hits : [],
         pages: action.payload.pages ? action.payload.pages : 0
       }
@@ -82,6 +88,16 @@ export default function SearchReducer(state, action) {
           ...state.removedIngredients,
           action.payload.removedIngredients
         ]
+      }
+    case PAGINATION:
+      if (action.payload.from.from < 0) {
+        return { ...state }
+      }
+      return {
+        ...state,
+        from: action.payload.from
+          ? action.payload.from
+          : { from: '', param: '' }
       }
     default:
       return state
