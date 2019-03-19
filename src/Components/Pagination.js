@@ -25,7 +25,7 @@ class Pagination extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam.param +
+      this.props.SearchedRecipe.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -47,7 +47,7 @@ class Pagination extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam.param +
+      this.props.SearchedRecipe.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -64,7 +64,7 @@ class Pagination extends Component {
 
 const mapStateToProps = state => ({
   defaultURL: state.defaultURL,
-  searchURLParam: state.searchURLParam,
+  SearchedRecipe: state.SearchedRecipe,
   calories: state.calories,
   cookTime: state.cookTime,
   maxIngredients: state.maxIngredients,

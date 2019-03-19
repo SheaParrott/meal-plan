@@ -30,7 +30,7 @@ class Browse extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam.param +
+      this.props.SearchedRecipe.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -51,7 +51,7 @@ class Browse extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam.param +
+      this.props.SearchedRecipe.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -94,7 +94,7 @@ class Browse extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam.param +
+      this.props.SearchedRecipe.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -164,7 +164,7 @@ const mapStateToProps = state => ({
   hits: state.hits,
   pages: state.pages,
   defaultURL: state.defaultURL,
-  searchURLParam: state.searchURLParam,
+  SearchedRecipe: state.SearchedRecipe,
   calories: state.calories,
   cookTime: state.cookTime,
   maxIngredients: state.maxIngredients,

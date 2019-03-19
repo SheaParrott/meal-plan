@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 import NumberInputs from '../Components/NumberInputs'
 import { connect } from 'react-redux'
-import { searchURLParam } from '../Actions/SearchActions'
+import { SearchedRecipe } from '../Actions/SearchActions'
 import { Link } from 'react-router-dom'
 import Header from './Header'
 
 class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
-    this._searchURLParam = this._searchURLParam.bind(this)
+    this._SearchedRecipe = this._SearchedRecipe.bind(this)
     this.state = {
       categoriesBar: false,
       numberError: '',
@@ -32,8 +32,8 @@ class AdvancedSearch extends Component {
     // can add a form reset here later on
   }
 
-  _searchURLParam = event => {
-    this.props._searchURLParam(event.target.value)
+  _SearchedRecipe = event => {
+    this.props._SearchedRecipe(event.target.value)
   }
   // add values to all inputs and use onchange
 
@@ -48,7 +48,7 @@ class AdvancedSearch extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam.param +
+      this.props.SearchedRecipe.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -139,15 +139,15 @@ class AdvancedSearch extends Component {
               </span>
               <h6 className="red">{this.state.recipeFieldError}</h6>
               <input
-                onChange={this._searchURLParam}
+                onChange={this._SearchedRecipe}
                 className="Search"
                 name="recipe"
                 placeholder="Keywords / Recipees!"
               />
-              {this.props.searchURLParam.value && this.state.recipeFieldError
+              {this.props.SearchedRecipe.value && this.state.recipeFieldError
                 ? this._recipeFieldError()
                 : null}
-              {this.props.searchURLParam.value ? (
+              {this.props.SearchedRecipe.value ? (
                 <Link to={`/browse/${params}`}>
                   <button className="advancedSearchButton">Submit</button>
                 </Link>
@@ -171,7 +171,7 @@ class AdvancedSearch extends Component {
 }
 const mapStateToProps = state => ({
   defaultURL: state.defaultURL,
-  searchURLParam: state.searchURLParam,
+  SearchedRecipe: state.SearchedRecipe,
   calories: state.calories,
   cookTime: state.cookTime,
   maxIngredients: state.maxIngredients,
@@ -183,7 +183,7 @@ const mapStateToProps = state => ({
 })
 
 const mapActionsToProps = {
-  _searchURLParam: searchURLParam
+  _SearchedRecipe: SearchedRecipe
 }
 
 export default connect(

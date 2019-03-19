@@ -22,7 +22,7 @@ class About extends Component {
         </div>
         <div className="aboutPageSpacing" />
         <div className="aboutParagraph">
-          <h2>Inspiration</h2>
+          <h2 className="aboutInspiration">Inspiration</h2>
           <p>
             <br /> Life is all about balance, right?
           </p>

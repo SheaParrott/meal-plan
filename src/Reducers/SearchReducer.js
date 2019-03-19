@@ -6,6 +6,7 @@ import {
   CALORIES,
   MAX_INGREDIENTS,
   ADD_CATEGORY,
+  REMOVE_CATEGORY,
   ADD_REMOVED_INGREDIENTS,
   PAGINATION,
   RESET_ALL_SEARCH_FIELDS
@@ -25,8 +26,8 @@ export default function SearchReducer(state, action) {
         to: action.payload.to ? action.payload.to : 0,
         more: action.payload.more ? action.payload.more : '',
         q: action.payload.q ? action.payload.q : '',
-        searchURLParam: action.payload.searchURLParam
-          ? action.payload.searchURLParam
+        SearchedRecipe: action.payload.SearchedRecipe
+          ? action.payload.SearchedRecipe
           : { value: '', param: '' },
         hits: action.payload.hits ? action.payload.hits : [],
         pages: action.payload.pages ? action.payload.pages : 0
@@ -39,8 +40,8 @@ export default function SearchReducer(state, action) {
     case UPDATE_SEARCH_URL_PARAMS:
       return {
         ...state,
-        searchURLParam: action.payload.searchURLParam
-          ? action.payload.searchURLParam
+        SearchedRecipe: action.payload.SearchedRecipe
+          ? action.payload.SearchedRecipe
           : { value: '', param: '' }
       }
     case COOK_TIME:
@@ -82,6 +83,13 @@ export default function SearchReducer(state, action) {
         ...state,
         categories: [...state.categories, category]
       }
+    case REMOVE_CATEGORY:
+      let removed = [
+        ...state.categories.filter(
+          category => action.payload.categories !== category.category
+        )
+      ]
+      return { ...state, categories: removed }
     case ADD_REMOVED_INGREDIENTS:
       return {
         ...state,

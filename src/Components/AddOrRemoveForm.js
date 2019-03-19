@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addCategory, addRemovedIngredients } from '../Actions/SearchActions'
-
-// [] add in option to delete categories chosen
-// [] add guard clause to to prevent adding the same catagory chosen twice
+import ChosenCategory from './ChosenCategory'
 
 class AddOrRemoveForm extends Component {
   constructor(props) {
     super(props)
+    // this._removeCategory = this._removeCategory.bind(this)
     this._addCategory = this._addCategory.bind(this)
   }
 
@@ -23,6 +22,10 @@ class AddOrRemoveForm extends Component {
   _addCategory = event => {
     this.props._addCategory(event.target.value)
   }
+  _removeCategory = event => {
+    console.log(event.target.value)
+    // this.props._removeCategory()
+  }
   render() {
     let tagsDisplayed =
       this.props.name === 'Categories'
@@ -35,8 +38,6 @@ class AddOrRemoveForm extends Component {
 
           {this.props.name === 'Categories' ? (
             <div>
-              {/* add on change here */}
-              {/* will have separate selectedFilters in state */}
               <select onChange={this._addCategory}>
                 <option value="">-----</option>
                 {this.props.healthLabels
@@ -71,12 +72,7 @@ class AddOrRemoveForm extends Component {
 
         <div className="displayedLabelbox">
           {tagsDisplayed.map((value, index) => {
-            return (
-              <div key={index} className="displayedLabel">
-                <i className="fas fa-times" />
-                <p className="Label">{value.category}</p>
-              </div>
-            )
+            return <ChosenCategory key={index} value={value} />
           })}
         </div>
       </div>
@@ -93,6 +89,7 @@ const mapStateToProps = state => ({
 const mapActionsToProps = {
   _addCategory: addCategory,
   _addRemovedIngredients: addRemovedIngredients
+  // _removeCategory: removeCategory
 }
 
 export default connect(
