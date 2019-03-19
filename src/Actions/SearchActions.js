@@ -8,6 +8,7 @@ export const MAX_INGREDIENTS = 'maxIngredients'
 export const ADD_CATEGORY = 'addCategory'
 export const REMOVE_CATEGORY = 'removeCategory'
 export const ADD_REMOVED_INGREDIENTS = 'removedIngredients'
+export const REMOVE_CHOSEN_INGREDIENT = 'removeChosenIngredient'
 export const PAGINATION = 'pagination'
 export const RESET_ALL_SEARCH_FIELDS = 'resetAllFields'
 
@@ -156,6 +157,14 @@ export function addRemovedIngredients(ingredient) {
         category: ingredient,
         param: `&excluded=${ingredient}`
       }
+    }
+  }
+}
+export function removeChosenIngredient(ingredient) {
+  return {
+    type: REMOVE_CHOSEN_INGREDIENT,
+    payload: {
+      removedIngredients: ingredient
     }
   }
 }

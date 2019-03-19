@@ -9,7 +9,8 @@ import {
   REMOVE_CATEGORY,
   ADD_REMOVED_INGREDIENTS,
   PAGINATION,
-  RESET_ALL_SEARCH_FIELDS
+  RESET_ALL_SEARCH_FIELDS,
+  REMOVE_CHOSEN_INGREDIENT
 } from '../Actions/SearchActions'
 //removed state = initial state
 // may cause issues
@@ -84,12 +85,12 @@ export default function SearchReducer(state, action) {
         categories: [...state.categories, category]
       }
     case REMOVE_CATEGORY:
-      let removed = [
+      let removedCategory = [
         ...state.categories.filter(
           category => action.payload.categories !== category.category
         )
       ]
-      return { ...state, categories: removed }
+      return { ...state, categories: removedCategory }
     case ADD_REMOVED_INGREDIENTS:
       return {
         ...state,
@@ -98,6 +99,15 @@ export default function SearchReducer(state, action) {
           action.payload.removedIngredients
         ]
       }
+    case REMOVE_CHOSEN_INGREDIENT:
+      // removedIngredients: ingredient
+      let updateIngredients = [
+        ...state.removedIngredients.filter(
+          ingredient =>
+            action.payload.removedIngredients !== ingredient.category
+        )
+      ]
+      return { ...state, removedIngredients: updateIngredients }
     case PAGINATION:
       if (action.payload.from.from < 0) {
         return { ...state }

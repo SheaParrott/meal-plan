@@ -72,7 +72,13 @@ class AddOrRemoveForm extends Component {
 
         <div className="displayedLabelbox">
           {tagsDisplayed.map((value, index) => {
-            return <ChosenCategory key={index} value={value} />
+            return (
+              <ChosenCategory
+                key={index}
+                value={value}
+                name={this.props.name}
+              />
+            )
           })}
         </div>
       </div>
