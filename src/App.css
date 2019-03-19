@@ -343,18 +343,19 @@ a {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  padding-bottom: 20px;
 }
 .aboutParagraph {
   text-align: left;
   background-color: #4d5366ce;
   border-radius: 20px;
-  border: 1px solid #92ca649c;
+  border: 1.5px solid #92ca649c;
   text-shadow: 0 0 8px black, 1.5px 1.5px 0.5px grey;
   font-weight: 700;
   padding: 20px;
   color: white;
   position: absolute;
-  top: 210px;
+  top: 220px;
   margin: 0 15px;
   display: flex;
   flex-direction: column;
