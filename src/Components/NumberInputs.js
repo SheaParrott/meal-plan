@@ -122,16 +122,11 @@ const mapStateToProps = state => ({
   calories: state.calories,
   cookTime: state.cookTime,
   maxIngredients: state.maxIngredients
-  // defaultURL: state.defaultURL,
-  // searchURLParam: state.searchURLParam
-  // months: state.months,
-  // map out state
 })
 
 const mapActionsToProps = {
   _Min: minAndMaxParams,
   _Max: minAndMaxParams
-  // _searchURLParam: searchURLParam
 }
 
 export default connect(

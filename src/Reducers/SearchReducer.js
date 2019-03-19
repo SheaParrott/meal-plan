@@ -27,7 +27,7 @@ export default function SearchReducer(state, action) {
         q: action.payload.q ? action.payload.q : '',
         searchURLParam: action.payload.searchURLParam
           ? action.payload.searchURLParam
-          : '',
+          : { value: '', param: '' },
         hits: action.payload.hits ? action.payload.hits : [],
         pages: action.payload.pages ? action.payload.pages : 0
       }
@@ -41,7 +41,7 @@ export default function SearchReducer(state, action) {
         ...state,
         searchURLParam: action.payload.searchURLParam
           ? action.payload.searchURLParam
-          : ''
+          : { value: '', param: '' }
       }
     case COOK_TIME:
       return {

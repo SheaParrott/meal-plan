@@ -25,4 +25,6 @@ class App extends Component {
 
 export default App
 
+// [] set up remove categories and ingredients action
+// and reducer and apply to UI
 // [] @media all pages

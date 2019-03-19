@@ -24,7 +24,25 @@ class RecipePage extends Component {
   render() {
     if (this.props.recipe.length <= 0) {
       return <Loading />
+    } else if (this.props.recipe[0] === 'No Results') {
+      return (
+        <div>
+          <nav>
+            <h1 className="basicHeader">Meal Plan</h1>
+            <Header />
+          </nav>
+          {/* <h2 className="uppercase noResults">No Results</h2> */}
+          <span>
+            Seems we Goofed! 🙃 Please try again or search for another one of
+            our amazing recipes
+          </span>
+          <div className="centerLine">
+            <div className="line" />
+          </div>
+        </div>
+      )
     }
+
     return (
       <div>
         <nav>

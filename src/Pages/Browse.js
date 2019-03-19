@@ -30,7 +30,7 @@ class Browse extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam +
+      this.props.searchURLParam.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -38,6 +38,7 @@ class Browse extends Component {
       `&from=${parseInt(this.props.from.from) - 10}`
     this.props._PaginationArrowBack(params)
     history.push(`/browse/${params}`)
+    window.scrollTo(0, 0)
   }
   _PaginationArrowForward = () => {
     if (this.props.from.from >= 90) {
@@ -50,7 +51,7 @@ class Browse extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam +
+      this.props.searchURLParam.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -58,6 +59,7 @@ class Browse extends Component {
       `&from=${parseInt(this.props.from.from) + 10}`
     this.props._PaginationArrowForward(params)
     history.push(`/browse/${params}`)
+    window.scrollTo(0, 0)
   }
 
   render() {
@@ -92,7 +94,7 @@ class Browse extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam +
+      this.props.searchURLParam.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +

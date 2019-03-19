@@ -45,7 +45,10 @@ export function getRecipes(url_params) {
           to: response.data.to,
           more: response.data.more,
           q: response.data.q,
-          searchURLParam: `&q=${response.data.q}`,
+          searchURLParam: {
+            value: response.data.q,
+            param: `&q=${response.data.q}`
+          },
           hits:
             response.data.hits.length === 0
               ? ['No Results']
@@ -103,7 +106,7 @@ export function searchURLParam(value) {
   return {
     type: UPDATE_SEARCH_URL_PARAMS,
     payload: {
-      searchURLParam: `&q=${value}`
+      searchURLParam: { value: value, param: `&q=${value}` }
     }
   }
 }
@@ -152,7 +155,7 @@ export function singleRecipe(uri) {
       dispatch({
         type: SINGLE_RECIPE,
         payload: {
-          recipe: response.data
+          recipe: response.data ? response.data : ['No Results']
         }
       })
     )
@@ -165,7 +168,7 @@ export function resetAllSearchFields() {
     payload: {
       defaultURL:
         'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999',
-      searchURLParam: '',
+      searchURLParam: { value: '', param: '' },
       calories: { min: '', max: '', params: '' },
       cookTime: { min: '', max: '', params: '' },
       maxIngredients: { max: '', params: '' },

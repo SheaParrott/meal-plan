@@ -12,7 +12,8 @@ class AdvancedSearch extends Component {
     this._searchURLParam = this._searchURLParam.bind(this)
     this.state = {
       categoriesBar: false,
-      numberError: ''
+      numberError: '',
+      recipeFieldError: ''
     }
   }
   _numberError = value => {
@@ -35,6 +36,10 @@ class AdvancedSearch extends Component {
     this.props._searchURLParam(event.target.value)
   }
   // add values to all inputs and use onchange
+
+  _recipeFieldError = () => {
+    this.setState({ recipeFieldError: '' })
+  }
   render() {
     let string = ''
     this.props.categories
@@ -43,7 +48,7 @@ class AdvancedSearch extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam +
+      this.props.searchURLParam.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -132,16 +137,30 @@ class AdvancedSearch extends Component {
                 </section>
                 <div className="line" />
               </span>
-
+              <h6 className="red">{this.state.recipeFieldError}</h6>
               <input
                 onChange={this._searchURLParam}
                 className="Search"
                 name="recipe"
                 placeholder="Keywords / Recipees!"
               />
-              <Link to={`/browse/${params}`}>
-                <button className="advancedSearchButton">Submit</button>
-              </Link>
+              {this.props.searchURLParam.value && this.state.recipeFieldError
+                ? this._recipeFieldError()
+                : null}
+              {this.props.searchURLParam.value ? (
+                <Link to={`/browse/${params}`}>
+                  <button className="advancedSearchButton">Submit</button>
+                </Link>
+              ) : (
+                <button
+                  onClick={() => {
+                    this.setState({ recipeFieldError: 'Cant be empty!' })
+                  }}
+                  className="advancedSearchButton"
+                >
+                  Submit
+                </button>
+              )}
             </div>
           </nav>
           <div className="navSpacing" />

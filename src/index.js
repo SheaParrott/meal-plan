@@ -21,7 +21,7 @@ const store = createStore(
   {
     defaultURL:
       'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999',
-    searchURLParam: '',
+    searchURLParam: { value: '', param: '' },
     calories: { min: '', max: '', params: '' },
     cookTime: { min: '', max: '', params: '' },
     maxIngredients: { max: '', params: '' },

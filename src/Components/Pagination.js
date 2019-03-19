@@ -25,7 +25,7 @@ class Pagination extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam +
+      this.props.searchURLParam.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
@@ -34,6 +34,7 @@ class Pagination extends Component {
 
     this.props._pagination(params)
     history.push(`/browse/${params}`)
+    window.scrollTo(0, 0)
   }
   render() {
     if (this.props.page >= 11) {
@@ -46,7 +47,7 @@ class Pagination extends Component {
         string += category.param
       })
     let params =
-      this.props.searchURLParam +
+      this.props.searchURLParam.param +
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
