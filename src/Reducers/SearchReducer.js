@@ -7,7 +7,8 @@ import {
   MAX_INGREDIENTS,
   ADD_CATEGORY,
   ADD_REMOVED_INGREDIENTS,
-  PAGINATION
+  PAGINATION,
+  RESET_ALL_SEARCH_FIELDS
 } from '../Actions/SearchActions'
 //removed state = initial state
 // may cause issues
@@ -99,6 +100,8 @@ export default function SearchReducer(state, action) {
           ? action.payload.from
           : { from: '', param: '' }
       }
+    case RESET_ALL_SEARCH_FIELDS:
+      return action.payload
     default:
       return state
   }

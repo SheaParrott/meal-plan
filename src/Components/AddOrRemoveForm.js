@@ -61,7 +61,9 @@ class AddOrRemoveForm extends Component {
                   list="v"
                   autoComplete="off"
                 />
-                <button type="submit">Submit</button>
+                <button className="advancedSearchButton" type="submit">
+                  Submit
+                </button>
               </div>
             </form>
           )}

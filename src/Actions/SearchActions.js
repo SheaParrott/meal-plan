@@ -8,6 +8,7 @@ export const MAX_INGREDIENTS = 'maxIngredients'
 export const ADD_CATEGORY = 'addCategory'
 export const ADD_REMOVED_INGREDIENTS = 'removedIngredients'
 export const PAGINATION = 'pagination'
+export const RESET_ALL_SEARCH_FIELDS = 'resetAllFields'
 
 const fillRange = count => {
   let start = 1
@@ -155,5 +156,32 @@ export function singleRecipe(uri) {
         }
       })
     )
+  }
+}
+
+export function resetAllSearchFields() {
+  return {
+    type: RESET_ALL_SEARCH_FIELDS,
+    payload: {
+      defaultURL:
+        'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999',
+      searchURLParam: '',
+      calories: { min: '', max: '', params: '' },
+      cookTime: { min: '', max: '', params: '' },
+      maxIngredients: { max: '', params: '' },
+      categories: [],
+      removedIngredients: [],
+      results: {},
+      count: '',
+      from: { from: 0, param: `&from=0` },
+      to: '',
+      more: '',
+      q: '',
+      hits: [],
+      pages: 0,
+      recipe: [],
+      healthLabels: ['vegan', 'vegetarian', 'peanut-free', 'tree-nut-free'],
+      dietLabels: ['balanced', 'high-protein', 'low-fat', 'low-carb']
+    }
   }
 }

@@ -73,11 +73,19 @@ class AdvancedSearch extends Component {
                   />
                 </div>
               </div>
+
               <span
                 className={`categoriesBar ${
                   this.state.categoriesBar ? '' : 'hidden'
                 }`}
               >
+                {' '}
+                <button
+                  className="advancedSearchButton"
+                  onClick={this.props._resetAllSearchFields}
+                >
+                  Reset Fields
+                </button>
                 <div className="searchOptionsForm">
                   {<AddOrRemoveForm name="Categories" showOptions={true} />}
                 </div>
@@ -132,7 +140,7 @@ class AdvancedSearch extends Component {
                 placeholder="Keywords / Recipees!"
               />
               <Link to={`/browse/${params}`}>
-                <button>Submit</button>
+                <button className="advancedSearchButton">Submit</button>
               </Link>
             </div>
           </nav>
