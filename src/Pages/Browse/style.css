@@ -207,7 +207,7 @@ div.browse {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .uppercase {
     font-size: 2rem;
   }

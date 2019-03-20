@@ -18,7 +18,7 @@
   background-color: #4d5366ce;
   border-radius: 20px;
   border: 1.5px solid #92ca649c;
-  text-shadow: 0 0 8px black, 1.5px 1.5px 0.5px grey;
+  text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
   font-weight: 700;
   padding: 20px;
   color: white;
@@ -53,5 +53,5 @@ strong {
 @media (min-width: 1024px) and (min-height: 1366px) {
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
 }
