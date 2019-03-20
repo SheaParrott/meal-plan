@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import './App.css'
-import Home from './Pages/Home'
-import Creator from './Pages/Creator'
-import Browse from './Pages/Browse'
+import Home from './Pages/Home/Home'
+import Creator from './Pages/Creator/Creator'
+import Browse from './Pages/Browse/Browse'
 import { Route } from 'react-router-dom'
-import RecipePage from './Pages/RecipePage'
+import RecipePage from './Pages/RecipePage/RecipePage'
 import Footer from './Components/Footer'
-import About from './Pages/About'
+import About from './Pages/About/About'
 
 class App extends Component {
   render() {

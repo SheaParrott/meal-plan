@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import front from '../assets/front.jpg'
-import Header from '../Components/Header'
+import front from '../../assets/front.jpg'
+import Header from '../../Components/Header'
+import './style.css'
 
 class About extends Component {
   componentDidMount = () => {

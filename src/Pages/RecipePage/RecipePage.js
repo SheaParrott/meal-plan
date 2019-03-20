@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { singleRecipe } from '../Actions/SearchActions'
-import Header from '../Components/Header'
-import Loading from '../Components/Loading'
+import { singleRecipe } from '../../Actions/SearchActions'
+import Header from '../../Components/Header'
+import Loading from '../../Components/Loading'
+import './style.css'
 
 class RecipePage extends Component {
   constructor(props) {

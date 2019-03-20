@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import Recipe from '../Components/Recipe'
+import Recipe from '../../Components/Recipe'
 import { connect } from 'react-redux'
-import { getRecipes } from '../Actions/SearchActions'
-import Header from '../Components/Header'
-import Loading from '../Components/Loading'
-import Pagination from '../Components/Pagination'
-import history from '../Components/history'
+import { getRecipes } from '../../Actions/SearchActions'
+import Header from '../../Components/Header'
+import Loading from '../../Components/Loading'
+import Pagination from '../../Components/Pagination'
+import history from '../../Components/history'
+import './style.css'
 
 class Browse extends Component {
   constructor(props) {
@@ -100,9 +101,6 @@ class Browse extends Component {
       this.props.maxIngredients.params +
       string +
       this.props.from.param
-    console.log('fromvalue :' + this.props.from.from)
-    console.log('hmmm :' + typeof this.props.from.from, typeof 0)
-    console.log('whyy: ', parseInt(this.props.from.from) > 1)
     let PaginationArray = this.props.pages
       ? parseInt(this.props.from.from) < 1
         ? this.props.pages.slice(0, 5)
@@ -124,11 +122,13 @@ class Browse extends Component {
           <div className="centerLine">
             <div className="line" />
           </div>
-          <div>
-            {this.props.hits.map((hit, index) => {
-              return <Recipe key={hit + index} hit={hit} />
-            })}
-          </div>
+          <main className="browseCentering">
+            <div>
+              {this.props.hits.map((hit, index) => {
+                return <Recipe key={hit + index} hit={hit} />
+              })}
+            </div>
+          </main>
           <div className="browse">
             <i
               className="fas fa-chevron-left white-hv"

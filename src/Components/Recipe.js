@@ -33,7 +33,7 @@ class Recipe extends Component {
           />
           <div className="browseRecipeInfo">
             <h3>{this.props.hit.recipe.label}</h3>
-            <h6>
+            <h6 className="browse-calories">
               {(
                 this.props.hit.recipe.calories / this.props.hit.recipe.yield
               ).toFixed(0)}{' '}
@@ -42,7 +42,7 @@ class Recipe extends Component {
             <div className="healthAndWarningsContainer">
               {this.props.hit.recipe.cautions.map((caution, index) => {
                 return (
-                  <p key={caution + index} className="red-bg">
+                  <p key={caution + index} className="red-bg-browse">
                     {caution}
                   </p>
                 )
@@ -51,7 +51,7 @@ class Recipe extends Component {
             <div className="healthAndWarningsContainer">
               {this.props.hit.recipe.healthLabels.map((label, index) => {
                 return (
-                  <p key={label + index} className="green-bg">
+                  <p key={label + index} className="green-bg-browse">
                     {label}
                   </p>
                 )

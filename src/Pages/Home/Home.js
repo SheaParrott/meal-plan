@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import front from '../assets/front.jpg'
-import AdvancedSearch from '../Components/AdvancedSearch'
+import front from '../../assets/front.jpg'
+import AdvancedSearch from '../../Components/AdvancedSearch'
 import { connect } from 'react-redux'
-import { resetAllSearchFields } from '../Actions/SearchActions'
+import { resetAllSearchFields } from '../../Actions/SearchActions'
 
 class Home extends Component {
   constructor(props) {

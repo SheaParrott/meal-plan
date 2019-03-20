@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import CreatorImage from '../assets/hmm.jpg'
-// import history from '../../history'
-import resume from '../assets/resume.png'
-import Header from '../Components/Header'
+import CreatorImage from '../../assets/hmm.jpg'
+import resume from '../../assets/resume.png'
+import Header from '../../Components/Header'
+import './style.css'
 
 class Creator extends Component {
   componentDidMount = () => {
