@@ -7,6 +7,7 @@ import Loading from '../../Components/Loading'
 import Pagination from '../../Components/Pagination'
 import history from '../../Components/history'
 import './style.css'
+import Footer from '../../Components/Footer'
 
 class Browse extends Component {
   constructor(props) {
@@ -65,25 +66,26 @@ class Browse extends Component {
 
   render() {
     if (this.props.hits.length <= 0) {
-      return (
-        <div>
-          <nav>
-            <h1 className="basicHeader">Meal Plan</h1>
-            <Header />
-          </nav>
-          <Loading />
-        </div>
-      )
+      return <Loading />
     } else if (this.props.hits[0] === 'No Results') {
       return (
-        <div>
-          <nav>
-            <h1 className="basicHeader">Meal Plan</h1>
-            <Header />
-          </nav>
-          <h2 className="uppercase noResults">No Results</h2>
-          <div className="centerLine">
-            <div className="line" />
+        <div className="spash-bg">
+          <div className="shaded-bg">
+            <div className="single-view-page s-v-p-recipe">
+              <main>
+                <div>
+                  <nav>
+                    <h1 className="basicHeader">Meal Plan</h1>
+                    <Header />
+                  </nav>
+                  <h2 className="uppercase noResults">No Results</h2>
+                  <div className="centerLine">
+                    <div className="line" />
+                  </div>
+                </div>
+              </main>
+              <Footer />
+            </div>
           </div>
         </div>
       )
@@ -111,44 +113,51 @@ class Browse extends Component {
       : []
 
     return (
-      <div>
-        <nav>
-          <h1 className="basicHeader">Meal Plan</h1>
-          <Header />
-        </nav>
-        <div className="spacingFromNav" />
-        <div>
-          <h2 className="uppercase">{this.props.q} Results</h2>
-          <div className="centerLine">
-            <div className="line" />
-          </div>
-          <main className="browseCentering">
-            <div>
-              {this.props.hits.map((hit, index) => {
-                return <Recipe key={hit + index} hit={hit} />
-              })}
-            </div>
-          </main>
-          <div className="browse">
-            <i
-              className="fas fa-chevron-left white-hv"
-              onClick={this._PaginationArrowBack}
-            />
+      <div className="spash-bg">
+        <div className="shaded-bg">
+          <div className="single-view-page s-v-p-recipe">
+            <main>
+              <nav>
+                <h1 className="basicHeader">Meal Plan</h1>
+                <Header />
+              </nav>
+              <div className="spacingFromNav" />
+              <div>
+                <h2 className="uppercase">{this.props.q} Results</h2>
+                <div className="centerLine">
+                  <div className="line" />
+                </div>
+                <main className="browseCentering">
+                  <div className="recipeBox">
+                    {this.props.hits.map((hit, index) => {
+                      return <Recipe key={hit + index} hit={hit} />
+                    })}
+                  </div>
+                </main>
+                <div className="browse">
+                  <i
+                    className="fas fa-chevron-left white-hv"
+                    onClick={this._PaginationArrowBack}
+                  />
 
-            {PaginationArray.map((page, index) => {
-              return (
-                <Pagination
-                  key={index}
-                  page={page}
-                  params={params}
-                  _searchRecipe={this._searchRecipe}
-                />
-              )
-            })}
-            <i
-              className="fas fa-chevron-right white-hv"
-              onClick={this._PaginationArrowForward}
-            />
+                  {PaginationArray.map((page, index) => {
+                    return (
+                      <Pagination
+                        key={index}
+                        page={page}
+                        params={params}
+                        _searchRecipe={this._searchRecipe}
+                      />
+                    )
+                  })}
+                  <i
+                    className="fas fa-chevron-right white-hv"
+                    onClick={this._PaginationArrowForward}
+                  />
+                </div>
+              </div>
+            </main>
+            <Footer />
           </div>
         </div>
       </div>

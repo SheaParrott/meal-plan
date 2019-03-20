@@ -3,10 +3,11 @@
   src: url('./assets/Good\ Vibes\ -\ Demo.ttf');
 }
 
-.App,
-.default {
+.App {
   text-align: center;
   min-height: 100vh;
+}
+.default {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
@@ -89,7 +90,7 @@ nav {
   background-image: linear-gradient(#444a5a, #4d5366);
   color: #ffffff;
   position: absolute;
-  z-index: 2;
+  z-index: 10;
   width: 100vw;
 }
 .spacingFromNav {
@@ -265,6 +266,28 @@ div.CategoriesBar {
     background-color: #81848d;
     width: 49vw;
     margin: 10px 0;
+  }
+  .spash-bg {
+    background-image: url(./assets/front.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+  .shaded-bg {
+    display: flex;
+    justify-content: center;
+    background-color: #686b7727;
+    width: 100vw;
+    z-index: 1;
+  }
+  .single-view-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    width: 900px;
+    position: relative;
+    z-index: 3;
   }
   /* general end */
 }

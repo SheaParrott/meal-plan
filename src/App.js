@@ -17,7 +17,6 @@ class App extends Component {
         <Route path="/browse/:url_params" component={Browse} />
         <Route path="/creator" component={Creator} />
         <Route path="/recipe/:uri" component={RecipePage} />
-        <Footer />
       </div>
     )
   }

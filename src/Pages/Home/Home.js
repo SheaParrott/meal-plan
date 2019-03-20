@@ -3,6 +3,7 @@ import front from '../../assets/front.jpg'
 import AdvancedSearch from '../../Components/AdvancedSearch'
 import { connect } from 'react-redux'
 import { resetAllSearchFields } from '../../Actions/SearchActions'
+import Footer from '../../Components/Footer'
 
 class Home extends Component {
   constructor(props) {
@@ -18,11 +19,14 @@ class Home extends Component {
   }
   render() {
     return (
-      <div className="wrapper default">
-        <AdvancedSearch
-          _resetAllSearchFields={this.props._resetAllSearchFields}
-        />
-        <img className="home" src={front} alt="cover" />
+      <div className="default">
+        <div className="wrapper default">
+          <AdvancedSearch
+            _resetAllSearchFields={this.props._resetAllSearchFields}
+          />
+          <img className="home" src={front} alt="cover" />
+        </div>
+        <Footer />
       </div>
     )
   }

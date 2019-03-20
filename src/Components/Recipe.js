@@ -32,7 +32,7 @@ class Recipe extends Component {
             alt={this.props.hit.recipe.label}
           />
           <div className="browseRecipeInfo">
-            <h3>{this.props.hit.recipe.label}</h3>
+            <h3 className="browse-label">{this.props.hit.recipe.label}</h3>
             <h6 className="browse-calories">
               {(
                 this.props.hit.recipe.calories / this.props.hit.recipe.yield

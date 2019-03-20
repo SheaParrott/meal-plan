@@ -29,6 +29,12 @@
   justify-content: center;
   align-items: center;
 }
+.healthAndWarningsContainer-recipe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .red-bg,
 .green-bg {
   border-radius: 5px;
@@ -181,6 +187,7 @@ p.singleRecipeInformation {
     width: 80vw;
     margin: 0 10vw;
   }
+
   p.red-bg,
   p.green-bg {
     font-size: 1rem;
@@ -296,20 +303,6 @@ p.singleRecipeInformation {
     min-height: 150vh;
   }
 
-  .spash-bg {
-    background-image: url(../../assets/front.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-    display: flex;
-    justify-content: center;
-  }
-  .single-view-page {
-    background-color: white;
-    width: 900px;
-    position: relative;
-    z-index: 1;
-  }
   /* will use below */
   .hide-mobile-bg-image {
     display: none;

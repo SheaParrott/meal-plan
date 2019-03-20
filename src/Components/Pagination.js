@@ -9,15 +9,6 @@ class Pagination extends Component {
     this._pagination = this._pagination.bind(this)
   }
   _pagination = event => {
-    console.log(this.props.page)
-    // this is what I need to set the from parameter to
-    console.log((this.props.page - 1) * 10)
-    // from: {
-    //   from: response.data.from,
-    //   param: `from=${response.data.from}`
-    // }
-    // history.pushState()
-
     let string = ''
     this.props.categories
       .concat(this.props.removedIngredients)
@@ -55,7 +46,7 @@ class Pagination extends Component {
       this.props.from.param
 
     return (
-      <p className="white-hv" onClick={this._pagination}>
+      <p className="pagination white-hv" onClick={this._pagination}>
         {this.props.page}
       </p>
     )
