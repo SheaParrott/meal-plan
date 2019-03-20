@@ -5,6 +5,11 @@ class Footer extends Component {
   render() {
     return (
       <footer>
+        <span className="headerOrFooterBiggerScreens">
+          <Link to="/">
+            <p className="white">Home</p>
+          </Link>
+        </span>
         <Link to="/creator">
           <p className="white">Creator</p>
         </Link>

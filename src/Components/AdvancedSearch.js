@@ -29,13 +29,11 @@ class AdvancedSearch extends Component {
     this.setState({
       categoriesBar: !this.state.categoriesBar
     })
-    // can add a form reset here later on
   }
 
   _SearchedRecipe = event => {
     this.props._SearchedRecipe(event.target.value)
   }
-  // add values to all inputs and use onchange
 
   _recipeFieldError = () => {
     this.setState({ recipeFieldError: '' })

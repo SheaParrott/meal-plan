@@ -26,15 +26,17 @@ class RecipePage extends Component {
       return <Loading />
     } else if (this.props.recipe[0] === 'No Results') {
       return (
-        <div>
+        <div className="spash-bg">
           <nav>
             <h1 className="basicHeader">Meal Plan</h1>
             <Header />
           </nav>
-          {/* <h2 className="uppercase noResults">No Results</h2> */}
           <span>
-            Seems we Goofed! 🙃 Please try again or search for another one of
-            our amazing recipes
+            Seems we Goofed!{' '}
+            <span role="img" aria-label="goofiness emoji">
+              🙃
+            </span>{' '}
+            Please try again or search for another one of our amazing recipes
           </span>
           <div className="centerLine">
             <div className="line" />
@@ -44,210 +46,376 @@ class RecipePage extends Component {
     }
 
     return (
-      <div>
-        <nav>
-          <h1 className="basicHeader">Meal Plan</h1>
-          <Header />
-        </nav>
-        <div className="spacingFromNav" />
-        <div className="singleViewRecipe marginFromFooter">
-          {this.props.recipe.map((info, index) => {
-            return (
-              <div key={index}>
-                <h2>{info.label}</h2>
-
-                <img
-                  className="singleViewRecipeImage"
-                  src={info.image}
-                  alt={info.label}
-                />
-                <h3>
-                  {(info.calories / info.yield).toFixed(0)} calories per serving
-                </h3>
-                <h3>{info.yield} total servings</h3>
-                <section className="singleViewRecipeHealthAndWarnings">
-                  <div className="healthAndWarningsContainer">
-                    {info.cautions.map(caution => {
-                      return (
-                        <p key={caution} className="red-bg">
-                          {caution}
-                        </p>
-                      )
-                    })}
+      <div className="spash-bg">
+        <div className="single-view-page">
+          <nav>
+            <h1 className="basicHeader">Meal Plan</h1>
+            <Header />
+          </nav>
+          <div className="spacingFromNav" />
+          <div className="singleViewRecipe marginFromFooter">
+            {this.props.recipe.map((info, index) => {
+              return (
+                <div key={index}>
+                  <h2 className="singleRecipeLabel">{info.label}</h2>
+                  <div className="centerLine">
+                    <div className="line" />
                   </div>
-                  <div className="healthAndWarningsContainer">
-                    {info.healthLabels.map(label => {
-                      return (
-                        <p key={label} className="green-bg">
-                          {label}
-                        </p>
-                      )
-                    })}
+                  <img
+                    className="singleViewRecipeImage"
+                    src={info.image}
+                    alt={info.label}
+                  />
+                  <h3 className="singleRecipeFacts">
+                    {(info.calories / info.yield).toFixed(0)} calories per
+                    serving
+                  </h3>
+                  <h3 className="singleRecipeFacts">
+                    {info.yield} total servings
+                  </h3>
+                  <section className="singleViewRecipeHealthAndWarnings">
+                    <div className="healthAndWarningsContainer">
+                      {info.cautions.map(caution => {
+                        return (
+                          <p key={caution} className="red-bg">
+                            {caution}
+                          </p>
+                        )
+                      })}
+                    </div>
+                    <div className="healthAndWarningsContainer">
+                      {info.healthLabels.map(label => {
+                        return (
+                          <p key={label} className="green-bg">
+                            {label}
+                          </p>
+                        )
+                      })}
+                    </div>
+                  </section>
+                  <div className="centerLine">
+                    <div className="line" />
                   </div>
-                </section>
-                <section className="RecipeInfoContainer">
-                  <div className="RecipeInfoBar">
-                    <h3
-                      className={
-                        this.state.displayedInfo == 'ingredients'
-                          ? 'shadedRecipeInfoLabel'
-                          : 'recipeInfoLabel'
-                      }
-                      onClick={() => {
-                        this.setState({
-                          displayedInfo: 'ingredients'
-                        })
-                      }}
-                    >
-                      Ingredients
-                    </h3>
+                  <section className="RecipeInfoContainer">
+                    <div className="RecipeInfoBar">
+                      <h3
+                        className={
+                          this.state.displayedInfo == 'ingredients'
+                            ? 'shadedRecipeInfoLabel'
+                            : 'recipeInfoLabel'
+                        }
+                        onClick={() => {
+                          this.setState({
+                            displayedInfo: 'ingredients'
+                          })
+                        }}
+                      >
+                        Ingredients
+                      </h3>
 
-                    <h3
-                      className={
-                        this.state.displayedInfo == 'digest'
-                          ? 'shadedRecipeInfoLabel'
-                          : 'recipeInfoLabel'
-                      }
-                      onClick={() => {
-                        this.setState({
-                          displayedInfo: 'digest'
-                        })
-                      }}
-                    >
-                      Digest
-                    </h3>
+                      <h3
+                        className={
+                          this.state.displayedInfo == 'digest'
+                            ? 'shadedRecipeInfoLabel'
+                            : 'recipeInfoLabel'
+                        }
+                        onClick={() => {
+                          this.setState({
+                            displayedInfo: 'digest'
+                          })
+                        }}
+                      >
+                        Digest
+                      </h3>
 
-                    <h3
-                      className={
-                        this.state.displayedInfo == 'totalDaily'
-                          ? 'shadedRecipeInfoLabel'
-                          : 'recipeInfoLabel'
-                      }
-                      onClick={() => {
-                        this.setState({
-                          displayedInfo: 'totalDaily'
-                        })
-                      }}
-                    >
-                      Daily
-                    </h3>
+                      <h3
+                        className={
+                          this.state.displayedInfo == 'totalDaily'
+                            ? 'shadedRecipeInfoLabel'
+                            : 'recipeInfoLabel'
+                        }
+                        onClick={() => {
+                          this.setState({
+                            displayedInfo: 'totalDaily'
+                          })
+                        }}
+                      >
+                        Daily
+                      </h3>
 
-                    <h3
-                      className={
-                        this.state.displayedInfo == 'totalNutrients'
-                          ? 'shadedRecipeInfoLabel'
-                          : 'recipeInfoLabel'
-                      }
-                      onClick={() => {
-                        this.setState({
-                          displayedInfo: 'totalNutrients'
-                        })
-                      }}
-                    >
-                      Nutrients
-                    </h3>
-                  </div>
-
-                  {this.state.displayedInfo == 'digest' ? (
-                    <div className="recipeInfo">
-                      {info.digest.map(label => {
-                        return (
-                          <div key={label.label}>
-                            <h5>{label.label}</h5>
-                            <p>
-                              {!label.daily || !label.schemaOrgTag
-                                ? ''
-                                : `${label.daily.toFixed(2)}% ${
-                                    label.schemaOrgTag
-                                  }`}
-                            </p>
-
-                            <p>
-                              {!label.total || !label.unit || !label.tag
-                                ? ''
-                                : `${label.total.toFixed(2)}${label.unit} ${
-                                    label.tag
-                                  }`}
-                            </p>
-                            <br />
-                            <div>
-                              {label.sub
-                                ? label.sub.map(l => {
-                                    return (
-                                      <div key={l.label}>
-                                        <h5>{l.label}</h5>
-                                        <p>
-                                          {!l.daily || !l.schemaOrgTag
-                                            ? ''
-                                            : `${l.daily.toFixed(2)}% ${
-                                                l.schemaOrgTag
-                                              }`}
-                                        </p>
-                                        <p>
-                                          {!l.total || !l.unit || !l.tag
-                                            ? ''
-                                            : `${l.total.toFixed(2)}${l.unit} ${
-                                                l.tag
-                                              }`}
-                                        </p>
-                                        <br />
-                                      </div>
-                                    )
-                                  })
-                                : null}
-                            </div>
-                          </div>
-                        )
-                      })}
+                      <h3
+                        className={
+                          this.state.displayedInfo == 'totalNutrients'
+                            ? 'shadedRecipeInfoLabel'
+                            : 'recipeInfoLabel'
+                        }
+                        onClick={() => {
+                          this.setState({
+                            displayedInfo: 'totalNutrients'
+                          })
+                        }}
+                      >
+                        Nutrients
+                      </h3>
                     </div>
-                  ) : null}
-                  {this.state.displayedInfo == 'totalDaily' ? (
-                    <div className="recipeInfo">
-                      {Object.keys(info.totalDaily).map((key, index) => {
-                        return (
-                          <div key={key + index}>
-                            <p>
-                              {info.totalDaily[key].label}:{' '}
-                              {info.totalDaily[key].quantity.toFixed(2)}{' '}
-                              {info.totalDaily[key].unit}
-                            </p>
-                            <br />
+
+                    <div className="RecipeInfoDisplayed">
+                      {/* start of digest */}
+                      {this.state.displayedInfo == 'digest' ? (
+                        <div className="recipeInfo">
+                          <div>
+                            {info.digest
+                              .slice(0, Math.ceil(info.digest.length / 2))
+                              .map(label => {
+                                return (
+                                  <div
+                                    className="informationDisplayed"
+                                    key={label.label}
+                                  >
+                                    <h4 className="singleRecipeInformation">
+                                      {label.label}
+                                    </h4>
+                                    <p className="singleRecipeInformation">
+                                      {!label.daily || !label.schemaOrgTag
+                                        ? ''
+                                        : `${label.daily.toFixed(2)}% ${
+                                            label.schemaOrgTag
+                                          }`}
+                                    </p>
+
+                                    <p className="singleRecipeInformation">
+                                      {!label.total || !label.unit || !label.tag
+                                        ? ''
+                                        : `${label.total.toFixed(2)}${
+                                            label.unit
+                                          } ${label.tag}`}
+                                    </p>
+                                    <br />
+                                    <div>
+                                      {label.sub
+                                        ? label.sub.map(l => {
+                                            return (
+                                              <div
+                                                className="informationDisplayed"
+                                                key={l.label}
+                                              >
+                                                <h4 className="singleRecipeInformation">
+                                                  {l.label}
+                                                </h4>
+                                                <p className="singleRecipeInformation">
+                                                  {!l.daily || !l.schemaOrgTag
+                                                    ? ''
+                                                    : `${l.daily.toFixed(2)}% ${
+                                                        l.schemaOrgTag
+                                                      }`}
+                                                </p>
+                                                <p className="singleRecipeInformation">
+                                                  {!l.total || !l.unit || !l.tag
+                                                    ? ''
+                                                    : `${l.total.toFixed(2)}${
+                                                        l.unit
+                                                      } ${l.tag}`}
+                                                </p>
+                                                <br />
+                                              </div>
+                                            )
+                                          })
+                                        : null}
+                                    </div>
+                                  </div>
+                                )
+                              })}
                           </div>
-                        )
-                      })}
-                    </div>
-                  ) : null}
-                  {this.state.displayedInfo == 'totalNutrients' ? (
-                    <div className="recipeInfo">
-                      {Object.keys(info.totalNutrients).map((key, index) => {
-                        return (
-                          <div key={key + index}>
-                            <p>
-                              {info.totalNutrients[key].label}:{' '}
-                              {info.totalNutrients[key].quantity.toFixed(2)}
-                              {info.totalNutrients[key].unit}
-                            </p>
-                            <br />
+                          <div>
+                            {info.digest
+                              .slice(
+                                Math.floor(info.digest.length / 2),
+                                info.digest.length
+                              )
+                              .map(label => {
+                                return (
+                                  <div
+                                    className="informationDisplayed"
+                                    key={label.label}
+                                  >
+                                    <h4 className="singleRecipeInformation">
+                                      {label.label}
+                                    </h4>
+                                    <p className="singleRecipeInformation">
+                                      {!label.daily || !label.schemaOrgTag
+                                        ? ''
+                                        : `${label.daily.toFixed(2)}% ${
+                                            label.schemaOrgTag
+                                          }`}
+                                    </p>
+
+                                    <p className="singleRecipeInformation">
+                                      {!label.total || !label.unit || !label.tag
+                                        ? ''
+                                        : `${label.total.toFixed(2)}${
+                                            label.unit
+                                          } ${label.tag}`}
+                                    </p>
+                                    <br />
+                                    <div>
+                                      {label.sub
+                                        ? label.sub.map(l => {
+                                            return (
+                                              <div
+                                                className="informationDisplayed"
+                                                key={l.label}
+                                              >
+                                                <h4 className="singleRecipeInformation">
+                                                  {l.label}
+                                                </h4>
+                                                <p className="singleRecipeInformation">
+                                                  {!l.daily || !l.schemaOrgTag
+                                                    ? ''
+                                                    : `${l.daily.toFixed(2)}% ${
+                                                        l.schemaOrgTag
+                                                      }`}
+                                                </p>
+                                                <p className="singleRecipeInformation">
+                                                  {!l.total || !l.unit || !l.tag
+                                                    ? ''
+                                                    : `${l.total.toFixed(2)}${
+                                                        l.unit
+                                                      } ${l.tag}`}
+                                                </p>
+                                                <br />
+                                              </div>
+                                            )
+                                          })
+                                        : null}
+                                    </div>
+                                  </div>
+                                )
+                              })}
                           </div>
-                        )
-                      })}
-                    </div>
-                  ) : null}
-                  {this.state.displayedInfo == 'ingredients' ? (
-                    <div className="recipeInfo">
-                      {info.ingredientLines.map((ingredient, index) => {
-                        return (
-                          <div key={ingredient + index}>
-                            <h5>{ingredient}</h5> <br />
+                        </div>
+                      ) : null}
+                      {/* end of digest */}
+                      {/* start of totalDaily */}
+                      {this.state.displayedInfo == 'totalDaily' ? (
+                        <div className="recipeInfo">
+                          <div>
+                            {Object.keys(info.totalDaily)
+                              .slice(0, Math.ceil(info.digest.length / 2))
+                              .map((key, index) => {
+                                return (
+                                  <div
+                                    className="informationDisplayed"
+                                    key={key + index}
+                                  >
+                                    <p className="singleRecipeInformation">
+                                      {info.totalDaily[key].label}:{' '}
+                                      {info.totalDaily[key].quantity.toFixed(2)}{' '}
+                                      {info.totalDaily[key].unit}
+                                    </p>
+                                    <br />
+                                  </div>
+                                )
+                              })}
                           </div>
-                        )
-                      })}
+                          <div>
+                            {Object.keys(info.totalDaily)
+                              .slice(
+                                Math.floor(info.digest.length / 2),
+                                info.digest.length
+                              )
+                              .map((key, index) => {
+                                return (
+                                  <div
+                                    className="informationDisplayed"
+                                    key={key + index}
+                                  >
+                                    <p className="singleRecipeInformation">
+                                      {info.totalDaily[key].label}:{' '}
+                                      {info.totalDaily[key].quantity.toFixed(2)}{' '}
+                                      {info.totalDaily[key].unit}
+                                    </p>
+                                    <br />
+                                  </div>
+                                )
+                              })}
+                          </div>
+                        </div>
+                      ) : null}
+                      {/* end of totalDaily */}
+                      {/* start of totalNutrients */}
+                      {this.state.displayedInfo == 'totalNutrients' ? (
+                        <div className="recipeInfo">
+                          <div>
+                            {Object.keys(info.totalNutrients)
+                              .slice(0, Math.ceil(info.digest.length / 2))
+                              .map((key, index) => {
+                                return (
+                                  <div
+                                    className="informationDisplayed"
+                                    key={key + index}
+                                  >
+                                    <p className="singleRecipeInformation">
+                                      {info.totalNutrients[key].label}:{' '}
+                                      {info.totalNutrients[
+                                        key
+                                      ].quantity.toFixed(2)}
+                                      {info.totalNutrients[key].unit}
+                                    </p>
+                                    <br />
+                                  </div>
+                                )
+                              })}
+                          </div>
+                          <div>
+                            {Object.keys(info.totalNutrients)
+                              .slice(
+                                Math.floor(info.digest.length / 2),
+                                info.digest.length
+                              )
+                              .map((key, index) => {
+                                return (
+                                  <div
+                                    className="informationDisplayed"
+                                    key={key + index}
+                                  >
+                                    <p className="singleRecipeInformation">
+                                      {info.totalNutrients[key].label}:{' '}
+                                      {info.totalNutrients[
+                                        key
+                                      ].quantity.toFixed(2)}
+                                      {info.totalNutrients[key].unit}
+                                    </p>
+                                    <br />
+                                  </div>
+                                )
+                              })}
+                          </div>
+                        </div>
+                      ) : null}
+                      {/* end of totalNutrients */}
+                      {this.state.displayedInfo == 'ingredients' ? (
+                        <div className="recipeInfoIngredients">
+                          {info.ingredientLines.map((ingredient, index) => {
+                            return (
+                              <div
+                                className="informationDisplayedIngredients"
+                                key={ingredient + index}
+                              >
+                                <h4 className="singleRecipeInformation">
+                                  {ingredient}
+                                </h4>{' '}
+                                <br />
+                              </div>
+                            )
+                          })}
+                        </div>
+                      ) : null}
                     </div>
-                  ) : null}
-                </section>
-              </div>
-            )
-          })}
+                  </section>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </div>
     )
