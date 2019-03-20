@@ -7,18 +7,18 @@ class Footer extends Component {
       <footer>
         <span className="headerOrFooterBiggerScreens">
           <Link to="/">
-            <p className="white">Home</p>
+            <p className="white footerButton">Home</p>
           </Link>
         </span>
         <Link to="/creator">
-          <p className="white">Creator</p>
+          <p className="white footerButton">Creator</p>
         </Link>
         {/* about page not created yet */}
         <Link to="/about">
-          <p className="white">About</p>
+          <p className="white footerButton">About</p>
         </Link>
         <Link to="/creator">
-          <p className="white">&copy;SheaParrott</p>
+          <p className="white footerButton">&copy;SheaParrott</p>
         </Link>
       </footer>
     )

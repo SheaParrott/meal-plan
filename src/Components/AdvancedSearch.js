@@ -52,9 +52,9 @@ class AdvancedSearch extends Component {
       this.props.maxIngredients.params +
       string
     return (
-      <div>
+      <div className="homePageName">
         <div>
-          <h1>Meal Plan</h1>
+          <h1 className="homePageName">Meal Plan</h1>
           <nav>
             <Header />
             <div className="centerLine">
@@ -62,8 +62,8 @@ class AdvancedSearch extends Component {
             </div>
             <div>
               <div className="advancedSearch">
-                <div className="categories " onClick={this.showCategories}>
-                  <h4>Advanced search</h4>
+                <div className="categories white" onClick={this.showCategories}>
+                  <h4 className="advancedDropDown">Advanced search</h4>
                   <i
                     className={`fas fa-angle-down ${
                       this.state.categoriesBar ? 'hidden' : ''
@@ -89,58 +89,69 @@ class AdvancedSearch extends Component {
                 >
                   Reset Fields
                 </button>
-                <div className="searchOptionsForm">
-                  {<AddOrRemoveForm name="Categories" showOptions={true} />}
-                </div>
-                <h6 className="red">{this.state.numberError}</h6>
-                <section className="CaloriesAndCookTime">
-                  <section className="searchOptions">
-                    <div className="label">
-                      <label>Calories:</label>
-                    </div>
-                    <NumberInputs
-                      ingredient={false}
-                      label="calories"
-                      _numberError={this._numberError}
-                      errorIsTrue={this.state.numberError ? true : false}
-                    />
-                  </section>
-                  <section className="searchOptions">
-                    <div className="label">
-                      <label>Cook Time: </label>
-                    </div>
-                    <NumberInputs
-                      ingredient={false}
-                      label="cookTime"
-                      _numberError={this._numberError}
-                      errorIsTrue={this.state.numberError ? true : false}
-                    />
-                  </section>
-                </section>
-                <section className="searchOptions row">
-                  <div className="label">
-                    <label>Max ingredients: </label>
+                <section>
+                  <div className="searchOptionsForm">
+                    {<AddOrRemoveForm name="Categories" showOptions={true} />}
                   </div>
-                  <NumberInputs ingredient={true} label="maxIngredients" />
+                  <h6 className="red">{this.state.numberError}</h6>
+                  <div className="centerFields">
+                    <section className="CaloriesAndCookTime">
+                      <section className="searchOptions">
+                        <div className="label">
+                          <label>Calories:</label>
+                        </div>
+                        <NumberInputs
+                          ingredient={false}
+                          label="calories"
+                          _numberError={this._numberError}
+                          errorIsTrue={this.state.numberError ? true : false}
+                        />
+                      </section>
+                      <section className="searchOptions">
+                        <div className="label">
+                          <label>Cook Time: </label>
+                        </div>
+                        <NumberInputs
+                          ingredient={false}
+                          label="cookTime"
+                          _numberError={this._numberError}
+                          errorIsTrue={this.state.numberError ? true : false}
+                        />
+                      </section>
+                      <section className="searchOptions row">
+                        <div className="label">
+                          <label>Max ingredients: </label>
+                        </div>
+                        <NumberInputs
+                          ingredient={true}
+                          label="maxIngredients"
+                        />
+                      </section>
+                    </section>
+                  </div>
+                  <div className="centerLine">
+                    <div className="line" />
+                  </div>
+                  <section className="searchOptionsForm">
+                    {
+                      <AddOrRemoveForm
+                        name="Remove Ingredients"
+                        label="removeIngredients"
+                        showOptions={false}
+                      />
+                    }
+                  </section>
                 </section>
-                <div className="line" />
-                <section className="searchOptionsForm">
-                  {
-                    <AddOrRemoveForm
-                      name="Remove Ingredients"
-                      label="removeIngredients"
-                      showOptions={false}
-                    />
-                  }
-                </section>
-                <div className="line" />
               </span>
+              <div className="centerLine">
+                <div className="line" />
+              </div>
               <h6 className="red">{this.state.recipeFieldError}</h6>
               <input
                 onChange={this._SearchedRecipe}
                 className="Search"
                 name="recipe"
-                placeholder="Keywords / Recipees!"
+                placeholder="Recipes"
               />
               {this.props.SearchedRecipe.value && this.state.recipeFieldError
                 ? this._recipeFieldError()
@@ -175,9 +186,6 @@ const mapStateToProps = state => ({
   maxIngredients: state.maxIngredients,
   categories: state.categories,
   removedIngredients: state.removedIngredients
-
-  // months: state.months,
-  // map out state
 })
 
 const mapActionsToProps = {

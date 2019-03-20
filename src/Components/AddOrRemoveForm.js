@@ -61,6 +61,7 @@ class AddOrRemoveForm extends Component {
                   type="text"
                   list="v"
                   autoComplete="off"
+                  placeholder="Ingredients"
                 />
                 <button className="advancedSearchButton" type="submit">
                   Submit

@@ -46,15 +46,7 @@ h6 {
   cursor: pointer;
   text-shadow: 0 0 5px white;
 }
-h1 {
-  font-family: 'good';
-  color: white;
-  text-shadow: 0 0 5px #444a5a;
-  font-size: 5rem;
-  font-weight: 500;
-  padding: 15px 0 0 0;
-  background-color: #92ca64;
-}
+
 h1.basicHeader {
   font-family: 'good';
   color: white;
@@ -68,25 +60,13 @@ h1.basicHeader {
 h4 {
   padding: 0;
 }
-input,
-button {
-  font-size: 1rem;
-}
-button {
-  margin: 10px 10px 10px 0;
-}
 section {
   margin: 0;
 }
 .wrapper {
   position: relative;
 }
-.categoriesBar {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 3px 0;
-}
+
 nav {
   background-image: linear-gradient(#444a5a, #4d5366);
   color: #ffffff;
@@ -103,10 +83,7 @@ nav {
 .navSpacing {
   height: 116px;
 }
-.homeButton {
-  padding: 10px;
-  margin: 0;
-}
+
 .white {
   color: #ffffff;
 }
@@ -123,83 +100,9 @@ nav {
   height: 1px;
   background-color: #81848d;
   width: 80vw;
-  margin: 10px 0;
+  margin: 8px 0;
 }
-.Search {
-  margin-right: 10px;
-  width: 65vw;
-}
-.home {
-  width: 100vw;
-}
-.advancedSearch {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.advancedSearchButton {
-  font-weight: 700;
-  border-radius: 5px;
-  outline-color: transparent;
-  border: none;
-  text-shadow: 0 0 0.5px #000000;
-  background-image: linear-gradient(#92ca64, #8ac05e);
-  color: #ffffff;
-  box-shadow: 0 0 3px #969595;
-}
-.advancedSearchButton:hover {
-  background-image: linear-gradient(#92ca64ec, #8ac05eec);
-  color: #fffffff5;
-  text-shadow: 0 0 0.5px #000000a2;
-  cursor: pointer;
-  box-shadow: 0 0 3px #9695956c;
-}
-div.categories {
-  cursor: pointer;
-  width: 145px;
-}
-.searchOptionsForm {
-  margin: 10px;
-  width: 90vw;
-}
-.formArea {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.formInput {
-  margin-right: 10px;
-  max-width: 70vw;
-}
-.searchOptions {
-  margin: 10px;
-}
-.CaloriesAndCookTime {
-  display: flex;
-}
-.numberInput {
-  width: 45px;
-}
-.displayedLabelbox {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 5px 5px 0 5px;
-}
-.displayedLabel {
-  display: flex;
-  align-items: center;
-  background-color: #687086;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 2px 2px;
-}
-p.Label {
-  margin: 0;
-  padding-left: 5px;
-}
+
 footer {
   display: flex;
   flex-direction: row;
@@ -215,50 +118,54 @@ footer {
 .hidden {
   display: none;
 }
-label {
-  padding: 5px;
+.homeButton {
+  padding: 10px;
+  margin: 0;
 }
-.label {
-  padding: 5px;
-}
-.row {
-  display: flex;
-  align-items: center;
-}
-.categoriesCentering {
-  display: flex;
-  justify-content: center;
-}
-.allCategories {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-div.CategoriesBar {
-  display: flex;
-  flex-wrap: column;
-}
-.Categories {
-  padding: 3px;
-  margin: 2px;
-  font-size: 1rem;
+.footerButton,
+.homeButton {
+  font-size: 1.1rem;
 }
 
 @media (min-width: 375px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.2rem;
+  }
 }
 @media (min-width: 411px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.3rem;
+  }
 }
 @media (min-width: 600px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.4rem;
+  }
 }
 @media (min-width: 760px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.35rem;
+  }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.55rem;
+  }
 }
 
 @media (min-width: 1280px) {
   /* header start */
   nav {
     width: 100%;
+  }
+  .footerButton,
+  .homeButton {
+    font-size: 1.15rem;
   }
   /* header end */
   /* general start */

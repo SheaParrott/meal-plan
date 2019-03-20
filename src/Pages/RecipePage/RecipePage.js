@@ -58,7 +58,7 @@ class RecipePage extends Component {
     return (
       <div className="spash-bg">
         <div className="shaded-bg">
-          <div className="single-view-page s-v-p-recipe">
+          <div className="single-view-page">
             <main>
               <div>
                 <nav>
