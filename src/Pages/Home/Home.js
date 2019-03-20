@@ -21,7 +21,7 @@ class Home extends Component {
   render() {
     return (
       <div className="spash-bg">
-        <div className="shaded-bg-darker">
+        <div className="shaded-bg-lighter">
           <div className="single-view-page-home">
             <div className="default">
               <div className="wrapper default">

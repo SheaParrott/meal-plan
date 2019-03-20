@@ -339,23 +339,6 @@ div.CategoriesBar {
 @media (min-width: 1280px) {
   /* home start */
 
-  .shaded-bg-darker {
-    display: flex;
-    justify-content: center;
-    background-color: #ffffffce;
-    width: 100vw;
-    z-index: 1;
-  }
-  .single-view-page-home {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    width: 900px;
-    position: relative;
-    z-index: 3;
-    box-shadow: 0 0 20px black, 0 0 10px #777777b6;
-  }
   .centerHomePage {
     display: flex;
     justify-content: center;

@@ -13,7 +13,8 @@
   text-decoration: underline;
   letter-spacing: 0.5px;
 }
-.aboutParagraph {
+.aboutParagraph,
+.thanksParagraph {
   text-align: left;
   background-color: #4d5366ce;
   border-radius: 20px;
@@ -23,13 +24,18 @@
   padding: 20px;
   color: white;
   position: absolute;
-  top: 220px;
   margin: 0 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.thanks {
+.aboutParagraph {
+  top: 220px;
+}
+.thanksParagraph {
+  top: 520px;
+}
+h5.about {
   padding-bottom: 10px;
 }
 
@@ -43,15 +49,113 @@ strong {
 /* about page end */
 
 @media (min-width: 375px) {
+  h5.about {
+    font-size: 0.9rem;
+  }
+  .aboutInspiration {
+    font-size: 1.6rem;
+  }
+  p.about {
+    font-size: 1.1rem;
+  }
+  strong {
+    font-size: 1.2rem;
+  }
+  .aboutPageSpacing {
+    height: 202px;
+  }
 }
 @media (min-width: 411px) {
+  h5.about {
+    font-size: 1rem;
+  }
+  .aboutInspiration {
+    font-size: 1.7rem;
+  }
+  p.about {
+    font-size: 1.2rem;
+  }
+  strong {
+    font-size: 1.3rem;
+  }
 }
 @media (min-width: 600px) {
+  h5.about {
+    font-size: 1.15rem;
+  }
+  .aboutInspiration {
+    font-size: 1.85rem;
+  }
+  p.about {
+    font-size: 1.35rem;
+  }
+  strong {
+    font-size: 1.45rem;
+  }
+  .aboutParagraph {
+    padding: 25px;
+    top: 240px;
+    margin: 0 40px;
+  }
+  .aboutPageSpacing {
+    height: 50px;
+  }
 }
 @media (min-width: 760px) {
+  h5.about {
+    font-size: 1.25rem;
+  }
+  .aboutInspiration {
+    font-size: 1.95rem;
+  }
+  p.about {
+    font-size: 1.45rem;
+  }
+  strong {
+    font-size: 1.55rem;
+  }
+  .aboutParagraph {
+    padding: 25px;
+    top: 240px;
+    margin: 0 80px;
+  }
+  .aboutPageSpacing {
+    height: 0;
+  }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
+  h5.about {
+    font-size: 1.55rem;
+  }
+  .aboutInspiration {
+    font-size: 2.25rem;
+  }
+  p.about {
+    font-size: 1.75rem;
+  }
+  strong {
+    font-size: 1.85rem;
+  }
+  .aboutParagraph {
+    top: 275px;
+    margin: 0 130px;
+  }
 }
 
 @media (min-width: 1280px) {
+  h5.about {
+    font-size: 1rem;
+  }
+  .aboutInspiration {
+    font-size: 1.6rem;
+  }
+  p.about {
+    font-size: 1rem;
+  }
+  strong {
+    font-size: 1.1rem;
+  }
+  .aboutParagraph {
+    margin: 0 150px;
+  }
 }
