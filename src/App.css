@@ -266,11 +266,19 @@ div.CategoriesBar {
   padding: 0 10px;
   height: 100%;
 }
-.healthAndWarningsContainer {
+.healthAndWarningsContainer-recipe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.healthAndWarningsContainer-recipe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  margin: 0 5vw;
 }
 p.red-bg,
 p.green-bg {
@@ -297,16 +305,18 @@ div.browse {
 }
 /* browse page end */
 /* single view recipe start */
+.s-v-p-recipe {
+  min-height: 170vh;
+}
 .singleViewRecipe {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
 }
 .singleViewRecipeImage {
   border-radius: 5px;
   box-shadow: 0 0 1px #000000;
-  width: 300px;
+  width: 250px;
   margin: 10px;
 }
 .RecipeInfoContainer {
@@ -552,8 +562,15 @@ img.resume:hover {
 
 @media (min-width: 375px) {
   /* single view recipe start */
+  .s-v-p-recipe {
+    min-height: 150vh;
+  }
   .singleViewRecipeImage {
-    width: 350px;
+    width: 320px;
+  }
+  .healthAndWarningsContainer-recipe {
+    width: 90vw;
+    margin: 0 5vw;
   }
   p.red-bg,
   p.green-bg {
@@ -584,7 +601,7 @@ img.resume:hover {
     font-size: 1.7rem;
   }
   .singleViewRecipeImage {
-    width: 390px;
+    width: 365px;
   }
   .singleRecipeFacts {
     font-size: 1.3rem;
@@ -610,30 +627,38 @@ img.resume:hover {
   }
   /* single view recipe end */
 }
-@media (min-width: 760px) {
+@media (min-width: 600px) {
   /* single view recipe start */
-
+  .s-v-p-recipe {
+    min-height: 137vh;
+  }
   .headerOrFooterBiggerScreens {
     display: block;
   }
   .singleRecipeLabel {
-    font-size: 2.7rem;
+    font-size: 1.9rem;
   }
   .singleViewRecipeImage {
-    width: 390px;
+    width: 300px;
   }
   .singleRecipeFacts {
-    font-size: 2rem;
+    font-size: 1.1rem;
+  }
+  .healthAndWarningsContainer-recipe {
+    width: 80vw;
+    margin: 0 10vw;
   }
   p.red-bg,
   p.green-bg {
-    font-size: 1.7rem;
+    font-size: 1rem;
   }
   .recipeInfoLabel {
-    font-size: 2rem;
+    font-size: 1.2rem;
+    padding: 5px 21px;
   }
   .shadedRecipeInfoLabel {
-    font-size: 2rem;
+    font-size: 1.2rem;
+    padding: 5px 21px;
   }
   .recipeInfo {
     display: flex;
@@ -641,16 +666,65 @@ img.resume:hover {
     justify-content: space-between;
   }
   .RecipeInfoDisplayed {
-    width: 600px;
+    width: 450px;
   }
   .informationDisplayed {
-    width: 300px;
+    width: 225px;
   }
   h4.singleRecipeInformation {
-    font-size: 1.37rem;
+    font-size: 0.8rem;
   }
   p.singleRecipeInformation {
-    font-size: 1.37rem;
+    font-size: 0.8rem;
+  }
+
+  /* single view recipe end */
+}
+@media (min-width: 760px) {
+  /* single view recipe start */
+  .s-v-p-recipe {
+    min-height: 135vh;
+  }
+  .headerOrFooterBiggerScreens {
+    display: block;
+  }
+  .singleRecipeLabel {
+    font-size: 2.5rem;
+  }
+  .singleViewRecipeImage {
+    width: 390px;
+  }
+  .singleRecipeFacts {
+    font-size: 1.8rem;
+  }
+  p.red-bg,
+  p.green-bg {
+    font-size: 1.4rem;
+  }
+  .recipeInfoLabel {
+    font-size: 1.5rem;
+    padding: 5px 30px;
+  }
+  .shadedRecipeInfoLabel {
+    font-size: 1.5rem;
+    padding: 5px 30px;
+  }
+  .recipeInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .RecipeInfoDisplayed {
+    width: 580px;
+  }
+  .informationDisplayed {
+    width: 290px;
+  }
+  h4.singleRecipeInformation {
+    font-size: 1.17rem;
+  }
+  p.singleRecipeInformation {
+    font-size: 1.17rem;
   }
 
   /* single view recipe end */
@@ -660,30 +734,33 @@ img.resume:hover {
   .headerOrFooterBiggerScreens {
     display: block;
   }
+  .s-v-p-recipe {
+    min-height: 120vh;
+  }
   .singleRecipeLabel {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   .singleViewRecipeImage {
     width: 500px;
   }
   .singleRecipeFacts {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
   }
   p.red-bg,
   p.green-bg {
     padding: 8px;
   }
   .recipeInfoLabel {
-    padding: 8px 45px;
+    padding: 8px 55px;
   }
   .shadedRecipeInfoLabel {
-    padding: 8px 45px;
+    padding: 8px 55px;
   }
   .RecipeInfoDisplayed {
-    width: 800px;
+    width: 750px;
   }
   .informationDisplayed {
-    width: 400px;
+    width: 375px;
   }
   /* single view recipe end */
 }
@@ -698,28 +775,36 @@ img.resume:hover {
   .line {
     height: 1px;
     background-color: #81848d;
-    width: 60vw;
+    width: 49vw;
     margin: 10px 0;
   }
   /* general end */
   /* single view recipe start */
+  .s-v-p-recipe {
+    min-height: 150vh;
+  }
+
   .spash-bg {
     background-image: url(./assets/front.jpg);
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
-    z-index: -1;
+    z-index: 0;
     display: flex;
     justify-content: center;
   }
   .single-view-page {
     background-color: white;
-    width: 70vw;
-    margin: 0 10vw;
+    width: 900px;
     position: relative;
+    z-index: 1;
   }
+  /* will use below */
+  .hide-mobile-bg-image {
+    display: none;
+  }
+  /* will hide the image thats in jsx and use the .splash-bg instead */
   .singleRecipeLabel {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
   .singleViewRecipeImage {
     width: 250px;
@@ -728,15 +813,21 @@ img.resume:hover {
     font-size: 1rem;
     /* brought an extra .5 down */
   }
+  .healthAndWarningsContainer-recipe {
+    width: 60vw;
+    margin: 0 20vw;
+  }
   p.red-bg,
   p.green-bg {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .recipeInfoLabel {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    padding: 8px 50px;
   }
   .shadedRecipeInfoLabel {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    padding: 8px 50px;
   }
   .recipeInfo {
     display: flex;

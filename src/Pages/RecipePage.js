@@ -47,7 +47,7 @@ class RecipePage extends Component {
 
     return (
       <div className="spash-bg">
-        <div className="single-view-page">
+        <div className="single-view-page s-v-p-recipe">
           <nav>
             <h1 className="basicHeader">Meal Plan</h1>
             <Header />
@@ -74,7 +74,7 @@ class RecipePage extends Component {
                     {info.yield} total servings
                   </h3>
                   <section className="singleViewRecipeHealthAndWarnings">
-                    <div className="healthAndWarningsContainer">
+                    <div className="healthAndWarningsContainer-recipe">
                       {info.cautions.map(caution => {
                         return (
                           <p key={caution} className="red-bg">
@@ -83,7 +83,7 @@ class RecipePage extends Component {
                         )
                       })}
                     </div>
-                    <div className="healthAndWarningsContainer">
+                    <div className="healthAndWarningsContainer-recipe">
                       {info.healthLabels.map(label => {
                         return (
                           <p key={label} className="green-bg">
