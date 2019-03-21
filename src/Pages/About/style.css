@@ -9,9 +9,14 @@
   flex-wrap: wrap;
   padding-bottom: 20px;
 }
+.thanksOrInspiration {
+  display: flex;
+  justify-content: space-evenly;
+}
 .aboutInspiration {
   text-decoration: underline;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 .aboutParagraph,
 .thanksParagraph {
@@ -32,9 +37,7 @@
 .aboutParagraph {
   top: 220px;
 }
-.thanksParagraph {
-  top: 520px;
-}
+
 h5.about {
   padding-bottom: 10px;
 }
@@ -46,23 +49,27 @@ strong {
   text-align: center;
   font-size: 1.1rem;
 }
+.big-view {
+  display: none;
+}
+
 /* about page end */
 
 @media (min-width: 375px) {
   h5.about {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .aboutInspiration {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   p.about {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   strong {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .aboutPageSpacing {
-    height: 202px;
+    height: 200px;
   }
 }
 @media (min-width: 411px) {
@@ -97,8 +104,18 @@ strong {
     top: 240px;
     margin: 0 40px;
   }
+  .thanksParagraph {
+    top: 700px;
+    margin: 0 40px;
+  }
   .aboutPageSpacing {
     height: 50px;
+  }
+  .big-view {
+    display: block;
+  }
+  .small-view {
+    display: none;
   }
 }
 @media (min-width: 760px) {
@@ -117,6 +134,10 @@ strong {
   .aboutParagraph {
     padding: 25px;
     top: 240px;
+    margin: 0 80px;
+  }
+  .thanksParagraph {
+    top: 700px;
     margin: 0 80px;
   }
   .aboutPageSpacing {
@@ -140,6 +161,10 @@ strong {
     top: 275px;
     margin: 0 130px;
   }
+  .thanksParagraph {
+    top: 820px;
+    margin: 0 130px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -156,6 +181,10 @@ strong {
     font-size: 1.1rem;
   }
   .aboutParagraph {
+    margin: 0 150px;
+  }
+  .thanksParagraph {
+    top: 560px;
     margin: 0 150px;
   }
 }
