@@ -1,4 +1,4 @@
-# Meal Plan (work in progress)
+# Meal Plan (work in progress - almost ready for deployment)
 
 ## Inspiration
 
