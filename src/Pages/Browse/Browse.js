@@ -8,6 +8,7 @@ import Pagination from '../../Components/Pagination'
 import history from '../../Components/history'
 import './style.css'
 import Footer from '../../Components/Footer'
+import ErrorMessage from '../../Components/ErrorMessage'
 
 class Browse extends Component {
   constructor(props) {
@@ -68,27 +69,7 @@ class Browse extends Component {
     if (this.props.hits.length <= 0) {
       return <Loading />
     } else if (this.props.hits[0] === 'No Results') {
-      return (
-        <div className="spash-bg">
-          <div className="shaded-bg">
-            <div className="single-view-page">
-              <main>
-                <div>
-                  <nav>
-                    <h1 className="basicHeader">Meal Plan</h1>
-                    <Header />
-                  </nav>
-                  <h2 className="uppercase noResults">No Results</h2>
-                  <div className="centerLine">
-                    <div className="line" />
-                  </div>
-                </div>
-              </main>
-              <Footer />
-            </div>
-          </div>
-        </div>
-      )
+      return <ErrorMessage />
     }
     let string = ''
     this.props.categories

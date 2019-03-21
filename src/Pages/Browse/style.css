@@ -10,9 +10,7 @@
   width: 98vw;
   padding: 0 0 3px 0;
 }
-.noResults {
-  margin-top: 85px;
-}
+
 .browseRecipeImage {
   width: 35%;
   height: auto;
@@ -36,6 +34,15 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+main.error {
+  height: 100vh;
+}
+.noResults {
+  padding-top: 110px;
+}
+.tryAgain {
+  padding: 5px;
 }
 
 .browse-calories {

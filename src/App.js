@@ -27,5 +27,7 @@ export default App
 // [] add in recommended options on front page. probably
 //  hard code some favorites and randomize what is shown to
 //  prevent overuse of api. Only allowed 5 api hits per minute.
+// - need the image, label and uri
+// - <Link to="/recipe/uri"/>
 // [] fixed deploy bug that when refreshed app doesn't reload
-// [] add cors error handling "We goofed, please try again "
+// [x] add cors error handling "We goofed, please try again "

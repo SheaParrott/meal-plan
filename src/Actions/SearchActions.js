@@ -29,31 +29,46 @@ export function getRecipes(url_params) {
       url: `https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999${url_params}`,
       headers: []
     })
-
-    return request.then(response =>
-      dispatch({
-        type: UPDATE_RECIPES,
-        payload: {
-          count: response.data.count,
-          from: {
-            from: response.data.from,
-            param: `&from=${response.data.from}`
-          },
-          to: response.data.to,
-          more: response.data.more,
-          q: response.data.q,
-          SearchedRecipe: {
-            value: response.data.q,
-            param: `&q=${response.data.q}`
-          },
-          hits:
-            response.data.hits.length === 0
-              ? ['No Results']
-              : response.data.hits,
-          pages: fillRange(response.data.count)
-        }
+    return request
+      .then(response =>
+        dispatch({
+          type: UPDATE_RECIPES,
+          payload: {
+            count: response.data.count,
+            from: {
+              from: response.data.from,
+              param: `&from=${response.data.from}`
+            },
+            to: response.data.to,
+            more: response.data.more,
+            q: response.data.q,
+            SearchedRecipe: {
+              value: response.data.q,
+              param: `&q=${response.data.q}`
+            },
+            hits:
+              response.data.hits.length === 0
+                ? ['No Results']
+                : response.data.hits,
+            pages: fillRange(response.data.count)
+          }
+        })
+      )
+      .catch(error => {
+        dispatch({
+          type: UPDATE_RECIPES,
+          payload: {
+            count: 0,
+            from: { from: 0, param: `&from=0` },
+            to: '',
+            more: '',
+            q: '',
+            SearchedRecipe: { value: '', param: '' },
+            hits: ['No Results'],
+            pages: []
+          }
+        })
       })
-    )
   }
 }
 
@@ -75,14 +90,23 @@ export function singleRecipe(uri) {
       headers: []
     })
 
-    return request.then(response =>
-      dispatch({
-        type: SINGLE_RECIPE,
-        payload: {
-          recipe: response.data ? response.data : ['No Results']
-        }
+    return request
+      .then(response =>
+        dispatch({
+          type: SINGLE_RECIPE,
+          payload: {
+            recipe: response.data ? response.data : ['No Results']
+          }
+        })
+      )
+      .catch(error => {
+        dispatch({
+          type: SINGLE_RECIPE,
+          payload: {
+            recipe: ['No Results']
+          }
+        })
       })
-    )
   }
 }
 

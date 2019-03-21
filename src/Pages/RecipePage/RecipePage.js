@@ -5,6 +5,7 @@ import Header from '../../Components/Header'
 import Loading from '../../Components/Loading'
 import './style.css'
 import Footer from '../../Components/Footer'
+import ErrorMessage from '../../Components/ErrorMessage'
 
 class RecipePage extends Component {
   constructor(props) {
@@ -27,32 +28,7 @@ class RecipePage extends Component {
     if (this.props.recipe.length <= 0) {
       return <Loading />
     } else if (this.props.recipe[0] === 'No Results') {
-      return (
-        <div className="spash-bg">
-          <div className="shaded-bg">
-            <div className="single-view-page s-v-p-recipe">
-              <div className="spash-bg">
-                <nav>
-                  <h1 className="basicHeader">Meal Plan</h1>
-                  <Header />
-                </nav>
-                <span>
-                  Seems we Goofed!{' '}
-                  <span role="img" aria-label="goofiness emoji">
-                    🙃
-                  </span>{' '}
-                  Please try again or search for another one of our amazing
-                  recipes
-                </span>
-                <div className="centerLine">
-                  <div className="line" />
-                </div>
-              </div>
-              <Footer />
-            </div>
-          </div>
-        </div>
-      )
+      return <ErrorMessage singleViewRecipePage={true} />
     }
 
     return (

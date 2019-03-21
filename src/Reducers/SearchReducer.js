@@ -12,10 +12,8 @@ import {
   RESET_ALL_SEARCH_FIELDS,
   REMOVE_CHOSEN_INGREDIENT
 } from '../Actions/SearchActions'
-//removed state = initial state
-// may cause issues
+
 export default function SearchReducer(state, action) {
-  // do work here
   switch (action.type) {
     case UPDATE_RECIPES:
       return {
