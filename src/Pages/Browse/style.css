@@ -27,7 +27,9 @@
   width: 55%;
   padding: 0 10px;
   min-height: 125px;
-  /* background-color: red; */
+}
+.uppercase {
+  margin-top: 10px;
 }
 .healthAndWarningsContainer {
   display: flex;

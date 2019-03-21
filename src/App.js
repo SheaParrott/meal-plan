@@ -31,3 +31,6 @@ export default App
 // - <Link to="/recipe/uri"/>
 // [] fixed deploy bug that when refreshed app doesn't reload
 // [x] add cors error handling "We goofed, please try again "
+// [] validate the minimal number on calories and max ingredients
+//    - ingredients must be more than 1
+//    - calories minimum?
