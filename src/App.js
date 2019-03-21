@@ -24,6 +24,7 @@ class App extends Component {
 
 export default App
 
-// [x] set up remove categories and ingredients action
-// and reducer and apply to UI
-// [] @media all pages
+// [] add in recommended options on front page. probably
+//  hard code some favorites and randomize what is shown to
+//  prevent overuse of api. Only allowed 5 api hits per minute.
+// [] fixed deploy bug that when refreshed app doesn't reload
