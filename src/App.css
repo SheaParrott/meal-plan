@@ -1,3 +1,7 @@
+html,
+body {
+  overscroll-behavior-y: contain;
+}
 @font-face {
   font-family: 'good';
   src: url('./assets/Good\ Vibes\ -\ Demo.ttf');
