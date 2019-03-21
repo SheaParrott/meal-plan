@@ -28,3 +28,4 @@ export default App
 //  hard code some favorites and randomize what is shown to
 //  prevent overuse of api. Only allowed 5 api hits per minute.
 // [] fixed deploy bug that when refreshed app doesn't reload
+// [] add cors error handling "We goofed, please try again "
