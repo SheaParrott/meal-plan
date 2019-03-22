@@ -5,10 +5,13 @@
   align-items: center;
 }
 .boxShadow {
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 2px rgb(255, 255, 255), 0px 0px 04px rgb(0, 0, 0);
 }
 .text-secondary {
-  color: #444a5a;
+  /* color: #444a5a; */
+}
+.creatorPage {
+  position: relative;
 }
 .columnCentering {
   display: flex;
@@ -54,10 +57,37 @@ div.col {
 img.resume:hover {
   cursor: pointer;
 }
+.background-added {
+  background-image: url(../../assets/front.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main-creator {
+  background-color: #4d5366ce;
+  border-radius: 20px;
+  border: 1.5px solid #92ca649c;
+  text-shadow: 0 0 5px black, 1.5px 1.5px 0.2px grey;
+  font-weight: 700;
+  padding: 8px;
+  color: white;
+  margin: 18px 15px;
+}
+.white-creator {
+  color: #ffffff;
+}
 
+.white-creator:hover {
+  cursor: pointer;
+  text-shadow: 0 0 2.5px #ffffffb2;
+  text-decoration: underline;
+}
 @media (min-width: 375px) {
   .widthbig {
     width: 360px;
+  }
+  .main-creator {
+    margin: 21px 15px;
   }
 }
 @media (min-width: 411px) {
@@ -65,7 +95,17 @@ img.resume:hover {
     width: 400px;
   }
 }
+@media (min-width: 600px) {
+  .main-creator {
+    padding: 25px;
+    margin: 30px 40px;
+  }
+}
 @media (min-width: 760px) {
+  .main-creator {
+    margin: 30px 80px;
+    text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
+  }
   .widthbig {
     width: 450px;
   }
@@ -99,6 +139,9 @@ img.resume:hover {
 }
 
 @media (min-width: 999px) {
+  .main-creator {
+    margin: 65px 130px;
+  }
   .widthbig {
     width: 480px;
   }
@@ -123,6 +166,36 @@ img.resume:hover {
   }
   .creatorPage {
     font-size: 50px;
+  }
+}
+@media (min-width: 1280px) {
+  div.col {
+    min-width: 150px;
+    margin: 8px;
+  }
+  .background-added {
+    background-image: none;
+  }
+  .main-creator {
+    text-shadow: none;
+    font-weight: 700;
+    margin: 5px 5px;
+
+    width: 1050px;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffffc5;
+    border-radius: 10px;
+    padding: 0px;
+  }
+  .white-creator {
+    color: #444a5a;
+  }
+
+  .white-creator:hover {
+    cursor: pointer;
+    color: #606677;
+    text-shadow: 0 0 2.5px #ffffffb2;
+    text-decoration: underline;
   }
 }
 /* end creator page */

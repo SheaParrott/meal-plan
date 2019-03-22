@@ -99,46 +99,46 @@ class About extends Component {
                     <p className="about aboutInspiration"> -Blessings-</p>
                   </div>
                 )}
-
-                <div className="aboutParagraph-desktop big-view">
-                  <h2 className="aboutInspiration">Inspiration</h2>
-                  <p className="about aboutInspiration">
-                    <br /> Life is all about balance, right?
-                  </p>
-                  <p className="aboutInspiration">
-                    <strong>Well I think so!</strong>
-                  </p>
-                  <p className="about">
-                    <br /> A healthy diet is one of those balances most of us
-                    struggle with. This is something that I have realized and it
-                    has takes precedence in my day to day life. In an effort to
-                    better myself for a healthier lifestyle and help others{' '}
-                    <i>Meal Plan</i> was created! I hope this helps you as much
-                    as it will help me!
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </p>
-                  <h2 className="aboutInspiration">Special Thanks!</h2>
-                  <p className="about">
-                    <br /> Thank you EDAMAM for providing the API used in this
-                    project. Documentation can be found here:{' '}
-                    <strong>
-                      <a
-                        className="EDAMAM-link"
-                        href="https://www.edamam.com/"
-                        target="_blank"
-                      >
-                        https://www.edamam.com/
-                      </a>
-                    </strong>
-                    <br />
-                    <br />
-                  </p>
-                  <p className="about aboutInspiration"> -Blessings-</p>
-                </div>
-
+                <main className="center-home-options big-view">
+                  <div className="aboutParagraph-desktop ">
+                    <h2 className="aboutInspiration">Inspiration</h2>
+                    <p className="about aboutInspiration">
+                      <br /> Life is all about balance, right?
+                    </p>
+                    <p className="aboutInspiration">
+                      <strong>Well I think so!</strong>
+                    </p>
+                    <p className="about">
+                      <br /> A healthy diet is one of those balances most of us
+                      struggle with. This is something that I have realized and
+                      it has takes precedence in my day to day life. In an
+                      effort to better myself for a healthier lifestyle and help
+                      others <i>Meal Plan</i> was created! I hope this helps you
+                      as much as it will help me!
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                    </p>
+                    <h2 className="aboutInspiration">Special Thanks!</h2>
+                    <p className="about">
+                      <br /> Thank you EDAMAM for providing the API used in this
+                      project. Documentation can be found here:{' '}
+                      <strong>
+                        <a
+                          className="EDAMAM-link"
+                          href="https://www.edamam.com/"
+                          target="_blank"
+                        >
+                          https://www.edamam.com/
+                        </a>
+                      </strong>
+                      <br />
+                      <br />
+                    </p>
+                    <p className="about aboutInspiration"> -Blessings-</p>
+                  </div>
+                </main>
                 <img className="home mobile-tablet" src={front} alt="cover" />
               </div>
               <Footer />

@@ -91,6 +91,7 @@ nav {
 .white {
   color: #ffffff;
 }
+
 .white:hover {
   cursor: pointer;
   text-shadow: 0 0 2.5px #ffffffb2;
@@ -136,6 +137,16 @@ footer {
 }
 .big-view {
   display: none;
+}
+.background-added {
+  background-image: url(./assets/front.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+img.home {
+  width: 100vw;
+  z-index: -1;
 }
 @media (min-width: 375px) {
   .footerButton,
@@ -237,6 +248,11 @@ footer {
   .mobile-tablet {
     display: none;
   }
-
+  .center-home-options {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 5px 0;
+  }
   /* general end */
 }

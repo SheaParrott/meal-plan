@@ -37,9 +37,6 @@ input.formInput {
 .formInput {
   margin-left: 8px;
 }
-img.home {
-  width: 100vw;
-}
 .advancedSearch {
   display: flex;
   flex-direction: column;
@@ -418,12 +415,7 @@ div.CategoriesBar {
     margin: 10px 0;
   } */
   /* general end */
-  .center-home-options {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 5px 0;
-  }
+
   img.home-category {
     width: 70px;
     border-radius: 50%;
@@ -448,6 +440,7 @@ div.CategoriesBar {
     border: 1.5px solid #b3b4b48c;
     border-radius: 5px;
     padding: 10px;
+    /* background-color: #ffffffc5; */
   }
   img.slider {
     width: 170px;
