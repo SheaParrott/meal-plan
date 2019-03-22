@@ -1,6 +1,7 @@
 [
   {
-    "Vietnam": [
+    "country": "Vietnam",
+    "food": [
       {
         "name": "Asian Dipping Sauce",
         "image": "https://www.edamam.com/web-img/769/76922f38b62d0c4da697fde1d9079f06.jpg",
@@ -14,7 +15,8 @@
     ]
   },
   {
-    "Greece": [
+    "country": "Greece",
+    "food": [
       {
         "name": "Greek Chicken Burgers with Tzatziki",
         "image": "https://www.edamam.com/web-img/ae4/ae4b632b8378ca54e6acfa11a0e1f36c.jpg",
@@ -28,7 +30,8 @@
     ]
   },
   {
-    "Italy": [
+    "country": "Italy",
+    "food": [
       {
         "name": "Sgroppino",
         "image": "https://www.edamam.com/web-img/0d0/0d005c22c5b012c5585ccc2e4b62da91.jpg",
@@ -42,7 +45,8 @@
     ]
   },
   {
-    "Philippines": [
+    "country": "Philippines",
+    "food": [
       {
         "name": "Adobo",
         "image": "https://www.edamam.com/web-img/186/1860eed355c8c25b88df2ab4fc2f1063.jpg",
@@ -56,7 +60,8 @@
     ]
   },
   {
-    "Thailand": [
+    "country": "Thailand",
+    "food": [
       {
         "name": "Shrimp Pad Thai",
         "image": "https://www.edamam.com/web-img/926/9261d11b3534724beff92969bacf89ed.jpg",
@@ -70,156 +75,137 @@
     ]
   },
   {
-    "Japan": [
+    "country": "Japan",
+    "food": [
       {
         "name": "Nabeyaki Udon Soup With Chicken, Spinach, and Mushrooms",
         "image": "https://www.edamam.com/web-img/707/707b3ce832100db42b5e1af7c3ed21d3.jpg",
         "uri": "5acab0642f440a4bcf6a964ccfe8dbf0"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Ma Po Tofu Recipe",
+        "image": "https://www.edamam.com/web-img/393/393559e6b8350d38ded886318de493cf.jpg",
+        "uri": "ca28aee16c3ce8554d09246a57ef913d"
       }
     ]
   },
   {
-    "Ukraine": [
+    "country": "India",
+    "food": [
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Khandvi",
+        "image": "https://www.edamam.com/web-img/50a/50ade2d8e898be072c34f67e24a65ccc.jpg",
+        "uri": "20bdb36d9eff821528a75ceff8427c9f"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Purnima Garg's Eggplant and Tomato Curry",
+        "image": "https://www.edamam.com/web-img/104/104f8bf11924119f2ba7ff22c85fed66.jpg",
+        "uri": "699a58aad03088645b0d1375223cd613"
       }
     ]
   },
   {
-    "China": [
+    "country": "Spain",
+    "food": [
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Spaghetti Con La Sarde",
+        "image": "https://www.edamam.com/web-img/ab7/ab7db4176f913f39254556dd2db8c062.jpg",
+        "uri": "3a4a61661a9cadd511e2904a3dd6da34"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Flan",
+        "image": "https://www.edamam.com/web-img/7f4/7f40725c0718191f29c0b96811b5be94.jpg",
+        "uri": "7af5f8ee036089bc72eccf6c1b75f088"
       }
     ]
   },
   {
-    "India": [
+    "country": "Mexico",
+    "food": [
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Baked Chile Rellenos with Corn and Crema Recipe",
+        "image": "https://www.edamam.com/web-img/394/3948fa0390ae03d585d4b3bb942e8053.jpg",
+        "uri": "f2f4fe1f92145049a19d741bb4320f7e"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Easy Mexican Chorizo Tacos Recipe",
+        "image": "https://www.edamam.com/web-img/305/305cbb6f8355a18820d0577c7d63933d.jpg",
+        "uri": "e05b7b36486095dd2b5b771457ad6796"
       }
     ]
   },
   {
-    "Spain": [
+    "country": "Switzerland",
+    "food": [
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Roasted Garlic and Black Pepper Raclette",
+        "image": "https://www.edamam.com/web-img/e6c/e6c970d799efc0dd0e992ec39001facf.jpg",
+        "uri": "d1354a947aa62a19d97af349823bb2ff"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "ZURICH CORDON BLEU",
+        "image": "https://www.edamam.com/web-img/18c/18c0a529ce9d1d3d88beb957ef213435",
+        "uri": "8d451bcc90fe369b187759b56f0b7cca"
       }
     ]
   },
   {
-    "Mexico": [
+    "country": "Portugal",
+    "food": [
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Portuguese-Style Mussels with Chorizo and Beer",
+        "image": "https://www.edamam.com/web-img/ef0/ef0089d6efe119c54f055d0b98527cbd.jpg",
+        "uri": "cf4ac4b252ef8c4356530d7c3215d0de"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Sopa De Cenoura - Carrot Soup - Portugal",
+        "image": "https://www.edamam.com/web-img/e54/e54c8bd6b2969cace30822857b3777dd.jpg",
+        "uri": "86e1f4091fdb30e6ee519b74976aadde"
       }
     ]
   },
   {
-    "Switzerland": [
+    "country": "Korea",
+    "food": [
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Korean Braised Tofu",
+        "image": "https://www.edamam.com/web-img/591/591991e48e6a3122976f908977b980be.jpg",
+        "uri": "d647eb045bac0d362b2bd08e87d0f158"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Steak Bibimbap Bowls",
+        "image": "https://www.edamam.com/web-img/4a5/4a5458fb72ffac7bb17f20df08313834.jpg",
+        "uri": "37a727fc1ed98f802b737f96b29e78fa"
       }
     ]
   },
   {
-    "Portugal": [
+    "country": "Sweden",
+    "food": [
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Semla Buns Recipe",
+        "image": "https://www.edamam.com/web-img/ac9/ac9bba28e04306eb46c29672aa30bbc0.jpg",
+        "uri": "aa4aef01da98653de69e28b18d368030"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Seriously Scandinavian: Swedish Meatballs Recipe",
+        "image": "https://www.edamam.com/web-img/a92/a92c1d109bd77f0a8d6e786ab2313a41.jpg",
+        "uri": "51fbafb9725c856bba1f230cded7d0a6"
       }
     ]
   },
   {
-    "Korea": [
+    "country": "USA",
+    "food": [
       {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Barbecue Bacon Burgers Recipe",
+        "image": "https://www.edamam.com/web-img/20e/20e7c933771a7db4080c026e4a1ba882.jpg",
+        "uri": "1d13035a67b6112521268f3a6ab2068d"
       },
       {
-        "name": "",
-        "image": "",
-        "uri": ""
-      }
-    ]
-  },
-  {
-    "Sweden": [
-      {
-        "name": "",
-        "image": "",
-        "uri": ""
-      },
-      {
-        "name": "",
-        "image": "",
-        "uri": ""
-      }
-    ]
-  },
-  {
-    "USA": [
-      {
-        "name": "",
-        "image": "",
-        "uri": ""
-      },
-      {
-        "name": "",
-        "image": "",
-        "uri": ""
+        "name": "Potato Puffs",
+        "image": "https://www.edamam.com/web-img/953/95320a32442039a9d7faedb13a76038b",
+        "uri": "01771ea9d30a2934299b5fbd2c1ff3d1"
       }
     ]
   }

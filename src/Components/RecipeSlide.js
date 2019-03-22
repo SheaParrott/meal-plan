@@ -6,9 +6,9 @@ class RecipeSlide extends Component {
   render() {
     return (
       <Link to={`/recipe/${this.props.recipe.uri}`}>
-        <div className="slider">
+        <div className={this.props.taste ? 'the-country-slider' : 'slider'}>
           <img
-            className="slider"
+            className={this.props.taste ? 'the-country-slider' : 'slider'}
             src={this.props.recipe.image}
             alt={this.props.recipe.name}
           />

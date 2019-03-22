@@ -9,6 +9,8 @@ import recommended from '../../recommended'
 import categories from '../../categories'
 import RecipeSlide from '../../Components/RecipeSlide'
 import Category from '../../Components/Category'
+import country from '../../Country'
+import TasteOfCountries from '../../Components/TasteOfCountries'
 
 class Home extends Component {
   constructor(props) {
@@ -78,11 +80,12 @@ class Home extends Component {
                   </div>
                 </div>
                 <div className="center-home-options big-view">
-                  <div className="top-Picks">
+                  <div className="country-top-Picks">
                     <h2 className="slider">A Taste From Another Land!</h2>
-                    <div className="homeRecipeSlider">
-                      {this.state.recommended.slice(0, 4).map(recipe => {
-                        return <RecipeSlide key={recipe.uri} recipe={recipe} />
+                    <div className="wrap-country-top-picks ">
+                      {country.map(TheCountry => {
+                        console.log(TheCountry)
+                        return <TasteOfCountries country={TheCountry} />
                       })}
                     </div>
                   </div>

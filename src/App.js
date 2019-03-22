@@ -38,10 +38,10 @@ export default App
 // [] validate the minimal number on calories and max ingredients
 //    - ingredients must be more than 1
 //    - calories minimum?
-// [] make sure all validations are working
+// [x] make sure all validations are working
 //    - check for invalid entries
 //    - add necessary validations
-// [] - fix reset all fields button view issue
-// [] wrap creator and about page contents in similar box as home page options
-// [] double check responsive deign on all pages. correct any mistakes
+// [x] - fix reset all fields button view issue
+// [x] wrap creator and about page contents in similar box as home page options
+// [x] double check responsive deign on all pages. correct any mistakes
 // [] deploy
