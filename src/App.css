@@ -197,8 +197,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: white;
-    width: 900px;
+    background-color: rgba(255, 255, 255, 0.157);
+    width: 100vw;
     position: relative;
     z-index: 3;
   }
@@ -206,8 +206,9 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: white;
-    width: 900px;
+    /* background opacity on big screen */
+    /* background-color: #ffffffe1; */
+    width: 100vw;
     position: relative;
     z-index: 3;
     box-shadow: 0 0 20px black, 0 0 10px #777777b6;
@@ -215,7 +216,7 @@ footer {
   .shaded-bg-lighter {
     display: flex;
     justify-content: center;
-    background-color: #ffffffce;
+    background-color: #ffffffea;
     width: 100vw;
     z-index: 1;
   }

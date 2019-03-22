@@ -171,6 +171,12 @@ strong {
   h5.about {
     font-size: 1rem;
   }
+  .aboutPage {
+    height: 100vh;
+  }
+  h2.aboutInspiration {
+    color: #92ca64;
+  }
   .aboutInspiration {
     font-size: 1.6rem;
   }
@@ -180,11 +186,21 @@ strong {
   strong {
     font-size: 1.1rem;
   }
+  .aboutParagraph,
+  .thanksParagraph {
+    /* background-color: #4d5366d2; */
+    background-color: #ffffffc5;
+    text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.096);
+    color: #4d5366;
+  }
   .aboutParagraph {
     margin: 0 150px;
+    width: 80vw;
+    margin: 0 10vw;
   }
   .thanksParagraph {
     top: 560px;
-    margin: 0 150px;
+    width: 80vw;
+    margin: 0 10vw;
   }
 }
