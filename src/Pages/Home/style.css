@@ -412,27 +412,5 @@ div.CategoriesBar {
     width: 49vw;
     margin: 10px 0;
   }
-  .spash-bg {
-    background-image: url(../../assets/front.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-  }
-  .shaded-bg {
-    display: flex;
-    justify-content: center;
-    background-color: #686b7727;
-    width: 100vw;
-    z-index: 1;
-  }
-  .single-view-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    width: 900px;
-    position: relative;
-    z-index: 3;
-  }
   /* general end */
 }

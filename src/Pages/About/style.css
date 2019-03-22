@@ -190,7 +190,7 @@ strong {
   .thanksParagraph {
     /* background-color: #4d5366d2; */
     background-color: #ffffffc5;
-    text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.096);
+    text-shadow: 0.5px 0.5px 0.5px #ffffff;
     color: #4d5366;
   }
   .aboutParagraph {
