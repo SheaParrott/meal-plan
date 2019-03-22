@@ -1,4 +1,4 @@
-# Meal Plan (work in progress - almost ready for deployment)
+# Meal Plan (Code Reactor and Testing in progress)
 
 ## Inspiration
 
