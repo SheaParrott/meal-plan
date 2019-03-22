@@ -17,9 +17,8 @@ class Footer extends Component {
         <Link to="/about">
           <p className="white footerButton">About</p>
         </Link>
-        <Link to="/creator">
-          <p className="white footerButton">&copy;SheaParrott</p>
-        </Link>
+
+        <p className=" footerButton">&copy;SheaParrott</p>
       </footer>
     )
   }

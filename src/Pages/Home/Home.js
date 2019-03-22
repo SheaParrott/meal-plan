@@ -77,6 +77,18 @@ class Home extends Component {
                     </div>
                   </div>
                 </div>
+                <div className="center-home-options big-view">
+                  <div className="top-Picks">
+                    <h2 className="slider">A Taste From Another Land!</h2>
+                    <div className="homeRecipeSlider">
+                      {this.state.recommended.slice(0, 4).map(recipe => {
+                        return <RecipeSlide key={recipe.uri} recipe={recipe} />
+                      })}
+                    </div>
+                  </div>
+                </div>
+                {/* food by country: A Taste from another Land
+                  Vietnam, Greece, Italy, Pakistan, Philippines, Thailand, Japan, Ukraine, China, India, Spain, Mexico, Switzerland, Portugal, Korea, Sweden, USA  */}
               </div>
               <Footer />
             </div>

@@ -39,7 +39,7 @@ class Browse extends Component {
       this.props.maxIngredients.params +
       string +
       `&from=${parseInt(this.props.from.from) - 10}` +
-      `&to=${parseInt(this.props.from.from) - 22}`
+      `&to=${parseInt(this.props.toParam.toParam) - 10}`
     this.props._PaginationArrowBack(params)
     history.push(`/browse/${params}`)
     window.scrollTo(0, 0)

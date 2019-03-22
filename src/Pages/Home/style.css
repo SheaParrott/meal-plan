@@ -31,11 +31,11 @@ button {
 }
 .Search,
 input.formInput {
-  margin-right: 10px;
-  width: 135px;
+  margin-right: 5px;
+  width: 125px;
 }
 .formInput {
-  margin-left: 8px;
+  margin-left: 12.5px;
 }
 .advancedSearch {
   display: flex;
@@ -177,11 +177,10 @@ div.CategoriesBar {
   }
   .Search,
   input.formInput {
-    margin-right: 10px;
     width: 170px;
   }
   .formInput {
-    margin-left: 11px;
+    margin-left: 15px;
   }
   /* home end */
 }
@@ -215,11 +214,10 @@ div.CategoriesBar {
   }
   .Search,
   input.formInput {
-    margin-right: 10px;
-    width: 195px;
+    width: 190px;
   }
   .formInput {
-    margin-left: 14px;
+    margin-left: 18px;
   }
   /* home end */
 }
@@ -254,7 +252,7 @@ div.CategoriesBar {
   }
   .Search,
   input.formInput {
-    width: 245px;
+    width: 240px;
   }
   .formInput {
     margin-left: 40px;
