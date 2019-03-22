@@ -50,7 +50,11 @@ class AdvancedSearch extends Component {
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
-      string
+      string +
+      this.props.from.param +
+      this.props.toParam.param
+    console.log('from :' + this.props.from.param)
+    console.log('to :' + this.props.toParam.param)
     return (
       <div className="homePageName">
         <div>
@@ -185,7 +189,9 @@ const mapStateToProps = state => ({
   cookTime: state.cookTime,
   maxIngredients: state.maxIngredients,
   categories: state.categories,
-  removedIngredients: state.removedIngredients
+  removedIngredients: state.removedIngredients,
+  from: state.from,
+  toParam: state.toParam
 })
 
 const mapActionsToProps = {

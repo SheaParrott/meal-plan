@@ -39,7 +39,10 @@ export function getRecipes(url_params) {
               from: response.data.from,
               param: `&from=${response.data.from}`
             },
-            to: response.data.to,
+            toParam: {
+              toParam: response.data.to,
+              param: `&from=${response.data.to}`
+            },
             more: response.data.more,
             q: response.data.q,
             SearchedRecipe: {
@@ -60,7 +63,7 @@ export function getRecipes(url_params) {
           payload: {
             count: 0,
             from: { from: 0, param: `&from=0` },
-            to: '',
+            toParam: { toParam: 12, param: `&to=12` },
             more: '',
             q: '',
             SearchedRecipe: { value: '', param: '' },
@@ -208,7 +211,7 @@ export function resetAllSearchFields() {
       results: {},
       count: '',
       from: { from: 0, param: `&from=0` },
-      to: '',
+      toParam: { toParam: 12, param: `&to=12` },
       more: '',
       q: '',
       hits: [],

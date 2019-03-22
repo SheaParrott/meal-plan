@@ -21,30 +21,17 @@ class Pagination extends Component {
       this.props.cookTime.params +
       this.props.maxIngredients.params +
       string +
-      `&from=${(this.props.page - 1) * 10}`
+      `&from=${(this.props.page - 1) * 10}` +
+      `&to=${(this.props.page - 1) * 10 + 12}`
 
     this.props._pagination(params)
     history.push(`/browse/${params}`)
     window.scrollTo(0, 0)
   }
   render() {
-    if (this.props.page >= 11) {
+    if (this.props.page >= 9) {
       return <div />
     }
-    let string = ''
-    this.props.categories
-      .concat(this.props.removedIngredients)
-      .forEach(category => {
-        string += category.param
-      })
-    let params =
-      this.props.SearchedRecipe.param +
-      this.props.calories.params +
-      this.props.cookTime.params +
-      this.props.maxIngredients.params +
-      string +
-      this.props.from.param
-
     return (
       <p className="pagination white-hv" onClick={this._pagination}>
         {this.props.page}

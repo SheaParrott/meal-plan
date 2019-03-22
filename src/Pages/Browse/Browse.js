@@ -38,7 +38,8 @@ class Browse extends Component {
       this.props.cookTime.params +
       this.props.maxIngredients.params +
       string +
-      `&from=${parseInt(this.props.from.from) - 10}`
+      `&from=${parseInt(this.props.from.from) - 10}` +
+      `&to=${parseInt(this.props.from.from) - 22}`
     this.props._PaginationArrowBack(params)
     history.push(`/browse/${params}`)
     window.scrollTo(0, 0)
@@ -59,7 +60,8 @@ class Browse extends Component {
       this.props.cookTime.params +
       this.props.maxIngredients.params +
       string +
-      `&from=${parseInt(this.props.from.from) + 10}`
+      `&from=${parseInt(this.props.from.from) + 10}` +
+      `&to=${parseInt(this.props.from.from) + 22}`
     this.props._PaginationArrowForward(params)
     history.push(`/browse/${params}`)
     window.scrollTo(0, 0)
@@ -83,7 +85,8 @@ class Browse extends Component {
       this.props.cookTime.params +
       this.props.maxIngredients.params +
       string +
-      this.props.from.param
+      this.props.from.param +
+      this.props.toParam.param
     let PaginationArray = this.props.pages
       ? parseInt(this.props.from.from) < 1
         ? this.props.pages.slice(0, 5)
@@ -160,7 +163,8 @@ const mapStateToProps = state => ({
   maxIngredients: state.maxIngredients,
   categories: state.categories,
   removedIngredients: state.removedIngredients,
-  from: state.from
+  from: state.from,
+  toParam: state.toParam
 })
 const mapActionsToProps = {
   _searchRecipe: getRecipes,

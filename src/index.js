@@ -30,7 +30,7 @@ const store = createStore(
     results: {},
     count: '',
     from: { from: 0, param: `&from=0` },
-    to: '',
+    toParam: { toParam: 12, param: `&to=12` },
     more: '',
     q: '',
     hits: [],

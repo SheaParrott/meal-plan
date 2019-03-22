@@ -22,7 +22,9 @@ export default function SearchReducer(state, action) {
         from: action.payload.from
           ? action.payload.from
           : { from: 0, param: `&from=0` },
-        to: action.payload.to ? action.payload.to : 0,
+        toParam: action.payload.toParam
+          ? action.payload.toParam
+          : { toParam: 0, param: `&from=0` },
         more: action.payload.more ? action.payload.more : '',
         q: action.payload.q ? action.payload.q : '',
         SearchedRecipe: action.payload.SearchedRecipe
