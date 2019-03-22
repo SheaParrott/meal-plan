@@ -32,7 +32,7 @@ button {
 .Search,
 input.formInput {
   margin-right: 10px;
-  width: 140px;
+  width: 135px;
 }
 .formInput {
   margin-left: 8px;
@@ -178,9 +178,11 @@ div.CategoriesBar {
   .Search,
   input.formInput {
     margin-right: 10px;
-    width: 180px;
+    width: 170px;
   }
-
+  .formInput {
+    margin-left: 11px;
+  }
   /* home end */
 }
 @media (min-width: 411px) {
@@ -214,7 +216,10 @@ div.CategoriesBar {
   .Search,
   input.formInput {
     margin-right: 10px;
-    width: 205px;
+    width: 195px;
+  }
+  .formInput {
+    margin-left: 14px;
   }
   /* home end */
 }
@@ -249,7 +254,7 @@ div.CategoriesBar {
   }
   .Search,
   input.formInput {
-    width: 250px;
+    width: 245px;
   }
   .formInput {
     margin-left: 40px;
@@ -286,10 +291,10 @@ div.CategoriesBar {
   }
   .Search,
   input.formInput {
-    width: 300px;
+    width: 295px;
   }
   .formInput {
-    margin-left: 10px;
+    margin-left: 5px;
   }
 
   /* home end */
@@ -326,9 +331,6 @@ div.CategoriesBar {
   .Search,
   input.formInput {
     width: 300px;
-  }
-  .formInput {
-    margin-left: 10px;
   }
   /* home end */
 }
@@ -384,9 +386,6 @@ div.CategoriesBar {
   .Search,
   input.formInput {
     width: 300px;
-  }
-  .formInput {
-    margin-left: 50px;
   }
   img.home {
     width: 100%;
