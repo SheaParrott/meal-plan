@@ -24,7 +24,7 @@ class App extends Component {
 
 export default App
 
-// [] add in recommended options on front page. probably
+// [x] add in recommended options on front page. probably
 //  hard code some favorites and randomize what is shown to
 //  prevent overuse of api. Only allowed 5 api hits per minute.
 // - need the image, label and uri
@@ -38,3 +38,9 @@ export default App
 // [] validate the minimal number on calories and max ingredients
 //    - ingredients must be more than 1
 //    - calories minimum?
+// [] make sure all validations are working
+//    - check for invalid entries
+//    - add necessary validations
+// [] - fix reset all fields button view issue
+// [] double check responsive deign on all pages. correct any mistakes
+// [] deploy
