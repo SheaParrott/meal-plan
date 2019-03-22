@@ -40,18 +40,20 @@
 .red-bg,
 .green-bg {
   border-radius: 5px;
-  padding: 4px;
-  margin: 3px;
-  color: white;
+  padding: 3px;
+  margin: 2px;
   font-size: 0.7rem;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.651);
+  font-weight: 900;
 }
 .red-bg {
-  background-color: #e40404bd;
+  color: #e40404bd;
+  box-shadow: 0 0 0.5px #e40404ab;
 }
 .green-bg {
-  background-color: #0ce404bd;
+  color: #0ce404bd;
+  box-shadow: 0 0 0.5px #0ce404bd;
 }
+
 a {
   text-decoration: none;
   color: inherit;

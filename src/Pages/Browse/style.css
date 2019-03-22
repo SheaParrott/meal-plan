@@ -6,7 +6,7 @@
   margin: 2px;
   border: 1.5px solid #b3b4b48c;
   border-radius: 5px;
-  background-color: white;
+  background-color: #ffffffa6;
   width: 98vw;
   padding: 0 0 3px 0;
 }
@@ -54,18 +54,24 @@ main.error {
 .red-bg-browse,
 .green-bg-browse {
   border-radius: 5px;
-  padding: 4px;
-  margin: 1px;
-  color: white;
+  padding: 3px;
+  margin: 2px;
+
   font-size: 0.7rem;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.651);
+  /* text-shadow: 0.5px 0.5px 0 #bebebe; */
+  font-weight: 900;
+  /* text-shadow: 0 0 2px rgba(255, 255, 255, 0.651); */
 }
 
 .red-bg-browse {
-  background-color: #e40404bd;
+  /* background-color: #e40404bd; */
+  color: #e40404bd;
+  box-shadow: 0 0 0.5px #e40404ab;
 }
 .green-bg-browse {
-  background-color: #0ce404bd;
+  color: #0ce404bd;
+  box-shadow: 0 0 0.5px #0ce404bd;
+  /* background-color: #0ce404bd; */
 }
 div.browse {
   display: flex;
@@ -227,10 +233,20 @@ div.browse {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 90%;
+    /*  */
+    width: 1050px;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffffc5;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+
+    /*  */
   }
   .browseRecipeContainer {
-    width: 300px;
+    /*  */
+    width: 340px;
+    /*  */
     padding: 15px 0;
     display: flex;
     flex-direction: column;
@@ -245,7 +261,7 @@ div.browse {
   .browseRecipeInfo {
     width: 75%;
     margin: 0 10%;
-    min-height: 155px;
+    min-height: 125px;
     /* background-color: red; */
   }
 
@@ -270,9 +286,6 @@ div.browse {
   }
 }
 @media (min-width: 1440px) {
-  .browseRecipeContainer {
-    width: 350px;
-  }
   .browseRecipeInfo {
     min-height: 130px;
   }
