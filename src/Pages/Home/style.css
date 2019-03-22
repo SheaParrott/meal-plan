@@ -338,7 +338,12 @@ div.CategoriesBar {
 
 @media (min-width: 1280px) {
   /* home start */
-
+  .home-spacing {
+    height: 350px;
+  }
+  .homePage {
+    min-height: 100vh;
+  }
   .centerHomePage {
     display: flex;
     justify-content: center;

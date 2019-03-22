@@ -230,7 +230,7 @@ div.browse {
     width: 90%;
   }
   .browseRecipeContainer {
-    width: 350px;
+    width: 300px;
     padding: 15px 0;
     display: flex;
     flex-direction: column;
@@ -269,12 +269,9 @@ div.browse {
     font-size: 1.2rem;
   }
 }
-/* @media (min-width: 1440px) {
-  .recipeBox {
-    width: 80%;
-  }
+@media (min-width: 1440px) {
   .browseRecipeContainer {
-    width: 345px;
+    width: 350px;
   }
   .browseRecipeInfo {
     min-height: 130px;
@@ -286,5 +283,5 @@ div.browse {
   .browse-calories {
     font-size: 0.9rem;
   }
-} */
+}
 /* browse page end */

@@ -49,9 +49,6 @@ strong {
   text-align: center;
   font-size: 1.1rem;
 }
-.big-view {
-  display: none;
-}
 
 /* about page end */
 
@@ -111,12 +108,6 @@ strong {
   .aboutPageSpacing {
     height: 50px;
   }
-  .big-view {
-    display: block;
-  }
-  .small-view {
-    display: none;
-  }
 }
 @media (min-width: 760px) {
   h5.about {
@@ -168,6 +159,9 @@ strong {
 }
 
 @media (min-width: 1280px) {
+  .small-view {
+    display: none;
+  }
   h5.about {
     font-size: 1rem;
   }
@@ -176,6 +170,7 @@ strong {
   }
   h2.aboutInspiration {
     color: #92ca64;
+    font-weight: 900;
   }
   .aboutInspiration {
     font-size: 1.6rem;
@@ -186,12 +181,24 @@ strong {
   strong {
     font-size: 1.1rem;
   }
-  .aboutParagraph,
-  .thanksParagraph {
-    /* background-color: #4d5366d2; */
-    background-color: #ffffffc5;
-    text-shadow: 0.5px 0.5px 0.5px #ffffff;
+
+  .aboutParagraph-desktop {
+    text-align: left;
+    border-radius: 20px;
+    text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
+    font-weight: 800;
+    padding: 20px 45px;
     color: #4d5366;
+    margin: 0 15px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 225px;
+  }
+  .EDAMAM-link:hover {
+    cursor: pointer;
+    color: #828692;
   }
   .aboutParagraph {
     margin: 0 150px;
@@ -202,5 +209,11 @@ strong {
     top: 560px;
     width: 80vw;
     margin: 0 10vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .aboutParagraph-desktop {
+    top: 240px;
   }
 }

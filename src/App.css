@@ -131,7 +131,12 @@ footer {
 .homeButton {
   font-size: 1.1rem;
 }
-
+.defaultHeight {
+  min-height: 100vh;
+}
+.big-view {
+  display: none;
+}
 @media (min-width: 375px) {
   .footerButton,
   .homeButton {
@@ -174,6 +179,9 @@ footer {
   }
   /* header end */
   /* general start */
+  .big-view {
+    display: block;
+  }
   .line {
     height: 1px;
     background-color: #81848d;
@@ -190,6 +198,12 @@ footer {
     display: flex;
     justify-content: center;
     background-color: #686b7727;
+    width: 100vw;
+    z-index: 1;
+  }
+  .no-shaded-bg {
+    display: flex;
+    justify-content: center;
     width: 100vw;
     z-index: 1;
   }
@@ -219,6 +233,9 @@ footer {
     background-color: #ffffffea;
     width: 100vw;
     z-index: 1;
+  }
+  .mobile-tablet {
+    display: none;
   }
 
   /* general end */

@@ -21,14 +21,28 @@ class Home extends Component {
   render() {
     return (
       <div className="spash-bg">
-        <div className="shaded-bg-lighter">
-          <div className="single-view-page-home">
-            <div className="default">
+        <div className="no-shaded-bg">
+          <div className="single-view-page">
+            <div className="default homePage">
               <div className="wrapper default">
                 <AdvancedSearch
                   _resetAllSearchFields={this.props._resetAllSearchFields}
                 />
-                <img className="home" src={front} alt="cover" />
+
+                <img className="home mobile-tablet" src={front} alt="cover" />
+                <div className="home-spacing" />
+                <div className="top-Picks big-view">
+                  <h2>Top Picks!</h2>
+                  <div className="browseRecipeContainer">
+                    {/* need uri as well, will call the single recipe fetch */}
+                    {/* <img
+            className="browseRecipeImage"
+            src={this.props.hit.recipe.image}
+            alt={this.props.hit.recipe.label}
+          />
+                <h3 className="browse-label">{this.props.hit.recipe.label}</h3> */}
+                  </div>
+                </div>
               </div>
               <Footer />
             </div>

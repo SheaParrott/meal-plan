@@ -12,7 +12,7 @@ class Creator extends Component {
   render() {
     return (
       <div className="spash-bg">
-        <div className="shaded-bg">
+        <div className="no-shaded-bg">
           <div className="single-view-page">
             <div className="default defaultHeight">
               <div>

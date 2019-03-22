@@ -54,9 +54,6 @@ div.col {
 img.resume:hover {
   cursor: pointer;
 }
-.defaultHeight {
-  min-height: 100vh;
-}
 
 @media (min-width: 375px) {
   .widthbig {
