@@ -471,6 +471,9 @@ div.CategoriesBar {
     color: #92ca64;
     font-weight: 900;
   }
+  .green:hover {
+    color: #a8e973;
+  }
   div.country-homeRecipeSlider {
     display: flex;
     align-items: center;

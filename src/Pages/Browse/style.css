@@ -260,7 +260,7 @@ div.browse {
   .browseRecipeInfo {
     width: 75%;
     margin: 0 10%;
-    min-height: 125px;
+    min-height: 150px;
     /* background-color: red; */
   }
 
@@ -286,7 +286,7 @@ div.browse {
 }
 @media (min-width: 1440px) {
   .browseRecipeInfo {
-    min-height: 130px;
+    min-height: 160px;
   }
 
   .browse-label {

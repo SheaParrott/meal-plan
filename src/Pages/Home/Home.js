@@ -17,7 +17,8 @@ class Home extends Component {
     super(props)
     this._resetAllSearchFields = this._resetAllSearchFields.bind(this)
     this.state = {
-      recommended: this.shuffle(recommended)
+      recommended: this.shuffle(recommended),
+      countries: this.shuffle(country)
     }
   }
   componentDidMount = () => {
@@ -83,7 +84,7 @@ class Home extends Component {
                   <div className="country-top-Picks">
                     <h2 className="slider">A Taste From Another Land!</h2>
                     <div className="wrap-country-top-picks ">
-                      {country.map(TheCountry => {
+                      {this.state.countries.map(TheCountry => {
                         console.log(TheCountry)
                         return <TasteOfCountries country={TheCountry} />
                       })}

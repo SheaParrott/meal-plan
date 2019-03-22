@@ -21,7 +21,7 @@ class TasteOfCountries extends Component {
             this.props.from.param
           }${this.props.toParam.param}`}
         >
-          <h4 className="country-slider">See More</h4>
+          <h4 className="country-slider green">See More</h4>
         </Link>
       </div>
     )
