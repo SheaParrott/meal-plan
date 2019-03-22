@@ -1,0 +1,50 @@
+[
+  {
+    "category": "Bread",
+    "image": "https://www.edamam.com/web-img/36b/36b8a93186055c229e537439a6ff94a2.JPG"
+  },
+  {
+    "category": "Pasta",
+    "image": "https://www.edamam.com/web-img/743/743e7e89ca76a21162a99e60e483e7fc.jpg"
+  },
+  {
+    "category": "Fruits",
+    "image": "https://www.edamam.com/web-img/245/245856e67b4cf97fd75c9de79e331ee7.jpeg"
+  },
+  {
+    "category": "Vegan",
+    "image": "https://www.edamam.com/web-img/21f/21f6ef18488f0c1273f16842ae389f08"
+  },
+  {
+    "category": "Salad",
+    "image": "https://www.edamam.com/web-img/35b/35b98a40bd9f20ca51a55b10d8173548.jpg"
+  },
+  {
+    "category": "Fruit Salad",
+    "image": "https://www.edamam.com/web-img/e03/e03769d4ba37b8ca6562c54e166be360.jpg"
+  },
+  {
+    "category": "Vegetarian",
+    "image": "https://www.edamam.com/web-img/176/17628a812c7f6f9f9169a05aa09dbd62"
+  },
+  {
+    "category": "Cocktail",
+    "image": "https://www.edamam.com/web-img/6dc/6dcc26540cfdb04d623176b3830b77ee.jpg"
+  },
+  {
+    "category": "Pork",
+    "image": "https://www.edamam.com/web-img/be9/be9e8a01c0a5a0f77ca59a0a022a3d56.jpg"
+  },
+  {
+    "category": "Lamb",
+    "image": "https://www.edamam.com/web-img/edf/edf9e054beafe9c2c54e9efb8ecda98d.jpg"
+  },
+  {
+    "category": "Chicken",
+    "image": "https://www.edamam.com/web-img/d4b/d4bb1e6c7a6c3738d8e01707eb0ad83d.jpg"
+  },
+  {
+    "category": "Beef",
+    "image": "https://www.edamam.com/web-img/772/772d81cff33e328039a8fb002f6ccb65.jpg"
+  }
+]

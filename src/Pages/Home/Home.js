@@ -5,19 +5,46 @@ import { connect } from 'react-redux'
 import { resetAllSearchFields } from '../../Actions/SearchActions'
 import Footer from '../../Components/Footer'
 import './style.css'
+import recommended from '../../recommended'
+import categories from '../../categories'
+import RecipeSlide from '../../Components/RecipeSlide'
+import Category from '../../Components/Category'
 
 class Home extends Component {
   constructor(props) {
     super(props)
     this._resetAllSearchFields = this._resetAllSearchFields.bind(this)
+    this.state = {
+      recommended: this.shuffle(recommended)
+    }
   }
   componentDidMount = () => {
     window.scrollTo(0, 0)
     this.props._resetAllSearchFields()
   }
+  shuffle = array => {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+    }
+
+    return array
+  }
   _resetAllSearchFields = () => {
     this.props.resetAllSearchFields()
   }
+
   render() {
     return (
       <div className="spash-bg">
@@ -31,16 +58,23 @@ class Home extends Component {
 
                 <img className="home mobile-tablet" src={front} alt="cover" />
                 <div className="home-spacing" />
-                <div className="top-Picks big-view">
-                  <h2>Top Picks!</h2>
-                  <div className="browseRecipeContainer">
-                    {/* need uri as well, will call the single recipe fetch */}
-                    {/* <img
-            className="browseRecipeImage"
-            src={this.props.hit.recipe.image}
-            alt={this.props.hit.recipe.label}
-          />
-                <h3 className="browse-label">{this.props.hit.recipe.label}</h3> */}
+                <div className="center-home-options big-view">
+                  <div className="top-Picks">
+                    <div className="homeRecipeSlider">
+                      {categories.map(category => {
+                        return <Category category={category} />
+                      })}
+                    </div>
+                  </div>
+                </div>
+                <div className="center-home-options big-view">
+                  <div className="top-Picks">
+                    <h2 className="slider">Top Picks!</h2>
+                    <div className="homeRecipeSlider">
+                      {this.state.recommended.slice(0, 4).map(recipe => {
+                        return <RecipeSlide key={recipe.uri} recipe={recipe} />
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>

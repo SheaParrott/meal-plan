@@ -53,8 +53,6 @@ class AdvancedSearch extends Component {
       string +
       this.props.from.param +
       this.props.toParam.param
-    console.log('from :' + this.props.from.param)
-    console.log('to :' + this.props.toParam.param)
     return (
       <div className="homePageName">
         <div>

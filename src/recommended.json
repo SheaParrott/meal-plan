@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Bowtie Chicken Alfredo",
+    "image": "https://www.edamam.com/web-img/2e0/2e0628af7cff89884d658f5502c381ff.jpg",
+    "uri": "2fc1f2593006c8d6614fd2bfbd106e92"
+  },
+  {
+    "name": "Mixed Greens Salad",
+    "image": "https://www.edamam.com/web-img/893/893b3132c9db111710d5e823a1a84dd7.jpg",
+    "uri": "3173e6b270d881fecc115c2721aa8741"
+  },
+  {
+    "name": "Spicy Tuna & Avocado Chirashi",
+    "image": "https://www.edamam.com/web-img/e77/e7731d9ee6236b941c6df6a751b6990c.jpg",
+    "uri": "99108913a82294bb61543d534ea06b43"
+  },
+  {
+    "name": "Salmon with Mango Salsa recipes",
+    "image": "https://www.edamam.com/web-img/637/63773fbcd3faf6495b02145d3aed0f48",
+    "uri": "847079dde54311e75491db071690509f"
+  },
+  {
+    "name": "Lime And Chilli Fish Tacos",
+    "image": "https://www.edamam.com/web-img/2d0/2d089e72d658018c8e907dfae2d10877.jpg",
+    "uri": "af9a247975aa3dff2d68ac9d224ded67"
+  },
+  {
+    "name": "Moscow Mule Recipe",
+    "image": "https://www.edamam.com/web-img/00d/00d36944e62d8d49e183c4e8fcf9a463.jpg",
+    "uri": "d402a5edb11397f4477808452603ac9d"
+  },
+  {
+    "name": "Zucchini 'Pasta' Caprese",
+    "image": "https://www.edamam.com/web-img/3c3/3c3a045fc6b02e6bae58fad807fbb518.jpg",
+    "uri": "e27410f7312b84cada84014a5de23693"
+  },
+  {
+    "name": "Sun-Dried Tomato Tapenade With Crostini",
+    "image": "https://www.edamam.com/web-img/475/4759f11e948d48243b0122ae8675f1fa.jpg",
+    "uri": "35bb1c55a2c4625ef2db3b627be4ade5"
+  },
+  {
+    "name": "Sweet Potato Biscuits",
+    "image": "https://www.edamam.com/web-img/5eb/5eb0d59036edd71d8dee60bba0174bc6.jpeg",
+    "uri": "0d8234df7524df37f2b4a9da9400ff03"
+  },
+  {
+    "name": "Mediterranean Chicken Lettuce Wrap Tacos",
+    "image": "https://www.edamam.com/web-img/890/890b00448030356c80cba020c2a3672a.jpg",
+    "uri": "b08e1fcd40cd23a977b247d53fe9a0e9"
+  },
+  {
+    "name": "Tomato, Mozzarella and Pesto Sandwich",
+    "image": "https://www.edamam.com/web-img/1e5/1e5483fad52f516d1c70b7cbe3efd9f7.jpeg",
+    "uri": "1b079f2df264f384b5ae00567e3fc2fe"
+  }
+]

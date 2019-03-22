@@ -339,7 +339,7 @@ div.CategoriesBar {
 @media (min-width: 1280px) {
   /* home start */
   .home-spacing {
-    height: 350px;
+    height: 285px;
   }
   .homePage {
     min-height: 100vh;
@@ -411,11 +411,51 @@ div.CategoriesBar {
   }
   /* header end */
   /* general start */
-  .line {
+  /* .line {
     height: 1px;
     background-color: #81848d;
     width: 49vw;
     margin: 10px 0;
-  }
+  } */
   /* general end */
+  .center-home-options {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 5px 0;
+  }
+  img.home-category {
+    width: 70px;
+    border-radius: 50%;
+  }
+  .top-Picks {
+    width: 1050px;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffffc5;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  h2.slider {
+    color: #92ca64;
+    font-weight: 900;
+    text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
+    padding: 5px;
+  }
+  div.slider {
+    margin: 5px;
+    height: 200px;
+    min-width: 228px;
+    border: 1.5px solid #b3b4b48c;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  img.slider {
+    width: 170px;
+  }
+  .homeRecipeSlider {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
 }
