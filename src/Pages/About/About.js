@@ -153,6 +153,7 @@ class About extends Component {
                       <br />
                     </p>
                     <p className="about aboutInspiration"> -Blessings-</p>
+                    <br />
                   </div>
                 </main>
                 <img className="home mobile-tablet" src={front} alt="cover" />
