@@ -28,7 +28,9 @@ class ErrorMessage extends Component {
                 ) : (
                   <div>
                     <h2 className="uppercase noResults">No Results</h2>
-                    <h5 className="tryAgain">Please Try Again Later!</h5>
+                    <h5 className="tryAgain">
+                      Please Try Again Later, <i>Or</i> Broaden Your Search !
+                    </h5>
                   </div>
                 )}
 

@@ -3,6 +3,7 @@ import front from '../../assets/front.jpg'
 import Header from '../../Components/Header'
 import './style.css'
 import Footer from '../../Components/Footer'
+import { Link } from 'react-router-dom'
 
 class About extends Component {
   constructor(props) {
@@ -102,10 +103,12 @@ class About extends Component {
                 <main className="center-home-options big-view">
                   <div className="aboutParagraph-desktop ">
                     <h2 className="aboutInspiration">Inspiration</h2>
-                    <p className="about aboutInspiration">
+                    <p className="about">
                       <br /> Life is all about balance, right?
+                      <br />
+                      <br />
                     </p>
-                    <p className="aboutInspiration">
+                    <p>
                       <strong>Well I think so!</strong>
                     </p>
                     <p className="about">
@@ -116,6 +119,18 @@ class About extends Component {
                       others <i>Meal Plan</i> was created! I hope this helps you
                       as much as it will help me!
                       <br />
+                      <br />
+                      <br />
+                    </p>
+                    <h2 className="aboutInspiration">
+                      Enjoy The Site <i>or</i> Find An Issue?
+                    </h2>
+                    <p className="about">
+                      <br /> Check out the{' '}
+                      <Link className="EDAMAM-link" to="/creator">
+                        <strong>Creator</strong>{' '}
+                      </Link>
+                      page and reach out to me I would love to hear from you!
                       <br />
                       <br />
                       <br />
@@ -133,6 +148,7 @@ class About extends Component {
                           https://www.edamam.com/
                         </a>
                       </strong>
+                      <br />
                       <br />
                       <br />
                     </p>

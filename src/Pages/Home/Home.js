@@ -91,8 +91,6 @@ class Home extends Component {
                     </div>
                   </div>
                 </div>
-                {/* food by country: A Taste from another Land
-                  Vietnam, Greece, Italy, Pakistan, Philippines, Thailand, Japan, Ukraine, China, India, Spain, Mexico, Switzerland, Portugal, Korea, Sweden, USA  */}
               </div>
               <Footer />
             </div>

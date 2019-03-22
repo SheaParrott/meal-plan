@@ -75,37 +75,6 @@ export function getRecipes(url_params) {
   }
 }
 
-// export async function singleRecipe(uri) {
-//   let url =
-//     'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&r='
-//   let encoded = encodeURIComponent(
-//     `http://www.edamam.com/ontologies/edamam.owl#recipe_${uri}`
-//   ).replace(/[!*]/g, function(c) {
-//     return '%' + c.charCodeAt(0).toString(16)
-//   })
-//   return function action(dispatch) {try {
-//     const data = await axios({
-//       method: 'GET',
-//       url: `${url}${encoded}`,
-//       headers: []
-//     })
-
-//     dispatch({
-//       type: SINGLE_RECIPE,
-//       payload: {
-//         recipe: data.length ? data : ['No Results']
-//       }
-//     })
-//   } catch (_error) {
-//     dispatch({
-//       type: SINGLE_RECIPE,
-//       payload: {
-//         recipe: ['No Results']
-//       }
-//     })
-//   }
-// }
-
 export function singleRecipe(uri) {
   let url =
     'https://api.edamam.com/search?app_id=4bef2681&app_key=96c8eeccc18628d4b898f8264781b999&r='
