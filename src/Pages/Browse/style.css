@@ -64,15 +64,14 @@ main.error {
 }
 
 .red-bg-browse {
-  /* background-color: #e40404bd; */
   color: #e40404bd;
-  box-shadow: 0 0 0.5px #e40404ab;
+  box-shadow: 0 0 0.5px #e4040486;
 }
 .green-bg-browse {
   color: #0ce404bd;
-  box-shadow: 0 0 0.5px #0ce404bd;
-  /* background-color: #0ce404bd; */
+  box-shadow: 0 0 0.5px #0ce404d2;
 }
+
 div.browse {
   display: flex;
   justify-content: space-evenly;
@@ -239,7 +238,7 @@ div.browse {
     background-color: #ffffffc5;
     border-radius: 10px;
     padding: 10px;
-    margin-bottom: 5px;
+    margin: 10px 0 5px 0;
 
     /*  */
   }

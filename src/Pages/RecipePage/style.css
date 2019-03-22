@@ -47,11 +47,17 @@
 }
 .red-bg {
   color: #e40404bd;
-  box-shadow: 0 0 0.5px #e40404ab;
+  box-shadow: 0 0 0.5px #e4040486;
 }
 .green-bg {
   color: #0ce404bd;
-  box-shadow: 0 0 0.5px #0ce404bd;
+  box-shadow: 0 0 0.5px #0ce404d2;
+}
+.line-recipePage {
+  height: 1px;
+  background-color: #81848d;
+  width: 295px;
+  margin: 8px 0;
 }
 
 a {
@@ -138,13 +144,16 @@ p.singleRecipeInformation {
   p.singleRecipeInformation {
     font-size: 1rem;
   }
+  .line-recipePage {
+    width: 343px;
+  }
 }
 @media (min-width: 411px) {
   .singleRecipeLabel {
     font-size: 1.7rem;
   }
   .singleViewRecipeImage {
-    width: 365px;
+    width: 360px;
   }
   .singleRecipeFacts {
     font-size: 1.3rem;
@@ -168,6 +177,9 @@ p.singleRecipeInformation {
   }
   p.singleRecipeInformation {
     font-size: 1.07rem;
+  }
+  .line-recipePage {
+    width: 361px;
   }
 }
 @media (min-width: 600px) {
@@ -218,6 +230,9 @@ p.singleRecipeInformation {
   p.singleRecipeInformation {
     font-size: 0.8rem;
   }
+  .line-recipePage {
+    width: 470px;
+  }
 }
 @media (min-width: 760px) {
   .headerOrFooterBiggerScreens {
@@ -262,6 +277,9 @@ p.singleRecipeInformation {
   p.singleRecipeInformation {
     font-size: 1.17rem;
   }
+  .line-recipePage {
+    width: 607px;
+  }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   .headerOrFooterBiggerScreens {
@@ -294,8 +312,31 @@ p.singleRecipeInformation {
   .informationDisplayed {
     width: 375px;
   }
+  .line-recipePage {
+    width: 808px;
+  }
 }
 @media (min-width: 1280px) {
+  .centerRecipePage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .recipe-page-main {
+    width: 1050px;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffffc5;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 0 5px 0;
+  }
+  .centerImageAndWarnings {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .singleRecipeLabel {
     font-size: 2rem;
   }
@@ -306,8 +347,8 @@ p.singleRecipeInformation {
     font-size: 0.9rem;
   }
   .healthAndWarningsContainer-recipe {
-    width: 49vw;
-    margin: 0 25.5vw;
+    width: 100%;
+    margin: 0;
   }
   p.red-bg,
   p.green-bg {
@@ -330,21 +371,22 @@ p.singleRecipeInformation {
   p.singleRecipeInformation {
     font-size: 0.9rem;
   }
+  .line-recipePage {
+    width: 624.5px;
+    margin: 8px 0;
+  }
 }
 @media (min-width: 1440px) {
   .singleRecipeLabel {
     font-size: 2.1rem;
   }
   .singleViewRecipeImage {
-    width: 250px;
+    width: 300px;
   }
   .singleRecipeFacts {
     font-size: 1rem;
   }
-  .healthAndWarningsContainer-recipe {
-    width: 60vw;
-    margin: 0 20vw;
-  }
+
   p.red-bg,
   p.green-bg {
     font-size: 1.1rem;
@@ -369,5 +411,8 @@ p.singleRecipeInformation {
   }
   p.singleRecipeInformation {
     font-size: 1rem;
+  }
+  .line-recipePage {
+    width: 702.8px;
   }
 }

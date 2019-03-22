@@ -193,12 +193,12 @@ img.home {
   .big-view {
     display: block;
   }
-  .line {
+  /* .line {
     height: 1px;
     background-color: #81848d;
     width: 49vw;
     margin: 10px 0;
-  }
+  } */
   .spash-bg {
     background-image: url(./assets/front.jpg);
     background-repeat: no-repeat;
@@ -253,6 +253,17 @@ img.home {
     justify-content: center;
     width: 100%;
     margin: 5px 0;
+  }
+  .centerHomePage {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+  .line {
+    height: 1px;
+    background-color: #81848d;
+    width: 1066px;
+    margin: 3px 0;
   }
   /* general end */
 }

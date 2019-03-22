@@ -85,13 +85,13 @@ class AdvancedSearch extends Component {
                 }`}
               >
                 {' '}
-                <button
-                  className="advancedSearchButton"
-                  onClick={this.props._resetAllSearchFields}
-                >
-                  Reset Fields
-                </button>
                 <section>
+                  <button
+                    className="advancedSearchButton"
+                    onClick={this.props._resetAllSearchFields}
+                  >
+                    Reset Fields
+                  </button>
                   <div className="searchOptionsForm">
                     {<AddOrRemoveForm name="Categories" showOptions={true} />}
                   </div>

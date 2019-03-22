@@ -335,16 +335,12 @@ div.CategoriesBar {
 
 @media (min-width: 1280px) {
   /* home start */
+
   .home-spacing {
-    height: 285px;
+    height: 261px;
   }
   .homePage {
     min-height: 100vh;
-  }
-  .centerHomePage {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
   }
   .homePageName {
     z-index: 7;

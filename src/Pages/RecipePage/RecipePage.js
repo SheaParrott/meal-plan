@@ -33,57 +33,60 @@ class RecipePage extends Component {
 
     return (
       <div className="spash-bg">
-        <div className="shaded-bg">
+        <div className="no-shaded-bg">
           <div className="single-view-page">
-            <main>
-              <div>
-                <nav>
-                  <h1 className="basicHeader">Meal Plan</h1>
-                  <Header />
-                </nav>
-                <div className="spacingFromNav" />
+            <nav>
+              <h1 className="basicHeader">Meal Plan</h1>
+              <Header />
+            </nav>
+            <div className="spacingFromNav" />
+            <main className="centerRecipePage">
+              <main className="recipe-page-main">
                 <div className="singleViewRecipe marginFromFooter">
                   {this.props.recipe.map((info, index) => {
                     return (
                       <div key={index}>
                         <h2 className="singleRecipeLabel">{info.label}</h2>
                         <div className="centerLine">
-                          <div className="line" />
+                          <div className="line-recipePage" />
                         </div>
-                        <img
-                          className="singleViewRecipeImage"
-                          src={info.image}
-                          alt={info.label}
-                        />
-                        <h3 className="singleRecipeFacts">
-                          {(info.calories / info.yield).toFixed(0)} calories per
-                          serving
-                        </h3>
-                        <h3 className="singleRecipeFacts">
-                          {info.yield} total servings
-                        </h3>
-                        <section className="singleViewRecipeHealthAndWarnings">
-                          <div className="healthAndWarningsContainer-recipe">
-                            {info.cautions.map(caution => {
-                              return (
-                                <p key={caution} className="red-bg">
-                                  {caution}
-                                </p>
-                              )
-                            })}
-                          </div>
-                          <div className="healthAndWarningsContainer-recipe">
-                            {info.healthLabels.map(label => {
-                              return (
-                                <p key={label} className="green-bg">
-                                  {label}
-                                </p>
-                              )
-                            })}
-                          </div>
-                        </section>
+                        <div className="centerImageAndWarnings">
+                          <img
+                            className="singleViewRecipeImage"
+                            src={info.image}
+                            alt={info.label}
+                          />
+
+                          <h3 className="singleRecipeFacts">
+                            {(info.calories / info.yield).toFixed(0)} calories
+                            per serving
+                          </h3>
+                          <h3 className="singleRecipeFacts">
+                            {info.yield} total servings
+                          </h3>
+                          <section className="singleViewRecipeHealthAndWarnings">
+                            <div className="healthAndWarningsContainer-recipe">
+                              {info.cautions.map(caution => {
+                                return (
+                                  <p key={caution} className="red-bg">
+                                    {caution}
+                                  </p>
+                                )
+                              })}
+                            </div>
+                            <div className="healthAndWarningsContainer-recipe">
+                              {info.healthLabels.map(label => {
+                                return (
+                                  <p key={label} className="green-bg">
+                                    {label}
+                                  </p>
+                                )
+                              })}
+                            </div>
+                          </section>
+                        </div>
                         <div className="centerLine">
-                          <div className="line" />
+                          <div className="line-recipePage" />
                         </div>
                         <section className="RecipeInfoContainer">
                           <div className="RecipeInfoBar">
@@ -429,7 +432,7 @@ class RecipePage extends Component {
                     )
                   })}
                 </div>
-              </div>
+              </main>
             </main>
             <Footer />
           </div>
