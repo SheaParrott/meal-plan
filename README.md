@@ -1,4 +1,4 @@
-# Meal Plan (Code Reactor and Testing in progress)
+# Meal Plan (Code Reactor and Testing in progress - then next features on the way!)
 
 ## Inspiration
 
