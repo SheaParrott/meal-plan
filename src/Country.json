@@ -5,12 +5,18 @@
       {
         "name": "Asian Dipping Sauce",
         "image": "https://www.edamam.com/web-img/769/76922f38b62d0c4da697fde1d9079f06.jpg",
-        "uri": "e8f9c1d7064b350f38319a435b3b150f"
+        "uri": "e8f9c1d7064b350f38319a435b3b150f",
+        "shareAs": "http://www.edamam.com/recipe/asian-dipping-sauce-e8f9c1d7064b350f38319a435b3b150f/-",
+        "source": "Saveur",
+        "url": "http://www.saveur.com/article/Recipes/Dipping-Sauce-1000008143"
       },
       {
         "name": "Lemongrass Beef and Onions over Rice Vermicelli (Bun Bo)",
         "image": "https://www.edamam.com/web-img/b5b/b5b5aa9cb3d38acb5a5ea674c5fdf341.jpg",
-        "uri": "e1346e5755a77dcd93f493796e50d537"
+        "uri": "e1346e5755a77dcd93f493796e50d537",
+        "shareAs": "http://www.edamam.com/recipe/lemongrass-beef-and-onions-over-rice-vermicelli-bun-bo-e1346e5755a77dcd93f493796e50d537/-",
+        "source": "Williams-Sonoma",
+        "url": "http://www.williams-sonoma.com/recipe/lemongrass-beef-and-onions-over-rice-vermicelli-bun-bo.html"
       }
     ]
   },
@@ -20,12 +26,18 @@
       {
         "name": "Greek Chicken Burgers with Tzatziki",
         "image": "https://www.edamam.com/web-img/ae4/ae4b632b8378ca54e6acfa11a0e1f36c.jpg",
-        "uri": "4f6a497f67fc6556f74ee80388c25b78"
+        "uri": "4f6a497f67fc6556f74ee80388c25b78",
+        "shareAs": "http://www.edamam.com/recipe/greek-chicken-burgers-with-tzatziki-4f6a497f67fc6556f74ee80388c25b78/-",
+        "source": "Honest Cooking",
+        "url": "http://honestcooking.com/greek-inspiration-chicken-burgers-with-tzatziki/"
       },
       {
         "name": "Baklava",
         "image": "https://www.edamam.com/web-img/321/321b94baa484b721c88e958b57b7efa0.jpg",
-        "uri": "7ec098d0e1a41b3a28cfc85dd3265aa7"
+        "uri": "7ec098d0e1a41b3a28cfc85dd3265aa7",
+        "shareAs": "http://www.edamam.com/recipe/baklava-7ec098d0e1a41b3a28cfc85dd3265aa7/-",
+        "source": "Williams-Sonoma",
+        "url": "http://www.williams-sonoma.com/recipe/baklava.html"
       }
     ]
   },
@@ -35,12 +47,18 @@
       {
         "name": "Sgroppino",
         "image": "https://www.edamam.com/web-img/0d0/0d005c22c5b012c5585ccc2e4b62da91.jpg",
-        "uri": "6fdc069cf2cad1e6befe2e42a80c2fb7"
+        "uri": "6fdc069cf2cad1e6befe2e42a80c2fb7",
+        "shareAs": "http://www.edamam.com/recipe/sgroppino-6fdc069cf2cad1e6befe2e42a80c2fb7/-",
+        "source": "Good Housekeeping",
+        "url": "http://www.goodhousekeeping.com/food-recipes/a8198/sgroppino-dessert-recipes/"
       },
       {
         "name": "Cook the Book: BLT Bucatini",
         "image": "https://www.edamam.com/web-img/87c/87cb21259809773f23864e630e804f93.jpg",
-        "uri": "3d8f3adea2301cfc3961f63eb330010c"
+        "uri": "3d8f3adea2301cfc3961f63eb330010c",
+        "shareAs": "http://www.edamam.com/recipe/cook-the-book-blt-bucatini-3d8f3adea2301cfc3961f63eb330010c/-",
+        "source": "Serious Eats",
+        "url": "http://www.seriouseats.com/recipes/2011/08/blt-bucatini-pasta-recipe.html"
       }
     ]
   },
@@ -50,12 +68,18 @@
       {
         "name": "Adobo",
         "image": "https://www.edamam.com/web-img/186/1860eed355c8c25b88df2ab4fc2f1063.jpg",
-        "uri": "64cce6a0e16b236c21b3ff42e95f8463"
+        "uri": "64cce6a0e16b236c21b3ff42e95f8463",
+        "shareAs": "http://www.edamam.com/recipe/adobo-64cce6a0e16b236c21b3ff42e95f8463/-",
+        "source": "Saveur",
+        "url": "http://www.saveur.com/article/Recipes/Pork-Adobo"
       },
       {
         "name": "Lumpia Rolls",
         "image": "https://www.edamam.com/web-img/e50/e503fefe2f1539b25ff60b9017ae1eef.jpg",
-        "uri": "6138d3576b16d880a22dc10d7a58d91d"
+        "uri": "6138d3576b16d880a22dc10d7a58d91d",
+        "shareAs": "http://www.edamam.com/recipe/lumpia-rolls-6138d3576b16d880a22dc10d7a58d91d/-",
+        "source": "Epicurious",
+        "url": "https://www.epicurious.com/recipes/food/views/lumpia-rolls-352989"
       }
     ]
   },
@@ -65,12 +89,18 @@
       {
         "name": "Shrimp Pad Thai",
         "image": "https://www.edamam.com/web-img/926/9261d11b3534724beff92969bacf89ed.jpg",
-        "uri": "dad83bb32fdbf5e7fe25b166a0313edf"
+        "uri": "dad83bb32fdbf5e7fe25b166a0313edf",
+        "shareAs": "http://www.edamam.com/recipe/shrimp-pad-thai-dad83bb32fdbf5e7fe25b166a0313edf/-",
+        "source": "Food52",
+        "url": "https://food52.com/recipes/6386-shrimp-pad-thai"
       },
       {
         "name": "Thai-Style Beef With Basil and Chilies (Phat Bai Horapha) Recipe",
         "image": "https://www.edamam.com/web-img/b4f/b4f704e2dfdbed8ee54566d43bafd49b.jpg",
-        "uri": "886359e3cfe24abe5c727b9d1f40a2f5"
+        "uri": "886359e3cfe24abe5c727b9d1f40a2f5",
+        "shareAs": "http://www.edamam.com/recipe/thai-style-beef-with-basil-and-chilies-phat-bai-horapha-recipe-886359e3cfe24abe5c727b9d1f40a2f5/-",
+        "source": "Serious Eats",
+        "url": "http://www.seriouseats.com/recipes/2016/01/thai-style-beef-basil-chilies-recipe.html"
       }
     ]
   },
@@ -80,12 +110,18 @@
       {
         "name": "Nabeyaki Udon Soup With Chicken, Spinach, and Mushrooms",
         "image": "https://www.edamam.com/web-img/707/707b3ce832100db42b5e1af7c3ed21d3.jpg",
-        "uri": "5acab0642f440a4bcf6a964ccfe8dbf0"
+        "uri": "5acab0642f440a4bcf6a964ccfe8dbf0",
+        "shareAs": "http://www.edamam.com/recipe/nabeyaki-udon-soup-with-chicken-spinach-and-mushrooms-5acab0642f440a4bcf6a964ccfe8dbf0/-",
+        "source": "Epicurious",
+        "url": "https://www.epicurious.com/recipes/food/views/nabeyaki-udon-soup-with-chicken-spinach-and-mushrooms"
       },
       {
         "name": "Ma Po Tofu Recipe",
         "image": "https://www.edamam.com/web-img/393/393559e6b8350d38ded886318de493cf.jpg",
-        "uri": "ca28aee16c3ce8554d09246a57ef913d"
+        "uri": "ca28aee16c3ce8554d09246a57ef913d",
+        "shareAs": "http://www.edamam.com/recipe/ma-po-tofu-recipe-ca28aee16c3ce8554d09246a57ef913d/-",
+        "source": "Chowhound",
+        "url": "http://www.chowhound.com/recipes/ma-po-tofu-29102"
       }
     ]
   },
@@ -95,12 +131,18 @@
       {
         "name": "Khandvi",
         "image": "https://www.edamam.com/web-img/50a/50ade2d8e898be072c34f67e24a65ccc.jpg",
-        "uri": "20bdb36d9eff821528a75ceff8427c9f"
+        "uri": "20bdb36d9eff821528a75ceff8427c9f",
+        "shareAs": "http://www.edamam.com/recipe/khandvi-a-healthy-finger-food-from-india-20bdb36d9eff821528a75ceff8427c9f/-",
+        "source": "Honest Cooking",
+        "url": "http://honestcooking.com/khandvi-recipe-indian-finger-food/"
       },
       {
         "name": "Purnima Garg's Eggplant and Tomato Curry",
         "image": "https://www.edamam.com/web-img/104/104f8bf11924119f2ba7ff22c85fed66.jpg",
-        "uri": "699a58aad03088645b0d1375223cd613"
+        "uri": "699a58aad03088645b0d1375223cd613",
+        "shareAs": "http://www.edamam.com/recipe/purnima-garg-s-eggplant-and-tomato-curry-699a58aad03088645b0d1375223cd613/-",
+        "source": "Food52",
+        "url": "https://food52.com/recipes/455-purnima-garg-s-eggplant-and-tomato-curry"
       }
     ]
   },
@@ -110,12 +152,18 @@
       {
         "name": "Spaghetti Con La Sarde",
         "image": "https://www.edamam.com/web-img/ab7/ab7db4176f913f39254556dd2db8c062.jpg",
-        "uri": "3a4a61661a9cadd511e2904a3dd6da34"
+        "uri": "3a4a61661a9cadd511e2904a3dd6da34",
+        "shareAs": "http://www.edamam.com/recipe/spaghetti-con-la-sarde-3a4a61661a9cadd511e2904a3dd6da34/-",
+        "source": "Martha Stewart",
+        "url": "http://www.marthastewart.com/318394/spaghetti-con-la-sarde"
       },
       {
         "name": "Flan",
         "image": "https://www.edamam.com/web-img/7f4/7f40725c0718191f29c0b96811b5be94.jpg",
-        "uri": "7af5f8ee036089bc72eccf6c1b75f088"
+        "uri": "7af5f8ee036089bc72eccf6c1b75f088",
+        "shareAs": "http://www.edamam.com/recipe/flan-7af5f8ee036089bc72eccf6c1b75f088/-",
+        "source": "Williams-Sonoma",
+        "url": "http://www.williams-sonoma.com/recipe/flan.html"
       }
     ]
   },
@@ -125,12 +173,18 @@
       {
         "name": "Baked Chile Rellenos with Corn and Crema Recipe",
         "image": "https://www.edamam.com/web-img/394/3948fa0390ae03d585d4b3bb942e8053.jpg",
-        "uri": "f2f4fe1f92145049a19d741bb4320f7e"
+        "uri": "f2f4fe1f92145049a19d741bb4320f7e",
+        "shareAs": "http://www.edamam.com/recipe/baked-chile-rellenos-with-corn-and-crema-recipe-f2f4fe1f92145049a19d741bb4320f7e/-",
+        "source": "Serious Eats",
+        "url": "http://www.seriouseats.com/recipes/2011/08/baked-chile-rellenos-with-corn-crema-recipe.html"
       },
       {
         "name": "Easy Mexican Chorizo Tacos Recipe",
         "image": "https://www.edamam.com/web-img/305/305cbb6f8355a18820d0577c7d63933d.jpg",
-        "uri": "e05b7b36486095dd2b5b771457ad6796"
+        "uri": "e05b7b36486095dd2b5b771457ad6796",
+        "shareAs": "http://www.edamam.com/recipe/easy-mexican-chorizo-tacos-recipe-e05b7b36486095dd2b5b771457ad6796/-",
+        "source": "Serious Eats",
+        "url": "http://www.seriouseats.com/recipes/2014/05/easy-mexican-chorizo-taco.html"
       }
     ]
   },
@@ -140,12 +194,18 @@
       {
         "name": "Roasted Garlic and Black Pepper Raclette",
         "image": "https://www.edamam.com/web-img/e6c/e6c970d799efc0dd0e992ec39001facf.jpg",
-        "uri": "d1354a947aa62a19d97af349823bb2ff"
+        "uri": "d1354a947aa62a19d97af349823bb2ff",
+        "shareAs": "http://www.edamam.com/recipe/roasted-garlic-and-black-pepper-raclette-d1354a947aa62a19d97af349823bb2ff/-",
+        "source": "Williams-Sonoma",
+        "url": "http://www.williams-sonoma.com/recipe/roasted-garlic-and-black-pepper-raclette.html"
       },
       {
         "name": "ZURICH CORDON BLEU",
         "image": "https://www.edamam.com/web-img/18c/18c0a529ce9d1d3d88beb957ef213435",
-        "uri": "8d451bcc90fe369b187759b56f0b7cca"
+        "uri": "8d451bcc90fe369b187759b56f0b7cca",
+        "shareAs": "http://www.edamam.com/recipe/zurich-cordon-bleu-8d451bcc90fe369b187759b56f0b7cca/-",
+        "source": "justapinch.com",
+        "url": "https://www.justapinch.com/recipes/main-course/pork/zurich-cordon-bleu.html"
       }
     ]
   },
@@ -155,12 +215,18 @@
       {
         "name": "Portuguese-Style Mussels with Chorizo and Beer",
         "image": "https://www.edamam.com/web-img/ef0/ef0089d6efe119c54f055d0b98527cbd.jpg",
-        "uri": "cf4ac4b252ef8c4356530d7c3215d0de"
+        "uri": "cf4ac4b252ef8c4356530d7c3215d0de",
+        "shareAs": "http://www.edamam.com/recipe/portuguese-style-mussels-with-chorizo-and-beer-cf4ac4b252ef8c4356530d7c3215d0de/-",
+        "source": "The Daily Meal",
+        "url": "http://www.thedailymeal.com/portuguese-style-mussels-chorizo-and-beer-recipe"
       },
       {
         "name": "Sopa De Cenoura - Carrot Soup - Portugal",
         "image": "https://www.edamam.com/web-img/e54/e54c8bd6b2969cace30822857b3777dd.jpg",
-        "uri": "86e1f4091fdb30e6ee519b74976aadde"
+        "uri": "86e1f4091fdb30e6ee519b74976aadde",
+        "shareAs": "http://www.edamam.com/recipe/sopa-de-cenoura-carrot-soup-portugal-86e1f4091fdb30e6ee519b74976aadde/-",
+        "source": "food.com",
+        "url": "http://www.food.com/recipe/sopa-de-cenoura-carrot-soup-portugal-482406"
       }
     ]
   },
@@ -170,12 +236,18 @@
       {
         "name": "Korean Braised Tofu",
         "image": "https://www.edamam.com/web-img/591/591991e48e6a3122976f908977b980be.jpg",
-        "uri": "d647eb045bac0d362b2bd08e87d0f158"
+        "uri": "d647eb045bac0d362b2bd08e87d0f158",
+        "shareAs": "http://www.edamam.com/recipe/korean-braised-tofu-d647eb045bac0d362b2bd08e87d0f158/-",
+        "source": "The Daily Meal",
+        "url": "http://www.thedailymeal.com/korean-braised-tofu-recipe"
       },
       {
         "name": "Steak Bibimbap Bowls",
         "image": "https://www.edamam.com/web-img/4a5/4a5458fb72ffac7bb17f20df08313834.jpg",
-        "uri": "37a727fc1ed98f802b737f96b29e78fa"
+        "uri": "37a727fc1ed98f802b737f96b29e78fa",
+        "shareAs": "http://www.edamam.com/recipe/steak-bibimbap-bowls-37a727fc1ed98f802b737f96b29e78fa/-",
+        "source": "blog.myfitnesspal.com",
+        "url": "https://blog.myfitnesspal.com/steak-bibimbap-bowls/"
       }
     ]
   },
@@ -185,12 +257,18 @@
       {
         "name": "Semla Buns Recipe",
         "image": "https://www.edamam.com/web-img/ac9/ac9bba28e04306eb46c29672aa30bbc0.jpg",
-        "uri": "aa4aef01da98653de69e28b18d368030"
+        "uri": "aa4aef01da98653de69e28b18d368030",
+        "shareAs": "http://www.edamam.com/recipe/semla-buns-recipe-aa4aef01da98653de69e28b18d368030/-",
+        "source": "The Daily Meal",
+        "url": "http://www.thedailymeal.com/semla-buns-recipe"
       },
       {
         "name": "Seriously Scandinavian: Swedish Meatballs Recipe",
         "image": "https://www.edamam.com/web-img/a92/a92c1d109bd77f0a8d6e786ab2313a41.jpg",
-        "uri": "51fbafb9725c856bba1f230cded7d0a6"
+        "uri": "51fbafb9725c856bba1f230cded7d0a6",
+        "shareAs": "http://www.edamam.com/recipe/seriously-scandinavian-swedish-meatballs-recipe-51fbafb9725c856bba1f230cded7d0a6/-",
+        "source": "Serious Eats",
+        "url": "http://www.seriouseats.com/recipes/2010/10/seriously-scandinavian-swedish-meatballs-recipe.html"
       }
     ]
   },
@@ -200,12 +278,18 @@
       {
         "name": "Barbecue Bacon Burgers Recipe",
         "image": "https://www.edamam.com/web-img/20e/20e7c933771a7db4080c026e4a1ba882.jpg",
-        "uri": "1d13035a67b6112521268f3a6ab2068d"
+        "uri": "1d13035a67b6112521268f3a6ab2068d",
+        "shareAs": "http://www.edamam.com/recipe/barbecue-bacon-burgers-recipe-1d13035a67b6112521268f3a6ab2068d/-",
+        "source": "Serious Eats",
+        "url": "http://www.seriouseats.com/recipes/2012/07/barbecue-bacon-burgers-recipe.html"
       },
       {
         "name": "Potato Puffs",
         "image": "https://www.edamam.com/web-img/953/95320a32442039a9d7faedb13a76038b",
-        "uri": "01771ea9d30a2934299b5fbd2c1ff3d1"
+        "uri": "01771ea9d30a2934299b5fbd2c1ff3d1",
+        "shareAs": "http://www.edamam.com/recipe/potato-puffs-01771ea9d30a2934299b5fbd2c1ff3d1/-",
+        "source": "justapinch.com",
+        "url": "https://www.justapinch.com/recipes/side/side-potatoes/potato-puffs.html"
       }
     ]
   }

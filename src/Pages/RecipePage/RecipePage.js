@@ -51,11 +51,25 @@ class RecipePage extends Component {
                           <div className="line-recipePage" />
                         </div>
                         <div className="centerImageAndWarnings">
-                          <img
-                            className="singleViewRecipeImage"
-                            src={info.image}
-                            alt={info.label}
-                          />
+                          <p className="singleRecipeInformation">
+                            See full recipe on:{' '}
+                            <a className="bold" href={info.url}>
+                              {info.source.toUpperCase()}
+                            </a>
+                          </p>
+
+                          <div className="tooltip">
+                            <a href={info.shareAs} target="_blank">
+                              <img
+                                className="singleViewRecipeImage"
+                                src={info.image}
+                                alt={info.label}
+                              />
+                            </a>
+                            <span className="tooltiptext big-view">
+                              Go To: {info.shareAs.slice(0, 50)}...
+                            </span>
+                          </div>
 
                           <h3 className="singleRecipeFacts">
                             {(info.calories / info.yield).toFixed(0)} calories

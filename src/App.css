@@ -148,6 +148,33 @@ img.home {
   width: 100vw;
   z-index: -1;
 }
+.bold {
+  font-weight: 600;
+}
+.bold:hover {
+  color: #00000080;
+}
+/* sources start */
+.sourceLine {
+  height: 1px;
+  background-color: #81848d18;
+  width: 100%;
+  margin: 5px 0;
+}
+.credit {
+  display: flex;
+  justify-content: space-around;
+}
+.source {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #444a5a;
+}
+.source:hover {
+  cursor: pointer;
+  color: #444a5ac7;
+}
+/* sources end*/
 @media (min-width: 375px) {
   .footerButton,
   .homeButton {

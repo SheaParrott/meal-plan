@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
-import RecipeSlide from './RecipeSlide'
+import HomeRecipe from './HomeRecipe'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class TasteOfCountries extends Component {
   render() {
-    console.log(this.props.country)
-    // console.log(this.props.country[0].country)
     return (
       <div className="country-container">
         <h3 className="country-slider">{this.props.country.country}</h3>
         <div className="country-homeRecipeSlider">
           {this.props.country.food.map(recipe => {
-            console.log(recipe)
-            return <RecipeSlide key={recipe.uri} recipe={recipe} taste={true} />
+            return <HomeRecipe key={recipe.uri} recipe={recipe} taste={true} />
           })}
         </div>
         <Link

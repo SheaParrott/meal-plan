@@ -7,7 +7,7 @@ import Footer from '../../Components/Footer'
 import './style.css'
 import recommended from '../../recommended'
 import categories from '../../categories'
-import RecipeSlide from '../../Components/RecipeSlide'
+import HomeRecipe from '../../Components/HomeRecipe'
 import Category from '../../Components/Category'
 import country from '../../Country'
 import TasteOfCountries from '../../Components/TasteOfCountries'
@@ -75,7 +75,7 @@ class Home extends Component {
                     <h2 className="slider">Top Picks!</h2>
                     <div className="homeRecipeSlider">
                       {this.state.recommended.slice(0, 4).map(recipe => {
-                        return <RecipeSlide key={recipe.uri} recipe={recipe} />
+                        return <HomeRecipe key={recipe.uri} recipe={recipe} />
                       })}
                     </div>
                   </div>

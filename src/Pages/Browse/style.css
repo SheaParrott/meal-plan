@@ -1,8 +1,5 @@
 /* browse page start */
 .browseRecipeContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin: 2px;
   border: 1.5px solid #b3b4b48c;
   border-radius: 5px;
@@ -10,6 +7,12 @@
   width: 98vw;
   padding: 0 0 3px 0;
 }
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* centerLine */
 
 .browseRecipeImage {
   width: 35%;
@@ -247,6 +250,8 @@ div.browse {
     width: 340px;
     /*  */
     padding: 15px 0;
+  }
+  .mainContent {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

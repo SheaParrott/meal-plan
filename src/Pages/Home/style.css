@@ -428,21 +428,27 @@ div.CategoriesBar {
   }
   div.the-country-slider {
     margin: 5px;
-    height: 200px;
+    height: 285px;
     width: 215px;
     border: 1.5px solid #b3b4b48c;
     border-radius: 5px;
     padding: 10px;
     background-color: #ffffff2f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   div.slider {
     margin: 5px;
-    height: 200px;
+    height: 285px;
     min-width: 228px;
     border: 1.5px solid #b3b4b48c;
     border-radius: 5px;
     padding: 10px;
     background-color: #ffffffa6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .country-top-Picks {
     width: 1050px;
@@ -470,6 +476,7 @@ div.CategoriesBar {
   .country-slider {
     color: #92ca64;
     font-weight: 900;
+    font-size: 1.3rem;
   }
   .green:hover {
     color: #a8e973;
@@ -481,10 +488,12 @@ div.CategoriesBar {
     overflow: hidden;
   }
   img.slider {
-    width: 170px;
+    width: 224px;
+    border-radius: 3px;
   }
   img.the-country-slider {
-    width: 148px;
+    width: 210px;
+    border-radius: 3px;
   }
   .homeRecipeSlider {
     display: flex;
