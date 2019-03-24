@@ -52,6 +52,16 @@ class About extends Component {
                       >
                         SPECIAL THANKS
                       </h5>
+                      <h5
+                        className="about white"
+                        onClick={() => {
+                          this.setState({
+                            InspirationShown: 'HappyOrIssues'
+                          })
+                        }}
+                      >
+                        HAPPY / ISSUES
+                      </h5>
                     </div>
                     <h5 className="about big-view">Thanks for Visiting!</h5>
                   </nav>
@@ -79,7 +89,7 @@ class About extends Component {
                     </p>
                     <p className="about"> -Blessings-</p>
                   </div>
-                ) : (
+                ) : this.state.InspirationShown == 'thanks' ? (
                   <div className="aboutParagraph small-view">
                     <h2 className="aboutInspiration">Special Thanks!</h2>
                     <p className="about">
@@ -101,7 +111,42 @@ class About extends Component {
                     </p>
                     <p className="about aboutInspiration"> -Blessings-</p>
                   </div>
+                ) : (
+                  <div className="aboutParagraph small-view">
+                    <h2 className="aboutInspiration">
+                      {' '}
+                      Enjoy The Site <br />
+                      <i>or</i> <br />
+                      Find An Issue?
+                    </h2>
+                    <p className="about">
+                      <br /> Check out the{' '}
+                      <Link className="EDAMAM-link" to="/creator">
+                        <strong>Creator</strong>{' '}
+                      </Link>
+                      page and reach out to me I would love to hear from you!
+                      <br />
+                      <br />
+                    </p>
+                    <p className="about aboutInspiration"> -Blessings-</p>
+                  </div>
                 )}
+                {/* new  start*/}
+                {/* <h2 className="aboutInspiration small-view">
+                      Enjoy The Site <i>or</i> Find An Issue?
+                    </h2>
+                    <p className="about">
+                      <br /> Check out the{' '}
+                      <Link className="EDAMAM-link" to="/creator">
+                        <strong>Creator</strong>{' '}
+                      </Link>
+                      page and reach out to me I would love to hear from you!
+                      <br />
+                      <br />
+                      <br />
+                    </p> */}
+
+                {/* new end */}
                 <main className="center-home-options big-view">
                   <div className="aboutParagraph-desktop ">
                     <h2 className="aboutInspiration">Inspiration</h2>

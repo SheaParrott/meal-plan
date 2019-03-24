@@ -40,6 +40,7 @@
 
 h5.about {
   padding-bottom: 10px;
+  font-size: 0.7rem;
 }
 
 .aboutPageSpacing {
@@ -71,7 +72,7 @@ strong {
 }
 @media (min-width: 411px) {
   h5.about {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .aboutInspiration {
     font-size: 1.7rem;
@@ -178,6 +179,7 @@ strong {
   }
   p.about {
     font-size: 1rem;
+    margin: 0 5px;
   }
   strong {
     font-size: 1.1rem;
