@@ -17,8 +17,9 @@ class Footer extends Component {
         <Link to="/about">
           <p className="white footerButton">About</p>
         </Link>
-
-        <p className=" footerButton">&copy;SheaParrott</p>
+        <a href="http://shea-portfolio.surge.sh/" target="_blank">
+          <p className=" footerButton white">&copy;SheaParrott</p>
+        </a>
       </footer>
     )
   }

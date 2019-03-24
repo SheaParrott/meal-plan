@@ -76,7 +76,9 @@ class NumberInputs extends Component {
               <input
                 className="numberInput"
                 type="number"
-                pattern="\d*"
+                min="0"
+                step="10"
+                pattern="\d+"
                 onChange={this._Min}
                 value={
                   this.props.label == 'cookTime'
@@ -91,7 +93,9 @@ class NumberInputs extends Component {
           <input
             className="numberInput"
             type="number"
-            pattern="\d*"
+            min="0"
+            step="10"
+            pattern="\d+"
             onChange={this._Max}
             value={
               this.props.label == 'cookTime'

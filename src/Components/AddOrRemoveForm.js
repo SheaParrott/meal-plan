@@ -6,25 +6,36 @@ import ChosenCategory from './ChosenCategory'
 class AddOrRemoveForm extends Component {
   constructor(props) {
     super(props)
-    // this._removeCategory = this._removeCategory.bind(this)
     this._addCategory = this._addCategory.bind(this)
   }
 
   _addRemovedIngredients = event => {
     event.preventDefault()
+
     let form = event.target
     const formData = new FormData(form)
     for (let pair of formData.entries()) {
+      if (
+        this.props.removedIngredients.filter(
+          category => category.category == pair[1]
+        ).length
+      ) {
+        return
+      }
       this.props._addRemovedIngredients(pair[1])
     }
     form.reset()
   }
   _addCategory = event => {
+    if (
+      this.props.categories.filter(
+        category => category.category === event.target.value
+      ).length
+    ) {
+      return
+    }
+
     this.props._addCategory(event.target.value)
-  }
-  _removeCategory = event => {
-    console.log(event.target.value)
-    // this.props._removeCategory()
   }
   render() {
     let tagsDisplayed =
@@ -98,7 +109,6 @@ const mapStateToProps = state => ({
 const mapActionsToProps = {
   _addCategory: addCategory,
   _addRemovedIngredients: addRemovedIngredients
-  // _removeCategory: removeCategory
 }
 
 export default connect(

@@ -5,7 +5,6 @@ import Creator from './Pages/Creator/Creator'
 import Browse from './Pages/Browse/Browse'
 import { Route } from 'react-router-dom'
 import RecipePage from './Pages/RecipePage/RecipePage'
-import Footer from './Components/Footer'
 import About from './Pages/About/About'
 
 class App extends Component {
@@ -25,4 +24,6 @@ class App extends Component {
 export default App
 
 // to do:
-// [] add validation to prevent the same categories chosen twice
+// [x] add validation to prevent the same categories chosen twice
+// [] (tough one, will consult someone about this) add guard clause to number inputs that prevents 'e' from getting added.
+//    - type of not number return
