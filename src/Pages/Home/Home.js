@@ -85,7 +85,6 @@ class Home extends Component {
                     <h2 className="slider">A Taste From Another Land!</h2>
                     <div className="wrap-country-top-picks ">
                       {this.state.countries.map(TheCountry => {
-                        console.log(TheCountry)
                         return <TasteOfCountries country={TheCountry} />
                       })}
                     </div>

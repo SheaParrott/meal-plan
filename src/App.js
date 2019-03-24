@@ -24,6 +24,8 @@ class App extends Component {
 export default App
 
 // to do:
+// [] highlight page number currently on
+// []
 // [] extend advanced search bar to all pages that work with the recipes
 // [] refactor single recipe page to have info to the side of the image for desktop view
 // [x] add validation to prevent the same categories chosen twice

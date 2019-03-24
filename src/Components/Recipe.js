@@ -12,9 +12,6 @@ class Recipe extends Component {
     this.props.goToSingleRecipe(this.props.hit.recipe.uri)
   }
   render() {
-    // console.log(this.props.hit.recipe.source)
-    // console.log(this.props.hit.recipe.url)
-    // console.log(this.props.hit.recipe.shareAs)
     return (
       <div className="browseRecipeContainer">
         <main className="recipeContainer">

@@ -87,7 +87,7 @@ div.categories {
 .CaloriesAndCookTime {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
 }
 .numberInput {
@@ -148,7 +148,6 @@ div.CategoriesBar {
   font-size: 1.3rem;
 }
 @media (min-width: 375px) {
-  /* home start */
   label {
     font-size: 1.2rem;
   }
@@ -181,11 +180,8 @@ div.CategoriesBar {
   input.formInput {
     width: 170px;
   }
-
-  /* home end */
 }
 @media (min-width: 411px) {
-  /* home start */
   label {
     font-size: 1.3rem;
   }
@@ -217,13 +213,9 @@ div.CategoriesBar {
   input.formInput {
     width: 190px;
   }
-
-  /* home end */
 }
 @media (min-width: 600px) {
-  /* home start */
   .CaloriesAndCookTime {
-    justify-content: space-between;
     width: 423px;
   }
   .displayedLabelbox {
@@ -261,13 +253,11 @@ div.CategoriesBar {
   input.formInput {
     width: 240px;
   }
-
-  /* home end */
 }
 @media (min-width: 760px) {
-  /* home start */
   .CaloriesAndCookTime {
-    width: 480px;
+    justify-content: space-between;
+    width: 500px;
   }
   .displayedLabelbox {
     width: 458px;
@@ -303,14 +293,10 @@ div.CategoriesBar {
   input.formInput {
     width: 295px;
   }
-
-  /* home end */
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
-  /* home start */
   .CaloriesAndCookTime {
-    justify-content: space-between;
-    width: 473px;
+    width: 510px;
   }
   .displayedLabelbox {
     width: 453.5px;
@@ -346,13 +332,11 @@ div.CategoriesBar {
   input.formInput {
     width: 300px;
   }
-  /* home end */
 }
 
 @media (min-width: 1280px) {
   /* home start */
   .CaloriesAndCookTime {
-    justify-content: space-between;
     width: 540px;
   }
   .displayedLabelbox {
@@ -415,20 +399,9 @@ div.CategoriesBar {
   .advancedSearchButton {
     width: 200px;
   }
-  /* home end */
-  /* header start */
   nav {
     width: 100%;
   }
-  /* header end */
-  /* general start */
-  /* .line {
-    height: 1px;
-    background-color: #81848d;
-    width: 49vw;
-    margin: 10px 0;
-  } */
-  /* general end */
 
   img.home-category {
     width: 70px;

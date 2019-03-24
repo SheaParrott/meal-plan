@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 class RecipeSlide extends Component {
   render() {
-    console.log(this.props.recipe)
     return (
       <div className={this.props.taste ? 'the-country-slider' : 'slider'}>
         <Link to={`/recipe/${this.props.recipe.uri}`}>
