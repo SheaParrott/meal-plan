@@ -25,6 +25,7 @@ button {
 select {
   font-size: 0.9rem;
   height: 24px;
+  width: 95px;
 }
 button {
   margin: 10px 10px 10px 0;
@@ -90,7 +91,7 @@ div.categories {
   width: 100%;
 }
 .numberInput {
-  width: 45px;
+  width: 48px;
 }
 .centerLabelBox {
   display: flex;
@@ -161,6 +162,7 @@ div.CategoriesBar {
   select {
     font-size: 1rem;
     height: 28px;
+    width: 105px;
   }
   .fa-angle-down,
   .fa-angle-up {
@@ -196,6 +198,7 @@ div.CategoriesBar {
   }
   select {
     height: 30px;
+    width: 110px;
   }
   .fa-angle-down,
   .fa-angle-up {
@@ -239,6 +242,7 @@ div.CategoriesBar {
   select {
     font-size: 1.05rem;
     height: 32px;
+    width: 118px;
   }
   .fa-angle-down,
   .fa-angle-up {
@@ -280,6 +284,7 @@ div.CategoriesBar {
   }
   select {
     height: 33px;
+    width: 125px;
   }
   .fa-angle-down,
   .fa-angle-up {
@@ -322,6 +327,7 @@ div.CategoriesBar {
   }
   select {
     height: 29px;
+    width: 130px;
   }
   .fa-angle-down,
   .fa-angle-up {
@@ -383,6 +389,7 @@ div.CategoriesBar {
   select {
     font-size: 0.9rem;
     height: 24px;
+    width: 102px;
   }
   .fa-angle-down,
   .fa-angle-up {
