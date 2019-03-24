@@ -34,9 +34,6 @@ input.formInput {
   margin-right: 5px;
   width: 125px;
 }
-.formInput {
-  margin-left: 12.5px;
-}
 .advancedSearch {
   display: flex;
   flex-direction: column;
@@ -89,17 +86,21 @@ div.categories {
 .CaloriesAndCookTime {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
 }
 .numberInput {
   width: 45px;
 }
+.centerLabelBox {
+  display: flex;
+  justify-content: center;
+}
 .displayedLabelbox {
+  width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 5px 5px 0 5px;
 }
 .displayedLabel {
   display: flex;
@@ -113,7 +114,6 @@ p.Label {
   margin: 0;
   padding-left: 5px;
 }
-
 label {
   padding: 5px;
 }
@@ -179,9 +179,7 @@ div.CategoriesBar {
   input.formInput {
     width: 170px;
   }
-  .formInput {
-    margin-left: 15px;
-  }
+
   /* home end */
 }
 @media (min-width: 411px) {
@@ -216,13 +214,18 @@ div.CategoriesBar {
   input.formInput {
     width: 190px;
   }
-  .formInput {
-    margin-left: 18px;
-  }
+
   /* home end */
 }
 @media (min-width: 600px) {
   /* home start */
+  .CaloriesAndCookTime {
+    justify-content: space-between;
+    width: 423px;
+  }
+  .displayedLabelbox {
+    width: 418px;
+  }
   label {
     font-size: 1.4rem;
   }
@@ -254,13 +257,17 @@ div.CategoriesBar {
   input.formInput {
     width: 240px;
   }
-  .formInput {
-    margin-left: 40px;
-  }
+
   /* home end */
 }
 @media (min-width: 760px) {
   /* home start */
+  .CaloriesAndCookTime {
+    width: 480px;
+  }
+  .displayedLabelbox {
+    width: 458px;
+  }
   label {
     font-size: 1.45rem;
   }
@@ -291,15 +298,18 @@ div.CategoriesBar {
   input.formInput {
     width: 295px;
   }
-  .formInput {
-    margin-left: 5px;
-  }
 
   /* home end */
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   /* home start */
-
+  .CaloriesAndCookTime {
+    justify-content: space-between;
+    width: 473px;
+  }
+  .displayedLabelbox {
+    width: 453.5px;
+  }
   label {
     font-size: 1.65rem;
   }
@@ -335,7 +345,13 @@ div.CategoriesBar {
 
 @media (min-width: 1280px) {
   /* home start */
-
+  .CaloriesAndCookTime {
+    justify-content: space-between;
+    width: 540px;
+  }
+  .displayedLabelbox {
+    width: 525px;
+  }
   .home-spacing {
     height: 261px;
   }
@@ -388,9 +404,7 @@ div.CategoriesBar {
   img.home {
     width: 100%;
   }
-  .searchOptionsForm {
-    width: 90%;
-  }
+
   .advancedSearchButton {
     width: 200px;
   }
@@ -477,6 +491,11 @@ div.CategoriesBar {
     color: #92ca64;
     font-weight: 900;
     font-size: 1.3rem;
+  }
+  .seeMore {
+    color: #92ca64;
+    font-weight: 900;
+    font-size: 1.15rem;
   }
   .green:hover {
     color: #a8e973;

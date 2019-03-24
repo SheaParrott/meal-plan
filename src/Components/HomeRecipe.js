@@ -22,13 +22,13 @@ class RecipeSlide extends Component {
           <div className="centerLine">
             <div className="sourceLine" />
           </div>
-          <div className="credit">
+          <div className="credit-home">
             <a className="source" href={this.props.recipe.url} target="_blank">
-              {this.props.recipe.source}
+              {this.props.recipe.source.toUpperCase()}
             </a>
             <a
               className="source"
-              href={this.props.recipe.shareAs.toUpperCase()}
+              href={this.props.recipe.shareAs}
               target="_blank"
             >
               EDAMAM

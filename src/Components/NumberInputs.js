@@ -7,11 +7,8 @@ class NumberInputs extends Component {
     super(props)
     this._Min = this._Min.bind(this)
     this._Max = this._Max.bind(this)
-    this.state = {
-      error: ''
-    }
   }
-  // create actions depending on the label name and add in validations
+
   _Min = event => {
     let max = ''
     let min = ''
@@ -37,9 +34,6 @@ class NumberInputs extends Component {
       min: min,
       max: max
     })
-
-    // pass the label name to action and the value
-    // use switch case in action {theCase: , min:, max:}
   }
 
   _Max = event => {
@@ -109,12 +103,6 @@ class NumberInputs extends Component {
             placeholder="any"
           />
         </div>
-        {this.props.ingredient ? null : (
-          <div>
-            <br />
-            <h6 className="red">{this.state.error}</h6>
-          </div>
-        )}
       </div>
     )
   }
@@ -135,7 +123,3 @@ export default connect(
   mapStateToProps,
   mapActionsToProps
 )(NumberInputs)
-
-// calories: {min: '', max: '', params: ''},
-// cookTime: {min: '', max: '', params: ''},
-// maxIngredients: '',

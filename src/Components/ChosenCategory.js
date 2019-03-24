@@ -12,11 +12,9 @@ class ChosenCategory extends Component {
     this._removeChosenIngredient = this._removeChosenIngredient.bind(this)
   }
   _removeCategory = event => {
-    console.log(this.props.value)
     this.props._removeCategory(this.props.value.category)
   }
   _removeChosenIngredient = event => {
-    console.log(this.props.value.category)
     this.props._removeChosenIngredient(this.props.value.category)
   }
   render() {

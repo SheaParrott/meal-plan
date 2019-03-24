@@ -56,9 +56,36 @@ class AdvancedSearch extends Component {
     return (
       <div className="homePageName">
         <div>
-          <h1 className="homePageName">Meal Plan</h1>
+          <h1>Meal Plan</h1>
           <nav>
             <Header />
+            <div className="centerLine">
+              <div className="line" />
+            </div>
+            <h6 className="red">{this.state.recipeFieldError}</h6>
+            <input
+              onChange={this._SearchedRecipe}
+              className="Search"
+              name="recipe"
+              placeholder="Recipes"
+            />
+            {this.props.SearchedRecipe.value && this.state.recipeFieldError
+              ? this._recipeFieldError()
+              : null}
+            {this.props.SearchedRecipe.value ? (
+              <Link to={`/browse/${params}`}>
+                <button className="advancedSearchButton">Submit</button>
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  this.setState({ recipeFieldError: 'Cant be empty!' })
+                }}
+                className="advancedSearchButton"
+              >
+                Search
+              </button>
+            )}
             <div className="centerLine">
               <div className="line" />
             </div>
@@ -85,7 +112,7 @@ class AdvancedSearch extends Component {
                 }`}
               >
                 {' '}
-                <section>
+                <section className="advancedSearchWidth">
                   <button
                     className="advancedSearchButton"
                     onClick={this.props._resetAllSearchFields}
@@ -95,6 +122,14 @@ class AdvancedSearch extends Component {
                   <div className="searchOptionsForm">
                     {<AddOrRemoveForm name="Categories" showOptions={true} />}
                   </div>
+                  <section className="centerLabelBox">
+                    <section className="searchOptions row">
+                      <div className="label">
+                        <label>Max ingredients: </label>
+                      </div>
+                      <NumberInputs ingredient={true} label="maxIngredients" />
+                    </section>
+                  </section>
                   <h6 className="red">{this.state.numberError}</h6>
                   <div className="centerFields">
                     <section className="CaloriesAndCookTime">
@@ -120,17 +155,9 @@ class AdvancedSearch extends Component {
                           errorIsTrue={this.state.numberError ? true : false}
                         />
                       </section>
-                      <section className="searchOptions row">
-                        <div className="label">
-                          <label>Max ingredients: </label>
-                        </div>
-                        <NumberInputs
-                          ingredient={true}
-                          label="maxIngredients"
-                        />
-                      </section>
                     </section>
                   </div>
+
                   <div className="centerLine">
                     <div className="line" />
                   </div>
@@ -145,33 +172,6 @@ class AdvancedSearch extends Component {
                   </section>
                 </section>
               </span>
-              <div className="centerLine">
-                <div className="line" />
-              </div>
-              <h6 className="red">{this.state.recipeFieldError}</h6>
-              <input
-                onChange={this._SearchedRecipe}
-                className="Search"
-                name="recipe"
-                placeholder="Recipes"
-              />
-              {this.props.SearchedRecipe.value && this.state.recipeFieldError
-                ? this._recipeFieldError()
-                : null}
-              {this.props.SearchedRecipe.value ? (
-                <Link to={`/browse/${params}`}>
-                  <button className="advancedSearchButton">Submit</button>
-                </Link>
-              ) : (
-                <button
-                  onClick={() => {
-                    this.setState({ recipeFieldError: 'Cant be empty!' })
-                  }}
-                  className="advancedSearchButton"
-                >
-                  Submit
-                </button>
-              )}
             </div>
           </nav>
           <div className="navSpacing" />

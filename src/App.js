@@ -23,3 +23,6 @@ class App extends Component {
 }
 
 export default App
+
+// to do:
+// [] add validation to prevent the same categories chosen twice

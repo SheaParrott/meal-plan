@@ -53,7 +53,7 @@ class RecipePage extends Component {
                         <div className="centerImageAndWarnings">
                           <p className="singleRecipeInformation">
                             See full recipe on:{' '}
-                            <a className="bold" href={info.url}>
+                            <a className="bold" href={info.url} target="_blank">
                               {info.source.toUpperCase()}
                             </a>
                           </p>
@@ -118,22 +118,6 @@ class RecipePage extends Component {
                             >
                               Ingredients
                             </h3>
-
-                            <h3
-                              className={
-                                this.state.displayedInfo == 'digest'
-                                  ? 'shadedRecipeInfoLabel'
-                                  : 'recipeInfoLabel'
-                              }
-                              onClick={() => {
-                                this.setState({
-                                  displayedInfo: 'digest'
-                                })
-                              }}
-                            >
-                              Digest
-                            </h3>
-
                             <h3
                               className={
                                 this.state.displayedInfo == 'totalDaily'
@@ -151,6 +135,21 @@ class RecipePage extends Component {
 
                             <h3
                               className={
+                                this.state.displayedInfo == 'Nutrition'
+                                  ? 'shadedRecipeInfoLabel'
+                                  : 'recipeInfoLabel'
+                              }
+                              onClick={() => {
+                                this.setState({
+                                  displayedInfo: 'Nutrition'
+                                })
+                              }}
+                            >
+                              Nutrition
+                            </h3>
+
+                            {/* <h3
+                              className={
                                 this.state.displayedInfo == 'totalNutrients'
                                   ? 'shadedRecipeInfoLabel'
                                   : 'recipeInfoLabel'
@@ -162,12 +161,12 @@ class RecipePage extends Component {
                               }}
                             >
                               Nutrients
-                            </h3>
+                            </h3> */}
                           </div>
 
                           <div className="RecipeInfoDisplayed">
-                            {/* start of digest */}
-                            {this.state.displayedInfo == 'digest' ? (
+                            {/* start of Nutrition */}
+                            {this.state.displayedInfo == 'Nutrition' ? (
                               <div className="recipeInfo">
                                 <div>
                                   {info.digest
@@ -318,7 +317,7 @@ class RecipePage extends Component {
                                 </div>
                               </div>
                             ) : null}
-                            {/* end of digest */}
+                            {/* end of Nutrition */}
                             {/* start of totalDaily */}
                             {this.state.displayedInfo == 'totalDaily' ? (
                               <div className="recipeInfo">
@@ -370,8 +369,9 @@ class RecipePage extends Component {
                               </div>
                             ) : null}
                             {/* end of totalDaily */}
+
                             {/* start of totalNutrients */}
-                            {this.state.displayedInfo == 'totalNutrients' ? (
+                            {/* {this.state.displayedInfo == 'totalNutrients' ? (
                               <div className="recipeInfo">
                                 <div>
                                   {Object.keys(info.totalNutrients)
@@ -420,7 +420,7 @@ class RecipePage extends Component {
                                 </div>
                               </div>
                             ) : null}
-                            {/* end of totalNutrients */}
+                            end of totalNutrients */}
                             {this.state.displayedInfo == 'ingredients' ? (
                               <div className="recipeInfoIngredients">
                                 {info.ingredientLines.map(

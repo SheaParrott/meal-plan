@@ -43,8 +43,7 @@ h6 {
 }
 .red {
   color: red;
-  font-weight: 700;
-  padding: 5px 0;
+  font-weight: 900;
 }
 .white-hv:hover {
   cursor: pointer;
@@ -166,7 +165,7 @@ img.home {
   justify-content: space-around;
 }
 .source {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #444a5a;
 }
@@ -192,17 +191,26 @@ img.home {
   .homeButton {
     font-size: 1.4rem;
   }
+  .source {
+    font-size: 0.91rem;
+  }
 }
 @media (min-width: 760px) {
   .footerButton,
   .homeButton {
     font-size: 1.35rem;
   }
+  .source {
+    font-size: 1rem;
+  }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   .footerButton,
   .homeButton {
     font-size: 1.55rem;
+  }
+  .source {
+    font-size: 1.2rem;
   }
 }
 
@@ -291,6 +299,13 @@ img.home {
     background-color: #81848d;
     width: 1066px;
     margin: 3px 0;
+  }
+  .source {
+    font-size: 0.7rem;
+  }
+  .credit-home {
+    display: flex;
+    justify-content: space-between;
   }
   /* general end */
 }

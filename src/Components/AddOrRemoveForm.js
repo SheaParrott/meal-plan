@@ -33,7 +33,7 @@ class AddOrRemoveForm extends Component {
         : this.props.removedIngredients
     return (
       <div>
-        <div className="formArea">
+        <div className={this.props.name === 'Categories' ? 'formArea' : ''}>
           <label>{this.props.name}: </label>
 
           {this.props.name === 'Categories' ? (
@@ -71,17 +71,19 @@ class AddOrRemoveForm extends Component {
           )}
         </div>
 
-        <div className="displayedLabelbox">
-          {tagsDisplayed.map((value, index) => {
-            return (
-              <ChosenCategory
-                key={index}
-                value={value}
-                name={this.props.name}
-              />
-            )
-          })}
-        </div>
+        <section className="centerLabelBox">
+          <div className="displayedLabelbox">
+            {tagsDisplayed.map((value, index) => {
+              return (
+                <ChosenCategory
+                  key={index}
+                  value={value}
+                  name={this.props.name}
+                />
+              )
+            })}
+          </div>
+        </section>
       </div>
     )
   }
