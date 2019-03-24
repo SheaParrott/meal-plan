@@ -49,6 +49,10 @@ h6 {
   cursor: pointer;
   text-shadow: 0 0 5px white;
 }
+.white-mellow:hover {
+  cursor: pointer;
+  text-shadow: 0 0 5px #ffffffa8;
+}
 
 h1.basicHeader {
   font-family: 'good';

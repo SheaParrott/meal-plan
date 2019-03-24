@@ -83,17 +83,19 @@ class About extends Component {
                   <div className="aboutParagraph small-view">
                     <h2 className="aboutInspiration">Special Thanks!</h2>
                     <p className="about">
-                      <br /> Thank you EDAMAM for providing the awesome and free
-                      API used in this project. Documentation can be found here:{' '}
+                      <br /> Thank you EDAMAM for providing the API used in this
+                      project. Please go check out EDAMAM and give them your
+                      support! Documentation can be found here:{' '}
                       <strong>
                         <a
-                          className="white"
+                          className="EDAMAM-link white-mellow"
                           href="https://www.edamam.com/"
                           target="_blank"
                         >
                           https://www.edamam.com/
                         </a>
-                      </strong>{' '}
+                      </strong>
+                      .
                       <br />
                       <br />
                     </p>
@@ -138,7 +140,8 @@ class About extends Component {
                     <h2 className="aboutInspiration">Special Thanks!</h2>
                     <p className="about">
                       <br /> Thank you EDAMAM for providing the API used in this
-                      project. Documentation can be found here:{' '}
+                      project. Please go check out EDAMAM and give them your
+                      support! Documentation can be found here:{' '}
                       <strong>
                         <a
                           className="EDAMAM-link"
@@ -148,6 +151,7 @@ class About extends Component {
                           https://www.edamam.com/
                         </a>
                       </strong>
+                      .
                       <br />
                       <br />
                       <br />
