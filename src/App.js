@@ -24,6 +24,11 @@ class App extends Component {
 export default App
 
 // to do:
+// [] extend advanced search bar to all pages that work with the recipes
+// [] refactor single recipe page to have info to the side of the image for desktop view
 // [x] add validation to prevent the same categories chosen twice
 // [] (tough one, will consult someone about this) add guard clause to number inputs that prevents 'e' from getting added.
 //    - type of not number return
+// [] start the week recipe planner
+//    - [] create a page where recipe can be saved to certain days and times
+//    - [] add a export to pdf option
