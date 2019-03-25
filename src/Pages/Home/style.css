@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
   font-family: 'good';
   color: white;
   text-shadow: 0 0 5px #444a5a;
@@ -335,7 +335,6 @@ div.CategoriesBar {
 }
 
 @media (min-width: 1280px) {
-  /* home start */
   .CaloriesAndCookTime {
     width: 540px;
   }
@@ -500,4 +499,4 @@ div.CategoriesBar {
     justify-content: space-evenly;
     overflow: hidden;
   }
-}
+} */

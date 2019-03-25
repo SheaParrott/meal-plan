@@ -9,6 +9,7 @@ import history from '../../Components/history'
 import './style.css'
 import Footer from '../../Components/Footer'
 import ErrorMessage from '../../Components/ErrorMessage'
+import AdvancedSearch from '../../Components/AdvancedSearch'
 
 class Browse extends Component {
   constructor(props) {
@@ -101,10 +102,7 @@ class Browse extends Component {
         <div className="shaded-bg">
           <div className="single-view-page">
             <main>
-              <nav>
-                <h1 className="basicHeader">Meal Plan</h1>
-                <Header />
-              </nav>
+              <AdvancedSearch />
               <div className="spacingFromNav" />
               <div>
                 <h2 className="uppercase">{this.props.q} Results</h2>

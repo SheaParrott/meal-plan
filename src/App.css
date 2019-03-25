@@ -54,7 +54,7 @@ h6 {
   text-shadow: 0 0 5px #ffffffa8;
 }
 
-h1.basicHeader {
+/* h1.basicHeader {
   font-family: 'good';
   color: white;
   text-shadow: 0 0 5px #444a5a;
@@ -62,7 +62,7 @@ h1.basicHeader {
   font-weight: 500;
   padding: 10px 0 2px 0;
   background-color: #92ca64;
-}
+} */
 
 h4 {
   padding: 0;
@@ -82,7 +82,7 @@ nav {
   width: 100vw;
 }
 .spacingFromNav {
-  height: 90px;
+  height: 45px;
 }
 .creatorSpacingFromNav {
   height: 145px;
@@ -313,3 +313,510 @@ img.home {
   }
   /* general end */
 }
+
+/* home / advanced  start*/
+h1 {
+  font-family: 'good';
+  color: white;
+  text-shadow: 0 0 5px #444a5a;
+  font-size: 4.2rem;
+  font-weight: 500;
+  padding: 12px 0 0 0;
+  background-color: #92ca64;
+}
+.categoriesBar {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 3px 0;
+}
+
+label {
+  font-size: 1.1rem;
+}
+input,
+button {
+  font-size: 1rem;
+  border-radius: 5px;
+}
+select {
+  font-size: 0.9rem;
+  height: 24px;
+  width: 95px;
+}
+button {
+  margin: 10px 10px 10px 0;
+}
+.Search,
+input.formInput {
+  margin-right: 5px;
+  width: 125px;
+}
+.advancedSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button:focus {
+  outline: 0;
+}
+.advancedSearchButton {
+  font-weight: 700;
+  border-radius: 5px;
+  outline-color: unset;
+  border: none;
+  text-shadow: 0 0 0.5px #000000;
+  background-image: linear-gradient(#92ca64, #8ac05e);
+  color: #ffffff;
+  box-shadow: 0 0 3px #969595;
+  padding: 3.1px 30px;
+}
+.advancedSearchButton:hover {
+  background-image: linear-gradient(#92ca64cb, #8ac05eec);
+  color: #fffffff5;
+  text-shadow: 0 0 0.5px #000000a2;
+  cursor: pointer;
+  box-shadow: 0 0 3px #9695956c;
+}
+div.categories {
+  width: 145px;
+}
+
+.searchOptionsForm {
+  margin: 10px;
+  width: 90vw;
+}
+.formArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchOptions {
+  margin: 10px;
+}
+.centerFields {
+  display: flex;
+  justify-content: center;
+}
+.CaloriesAndCookTime {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.numberInput {
+  width: 48px;
+}
+.centerLabelBox {
+  display: flex;
+  justify-content: center;
+}
+.displayedLabelbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.displayedLabel {
+  display: flex;
+  align-items: center;
+  background-color: #687086;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 2px 2px;
+}
+p.Label {
+  margin: 0;
+  padding-left: 5px;
+}
+label {
+  padding: 5px;
+}
+.label {
+  padding: 5px;
+}
+.row {
+  display: flex;
+  align-items: center;
+}
+.categoriesCentering {
+  display: flex;
+  justify-content: center;
+}
+.allCategories {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+div.CategoriesBar {
+  display: flex;
+  flex-wrap: column;
+}
+.Categories {
+  padding: 3px;
+  margin: 2px;
+  font-size: 1rem;
+}
+.fa-angle-down,
+.fa-angle-up {
+  font-size: 1.3rem;
+}
+@media (min-width: 375px) {
+  label {
+    font-size: 1.2rem;
+  }
+  p.Label {
+    font-size: 1.05rem;
+  }
+  input,
+  button {
+    font-size: 1.2rem;
+  }
+  select {
+    font-size: 1rem;
+    height: 28px;
+    width: 105px;
+  }
+  .fa-angle-down,
+  .fa-angle-up {
+    font-size: 1.5rem;
+  }
+  div.categories {
+    width: 150px;
+  }
+  .advancedDropDown {
+    font-size: 1.1rem;
+  }
+  .numberInput {
+    width: 55px;
+  }
+  .Search,
+  input.formInput {
+    width: 170px;
+  }
+}
+@media (min-width: 411px) {
+  label {
+    font-size: 1.3rem;
+  }
+  p.Label {
+    font-size: 1.1rem;
+  }
+  input,
+  button {
+    font-size: 1.3rem;
+  }
+  select {
+    height: 30px;
+    width: 110px;
+  }
+  .fa-angle-down,
+  .fa-angle-up {
+    font-size: 1.6rem;
+  }
+  div.categories {
+    width: 160px;
+  }
+  .advancedDropDown {
+    font-size: 1.2rem;
+  }
+  .numberInput {
+    width: 60px;
+  }
+  .Search,
+  input.formInput {
+    width: 190px;
+  }
+}
+@media (min-width: 600px) {
+  .CaloriesAndCookTime {
+    width: 423px;
+  }
+  .displayedLabelbox {
+    width: 418px;
+  }
+  label {
+    font-size: 1.4rem;
+  }
+  p.Label {
+    font-size: 1.15rem;
+  }
+  input,
+  button {
+    font-size: 1.4rem;
+  }
+  select {
+    font-size: 1.05rem;
+    height: 32px;
+    width: 118px;
+  }
+  .fa-angle-down,
+  .fa-angle-up {
+    font-size: 1.7rem;
+  }
+  div.categories {
+    width: 170px;
+  }
+  .advancedDropDown {
+    font-size: 1.3rem;
+  }
+  .numberInput {
+    width: 65px;
+  }
+  .Search,
+  input.formInput {
+    width: 240px;
+  }
+}
+@media (min-width: 760px) {
+  .CaloriesAndCookTime {
+    justify-content: space-between;
+    width: 500px;
+  }
+  .displayedLabelbox {
+    width: 458px;
+  }
+  label {
+    font-size: 1.45rem;
+  }
+  p.Label {
+    font-size: 1.2rem;
+  }
+  input,
+  button {
+    font-size: 1.45rem;
+  }
+  select {
+    height: 33px;
+    width: 125px;
+  }
+  .fa-angle-down,
+  .fa-angle-up {
+    font-size: 2.05rem;
+  }
+  div.categories {
+    width: 178px;
+  }
+  .advancedDropDown {
+    font-size: 1.35rem;
+  }
+  .numberInput {
+    width: 69px;
+  }
+  .Search,
+  input.formInput {
+    width: 295px;
+  }
+}
+@media (min-width: 1024px) and (min-height: 1366px) {
+  .CaloriesAndCookTime {
+    width: 510px;
+  }
+  .displayedLabelbox {
+    width: 453.5px;
+  }
+  label {
+    font-size: 1.65rem;
+  }
+  p.Label {
+    font-size: 1.4rem;
+  }
+  input,
+  button {
+    font-size: 1.25rem;
+  }
+  select {
+    height: 29px;
+    width: 130px;
+  }
+  .fa-angle-down,
+  .fa-angle-up {
+    font-size: 2.6rem;
+  }
+  div.categories {
+    width: 202px;
+  }
+  .advancedDropDown {
+    font-size: 1.55rem;
+  }
+  .numberInput {
+    width: 69px;
+  }
+  .Search,
+  input.formInput {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* home start */
+  .CaloriesAndCookTime {
+    width: 540px;
+  }
+  .displayedLabelbox {
+    width: 525px;
+  }
+  .home-spacing {
+    height: 261px;
+  }
+  .homePage {
+    min-height: 100vh;
+  }
+  .homePageName {
+    z-index: 7;
+  }
+  .navSpacing {
+    margin-top: -100px;
+    height: 0;
+  }
+  .fa-angle-down,
+  .fa-angle-up {
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+  p.Label {
+    font-size: 1rem;
+  }
+  input,
+  button {
+    font-size: 1rem;
+  }
+  select {
+    font-size: 0.9rem;
+    height: 24px;
+    width: 102px;
+  }
+  .fa-angle-down,
+  .fa-angle-up {
+    font-size: 1.6rem;
+  }
+  div.categories {
+    width: 178px;
+  }
+  .advancedDropDown {
+    font-size: 0.95rem;
+  }
+  .numberInput {
+    width: 60px;
+  }
+  .Search,
+  input.formInput {
+    width: 300px;
+  }
+  img.home {
+    width: 100%;
+  }
+
+  .advancedSearchButton {
+    width: 200px;
+  }
+  nav {
+    width: 100%;
+  }
+
+  img.home-category {
+    width: 70px;
+    border-radius: 50%;
+  }
+  .top-Picks {
+    width: 1050px;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffffc5;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  h2.slider {
+    color: #92ca64;
+    font-weight: 900;
+    text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
+    padding: 5px;
+  }
+  div.the-country-slider {
+    margin: 5px;
+    height: 285px;
+    width: 215px;
+    border: 1.5px solid #b3b4b48c;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffff2f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  div.slider {
+    margin: 5px;
+    height: 285px;
+    min-width: 228px;
+    border: 1.5px solid #b3b4b48c;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffffa6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .country-top-Picks {
+    width: 1050px;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffffc5;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .wrap-country-top-picks {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .country-container {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffff77;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .country-slider {
+    color: #92ca64;
+    font-weight: 900;
+    font-size: 1.3rem;
+  }
+  .seeMore {
+    color: #92ca64;
+    font-weight: 900;
+    font-size: 1.15rem;
+  }
+  .green:hover {
+    color: #a8e973;
+  }
+  div.country-homeRecipeSlider {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+  img.slider {
+    width: 224px;
+    border-radius: 3px;
+  }
+  img.the-country-slider {
+    width: 210px;
+    border-radius: 3px;
+  }
+  .homeRecipeSlider {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+}
+
+/* home / advanced end */

@@ -74,7 +74,7 @@ class AdvancedSearch extends Component {
               : null}
             {this.props.SearchedRecipe.value ? (
               <Link to={`/browse/${params}`}>
-                <button className="advancedSearchButton">Submit</button>
+                <button className="advancedSearchButton">Search</button>
               </Link>
             ) : (
               <button

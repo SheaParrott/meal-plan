@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import AdvancedSearch from './AdvancedSearch'
 
 class ErrorMessage extends Component {
   render() {
@@ -10,10 +11,7 @@ class ErrorMessage extends Component {
           <div className="single-view-page">
             <main className="error">
               <div>
-                <nav>
-                  <h1 className="basicHeader">Meal Plan</h1>
-                  <Header />
-                </nav>
+                <AdvancedSearch />
                 {this.props.singleViewRecipePage ? (
                   <div>
                     <h2 className="uppercase noResults">

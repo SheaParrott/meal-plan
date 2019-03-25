@@ -20,6 +20,12 @@ class Creator extends Component {
                 <nav>
                   <h1>Shea Parrott</h1>
                   <Header />
+
+                  <div className="centerLine">
+                    <div className="line" />
+                  </div>
+                  <div className="thanksOrInspiration small-view" />
+                  <h5 className="about">Thanks for Visiting!</h5>
                 </nav>
                 <div className="creatorSpacingFromNav" />
 

@@ -6,6 +6,7 @@ import Loading from '../../Components/Loading'
 import './style.css'
 import Footer from '../../Components/Footer'
 import ErrorMessage from '../../Components/ErrorMessage'
+import AdvancedSearch from '../../Components/AdvancedSearch'
 
 class RecipePage extends Component {
   constructor(props) {
@@ -35,10 +36,7 @@ class RecipePage extends Component {
       <div className="spash-bg">
         <div className="no-shaded-bg">
           <div className="single-view-page">
-            <nav>
-              <h1 className="basicHeader">Meal Plan</h1>
-              <Header />
-            </nav>
+            <AdvancedSearch />
             <div className="spacingFromNav" />
             <main className="centerRecipePage">
               <main className="recipe-page-main">
