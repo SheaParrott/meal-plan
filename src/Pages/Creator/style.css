@@ -67,7 +67,7 @@ img.resume:hover {
   font-weight: 700;
   padding: 8px;
   color: white;
-  margin: 18px 15px;
+  margin: 80px 15px 18px 15px;
 }
 .white-creator {
   color: #ffffff;
@@ -83,7 +83,7 @@ img.resume:hover {
     width: 360px;
   }
   .main-creator {
-    margin: 21px 15px;
+    margin: 75px 15px 18px 15px;
   }
 }
 @media (min-width: 411px) {
@@ -99,7 +99,7 @@ img.resume:hover {
 }
 @media (min-width: 760px) {
   .main-creator {
-    margin: 30px 80px;
+    margin: 95px 80px 30px 80px;
     text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
   }
   .widthbig {
@@ -136,7 +136,7 @@ img.resume:hover {
 
 @media (min-width: 999px) {
   .main-creator {
-    margin: 65px 130px;
+    margin: 130px 130px 65px 130px;
   }
   .widthbig {
     width: 480px;
@@ -175,8 +175,7 @@ img.resume:hover {
   .main-creator {
     text-shadow: none;
     font-weight: 700;
-    margin: 5px 5px;
-
+    margin: 30px 5px 65px 30px;
     width: 1050px;
     border: 1.5px solid #b3b4b48c;
     background-color: #ffffffc5;

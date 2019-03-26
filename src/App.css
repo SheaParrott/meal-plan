@@ -82,7 +82,7 @@ nav {
   width: 100vw;
 }
 .spacingFromNav {
-  height: 45px;
+  height: 50px;
 }
 .creatorSpacingFromNav {
   height: 145px;
@@ -183,11 +183,17 @@ img.home {
   .homeButton {
     font-size: 1.2rem;
   }
+  .spacingFromNav {
+    height: 60px;
+  }
 }
 @media (min-width: 411px) {
   .footerButton,
   .homeButton {
     font-size: 1.3rem;
+  }
+  .spacingFromNav {
+    height: 70px;
   }
 }
 @media (min-width: 600px) {
@@ -207,6 +213,9 @@ img.home {
   .source {
     font-size: 1rem;
   }
+  .spacingFromNav {
+    height: 80px;
+  }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   .footerButton,
@@ -216,6 +225,9 @@ img.home {
   .source {
     font-size: 1.2rem;
   }
+  .spacingFromNav {
+    height: 90px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -223,6 +235,7 @@ img.home {
   nav {
     width: 100vw;
   }
+
   .footerButton,
   .homeButton {
     font-size: 1.15rem;
@@ -660,7 +673,7 @@ div.CategoriesBar {
     width: 525px;
   }
   .home-spacing {
-    height: 261px;
+    height: 240px;
   }
   .homePage {
     min-height: 100vh;
@@ -676,7 +689,9 @@ div.CategoriesBar {
   .fa-angle-up {
     font-size: 0.9rem;
   }
-
+  .spacingFromNav {
+    height: 250px;
+  }
   label {
     font-size: 1rem;
   }
