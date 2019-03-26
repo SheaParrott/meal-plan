@@ -95,6 +95,7 @@ img.resume:hover {
   .main-creator {
     padding: 25px;
     margin: 30px 40px;
+    margin: 95px 40px 30px 40px;
   }
 }
 @media (min-width: 760px) {
