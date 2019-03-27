@@ -72,6 +72,13 @@ main.error {
   color: #0ce404bd;
   box-shadow: 0 0 0.5px #0ce404d2;
 }
+.currentPage {
+  color: #92ca64;
+}
+.currentPage:hover {
+  cursor: pointer;
+  text-shadow: 0 0 5px #92ca64;
+}
 
 div.browse {
   display: flex;

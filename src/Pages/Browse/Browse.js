@@ -96,13 +96,17 @@ class Browse extends Component {
             parseInt(this.props.from.from.toString().slice(0, -1)) + 5
           )
       : []
-
+    // console.log('the path ' + window.location)
+    // this.props._searchRecipe()
     return (
       <div className="spash-bg">
         <div className="shaded-bg">
           <div className="single-view-page">
             <main>
-              <AdvancedSearch />
+              <AdvancedSearch
+                _searchRecipe={this._searchRecipe}
+                browsePage={true}
+              />
               <div className="spacingFromNav" />
               <div>
                 <h2 className="uppercase">{this.props.q} Results</h2>

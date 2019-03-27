@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { SearchedRecipe } from '../Actions/SearchActions'
 import { Link } from 'react-router-dom'
 import Header from './Header'
+import history from './history'
 
 class AdvancedSearch extends Component {
   constructor(props) {
@@ -50,9 +51,7 @@ class AdvancedSearch extends Component {
       this.props.calories.params +
       this.props.cookTime.params +
       this.props.maxIngredients.params +
-      string +
-      this.props.from.param +
-      this.props.toParam.param
+      string
     return (
       <div className="homePageName">
         <div>
@@ -73,9 +72,24 @@ class AdvancedSearch extends Component {
               ? this._recipeFieldError()
               : null}
             {this.props.SearchedRecipe.value ? (
-              <Link to={`/browse/${params}`}>
-                <button className="advancedSearchButton">Search</button>
-              </Link>
+              this.props.browsePage ? (
+                <button
+                  onClick={() => {
+                    history.push(`/browse/${params}`)
+                    this.props._searchRecipe()
+                    // setTimeout(function() {
+
+                    // }, 3000)
+                  }}
+                  className="advancedSearchButton"
+                >
+                  Search
+                </button>
+              ) : (
+                <Link to={`/browse/${params}`}>
+                  <button className="advancedSearchButton">Search</button>
+                </Link>
+              )
             ) : (
               <button
                 onClick={() => {

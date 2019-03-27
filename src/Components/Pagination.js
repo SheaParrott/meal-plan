@@ -32,8 +32,23 @@ class Pagination extends Component {
     if (this.props.page >= 9) {
       return <div />
     }
+
+    let array = this.props.from.from.toString().split('')
+    let currentPage =
+      parseInt(this.props.from.from) < 1
+        ? 1
+        : parseInt(
+            array
+              .slice(0, array.length - 1)
+              .reduce((accumulator, currentValue) => accumulator + currentValue)
+          ) + 1
     return (
-      <p className="pagination white-hv" onClick={this._pagination}>
+      <p
+        className={`pagination white-hv ${
+          currentPage == this.props.page ? 'currentPage' : ''
+        }`}
+        onClick={this._pagination}
+      >
         {this.props.page}
       </p>
     )
