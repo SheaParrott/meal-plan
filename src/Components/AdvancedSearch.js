@@ -76,10 +76,7 @@ class AdvancedSearch extends Component {
                 <button
                   onClick={() => {
                     history.push(`/browse/${params}`)
-                    this.props._searchRecipe()
-                    // setTimeout(function() {
-
-                    // }, 3000)
+                    this.props._newSearchRecipe(params)
                   }}
                   className="advancedSearchButton"
                 >

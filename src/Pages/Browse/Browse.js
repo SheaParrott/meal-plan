@@ -25,6 +25,9 @@ class Browse extends Component {
   _searchRecipe = event => {
     this.props._searchRecipe(this.props.match.params.url_params)
   }
+  _newSearchRecipe = params => {
+    this.props._newSearchRecipe(params)
+  }
 
   _PaginationArrowBack = () => {
     let string = ''
@@ -89,7 +92,7 @@ class Browse extends Component {
       this.props.from.param +
       this.props.toParam.param
     let PaginationArray = this.props.pages
-      ? parseInt(this.props.from.from) < 1
+      ? parseInt(this.props.from.from) < 41
         ? this.props.pages.slice(0, 5)
         : this.props.pages.slice(
             parseInt(this.props.from.from.toString().slice(0, -1)),
@@ -104,7 +107,7 @@ class Browse extends Component {
           <div className="single-view-page">
             <main>
               <AdvancedSearch
-                _searchRecipe={this._searchRecipe}
+                _newSearchRecipe={this._newSearchRecipe}
                 browsePage={true}
               />
               <div className="spacingFromNav" />
@@ -171,7 +174,8 @@ const mapStateToProps = state => ({
 const mapActionsToProps = {
   _searchRecipe: getRecipes,
   _PaginationArrowBack: getRecipes,
-  _PaginationArrowForward: getRecipes
+  _PaginationArrowForward: getRecipes,
+  _newSearchRecipe: getRecipes
 }
 
 export default connect(

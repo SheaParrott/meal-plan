@@ -36,7 +36,7 @@ class RecipePage extends Component {
       <div className="spash-bg">
         <div className="no-shaded-bg">
           <div className="single-view-page">
-            <AdvancedSearch />
+            <AdvancedSearch RecipePage={true} />
             <div className="spacingFromNav" />
             <main className="centerRecipePage">
               <main className="recipe-page-main">
