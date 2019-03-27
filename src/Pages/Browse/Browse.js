@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Recipe from '../../Components/Recipe'
 import { connect } from 'react-redux'
-import { getRecipes } from '../../Actions/SearchActions'
-import Header from '../../Components/Header'
+import { getRecipes } from '../../Actions/SearchActionsß'
 import Loading from '../../Components/Loading'
 import Pagination from '../../Components/Pagination'
 import history from '../../Components/history'
@@ -99,8 +98,6 @@ class Browse extends Component {
             parseInt(this.props.from.from.toString().slice(0, -1)) + 5
           )
       : []
-    // console.log('the path ' + window.location)
-    // this.props._searchRecipe()
     return (
       <div className="spash-bg">
         <div className="shaded-bg">

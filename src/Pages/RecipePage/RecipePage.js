@@ -145,21 +145,6 @@ class RecipePage extends Component {
                             >
                               Nutrition
                             </h3>
-
-                            {/* <h3
-                              className={
-                                this.state.displayedInfo == 'totalNutrients'
-                                  ? 'shadedRecipeInfoLabel'
-                                  : 'recipeInfoLabel'
-                              }
-                              onClick={() => {
-                                this.setState({
-                                  displayedInfo: 'totalNutrients'
-                                })
-                              }}
-                            >
-                              Nutrients
-                            </h3> */}
                           </div>
 
                           <div className="RecipeInfoDisplayed">
@@ -366,59 +351,6 @@ class RecipePage extends Component {
                                 </div>
                               </div>
                             ) : null}
-                            {/* end of totalDaily */}
-
-                            {/* start of totalNutrients */}
-                            {/* {this.state.displayedInfo == 'totalNutrients' ? (
-                              <div className="recipeInfo">
-                                <div>
-                                  {Object.keys(info.totalNutrients)
-                                    .slice(0, Math.ceil(info.digest.length / 2))
-                                    .map((key, index) => {
-                                      return (
-                                        <div
-                                          className="informationDisplayed"
-                                          key={key + index}
-                                        >
-                                          <p className="singleRecipeInformation">
-                                            {info.totalNutrients[key].label}:{' '}
-                                            {info.totalNutrients[
-                                              key
-                                            ].quantity.toFixed(2)}
-                                            {info.totalNutrients[key].unit}
-                                          </p>
-                                          <br />
-                                        </div>
-                                      )
-                                    })}
-                                </div>
-                                <div>
-                                  {Object.keys(info.totalNutrients)
-                                    .slice(
-                                      Math.floor(info.digest.length / 2),
-                                      info.digest.length
-                                    )
-                                    .map((key, index) => {
-                                      return (
-                                        <div
-                                          className="informationDisplayed"
-                                          key={key + index}
-                                        >
-                                          <p className="singleRecipeInformation">
-                                            {info.totalNutrients[key].label}:{' '}
-                                            {info.totalNutrients[
-                                              key
-                                            ].quantity.toFixed(2)}
-                                            {info.totalNutrients[key].unit}
-                                          </p>
-                                          <br />
-                                        </div>
-                                      )
-                                    })}
-                                </div>
-                              </div>
-                            ) : null}
-                            end of totalNutrients */}
                             {this.state.displayedInfo == 'ingredients' ? (
                               <div className="recipeInfoIngredients">
                                 {info.ingredientLines.map(
