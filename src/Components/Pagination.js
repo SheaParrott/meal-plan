@@ -25,7 +25,7 @@ class Pagination extends Component {
       `&to=${(this.props.page - 1) * 10 + 12}`
 
     this.props._pagination(params)
-    history.push(`/browse/${params}`)
+    history.push(`/results/${params}`)
     window.scrollTo(0, 0)
   }
   render() {

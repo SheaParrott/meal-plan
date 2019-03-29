@@ -64,7 +64,7 @@ class AdvancedSearch extends Component {
                 <button
                   onClick={() => {
                     history.push(
-                      `/browse/${this.props.paramsWithoutPagination}`
+                      `/results/${this.props.paramsWithoutPagination}`
                     )
                     this.props._newSearchRecipe(
                       this.props.paramsWithoutPagination
@@ -75,7 +75,7 @@ class AdvancedSearch extends Component {
                   Search
                 </button>
               ) : (
-                <Link to={`/browse/${this.props.paramsWithoutPagination}`}>
+                <Link to={`/results/${this.props.paramsWithoutPagination}`}>
                   <button className="advancedSearchButton">Search</button>
                 </Link>
               )

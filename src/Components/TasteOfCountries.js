@@ -14,7 +14,7 @@ class TasteOfCountries extends Component {
           })}
         </div>
         <Link
-          to={`/browse/&q=${this.props.country.country}${
+          to={`/results/&q=${this.props.country.country}${
             this.props.from.param
           }${this.props.toParam.param}`}
         >

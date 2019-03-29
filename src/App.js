@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import './App.css'
 import Home from './Pages/Home/Home'
 import Creator from './Pages/Creator/Creator'
-import Browse from './Pages/Browse/Browse'
 import { Route } from 'react-router-dom'
 import RecipePage from './Pages/RecipePage/RecipePage'
 import About from './Pages/About/About'
+import Results from './Pages/Results/Results'
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route path="/browse/:url_params" component={Browse} />
+        <Route path="/results/:url_params" component={Results} />
         <Route path="/creator" component={Creator} />
         <Route path="/recipe/:uri" component={RecipePage} />
       </div>

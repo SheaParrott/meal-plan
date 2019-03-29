@@ -6,7 +6,7 @@ class Category extends Component {
   render() {
     return (
       <Link
-        to={`/browse/&q=${this.props.category.category}${
+        to={`/results/&q=${this.props.category.category}${
           this.props.from.param
         }${this.props.toParam.param}`}
       >

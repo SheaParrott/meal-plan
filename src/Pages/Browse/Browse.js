@@ -1,117 +1,68 @@
 import React, { Component } from 'react'
-import Recipe from '../../Components/Recipe'
-import { connect } from 'react-redux'
-import { getRecipes } from '../../Actions/SearchActions'
-import Loading from '../../Components/Loading'
-import Pagination from '../../Components/Pagination'
-import history from '../../Components/history'
-import './style.css'
-import Footer from '../../Components/Footer'
-import ErrorMessage from '../../Components/ErrorMessage'
-import AdvancedSearch from '../../Components/AdvancedSearch'
+import recommended from '../../recommended'
+import categories from '../../categories'
+import HomeRecipe from '../../Components/HomeRecipe'
+import Category from '../../Components/Category'
+import country from '../../Country'
+import TasteOfCountries from '../../Components/TasteOfCountries'
 
 class Browse extends Component {
   constructor(props) {
     super(props)
-    this._searchRecipe = this._searchRecipe.bind(this)
-    this._PaginationArrowBack = this._PaginationArrowBack.bind(this)
-    this._PaginationArrowForward = this._PaginationArrowForward.bind(this)
-  }
-  componentDidMount = () => {
-    window.scrollTo(0, 0)
-    this._searchRecipe()
-  }
-  _searchRecipe = event => {
-    this.props._searchRecipe(this.props.match.params.url_params)
-  }
-  _newSearchRecipe = params => {
-    this.props._newSearchRecipe(params)
-  }
-
-  _PaginationArrowBack = () => {
-    let params =
-      this.props.paramsWithoutPagination +
-      `&from=${parseInt(this.props.from.from) - 10}` +
-      `&to=${parseInt(this.props.toParam.toParam) - 10}`
-    this.props._PaginationArrowBack(params)
-    history.push(`/browse/${params}`)
-    window.scrollTo(0, 0)
-  }
-  _PaginationArrowForward = () => {
-    if (this.props.from.from >= 90) {
-      return
+    this.state = {
+      recommended: this.shuffle(recommended),
+      countries: this.shuffle(country)
     }
-    let params =
-      this.props.paramsWithoutPagination +
-      `&from=${parseInt(this.props.from.from) + 10}` +
-      `&to=${parseInt(this.props.from.from) + 22}`
-    this.props._PaginationArrowForward(params)
-    history.push(`/browse/${params}`)
-    window.scrollTo(0, 0)
   }
+  shuffle = array => {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex
 
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+    }
+
+    return array
+  }
   render() {
-    if (this.props.hits.length <= 0) {
-      return <Loading />
-    } else if (this.props.hits[0] === 'No Results') {
-      return <ErrorMessage />
-    }
-    let PaginationArray = this.props.pages
-      ? parseInt(this.props.from.from) < 41
-        ? this.props.pages.slice(0, 5)
-        : this.props.pages.slice(
-            parseInt(this.props.from.from.toString().slice(0, -1)),
-            parseInt(this.props.from.from.toString().slice(0, -1)) + 5
-          )
-      : []
     return (
-      <div className="spash-bg">
-        <div className="shaded-bg">
-          <div className="single-view-page">
-            <main>
-              <AdvancedSearch
-                _newSearchRecipe={this._newSearchRecipe}
-                browsePage={true}
-              />
-              <div className="spacingFromNav" />
-              <div>
-                <h2 className="uppercase">
-                  {this.props.SearchedRecipe.value} Results
-                </h2>
-                <div className="centerLine">
-                  <div className="line" />
-                </div>
-                <main className="browseCentering">
-                  <div className="recipeBox">
-                    {this.props.hits.map((hit, index) => {
-                      return <Recipe key={hit + index} hit={hit} />
-                    })}
-                  </div>
-                </main>
-                <div className="browse">
-                  <i
-                    className="fas fa-chevron-left white-hv"
-                    onClick={this._PaginationArrowBack}
-                  />
-
-                  {PaginationArray.map((page, index) => {
-                    return (
-                      <Pagination
-                        key={index}
-                        page={page}
-                        // params={this.props.paramsWithPagination}
-                        _searchRecipe={this._searchRecipe}
-                      />
-                    )
-                  })}
-                  <i
-                    className="fas fa-chevron-right white-hv"
-                    onClick={this._PaginationArrowForward}
-                  />
-                </div>
-              </div>
-            </main>
-            <Footer />
+      <div className="big-view">
+        <div className="center-home-options">
+          <div className="top-Picks">
+            <div className="homeRecipeSlider">
+              {categories.map(category => {
+                return <Category category={category} />
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="center-home-options">
+          <div className="top-Picks">
+            <h2 className="slider">Top Picks!</h2>
+            <div className="homeRecipeSlider">
+              {this.state.recommended.slice(0, 4).map(recipe => {
+                return <HomeRecipe key={recipe.uri} recipe={recipe} />
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="center-home-options">
+          <div className="country-top-Picks">
+            <h2 className="slider">A Taste From Another Land!</h2>
+            <div className="wrap-country-top-picks ">
+              {this.state.countries.map(TheCountry => {
+                return <TasteOfCountries country={TheCountry} />
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -119,32 +70,4 @@ class Browse extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  count: state.count,
-  to: state.to,
-  more: state.more,
-  hits: state.hits,
-  pages: state.pages,
-  defaultURL: state.defaultURL,
-  SearchedRecipe: state.SearchedRecipe,
-  calories: state.calories,
-  cookTime: state.cookTime,
-  maxIngredients: state.maxIngredients,
-  categories: state.categories,
-  removedIngredients: state.removedIngredients,
-  from: state.from,
-  toParam: state.toParam,
-  paramsWithoutPagination: state.paramsWithoutPagination,
-  paramsWithPagination: state.paramsWithPagination
-})
-const mapActionsToProps = {
-  _searchRecipe: getRecipes,
-  _PaginationArrowBack: getRecipes,
-  _PaginationArrowForward: getRecipes,
-  _newSearchRecipe: getRecipes
-}
-
-export default connect(
-  mapStateToProps,
-  mapActionsToProps
-)(Browse)
+export default Browse
