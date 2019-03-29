@@ -6,13 +6,35 @@ class Footer extends Component {
     return (
       <footer>
         <Link to="/">
-          <p className="white footerButton">Home</p>
+          <p
+            className={`footerButton ${
+              window.location.pathname === '/' ? 'whiteCurrentPage' : 'white'
+            }`}
+          >
+            Home
+          </p>
         </Link>
         <Link to="/about">
-          <p className="white footerButton">About</p>
+          <p
+            className={`footerButton ${
+              window.location.pathname === '/about'
+                ? 'whiteCurrentPage'
+                : 'white'
+            }`}
+          >
+            About
+          </p>
         </Link>
         <Link to="/creator">
-          <p className="white footerButton">Creator</p>
+          <p
+            className={`footerButton ${
+              window.location.pathname === '/creator'
+                ? 'whiteCurrentPage'
+                : 'white'
+            }`}
+          >
+            Creator
+          </p>
         </Link>
         <a href="http://shea-portfolio.surge.sh/" target="_blank">
           <p className=" footerButton white">&copy;SheaParrott</p>

@@ -24,8 +24,9 @@ class Creator extends Component {
                   <div className="centerLine">
                     <div className="line" />
                   </div>
-                  <div className="thanksOrInspiration small-view" />
-                  <h5 className="about">Thanks for Visiting!</h5>
+                  <div className="secondTearHeader">
+                    <h5 className="about">THANKS FOR VISITING!</h5>
+                  </div>
                 </nav>
                 <div className="creatorSpacingFromNav" />
 

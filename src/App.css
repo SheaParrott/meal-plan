@@ -53,16 +53,13 @@ h6 {
   cursor: pointer;
   text-shadow: 0 0 5px #ffffffa8;
 }
-
-/* h1.basicHeader {
-  font-family: 'good';
-  color: white;
-  text-shadow: 0 0 5px #444a5a;
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 10px 0 2px 0;
-  background-color: #92ca64;
-} */
+.currentPage {
+  color: #92ca64;
+}
+.currentPage:hover {
+  cursor: pointer;
+  text-shadow: 0 0 5px #92ca64;
+}
 
 h4 {
   padding: 0;
@@ -99,6 +96,11 @@ nav {
   cursor: pointer;
   text-shadow: 0 0 2.5px #ffffffb2;
   text-decoration: underline;
+}
+.whiteCurrentPage {
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .centerLine {
   display: flex;

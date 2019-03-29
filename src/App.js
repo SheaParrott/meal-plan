@@ -24,6 +24,7 @@ class App extends Component {
 export default App
 
 // to do:
+// [] implement color change on any current page link
 // [] implement cached data
 // [x] highlight page number currently on
 // [x] extend advanced search bar to all pages that work with the recipes

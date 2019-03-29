@@ -31,9 +31,13 @@ class About extends Component {
                     <div className="centerLine">
                       <div className="line" />
                     </div>
-                    <div className="thanksOrInspiration small-view">
+                    <div className="secondTearHeader small-view">
                       <h5
-                        className="about white"
+                        className={`about ${
+                          this.state.InspirationShown == 'Inspiration'
+                            ? 'whiteCurrentPage'
+                            : 'white'
+                        }`}
                         onClick={() => {
                           this.setState({
                             InspirationShown: 'Inspiration'
@@ -43,7 +47,11 @@ class About extends Component {
                         INSPIRATION
                       </h5>
                       <h5
-                        className="about white"
+                        className={`about ${
+                          this.state.InspirationShown == 'thanks'
+                            ? 'whiteCurrentPage'
+                            : 'white'
+                        }`}
                         onClick={() => {
                           this.setState({
                             InspirationShown: 'thanks'
@@ -53,7 +61,11 @@ class About extends Component {
                         SPECIAL THANKS
                       </h5>
                       <h5
-                        className="about white"
+                        className={`about ${
+                          this.state.InspirationShown == 'HappyOrIssues'
+                            ? 'whiteCurrentPage'
+                            : 'white'
+                        }`}
                         onClick={() => {
                           this.setState({
                             InspirationShown: 'HappyOrIssues'
@@ -63,7 +75,9 @@ class About extends Component {
                         HAPPY / ISSUES
                       </h5>
                     </div>
-                    <h5 className="about big-view">Thanks for Visiting!</h5>
+                    <div className="secondTearHeader">
+                      <h5 className="about big-view">THANKS FOR VISITING!</h5>
+                    </div>
                   </nav>
                 </div>
                 <div className="aboutPageSpacing " />
