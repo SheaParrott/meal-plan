@@ -2,15 +2,37 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import glutenFree from '../assets/glutenFree.jpg'
-// src/assets/glutenFree.jpg
+import { SearchedRecipe } from '../Actions/SearchActions'
+import { Redirect } from 'react-router'
+
 class Category extends Component {
+  constructor(props) {
+    super(props)
+    this._SearchedRecipe = this._SearchedRecipe.bind(this)
+    this.state = {
+      navigate: false
+    }
+  }
+  _SearchedRecipe = () => {
+    this.props._SearchedRecipe(this.props.category.category)
+    this.setState({
+      navigate: true
+    })
+  }
+
   render() {
+    if (this.state.navigate) {
+      return (
+        <Redirect
+          to={`/results/&q=${this.props.category.category}${
+            this.props.from.param
+          }${this.props.toParam.param}`}
+          push={true}
+        />
+      )
+    }
     return (
-      <Link
-        to={`/results/&q=${this.props.category.category}${
-          this.props.from.param
-        }${this.props.toParam.param}`}
-      >
+      <div onClick={this._SearchedRecipe}>
         <img
           className="home-category"
           src={
@@ -21,7 +43,7 @@ class Category extends Component {
           alt={this.props.category.category}
         />
         <h5>{this.props.category.category}</h5>
-      </Link>
+      </div>
     )
   }
 }
@@ -31,7 +53,9 @@ const mapStateToProps = state => ({
   toParam: state.toParam
 })
 
-const mapActionsToProps = {}
+const mapActionsToProps = {
+  _SearchedRecipe: SearchedRecipe
+}
 
 export default connect(
   mapStateToProps,

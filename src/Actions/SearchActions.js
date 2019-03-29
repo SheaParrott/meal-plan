@@ -34,6 +34,7 @@ export function getRecipes(url_params) {
         dispatch({
           type: UPDATE_RECIPES,
           payload: {
+            responseStatus: response.status ? response.status : 200,
             count: response.data.count,
             from: {
               from: response.data.from,
@@ -48,7 +49,8 @@ export function getRecipes(url_params) {
               response.data.hits.length === 0
                 ? ['No Results']
                 : response.data.hits,
-            pages: fillRange(response.data.count)
+            pages: fillRange(response.data.count),
+            q: response.data.q
           }
         })
       )
@@ -56,6 +58,7 @@ export function getRecipes(url_params) {
         dispatch({
           type: UPDATE_RECIPES,
           payload: {
+            responseStatus: error.status ? error.status : 400,
             count: 0,
             from: { from: 0, param: `&from=0` },
             toParam: { toParam: 12, param: `&to=12` },
@@ -92,7 +95,8 @@ export function singleRecipe(uri) {
         dispatch({
           type: SINGLE_RECIPE,
           payload: {
-            recipe: response.data ? response.data : ['No Results']
+            recipe: response.data ? response.data : ['No Results'],
+            responseStatus: response.status ? response.status : 200
           }
         })
       )
@@ -100,6 +104,7 @@ export function singleRecipe(uri) {
         dispatch({
           type: SINGLE_RECIPE,
           payload: {
+            responseStatus: error.status ? error.status : 400,
             recipe: ['No Results']
           }
         })
@@ -148,7 +153,9 @@ export function SearchedRecipe(value) {
   return {
     type: UPDATE_SEARCH_URL_PARAMS,
     payload: {
-      SearchedRecipe: { value: value, param: `&q=${value}` }
+      SearchedRecipe: { value: value, param: `&q=${value}` },
+      from: { from: 0, param: `&from=0` },
+      toParam: { toParam: 12, param: `&to=12` }
     }
   }
 }

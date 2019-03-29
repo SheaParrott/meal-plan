@@ -53,7 +53,10 @@ class Results extends Component {
   render() {
     if (this.props.hits.length <= 0) {
       return <Loading />
-    } else if (this.props.hits[0] === 'No Results') {
+    } else if (
+      this.props.hits[0] === 'No Results' ||
+      this.props.responseStatus !== 200
+    ) {
       return <ErrorMessage />
     }
     let PaginationArray = this.props.pages
@@ -75,9 +78,7 @@ class Results extends Component {
               />
               <div className="spacingFromNav" />
               <div>
-                <h2 className="uppercase">
-                  {this.props.SearchedRecipe.value} Results
-                </h2>
+                <h2 className="uppercase">{this.props.q} Results</h2>
                 <div className="centerLine">
                   <div className="line" />
                 </div>
@@ -135,7 +136,9 @@ const mapStateToProps = state => ({
   from: state.from,
   toParam: state.toParam,
   paramsWithoutPagination: state.paramsWithoutPagination,
-  paramsWithPagination: state.paramsWithPagination
+  paramsWithPagination: state.paramsWithPagination,
+  q: state.q,
+  responseStatus: state.responseStatus
 })
 const mapActionsToProps = {
   _searchRecipe: getRecipes,

@@ -91,7 +91,9 @@ nav {
 .white {
   color: #ffffff;
 }
-
+main.error {
+  min-height: 100vh;
+}
 .white:hover {
   cursor: pointer;
   text-shadow: 0 0 2.5px #ffffffb2;

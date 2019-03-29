@@ -38,7 +38,9 @@ const store = createStore(
     healthLabels: ['vegan', 'vegetarian', 'peanut-free', 'tree-nut-free'],
     dietLabels: ['balanced', 'high-protein', 'low-fat', 'low-carb'],
     paramsWithoutPagination: '',
-    paramsWithPagination: ''
+    paramsWithPagination: '',
+    q: '',
+    responseStatus: 200
   },
   middleware
 )

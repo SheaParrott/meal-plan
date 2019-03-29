@@ -28,10 +28,12 @@ class RecipePage extends Component {
   render() {
     if (this.props.recipe.length <= 0) {
       return <Loading />
-    } else if (this.props.recipe[0] === 'No Results') {
+    } else if (
+      this.props.recipe[0] === 'No Results' ||
+      this.props.responseStatus !== 200
+    ) {
       return <ErrorMessage singleViewRecipePage={true} />
     }
-
     return (
       <div className="spash-bg">
         <div className="no-shaded-bg">
@@ -387,7 +389,8 @@ class RecipePage extends Component {
 }
 
 const mapStateToProps = state => ({
-  recipe: state.recipe
+  recipe: state.recipe,
+  responseStatus: state.responseStatus
 })
 const mapActionsToProps = {
   goToSingleRecipe: singleRecipe

@@ -63,12 +63,8 @@ class AdvancedSearch extends Component {
               this.props.browsePage ? (
                 <button
                   onClick={() => {
-                    history.push(
-                      `/results/${this.props.paramsWithoutPagination}`
-                    )
-                    this.props._newSearchRecipe(
-                      this.props.paramsWithoutPagination
-                    )
+                    history.push(`/results/${this.props.paramsWithPagination}`)
+                    this.props._newSearchRecipe(this.props.paramsWithPagination)
                   }}
                   className="advancedSearchButton"
                 >
@@ -193,7 +189,8 @@ const mapStateToProps = state => ({
   removedIngredients: state.removedIngredients,
   from: state.from,
   toParam: state.toParam,
-  paramsWithPagination: state.paramsWithPagination
+  paramsWithPagination: state.paramsWithPagination,
+  paramsWithoutPagination: state.paramsWithoutPagination
 })
 
 const mapActionsToProps = {

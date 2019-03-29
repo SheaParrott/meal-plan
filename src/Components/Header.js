@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 
 class Header extends Component {
   render() {
-    console.log(window.location.pathname)
-    // if (window.location == "/") {
-    //   currentPage else white
-    // }
     return (
       <div className="categoriesBar">
         <Link to="/">

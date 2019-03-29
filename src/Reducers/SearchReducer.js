@@ -22,6 +22,7 @@ export default function SearchReducer(state, action) {
     case UPDATE_RECIPES:
       return {
         ...state,
+        responseStatus: action.payload.responseStatus,
         count: action.payload.count ? action.payload.count : 0,
         from: action.payload.from
           ? action.payload.from
@@ -31,12 +32,14 @@ export default function SearchReducer(state, action) {
           : { toParam: 0, param: `&from=0` },
         more: action.payload.more ? action.payload.more : '',
         hits: action.payload.hits ? action.payload.hits : [],
-        pages: action.payload.pages ? action.payload.pages : 0
+        pages: action.payload.pages ? action.payload.pages : 0,
+        q: action.payload.q
       }
     case SINGLE_RECIPE:
       return {
         ...state,
-        recipe: action.payload.recipe ? action.payload.recipe : []
+        recipe: action.payload.recipe ? action.payload.recipe : [],
+        responseStatus: action.payload.responseStatus
       }
     case UPDATE_SEARCH_URL_PARAMS:
       return {
@@ -44,14 +47,16 @@ export default function SearchReducer(state, action) {
         SearchedRecipe: action.payload.SearchedRecipe
           ? action.payload.SearchedRecipe
           : { value: '', param: '' },
+        from: action.payload.from,
+        toParam: action.payload.toParam,
         paramsWithPagination:
           action.payload.SearchedRecipe.param +
           state.calories.params +
           state.cookTime.params +
           state.maxIngredients.params +
           string +
-          state.from.param +
-          state.toParam.param,
+          action.payload.from.param +
+          action.payload.toParam.param,
         paramsWithoutPagination:
           action.payload.SearchedRecipe.param +
           state.calories.params +

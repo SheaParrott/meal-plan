@@ -12,6 +12,7 @@ class ErrorMessage extends Component {
             <main className="error">
               <div>
                 <AdvancedSearch />
+                <div className="spacingFromNav" />
                 {this.props.singleViewRecipePage ? (
                   <div>
                     <h2 className="uppercase noResults">
