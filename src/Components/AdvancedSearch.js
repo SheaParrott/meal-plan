@@ -75,7 +75,7 @@ class AdvancedSearch extends Component {
                   Search
                 </button>
               ) : (
-                <Link to={`/results/${this.props.paramsWithoutPagination}`}>
+                <Link to={`/results/${this.props.paramsWithPagination}`}>
                   <button className="advancedSearchButton">Search</button>
                 </Link>
               )
@@ -193,7 +193,7 @@ const mapStateToProps = state => ({
   removedIngredients: state.removedIngredients,
   from: state.from,
   toParam: state.toParam,
-  paramsWithoutPagination: state.paramsWithoutPagination
+  paramsWithPagination: state.paramsWithPagination
 })
 
 const mapActionsToProps = {
