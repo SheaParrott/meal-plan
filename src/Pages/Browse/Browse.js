@@ -29,12 +29,6 @@ class Browse extends Component {
   }
 
   _PaginationArrowBack = () => {
-    // let string = ''
-    // this.props.categories
-    //   .concat(this.props.removedIngredients)
-    //   .forEach(category => {
-    //     string += category.param
-    //   })
     let params =
       this.props.paramsWithoutPagination +
       `&from=${parseInt(this.props.from.from) - 10}` +
@@ -47,12 +41,6 @@ class Browse extends Component {
     if (this.props.from.from >= 90) {
       return
     }
-    // let string = ''
-    // this.props.categories
-    //   .concat(this.props.removedIngredients)
-    //   .forEach(category => {
-    //     string += category.param
-    //   })
     let params =
       this.props.paramsWithoutPagination +
       `&from=${parseInt(this.props.from.from) + 10}` +
@@ -68,16 +56,6 @@ class Browse extends Component {
     } else if (this.props.hits[0] === 'No Results') {
       return <ErrorMessage />
     }
-    // let string = ''
-    // this.props.categories
-    //   .concat(this.props.removedIngredients)
-    //   .forEach(category => {
-    //     string += category.param
-    //   })
-    // let params =
-    //   this.props.paramsWithoutPagination +
-    //   this.props.from.param +
-    //   this.props.toParam.param
     let PaginationArray = this.props.pages
       ? parseInt(this.props.from.from) < 41
         ? this.props.pages.slice(0, 5)

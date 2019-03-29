@@ -24,7 +24,8 @@ class App extends Component {
 export default App
 
 // to do:
-// [] implement color change on any current page link
+// [] implement a true browse page for mobile view and change current browse name to results
+// [x] implement indication on which page user is on
 // [] implement cached data
 // [x] highlight page number currently on
 // [x] extend advanced search bar to all pages that work with the recipes

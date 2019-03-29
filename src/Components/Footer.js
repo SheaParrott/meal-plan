@@ -37,7 +37,7 @@ class Footer extends Component {
           </p>
         </Link>
         <a href="http://shea-portfolio.surge.sh/" target="_blank">
-          <p className=" footerButton white">&copy;SheaParrott</p>
+          <p className="footerButton white">&copy;SheaParrott</p>
         </a>
       </footer>
     )

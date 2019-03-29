@@ -61,6 +61,7 @@ class Home extends Component {
 
                 <img className="home mobile-tablet" src={front} alt="cover" />
                 <div className="home-spacing" />
+                {/* desktop view of browse start */}
                 <div className="center-home-options big-view">
                   <div className="top-Picks">
                     <div className="homeRecipeSlider">
@@ -90,6 +91,7 @@ class Home extends Component {
                     </div>
                   </div>
                 </div>
+                {/* desktop view of browse end */}
               </div>
               <Footer />
             </div>

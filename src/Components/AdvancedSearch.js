@@ -40,18 +40,6 @@ class AdvancedSearch extends Component {
     this.setState({ recipeFieldError: '' })
   }
   render() {
-    // let string = ''
-    // this.props.categories
-    //   .concat(this.props.removedIngredients)
-    //   .forEach(category => {
-    //     string += category.param
-    //   })
-    // let params =
-    //   this.props.SearchedRecipe.param +
-    //   this.props.calories.params +
-    //   this.props.cookTime.params +
-    //   this.props.maxIngredients.params +
-    //   string
     return (
       <div className="homePageName">
         <div>
