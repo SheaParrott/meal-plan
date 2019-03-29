@@ -1,5 +1,18 @@
 [
   {
+    "category": "Gluten Free",
+    "image": "gluten"
+  },
+  {
+    "category": "Vegetarian",
+    "image": "https://www.edamam.com/web-img/176/17628a812c7f6f9f9169a05aa09dbd62"
+  },
+  {
+    "category": "Vegan",
+    "image": "https://www.edamam.com/web-img/21f/21f6ef18488f0c1273f16842ae389f08"
+  },
+
+  {
     "category": "Bread",
     "image": "https://www.edamam.com/web-img/36b/36b8a93186055c229e537439a6ff94a2.JPG"
   },
@@ -12,20 +25,12 @@
     "image": "https://www.edamam.com/web-img/245/245856e67b4cf97fd75c9de79e331ee7.jpeg"
   },
   {
-    "category": "Vegan",
-    "image": "https://www.edamam.com/web-img/21f/21f6ef18488f0c1273f16842ae389f08"
-  },
-  {
     "category": "Salad",
     "image": "https://www.edamam.com/web-img/35b/35b98a40bd9f20ca51a55b10d8173548.jpg"
   },
   {
     "category": "Fruit Salad",
     "image": "https://www.edamam.com/web-img/e03/e03769d4ba37b8ca6562c54e166be360.jpg"
-  },
-  {
-    "category": "Vegetarian",
-    "image": "https://www.edamam.com/web-img/176/17628a812c7f6f9f9169a05aa09dbd62"
   },
   {
     "category": "Cocktail",
