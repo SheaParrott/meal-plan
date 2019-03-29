@@ -32,7 +32,6 @@ const store = createStore(
     from: { from: 0, param: `&from=0` },
     toParam: { toParam: 12, param: `&to=12` },
     more: '',
-    q: '',
     hits: [],
     pages: 0,
     recipe: [],

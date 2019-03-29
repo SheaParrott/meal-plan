@@ -97,7 +97,9 @@ class Browse extends Component {
               />
               <div className="spacingFromNav" />
               <div>
-                <h2 className="uppercase">{this.props.q} Results</h2>
+                <h2 className="uppercase">
+                  {this.props.SearchedRecipe.value} Results
+                </h2>
                 <div className="centerLine">
                   <div className="line" />
                 </div>
@@ -143,7 +145,6 @@ const mapStateToProps = state => ({
   count: state.count,
   to: state.to,
   more: state.more,
-  q: state.q,
   hits: state.hits,
   pages: state.pages,
   defaultURL: state.defaultURL,

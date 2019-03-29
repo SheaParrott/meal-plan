@@ -30,10 +30,6 @@ export default function SearchReducer(state, action) {
           ? action.payload.toParam
           : { toParam: 0, param: `&from=0` },
         more: action.payload.more ? action.payload.more : '',
-        q: action.payload.q ? action.payload.q : '',
-        SearchedRecipe: action.payload.SearchedRecipe
-          ? action.payload.SearchedRecipe
-          : { value: '', param: '' },
         hits: action.payload.hits ? action.payload.hits : [],
         pages: action.payload.pages ? action.payload.pages : 0
       }
@@ -263,8 +259,7 @@ export default function SearchReducer(state, action) {
           state.maxIngredients.params +
           TheNewestString +
           action.payload.from.param +
-          `&to=${parseInt(action.payload.from.param) + 12}
-`
+          `&to=${parseInt(action.payload.from.param) + 12}`
       }
     case RESET_ALL_SEARCH_FIELDS:
       return action.payload

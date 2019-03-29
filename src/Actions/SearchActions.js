@@ -44,11 +44,6 @@ export function getRecipes(url_params) {
               param: `&from=${response.data.to}`
             },
             more: response.data.more,
-            q: response.data.q,
-            SearchedRecipe: {
-              value: response.data.q,
-              param: `&q=${response.data.q}`
-            },
             hits:
               response.data.hits.length === 0
                 ? ['No Results']
@@ -65,7 +60,6 @@ export function getRecipes(url_params) {
             from: { from: 0, param: `&from=0` },
             toParam: { toParam: 12, param: `&to=12` },
             more: '',
-            q: '',
             SearchedRecipe: { value: '', param: '' },
             hits: ['No Results'],
             pages: []
@@ -146,7 +140,6 @@ export function minAndMaxParams({ theCase, min, max }) {
         }
       }
     default:
-      //this could break the reducer..
       return
   }
 }
@@ -213,12 +206,13 @@ export function resetAllSearchFields() {
       from: { from: 0, param: `&from=0` },
       toParam: { toParam: 12, param: `&to=12` },
       more: '',
-      q: '',
       hits: [],
       pages: 0,
       recipe: [],
       healthLabels: ['vegan', 'vegetarian', 'peanut-free', 'tree-nut-free'],
-      dietLabels: ['balanced', 'high-protein', 'low-fat', 'low-carb']
+      dietLabels: ['balanced', 'high-protein', 'low-fat', 'low-carb'],
+      paramsWithoutPagination: '',
+      paramsWithPagination: ''
     }
   }
 }

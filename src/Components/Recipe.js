@@ -87,7 +87,6 @@ const mapStateToProps = state => ({
   from: state.from,
   to: state.to,
   more: state.more,
-  q: state.q,
   hits: state.hits,
   pages: state.pages
 })
