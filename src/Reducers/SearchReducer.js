@@ -14,6 +14,10 @@ import {
 } from '../Actions/SearchActions'
 
 export default function SearchReducer(state, action) {
+  let string = ''
+  state.categories.concat(state.removedIngredients).forEach(category => {
+    string += category.param
+  })
   switch (action.type) {
     case UPDATE_RECIPES:
       return {
@@ -43,28 +47,84 @@ export default function SearchReducer(state, action) {
         ...state,
         SearchedRecipe: action.payload.SearchedRecipe
           ? action.payload.SearchedRecipe
-          : { value: '', param: '' }
+          : { value: '', param: '' },
+        paramsWithPagination:
+          action.payload.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          string +
+          state.from.param +
+          state.toParam.param,
+        paramsWithoutPagination:
+          action.payload.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          string
       }
     case COOK_TIME:
       return {
         ...state,
         cookTime: action.payload.cookTime
           ? action.payload.cookTime
-          : { min: '', max: '', params: '' }
+          : { min: '', max: '', params: '' },
+        paramsWithPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          action.payload.cookTime.params +
+          state.maxIngredients.params +
+          string +
+          state.from.param +
+          state.toParam.param,
+        paramsWithoutPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          action.payload.cookTime.params +
+          state.maxIngredients.params +
+          string
       }
     case CALORIES:
       return {
         ...state,
         calories: action.payload.calories
           ? action.payload.calories
-          : { min: '', max: '', params: '' }
+          : { min: '', max: '', params: '' },
+        paramsWithPagination:
+          state.SearchedRecipe.param +
+          action.payload.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          string +
+          state.from.param +
+          state.toParam.param,
+        paramsWithoutPagination:
+          state.SearchedRecipe.param +
+          action.payload.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          string
       }
     case MAX_INGREDIENTS:
       return {
         ...state,
         maxIngredients: action.payload.maxIngredients
           ? action.payload.maxIngredients
-          : { max: '', params: '' }
+          : { max: '', params: '' },
+        paramsWithPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          action.payload.maxIngredients.params +
+          string +
+          state.from.param +
+          state.toParam.param,
+        paramsWithoutPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          action.payload.maxIngredients.params +
+          string
       }
     case ADD_CATEGORY:
       if (!action.payload.categories) {
@@ -79,10 +139,29 @@ export default function SearchReducer(state, action) {
             category: action.payload.categories,
             param: `&diet=${action.payload.categories}`
           }
-
+      let TheString = ''
+      state.removedIngredients
+        .concat([...state.categories, category])
+        .forEach(category => {
+          TheString += category.param
+        })
       return {
         ...state,
-        categories: [...state.categories, category]
+        categories: [...state.categories, category],
+        paramsWithPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          TheString +
+          state.from.param +
+          state.toParam.param,
+        paramsWithoutPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          TheString
       }
     case REMOVE_CATEGORY:
       let removedCategory = [
@@ -90,24 +169,84 @@ export default function SearchReducer(state, action) {
           category => action.payload.categories !== category.category
         )
       ]
-      return { ...state, categories: removedCategory }
-    case ADD_REMOVED_INGREDIENTS:
+      let stringOfCategoriesAndRemovedIngredients = ''
+      state.removedIngredients.concat(removedCategory).forEach(category => {
+        stringOfCategoriesAndRemovedIngredients += category.param
+      })
       return {
         ...state,
-        removedIngredients: [
-          ...state.removedIngredients,
-          action.payload.removedIngredients
-        ]
+        categories: removedCategory,
+        paramsWithPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          stringOfCategoriesAndRemovedIngredients +
+          state.from.param +
+          state.toParam.param,
+        paramsWithoutPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          stringOfCategoriesAndRemovedIngredients
+      }
+    case ADD_REMOVED_INGREDIENTS:
+      let TheIngredientsRemoved = [
+        ...state.removedIngredients,
+        action.payload.removedIngredients
+      ]
+      let TheNewString = ''
+      TheIngredientsRemoved.concat(state.categories).forEach(category => {
+        TheNewString += category.param
+      })
+      return {
+        ...state,
+        removedIngredients: TheIngredientsRemoved,
+        paramsWithPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          TheNewString +
+          state.from.param +
+          state.toParam.param,
+        paramsWithoutPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          TheNewString
       }
     case REMOVE_CHOSEN_INGREDIENT:
-      // removedIngredients: ingredient
       let updateIngredients = [
         ...state.removedIngredients.filter(
           ingredient =>
             action.payload.removedIngredients !== ingredient.category
         )
       ]
-      return { ...state, removedIngredients: updateIngredients }
+      let TheNewestString = ''
+      updateIngredients.concat(state.categories).forEach(category => {
+        TheNewestString += category.param
+      })
+      return {
+        ...state,
+        removedIngredients: updateIngredients,
+        paramsWithPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          TheNewestString +
+          state.from.param +
+          state.toParam.param,
+        paramsWithoutPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          TheNewestString
+      }
     case PAGINATION:
       if (action.payload.from.from < 0) {
         return { ...state }
@@ -116,7 +255,16 @@ export default function SearchReducer(state, action) {
         ...state,
         from: action.payload.from
           ? action.payload.from
-          : { from: '', param: '' }
+          : { from: '', param: '' },
+        paramsWithPagination:
+          state.SearchedRecipe.param +
+          state.calories.params +
+          state.cookTime.params +
+          state.maxIngredients.params +
+          TheNewestString +
+          action.payload.from.param +
+          `&to=${parseInt(action.payload.from.param) + 12}
+`
       }
     case RESET_ALL_SEARCH_FIELDS:
       return action.payload

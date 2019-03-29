@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Recipe from '../../Components/Recipe'
 import { connect } from 'react-redux'
-import { getRecipes } from '../../Actions/SearchActionsß'
+import { getRecipes } from '../../Actions/SearchActions'
 import Loading from '../../Components/Loading'
 import Pagination from '../../Components/Pagination'
 import history from '../../Components/history'
@@ -29,18 +29,14 @@ class Browse extends Component {
   }
 
   _PaginationArrowBack = () => {
-    let string = ''
-    this.props.categories
-      .concat(this.props.removedIngredients)
-      .forEach(category => {
-        string += category.param
-      })
+    // let string = ''
+    // this.props.categories
+    //   .concat(this.props.removedIngredients)
+    //   .forEach(category => {
+    //     string += category.param
+    //   })
     let params =
-      this.props.SearchedRecipe.param +
-      this.props.calories.params +
-      this.props.cookTime.params +
-      this.props.maxIngredients.params +
-      string +
+      this.props.paramsWithoutPagination +
       `&from=${parseInt(this.props.from.from) - 10}` +
       `&to=${parseInt(this.props.toParam.toParam) - 10}`
     this.props._PaginationArrowBack(params)
@@ -51,18 +47,14 @@ class Browse extends Component {
     if (this.props.from.from >= 90) {
       return
     }
-    let string = ''
-    this.props.categories
-      .concat(this.props.removedIngredients)
-      .forEach(category => {
-        string += category.param
-      })
+    // let string = ''
+    // this.props.categories
+    //   .concat(this.props.removedIngredients)
+    //   .forEach(category => {
+    //     string += category.param
+    //   })
     let params =
-      this.props.SearchedRecipe.param +
-      this.props.calories.params +
-      this.props.cookTime.params +
-      this.props.maxIngredients.params +
-      string +
+      this.props.paramsWithoutPagination +
       `&from=${parseInt(this.props.from.from) + 10}` +
       `&to=${parseInt(this.props.from.from) + 22}`
     this.props._PaginationArrowForward(params)
@@ -76,20 +68,16 @@ class Browse extends Component {
     } else if (this.props.hits[0] === 'No Results') {
       return <ErrorMessage />
     }
-    let string = ''
-    this.props.categories
-      .concat(this.props.removedIngredients)
-      .forEach(category => {
-        string += category.param
-      })
-    let params =
-      this.props.SearchedRecipe.param +
-      this.props.calories.params +
-      this.props.cookTime.params +
-      this.props.maxIngredients.params +
-      string +
-      this.props.from.param +
-      this.props.toParam.param
+    // let string = ''
+    // this.props.categories
+    //   .concat(this.props.removedIngredients)
+    //   .forEach(category => {
+    //     string += category.param
+    //   })
+    // let params =
+    //   this.props.paramsWithoutPagination +
+    //   this.props.from.param +
+    //   this.props.toParam.param
     let PaginationArray = this.props.pages
       ? parseInt(this.props.from.from) < 41
         ? this.props.pages.slice(0, 5)
@@ -131,7 +119,7 @@ class Browse extends Component {
                       <Pagination
                         key={index}
                         page={page}
-                        params={params}
+                        // params={this.props.paramsWithPagination}
                         _searchRecipe={this._searchRecipe}
                       />
                     )
@@ -166,7 +154,9 @@ const mapStateToProps = state => ({
   categories: state.categories,
   removedIngredients: state.removedIngredients,
   from: state.from,
-  toParam: state.toParam
+  toParam: state.toParam,
+  paramsWithoutPagination: state.paramsWithoutPagination,
+  paramsWithPagination: state.paramsWithPagination
 })
 const mapActionsToProps = {
   _searchRecipe: getRecipes,

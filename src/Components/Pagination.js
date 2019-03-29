@@ -64,6 +64,7 @@ const mapStateToProps = state => ({
   categories: state.categories,
   removedIngredients: state.removedIngredients,
   from: state.from
+  // paramsWithoutPagination: state.paramsWithoutPagination
 })
 const mapActionsToProps = {
   _pagination: getRecipes

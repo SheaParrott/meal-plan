@@ -40,18 +40,18 @@ class AdvancedSearch extends Component {
     this.setState({ recipeFieldError: '' })
   }
   render() {
-    let string = ''
-    this.props.categories
-      .concat(this.props.removedIngredients)
-      .forEach(category => {
-        string += category.param
-      })
-    let params =
-      this.props.SearchedRecipe.param +
-      this.props.calories.params +
-      this.props.cookTime.params +
-      this.props.maxIngredients.params +
-      string
+    // let string = ''
+    // this.props.categories
+    //   .concat(this.props.removedIngredients)
+    //   .forEach(category => {
+    //     string += category.param
+    //   })
+    // let params =
+    //   this.props.SearchedRecipe.param +
+    //   this.props.calories.params +
+    //   this.props.cookTime.params +
+    //   this.props.maxIngredients.params +
+    //   string
     return (
       <div className="homePageName">
         <div>
@@ -75,15 +75,19 @@ class AdvancedSearch extends Component {
               this.props.browsePage ? (
                 <button
                   onClick={() => {
-                    history.push(`/browse/${params}`)
-                    this.props._newSearchRecipe(params)
+                    history.push(
+                      `/browse/${this.props.paramsWithoutPagination}`
+                    )
+                    this.props._newSearchRecipe(
+                      this.props.paramsWithoutPagination
+                    )
                   }}
                   className="advancedSearchButton"
                 >
                   Search
                 </button>
               ) : (
-                <Link to={`/browse/${params}`}>
+                <Link to={`/browse/${this.props.paramsWithoutPagination}`}>
                   <button className="advancedSearchButton">Search</button>
                 </Link>
               )
@@ -200,7 +204,8 @@ const mapStateToProps = state => ({
   categories: state.categories,
   removedIngredients: state.removedIngredients,
   from: state.from,
-  toParam: state.toParam
+  toParam: state.toParam,
+  paramsWithoutPagination: state.paramsWithoutPagination
 })
 
 const mapActionsToProps = {
