@@ -19,6 +19,9 @@ class App extends Component {
         <div className="small-view">
           <Route exact path="/browse" component={Browse} />
         </div>
+        <div className="big-view">
+          <Route exact path="/browse" component={Home} />
+        </div>
         <Route path="/recipe/:uri" component={RecipePage} />
       </div>
     )

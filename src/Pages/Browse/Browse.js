@@ -43,6 +43,7 @@ class Browse extends Component {
       selected: value
     })
   }
+
   render() {
     return (
       <div>
@@ -86,7 +87,11 @@ class Browse extends Component {
               <div className="top-Picks ">
                 <div className="homeRecipeSlider">
                   {categories.map(category => {
-                    return <Category category={category} />
+                    return (
+                      <div key={category.category}>
+                        <Category category={category} />
+                      </div>
+                    )
                   })}
                 </div>
               </div>
