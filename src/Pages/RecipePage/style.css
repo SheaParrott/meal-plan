@@ -93,7 +93,7 @@ a {
 }
 .recipeInfo {
   text-align: left;
-  padding: 10px 0;
+  padding: 0 10px;
 }
 .recipeInfoIngredients {
   text-align: left;
@@ -111,7 +111,11 @@ h4.singleRecipeInformation {
 p.singleRecipeInformation {
   font-size: 0.9rem;
 }
-/* single view recipe end */
+.nutritionSubContainer {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
 
 @media (min-width: 375px) {
   .singleViewRecipeImage {
@@ -200,7 +204,10 @@ p.singleRecipeInformation {
   p.green-bg {
     font-size: 1rem;
   }
-
+  .flexColumns {
+    display: flex;
+    justify-content: space-between;
+  }
   .recipeInfoLabel,
   .shadedRecipeInfoLabel {
     font-size: 1.3rem;

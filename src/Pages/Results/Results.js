@@ -100,7 +100,6 @@ class Results extends Component {
                       <Pagination
                         key={index}
                         page={page}
-                        // params={this.props.paramsWithPagination}
                         _searchRecipe={this._searchRecipe}
                       />
                     )

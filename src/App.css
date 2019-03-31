@@ -79,7 +79,7 @@ nav {
   width: 100vw;
 }
 .spacingFromNav {
-  height: 50px;
+  height: 25px;
 }
 .creatorSpacingFromNav {
   height: 145px;
@@ -337,6 +337,19 @@ div.CategoriesBar {
 .fa-angle-up {
   font-size: 1.3rem;
 }
+.background-added {
+  background-image: url(./assets/front.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.defaultHeight {
+  min-height: 170vh;
+}
+.fa-caret-right,
+.fa-caret-down {
+  margin-right: 5px;
+}
 /* sources end*/
 @media (min-width: 375px) {
   .footerButton,
@@ -344,7 +357,7 @@ div.CategoriesBar {
     font-size: 1rem;
   }
   .spacingFromNav {
-    height: 60px;
+    height: 40px;
   }
   label {
     font-size: 1.2rem;
@@ -378,6 +391,14 @@ div.CategoriesBar {
   input.formInput {
     width: 170px;
   }
+  .defaultHeight {
+    min-height: 170vh;
+  }
+}
+@media (min-width: 375px) and (min-height: 812px) {
+  .defaultHeight {
+    min-height: 120vh;
+  }
 }
 @media (min-width: 411px) {
   .footerButton,
@@ -385,7 +406,7 @@ div.CategoriesBar {
     font-size: 1.15rem;
   }
   .spacingFromNav {
-    height: 70px;
+    height: 50px;
   }
   label {
     font-size: 1.3rem;
@@ -417,6 +438,9 @@ div.CategoriesBar {
   .Search,
   input.formInput {
     width: 190px;
+  }
+  .defaultHeight {
+    min-height: 140vh;
   }
 }
 @media (min-width: 600px) {
@@ -475,7 +499,7 @@ div.CategoriesBar {
     font-size: 0.7rem;
   }
   .spacingFromNav {
-    height: 80px;
+    height: 65px;
   }
   .CaloriesAndCookTime {
     justify-content: space-between;
@@ -515,6 +539,9 @@ div.CategoriesBar {
   input.formInput {
     width: 295px;
   }
+  .defaultHeight {
+    min-height: 165vh;
+  }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   .footerButton,
@@ -525,7 +552,7 @@ div.CategoriesBar {
     font-size: 0.8rem;
   }
   .spacingFromNav {
-    height: 90px;
+    height: 75px;
   }
   .CaloriesAndCookTime {
     width: 510px;
@@ -563,6 +590,9 @@ div.CategoriesBar {
   .Search,
   input.formInput {
     width: 300px;
+  }
+  .defaultHeight {
+    min-height: 100vh;
   }
 }
 
@@ -726,6 +756,9 @@ div.CategoriesBar {
   }
   nav {
     width: 100%;
+  }
+  .background-added {
+    background-image: none;
   }
 }
 

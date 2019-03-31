@@ -53,12 +53,6 @@ div.col {
 img.resume:hover {
   cursor: pointer;
 }
-.background-added {
-  background-image: url(../../assets/front.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 .main-creator {
   background-color: #4d5366ce;
   border-radius: 20px;
@@ -79,6 +73,11 @@ img.resume:hover {
   text-shadow: 0 0 2.5px #ffffffb2;
   text-decoration: underline;
 }
+@media (min-width: 360px) {
+  .main-creator {
+    width: 311px;
+  }
+}
 @media (min-width: 375px) {
   .widthbig {
     width: 360px;
@@ -94,6 +93,11 @@ img.resume:hover {
   }
   .main-creator {
     width: 362px;
+  }
+}
+@media (min-width: 414px) {
+  .main-creator {
+    width: 365px;
   }
 }
 @media (min-width: 600px) {
@@ -176,9 +180,6 @@ img.resume:hover {
   div.col {
     min-width: 150px;
     margin: 8px;
-  }
-  .background-added {
-    background-image: none;
   }
   .main-creator {
     text-shadow: none;

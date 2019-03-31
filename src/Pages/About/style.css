@@ -1,21 +1,6 @@
 .aboutPage {
   position: relative;
 }
-
-/* .categoriesBarAbout {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-} */
-.background-added {
-  background-image: url(../../assets/front.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.defaultHeight {
-  min-height: 170vh;
-}
 .secondTearHeader {
   display: flex;
   justify-content: space-evenly;
@@ -62,8 +47,6 @@ strong {
   display: none;
 }
 
-/* about page end */
-
 @media (min-width: 375px) {
   h5.about {
     font-size: 0.8rem;
@@ -80,15 +63,8 @@ strong {
   .aboutPageSpacing {
     height: 180px;
   }
-  .defaultHeight {
-    min-height: 170vh;
-  }
 }
-@media (min-width: 375px) and (min-height: 812px) {
-  .defaultHeight {
-    min-height: 120vh;
-  }
-}
+
 @media (min-width: 411px) {
   h5.about {
     font-size: 0.9rem;
@@ -101,9 +77,6 @@ strong {
   }
   strong {
     font-size: 1.3rem;
-  }
-  .defaultHeight {
-    min-height: 140vh;
   }
 }
 @media (min-width: 600px) {
@@ -154,9 +127,6 @@ strong {
   .aboutPageSpacing {
     height: 0;
   }
-  .defaultHeight {
-    min-height: 165vh;
-  }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   h5.about {
@@ -188,9 +158,7 @@ strong {
   .aboutSpacingFromNav {
     height: 180px;
   }
-  .background-added {
-    background-image: none;
-  }
+
   .center-about {
     display: flex;
     justify-content: center;

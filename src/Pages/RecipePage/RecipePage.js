@@ -7,13 +7,15 @@ import './style.css'
 import Footer from '../../Components/Footer'
 import ErrorMessage from '../../Components/ErrorMessage'
 import AdvancedSearch from '../../Components/AdvancedSearch'
+import Nutrition from '../../Components/Nutrition'
 
 class RecipePage extends Component {
   constructor(props) {
     super(props)
     this.goToSingleRecipe = this.goToSingleRecipe.bind(this)
     this.state = {
-      displayedInfo: 'ingredients'
+      displayedInfo: 'ingredients',
+      showSubNutrition: false
     }
   }
   componentDidMount = () => {
@@ -150,158 +152,51 @@ class RecipePage extends Component {
                           </div>
 
                           <div className="RecipeInfoDisplayed">
-                            {/* start of Nutrition */}
-                            {this.state.displayedInfo == 'Nutrition' ? (
-                              <div className="recipeInfo">
-                                <div>
-                                  {info.digest
-                                    .slice(0, Math.ceil(info.digest.length / 2))
-                                    .map(label => {
-                                      return (
-                                        <div
-                                          className="informationDisplayed"
-                                          key={label.label}
-                                        >
-                                          <h4 className="singleRecipeInformation">
-                                            {label.label}
-                                          </h4>
-                                          <p className="singleRecipeInformation">
-                                            {!label.daily || !label.schemaOrgTag
-                                              ? ''
-                                              : `${label.daily.toFixed(2)}% ${
-                                                  label.schemaOrgTag
-                                                }`}
-                                          </p>
-
-                                          <p className="singleRecipeInformation">
-                                            {!label.total ||
-                                            !label.unit ||
-                                            !label.tag
-                                              ? ''
-                                              : `${label.total.toFixed(2)}${
-                                                  label.unit
-                                                } ${label.tag}`}
-                                          </p>
-                                          <br />
-                                          <div>
-                                            {label.sub
-                                              ? label.sub.map(l => {
-                                                  return (
-                                                    <div
-                                                      className="informationDisplayed"
-                                                      key={l.label}
-                                                    >
-                                                      <h4 className="singleRecipeInformation">
-                                                        {l.label}
-                                                      </h4>
-                                                      <p className="singleRecipeInformation">
-                                                        {!l.daily ||
-                                                        !l.schemaOrgTag
-                                                          ? ''
-                                                          : `${l.daily.toFixed(
-                                                              2
-                                                            )}% ${
-                                                              l.schemaOrgTag
-                                                            }`}
-                                                      </p>
-                                                      <p className="singleRecipeInformation">
-                                                        {!l.total ||
-                                                        !l.unit ||
-                                                        !l.tag
-                                                          ? ''
-                                                          : `${l.total.toFixed(
-                                                              2
-                                                            )}${l.unit} ${
-                                                              l.tag
-                                                            }`}
-                                                      </p>
-                                                      <br />
-                                                    </div>
-                                                  )
-                                                })
-                                              : null}
-                                          </div>
-                                        </div>
+                            <div className="flexColumns">
+                              {/* start of Nutrition */}
+                              {this.state.displayedInfo == 'Nutrition' ? (
+                                <div className="recipeInfo">
+                                  <div>
+                                    {info.digest
+                                      .slice(
+                                        0,
+                                        Math.ceil(info.digest.length / 2)
                                       )
-                                    })}
-                                </div>
-                                <div>
-                                  {info.digest
-                                    .slice(
-                                      Math.floor(info.digest.length / 2),
-                                      info.digest.length
-                                    )
-                                    .map(label => {
-                                      return (
-                                        <div
-                                          className="informationDisplayed"
-                                          key={label.label}
-                                        >
-                                          <h4 className="singleRecipeInformation">
-                                            {label.label}
-                                          </h4>
-                                          <p className="singleRecipeInformation">
-                                            {!label.daily || !label.schemaOrgTag
-                                              ? ''
-                                              : `${label.daily.toFixed(2)}% ${
-                                                  label.schemaOrgTag
-                                                }`}
-                                          </p>
-
-                                          <p className="singleRecipeInformation">
-                                            {!label.total ||
-                                            !label.unit ||
-                                            !label.tag
-                                              ? ''
-                                              : `${label.total.toFixed(2)}${
-                                                  label.unit
-                                                } ${label.tag}`}
-                                          </p>
-                                          <br />
-                                          <div>
-                                            {label.sub
-                                              ? label.sub.map(l => {
-                                                  return (
-                                                    <div
-                                                      className="informationDisplayed"
-                                                      key={l.label}
-                                                    >
-                                                      <h4 className="singleRecipeInformation">
-                                                        {l.label}
-                                                      </h4>
-                                                      <p className="singleRecipeInformation">
-                                                        {!l.daily ||
-                                                        !l.schemaOrgTag
-                                                          ? ''
-                                                          : `${l.daily.toFixed(
-                                                              2
-                                                            )}% ${
-                                                              l.schemaOrgTag
-                                                            }`}
-                                                      </p>
-                                                      <p className="singleRecipeInformation">
-                                                        {!l.total ||
-                                                        !l.unit ||
-                                                        !l.tag
-                                                          ? ''
-                                                          : `${l.total.toFixed(
-                                                              2
-                                                            )}${l.unit} ${
-                                                              l.tag
-                                                            }`}
-                                                      </p>
-                                                      <br />
-                                                    </div>
-                                                  )
-                                                })
-                                              : null}
+                                      .map(label => {
+                                        return (
+                                          <div
+                                            className="informationDisplayed"
+                                            key={label.label}
+                                          >
+                                            <Nutrition label={label} />
                                           </div>
-                                        </div>
-                                      )
-                                    })}
+                                        )
+                                      })}
+                                  </div>
                                 </div>
-                              </div>
-                            ) : null}
+                              ) : null}
+                              {this.state.displayedInfo == 'Nutrition' ? (
+                                <div className="recipeInfo">
+                                  <div>
+                                    {info.digest
+                                      .slice(
+                                        Math.floor(info.digest.length / 2),
+                                        info.digest.length - 1
+                                      )
+                                      .map(label => {
+                                        return (
+                                          <div
+                                            className="informationDisplayed"
+                                            key={label.label}
+                                          >
+                                            <Nutrition label={label} />
+                                          </div>
+                                        )
+                                      })}
+                                  </div>
+                                </div>
+                              ) : null}
+                            </div>
                             {/* end of Nutrition */}
                             {/* start of totalDaily */}
                             {this.state.displayedInfo == 'totalDaily' ? (
