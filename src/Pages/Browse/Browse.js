@@ -48,7 +48,7 @@ class Browse extends Component {
       <div>
         <section className="small-view">
           <AdvancedSearch
-            browsePage={true}
+            browse={true}
             selected={this.state.selected}
             _selected={this._selected}
           />
@@ -56,13 +56,12 @@ class Browse extends Component {
           <div className="spacingFromNav" />
         </section>
         {/*  */}
-
         <section className="small-view">
           {this.state.selected == 'topPicks' ? (
             <div className="center-home-options">
               <div className="top-Picks">
                 <div className="homeRecipeSlider">
-                  {this.state.recommended.slice(0, 5).map(recipe => {
+                  {this.state.recommended.slice(0, 7).map(recipe => {
                     return <HomeRecipe key={recipe.uri} recipe={recipe} />
                   })}
                 </div>
@@ -81,35 +80,40 @@ class Browse extends Component {
           )}
         </section>
         {/*  */}
-        <div className="center-home-options big-view">
-          <div className="top-Picks ">
-            <div className="homeRecipeSlider">
-              {categories.map(category => {
-                return <Category category={category} />
-              })}
+        <section className="centerLine ">
+          <div>
+            <div className="center-home-options big-view">
+              <div className="top-Picks ">
+                <div className="homeRecipeSlider">
+                  {categories.map(category => {
+                    return <Category category={category} />
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="center-home-options big-view">
+              <div className="top-Picks">
+                <h2 className="slider">Top Picks!</h2>
+                <div className="homeRecipeSlider">
+                  {this.state.recommended.slice(0, 4).map(recipe => {
+                    return <HomeRecipe key={recipe.uri} recipe={recipe} />
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="center-home-options big-view">
+              <div className="country-top-Picks">
+                <h2 className="slider">A Taste From Another Land!</h2>
+                <div className="wrap-country-top-picks ">
+                  {this.state.countries.map(TheCountry => {
+                    return <TasteOfCountries country={TheCountry} />
+                  })}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="center-home-options big-view">
-          <div className="top-Picks">
-            <h2 className="slider">Top Picks!</h2>
-            <div className="homeRecipeSlider">
-              {this.state.recommended.slice(0, 4).map(recipe => {
-                return <HomeRecipe key={recipe.uri} recipe={recipe} />
-              })}
-            </div>
-          </div>
-        </div>
-        <div className="center-home-options big-view">
-          <div className="country-top-Picks">
-            <h2 className="slider">A Taste From Another Land!</h2>
-            <div className="wrap-country-top-picks ">
-              {this.state.countries.map(TheCountry => {
-                return <TasteOfCountries country={TheCountry} />
-              })}
-            </div>
-          </div>
-        </div>
+        </section>
+
         <section className="small-view">
           <Footer className="small-view" />
         </section>

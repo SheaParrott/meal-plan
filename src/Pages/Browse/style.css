@@ -4,14 +4,14 @@
   width: 100%;
   margin: 5px 0;
 }
+
 .top-Picks {
   width: 295px;
   background-color: #ffffffc5;
   padding: 0px;
 }
-
 div.the-country-slider {
-  margin: 5px;
+  margin: 2px 0;
   height: 285px;
   width: 235px;
   border: 1.5px solid #b3b4b48c;
@@ -23,9 +23,9 @@ div.the-country-slider {
   justify-content: space-between;
 }
 div.slider {
-  margin: 5px;
+  margin: 2px 0;
   height: 285px;
-  min-width: 270px;
+  width: 270px;
   border: 1.5px solid #b3b4b48c;
   border-radius: 5px;
   padding: 10px;
@@ -72,9 +72,7 @@ div.country-homeRecipeSlider {
   align-items: center;
   justify-content: space-evenly;
   overflow: hidden;
-  /* changed */
   flex-wrap: wrap;
-  /*  */
 }
 img.slider {
   width: 227px;
@@ -86,7 +84,6 @@ img.the-country-slider {
 }
 
 @media (min-width: 1280px) {
-  /*  */
   img.home-category {
     width: 70px;
     border-radius: 50%;
@@ -108,7 +105,7 @@ img.the-country-slider {
     width: 215px;
   }
   div.slider {
-    min-width: 228px;
+    width: 228px;
   }
 
   .country-top-Picks {

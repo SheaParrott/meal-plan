@@ -186,152 +186,6 @@ img.home {
   display: flex;
   justify-content: space-between;
 }
-/* sources end*/
-@media (min-width: 375px) {
-  .footerButton,
-  .homeButton {
-    font-size: 1.2rem;
-  }
-  .spacingFromNav {
-    height: 60px;
-  }
-}
-@media (min-width: 411px) {
-  .footerButton,
-  .homeButton {
-    font-size: 1.3rem;
-  }
-  .spacingFromNav {
-    height: 70px;
-  }
-}
-@media (min-width: 600px) {
-  .footerButton,
-  .homeButton {
-    font-size: 1.4rem;
-  }
-  .source {
-    font-size: 0.91rem;
-  }
-}
-@media (min-width: 760px) {
-  .footerButton,
-  .homeButton {
-    font-size: 1.35rem;
-  }
-  .source {
-    font-size: 1rem;
-  }
-  .spacingFromNav {
-    height: 80px;
-  }
-}
-@media (min-width: 1024px) and (min-height: 1366px) {
-  .footerButton,
-  .homeButton {
-    font-size: 1.55rem;
-  }
-  .source {
-    font-size: 1.2rem;
-  }
-  .spacingFromNav {
-    height: 90px;
-  }
-}
-
-@media (min-width: 1280px) {
-  /* header start */
-  nav {
-    width: 100vw;
-  }
-
-  .footerButton,
-  .homeButton {
-    font-size: 1.15rem;
-  }
-  /* header end */
-  /* general start */
-  .big-view {
-    display: block;
-  }
-  /* .line {
-    height: 1px;
-    background-color: #81848d;
-    width: 49vw;
-    margin: 10px 0;
-  } */
-  .spash-bg {
-    background-image: url(./assets/front.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-  }
-  .shaded-bg {
-    display: flex;
-    justify-content: center;
-    background-color: #686b7727;
-    width: 100vw;
-    z-index: 1;
-  }
-  .no-shaded-bg {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    z-index: 1;
-  }
-  .single-view-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #ffffffc5;
-    width: 90vw;
-    position: relative;
-    z-index: 3;
-  }
-  .single-view-page-home {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* background opacity on big screen */
-    /* background-color: #ffffffe1; */
-    width: 100vw;
-    position: relative;
-    z-index: 3;
-    box-shadow: 0 0 20px black, 0 0 10px #777777b6;
-  }
-  .shaded-bg-lighter {
-    display: flex;
-    justify-content: center;
-    background-color: #ffffffea;
-    width: 100vw;
-    z-index: 1;
-  }
-  .mobile-tablet {
-    display: none;
-  }
-  .center-home-options {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 5px 0;
-  }
-  .centerHomePage {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-  }
-  .line {
-    height: 1px;
-    background-color: #81848d;
-    width: 1066px;
-    margin: 3px 0;
-  }
-  .source {
-    font-size: 0.7rem;
-  }
-
-  /* general end */
-}
 
 /* home / advanced  start*/
 h1 {
@@ -483,7 +337,15 @@ div.CategoriesBar {
 .fa-angle-up {
   font-size: 1.3rem;
 }
+/* sources end*/
 @media (min-width: 375px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1rem;
+  }
+  .spacingFromNav {
+    height: 60px;
+  }
   label {
     font-size: 1.2rem;
   }
@@ -518,6 +380,13 @@ div.CategoriesBar {
   }
 }
 @media (min-width: 411px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.15rem;
+  }
+  .spacingFromNav {
+    height: 70px;
+  }
   label {
     font-size: 1.3rem;
   }
@@ -551,6 +420,13 @@ div.CategoriesBar {
   }
 }
 @media (min-width: 600px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.4rem;
+  }
+  .source {
+    font-size: 0.91rem;
+  }
   .CaloriesAndCookTime {
     width: 423px;
   }
@@ -591,6 +467,16 @@ div.CategoriesBar {
   }
 }
 @media (min-width: 760px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.35rem;
+  }
+  .source {
+    font-size: 1rem;
+  }
+  .spacingFromNav {
+    height: 80px;
+  }
   .CaloriesAndCookTime {
     justify-content: space-between;
     width: 500px;
@@ -631,6 +517,16 @@ div.CategoriesBar {
   }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
+  .footerButton,
+  .homeButton {
+    font-size: 1.55rem;
+  }
+  .source {
+    font-size: 1.2rem;
+  }
+  .spacingFromNav {
+    height: 90px;
+  }
   .CaloriesAndCookTime {
     width: 510px;
   }
@@ -671,6 +567,97 @@ div.CategoriesBar {
 }
 
 @media (min-width: 1280px) {
+  /* header start */
+  nav {
+    width: 100vw;
+  }
+
+  .footerButton,
+  .homeButton {
+    font-size: 1.15rem;
+  }
+  /* header end */
+  /* general start */
+  .big-view {
+    display: block;
+  }
+  /* .line {
+    height: 1px;
+    background-color: #81848d;
+    width: 49vw;
+    margin: 10px 0;
+  } */
+  .spash-bg {
+    background-image: url(./assets/front.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+  .shaded-bg {
+    display: flex;
+    justify-content: center;
+    background-color: #686b7727;
+    width: 100vw;
+    z-index: 1;
+  }
+  .no-shaded-bg {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    z-index: 1;
+  }
+  .single-view-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffffc5;
+    width: 90vw;
+    position: relative;
+    z-index: 3;
+  }
+  .single-view-page-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background opacity on big screen */
+    /* background-color: #ffffffe1; */
+    width: 100vw;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 0 20px black, 0 0 10px #777777b6;
+  }
+  /* .shaded-bg-lighter {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffffea;
+    width: 100vw;
+    z-index: 1;
+  } */
+  .mobile-tablet {
+    display: none;
+  }
+  .center-home-options {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 5px 0;
+  }
+  .centerHomePage {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+  .line {
+    height: 1px;
+    background-color: #81848d;
+    width: 1066px;
+    margin: 3px 0;
+  }
+  .source {
+    font-size: 0.7rem;
+  }
+
+  /* general end */
   /* home start */
   .CaloriesAndCookTime {
     width: 540px;
@@ -740,104 +727,19 @@ div.CategoriesBar {
   nav {
     width: 100%;
   }
-
-  img.home-category {
-    width: 70px;
-    border-radius: 50%;
-  }
-  .top-Picks {
-    width: 1050px;
-    border: 1.5px solid #b3b4b48c;
-    background-color: #ffffffc5;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  h2.slider {
-    color: #92ca64;
-    font-weight: 900;
-    text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
-    padding: 5px;
-  }
-  div.the-country-slider {
-    margin: 5px;
-    height: 285px;
-    width: 215px;
-    border: 1.5px solid #b3b4b48c;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #ffffff2f;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  div.slider {
-    margin: 5px;
-    height: 285px;
-    min-width: 228px;
-    border: 1.5px solid #b3b4b48c;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #ffffffa6;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .country-top-Picks {
-    width: 1050px;
-    border: 1.5px solid #b3b4b48c;
-    background-color: #ffffffc5;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  .wrap-country-top-picks {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-  .country-container {
-    margin: 5px 0;
-    display: flex;
-    flex-direction: column;
-    border: 1.5px solid #b3b4b48c;
-    background-color: #ffffff77;
-    border-radius: 10px;
-    padding: 10px;
-    align-items: center;
-  }
-
-  .country-slider {
-    color: #92ca64;
-    font-weight: 900;
-    font-size: 1.3rem;
-  }
-  .seeMore {
-    color: #92ca64;
-    font-weight: 900;
-    font-size: 1.15rem;
-  }
-  .green:hover {
-    color: #a8e973;
-  }
-  div.country-homeRecipeSlider {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    overflow: hidden;
-  }
-  img.slider {
-    width: 224px;
-    border-radius: 3px;
-  }
-  img.the-country-slider {
-    width: 210px;
-    border-radius: 3px;
-  }
-  .homeRecipeSlider {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    overflow: hidden;
-  }
 }
 
-/* home / advanced end */
+/* @media (min-width: 375px) {
+}
+@media (min-width: 411px) {
+}
+@media (min-width: 600px) {
+}
+@media (min-width: 760px) {
+}
+@media (min-width: 1024px) and (min-height: 1366px) {
+}
+
+@media (min-width: 1280px) {
+  
+} */

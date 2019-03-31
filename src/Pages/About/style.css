@@ -159,6 +159,16 @@ strong {
 }
 
 @media (min-width: 1280px) {
+  .aboutSpacingFromNav {
+    height: 180px;
+  }
+  .center-about {
+    display: flex;
+    justify-content: center;
+  }
+  .big-view {
+    display: block;
+  }
   .small-view {
     display: none;
   }
@@ -188,11 +198,9 @@ strong {
     text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
     font-weight: 800;
     color: #4d5366;
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 180px;
 
     width: 1050px;
     border: 1.5px solid #b3b4b48c;

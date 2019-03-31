@@ -86,7 +86,7 @@ class AdvancedSearch extends Component {
               </button>
             )}
 
-            {this.props.browsePage ? (
+            {this.props.browse ? (
               <section>
                 <div className="centerLine">
                   <div className="line" />
@@ -94,7 +94,7 @@ class AdvancedSearch extends Component {
                 <div className="secondTearHeader small-view">
                   <h5
                     className={`about ${
-                      this.props.selected == 'TOP PICKS'
+                      this.props.selected == 'topPicks'
                         ? 'whiteCurrentPage'
                         : 'white'
                     }`}
@@ -106,7 +106,7 @@ class AdvancedSearch extends Component {
                   </h5>
                   <h5
                     className={`about ${
-                      this.props.selected == 'COUNTRY'
+                      this.props.selected == 'Country'
                         ? 'whiteCurrentPage'
                         : 'white'
                     }`}
