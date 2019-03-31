@@ -94,6 +94,7 @@ a {
 .recipeInfo {
   text-align: left;
   padding: 0 10px;
+  width: 100%;
 }
 .recipeInfoIngredients {
   text-align: left;

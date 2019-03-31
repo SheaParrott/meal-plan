@@ -152,58 +152,56 @@ class RecipePage extends Component {
                           </div>
 
                           <div className="RecipeInfoDisplayed">
-                            <div className="flexColumns">
-                              {/* start of Nutrition */}
-                              {this.state.displayedInfo == 'Nutrition' ? (
-                                <div className="recipeInfo">
-                                  <div>
-                                    {info.digest
-                                      .slice(
-                                        0,
-                                        Math.ceil(info.digest.length / 2)
+                            {/* start of Nutrition */}
+                            {this.state.displayedInfo == 'Nutrition' ? (
+                              <div className="recipeInfo">
+                                <div>
+                                  {info.digest
+                                    .slice(0, Math.ceil(info.digest.length / 2))
+                                    .map(label => {
+                                      return (
+                                        <div
+                                          className="informationDisplayed"
+                                          key={label.label}
+                                        >
+                                          <Nutrition label={label} />
+                                        </div>
                                       )
-                                      .map(label => {
-                                        return (
-                                          <div
-                                            className="informationDisplayed"
-                                            key={label.label}
-                                          >
-                                            <Nutrition label={label} />
-                                          </div>
-                                        )
-                                      })}
-                                  </div>
+                                    })}
                                 </div>
-                              ) : null}
-                              {this.state.displayedInfo == 'Nutrition' ? (
-                                <div className="recipeInfo">
-                                  <div>
-                                    {info.digest
-                                      .slice(
-                                        Math.floor(info.digest.length / 2),
-                                        info.digest.length - 1
+                                <div>
+                                  {info.digest
+                                    .slice(
+                                      Math.floor(info.digest.length / 2),
+                                      info.digest.length - 1
+                                    )
+                                    .map(label => {
+                                      return (
+                                        <div
+                                          className="informationDisplayed"
+                                          key={label.label}
+                                        >
+                                          <Nutrition label={label} />
+                                        </div>
                                       )
-                                      .map(label => {
-                                        return (
-                                          <div
-                                            className="informationDisplayed"
-                                            key={label.label}
-                                          >
-                                            <Nutrition label={label} />
-                                          </div>
-                                        )
-                                      })}
-                                  </div>
+                                    })}
                                 </div>
-                              ) : null}
-                            </div>
+                              </div>
+                            ) : null}
+
                             {/* end of Nutrition */}
                             {/* start of totalDaily */}
+
                             {this.state.displayedInfo == 'totalDaily' ? (
                               <div className="recipeInfo">
                                 <div>
                                   {Object.keys(info.totalDaily)
-                                    .slice(0, Math.ceil(info.digest.length / 2))
+                                    .slice(
+                                      0,
+                                      Math.ceil(
+                                        Object.keys(info.totalDaily).length / 2
+                                      )
+                                    )
                                     .map((key, index) => {
                                       return (
                                         <div
@@ -225,8 +223,10 @@ class RecipePage extends Component {
                                 <div>
                                   {Object.keys(info.totalDaily)
                                     .slice(
-                                      Math.floor(info.digest.length / 2),
-                                      info.digest.length
+                                      Math.floor(
+                                        Object.keys(info.totalDaily).length / 2
+                                      ),
+                                      Object.keys(info.totalDaily).length - 1
                                     )
                                     .map((key, index) => {
                                       return (
@@ -248,6 +248,7 @@ class RecipePage extends Component {
                                 </div>
                               </div>
                             ) : null}
+
                             {this.state.displayedInfo == 'ingredients' ? (
                               <div className="recipeInfoIngredients">
                                 {info.ingredientLines.map(
