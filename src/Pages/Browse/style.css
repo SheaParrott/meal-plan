@@ -62,11 +62,13 @@ div.slider {
   color: #92ca64;
   font-weight: 900;
   font-size: 1.3rem;
+  text-shadow: 0.5px 0px 0px #69db4c;
 }
 .seeMore {
   color: #92ca64;
   font-weight: 900;
   font-size: 1.15rem;
+  text-shadow: 0.5px 0px 0px #69db4c;
 }
 .green:hover {
   color: #a8e973;
@@ -267,7 +269,8 @@ h5.slider {
   h2.slider {
     color: #92ca64;
     font-weight: 900;
-    text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
+
+    text-shadow: 0.5px 0px 0px #69db4c;
     padding: 5px;
   }
   h5.slider {

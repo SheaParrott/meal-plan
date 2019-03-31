@@ -14,7 +14,7 @@ class RecipeSlide extends Component {
               src={this.props.recipe.image}
               alt={this.props.recipe.name}
             />
-            <h5 className="slider">{this.props.recipe.name}</h5>
+            <h5 className="slider text-shadow ">{this.props.recipe.name}</h5>
           </div>
         </Link>
         <section>
@@ -22,11 +22,15 @@ class RecipeSlide extends Component {
             <div className="sourceLine" />
           </div>
           <div className="credit-home">
-            <a className="source" href={this.props.recipe.url} target="_blank">
+            <a
+              className="source text-shadow "
+              href={this.props.recipe.url}
+              target="_blank"
+            >
               {this.props.recipe.source.toUpperCase()}
             </a>
             <a
-              className="source"
+              className="source text-shadow "
               href={this.props.recipe.shareAs}
               target="_blank"
             >

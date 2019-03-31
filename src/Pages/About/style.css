@@ -177,6 +177,7 @@ strong {
   }
   h2.aboutInspiration {
     color: #92ca64;
+    text-shadow: 0.5px 0px 0px #69db4c;
     font-weight: 900;
     text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
   }

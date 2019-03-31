@@ -48,59 +48,131 @@ class RecipePage extends Component {
                   {this.props.recipe.map((info, index) => {
                     return (
                       <div key={index}>
-                        <h2 className="singleRecipeLabel">{info.label}</h2>
-                        <div className="centerLine">
-                          <div className="line-recipePage" />
-                        </div>
-                        <div className="centerImageAndWarnings">
-                          <p className="singleRecipeInformation">
-                            See full recipe on:{' '}
-                            <a className="bold" href={info.url} target="_blank">
-                              {info.source.toUpperCase()}
-                            </a>
-                          </p>
-
-                          <div className="tooltip">
-                            <a href={info.shareAs} target="_blank">
-                              <img
-                                className="singleViewRecipeImage"
-                                src={info.image}
-                                alt={info.label}
-                              />
-                            </a>
-                            <span className="tooltiptext big-view">
-                              Go To: {info.shareAs.slice(0, 50)}...
-                            </span>
+                        {/* start */}
+                        <main className="big-view">
+                          <div className="centerImageAndWarnings">
+                            <section className="RowImageAndWarnings">
+                              <div className="tooltip">
+                                <a href={info.shareAs} target="_blank">
+                                  <img
+                                    className="singleViewRecipeImage"
+                                    src={info.image}
+                                    alt={info.label}
+                                  />
+                                </a>
+                                <span className="tooltiptext big-view">
+                                  Go To: {info.shareAs.slice(0, 50)}...
+                                </span>
+                              </div>
+                              <div>
+                                <h2 className="singleRecipeLabel text-shadow">
+                                  {info.label}
+                                </h2>
+                                <div className="centerLine">
+                                  <div className="recipePageLine" />
+                                </div>
+                                <p className="singleRecipeInformation text-shadow">
+                                  See full recipe on:{' '}
+                                  <a
+                                    className="bold"
+                                    href={info.url}
+                                    target="_blank"
+                                  >
+                                    {info.source.toUpperCase()}
+                                  </a>
+                                </p>
+                                <h3 className="singleRecipeFacts text-shadow">
+                                  {(info.calories / info.yield).toFixed(0)}{' '}
+                                  calories per serving
+                                </h3>
+                                <h3 className="singleRecipeFacts  text-shadow">
+                                  {info.yield} total servings
+                                </h3>
+                                <section className="singleViewRecipeHealthAndWarnings">
+                                  <div className="healthAndWarningsContainer-recipe">
+                                    {info.cautions.map(caution => {
+                                      return (
+                                        <p key={caution} className="red-bg">
+                                          {caution}
+                                        </p>
+                                      )
+                                    })}
+                                  </div>
+                                  <div className="healthAndWarningsContainer-recipe">
+                                    {info.healthLabels.map(label => {
+                                      return (
+                                        <p key={label} className="green-bg">
+                                          {label}
+                                        </p>
+                                      )
+                                    })}
+                                  </div>
+                                </section>
+                              </div>
+                            </section>
+                            {/*  */}
                           </div>
+                        </main>
+                        <main className="small-view">
+                          <h2 className="singleRecipeLabel">{info.label}</h2>
+                          <div className="centerLine">
+                            <div className="line-recipePage" />
+                          </div>
+                          <div className="centerImageAndWarnings">
+                            <p className="singleRecipeInformation">
+                              See full recipe on:{' '}
+                              <a
+                                className="bold"
+                                href={info.url}
+                                target="_blank"
+                              >
+                                {info.source.toUpperCase()}
+                              </a>
+                            </p>
 
-                          <h3 className="singleRecipeFacts">
-                            {(info.calories / info.yield).toFixed(0)} calories
-                            per serving
-                          </h3>
-                          <h3 className="singleRecipeFacts">
-                            {info.yield} total servings
-                          </h3>
-                          <section className="singleViewRecipeHealthAndWarnings">
-                            <div className="healthAndWarningsContainer-recipe">
-                              {info.cautions.map(caution => {
-                                return (
-                                  <p key={caution} className="red-bg">
-                                    {caution}
-                                  </p>
-                                )
-                              })}
+                            <div className="tooltip">
+                              <a href={info.shareAs} target="_blank">
+                                <img
+                                  className="singleViewRecipeImage"
+                                  src={info.image}
+                                  alt={info.label}
+                                />
+                              </a>
+                              <span className="tooltiptext big-view">
+                                Go To: {info.shareAs.slice(0, 50)}...
+                              </span>
                             </div>
-                            <div className="healthAndWarningsContainer-recipe">
-                              {info.healthLabels.map(label => {
-                                return (
-                                  <p key={label} className="green-bg">
-                                    {label}
-                                  </p>
-                                )
-                              })}
-                            </div>
-                          </section>
-                        </div>
+
+                            <h3 className="singleRecipeFacts">
+                              {(info.calories / info.yield).toFixed(0)} calories
+                              per serving
+                            </h3>
+                            <h3 className="singleRecipeFacts">
+                              {info.yield} total servings
+                            </h3>
+                            <section className="singleViewRecipeHealthAndWarnings">
+                              <div className="healthAndWarningsContainer-recipe">
+                                {info.cautions.map(caution => {
+                                  return (
+                                    <p key={caution} className="red-bg">
+                                      {caution}
+                                    </p>
+                                  )
+                                })}
+                              </div>
+                              <div className="healthAndWarningsContainer-recipe">
+                                {info.healthLabels.map(label => {
+                                  return (
+                                    <p key={label} className="green-bg">
+                                      {label}
+                                    </p>
+                                  )
+                                })}
+                              </div>
+                            </section>
+                          </div>
+                        </main>
+                        {/* end */}
                         <div className="centerLine">
                           <div className="line-recipePage" />
                         </div>

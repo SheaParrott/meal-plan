@@ -42,7 +42,7 @@ class Category extends Component {
           }
           alt={this.props.category.category}
         />
-        <h5>{this.props.category.category}</h5>
+        <h5 className="text-shadow ">{this.props.category.category}</h5>
       </div>
     )
   }

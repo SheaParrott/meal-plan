@@ -114,7 +114,18 @@ main.error {
   width: 80vw;
   margin: 8px 0;
 }
+.text-shadow {
+  text-shadow: 1px 1px 0px #b3b4b46e;
+}
 
+/* .red-bg-browse {
+  color: #e40404bd;
+  box-shadow: 0 0 0.5px #e4040486;
+}
+.green-bg-browse {
+  color: #0ce404bd;
+  box-shadow: 0 0 0.5px #0ce404d2;
+} */
 footer {
   display: flex;
   flex-direction: row;

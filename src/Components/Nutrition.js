@@ -23,14 +23,18 @@ class Nutrition extends Component {
     }
     return (
       <div>
-        <div className="nutritionSubContainer" onClick={this._showSubNutrition}>
-          {this.state.showSubNutrition ? (
-            <i className="fas fa-caret-down" />
-          ) : (
-            <i className="fas fa-caret-right" />
-          )}
+        <div>
+          <span className="nutritionArrowFlex" onClick={this._showSubNutrition}>
+            {this.state.showSubNutrition ? (
+              <i className="fas fa-caret-down" />
+            ) : (
+              <i className="fas fa-caret-right" />
+            )}
 
-          <h3 className="singleRecipeInformation">{this.props.label.label}</h3>
+            <h3 className="singleRecipeInformation">
+              {this.props.label.label}
+            </h3>
+          </span>
         </div>
         {this.state.showSubNutrition ? (
           <div>

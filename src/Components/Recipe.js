@@ -28,8 +28,10 @@ class Recipe extends Component {
                 alt={this.props.hit.recipe.label}
               />
               <div className="browseRecipeInfo">
-                <h3 className="browse-label">{this.props.hit.recipe.label}</h3>
-                <h6 className="browse-calories">
+                <h3 className="browse-label text-shadow">
+                  {this.props.hit.recipe.label}
+                </h3>
+                <h6 className="browse-calories text-shadow">
                   {(
                     this.props.hit.recipe.calories / this.props.hit.recipe.yield
                   ).toFixed(0)}{' '}
@@ -47,7 +49,10 @@ class Recipe extends Component {
                 <div className="healthAndWarningsContainer">
                   {this.props.hit.recipe.healthLabels.map((label, index) => {
                     return (
-                      <p key={label + index} className="green-bg-browse">
+                      <p
+                        key={label + index}
+                        className="green-bg-browse text-shadow-green"
+                      >
                         {label}
                       </p>
                     )
@@ -64,13 +69,13 @@ class Recipe extends Component {
           <div className="credit">
             <a
               href={this.props.hit.recipe.url}
-              className="source"
+              className="source text-shadow "
               target="_blank"
             >
               {this.props.hit.recipe.source.toUpperCase()}
             </a>
             <a
-              className="source"
+              className="source text-shadow "
               href={this.props.hit.recipe.shareAs}
               target="_blank"
             >
