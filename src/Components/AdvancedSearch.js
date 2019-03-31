@@ -94,28 +94,24 @@ class AdvancedSearch extends Component {
                 <div className="secondTearHeader small-view">
                   <h5
                     className={`about ${
-                      this.state.InspirationShown == 'Inspiration'
+                      this.props.selected == 'TOP PICKS'
                         ? 'whiteCurrentPage'
                         : 'white'
                     }`}
                     onClick={() => {
-                      this.setState({
-                        InspirationShown: 'Inspiration'
-                      })
+                      this.props._selected('topPicks')
                     }}
                   >
                     TOP PICKS
                   </h5>
                   <h5
                     className={`about ${
-                      this.state.InspirationShown == 'thanks'
+                      this.props.selected == 'COUNTRY'
                         ? 'whiteCurrentPage'
                         : 'white'
                     }`}
                     onClick={() => {
-                      this.setState({
-                        InspirationShown: 'thanks'
-                      })
+                      this.props._selected('Country')
                     }}
                   >
                     COUNTRY

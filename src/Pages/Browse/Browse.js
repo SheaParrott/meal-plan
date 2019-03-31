@@ -14,7 +14,8 @@ class Browse extends Component {
     super(props)
     this.state = {
       recommended: this.shuffle(recommended),
-      countries: this.shuffle(country)
+      countries: this.shuffle(country),
+      selected: 'topPicks'
     }
   }
   shuffle = array => {
@@ -36,17 +37,52 @@ class Browse extends Component {
 
     return array
   }
+  _selected = value => {
+    console.log(value)
+    this.setState({
+      selected: value
+    })
+  }
   render() {
     return (
       <div>
         <section className="small-view">
-          <AdvancedSearch browsePage={true} />
+          <AdvancedSearch
+            browsePage={true}
+            selected={this.state.selected}
+            _selected={this._selected}
+          />
 
           <div className="spacingFromNav" />
         </section>
+        {/*  */}
 
-        <div className="center-home-options">
-          <div className="top-Picks big-view">
+        <section className="small-view">
+          {this.state.selected == 'topPicks' ? (
+            <div className="center-home-options">
+              <div className="top-Picks">
+                <div className="homeRecipeSlider">
+                  {this.state.recommended.slice(0, 5).map(recipe => {
+                    return <HomeRecipe key={recipe.uri} recipe={recipe} />
+                  })}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="center-home-options">
+              <div className="country-top-Picks">
+                <div className="wrap-country-top-picks ">
+                  {this.state.countries.map(TheCountry => {
+                    return <TasteOfCountries country={TheCountry} />
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
+        {/*  */}
+        <div className="center-home-options big-view">
+          <div className="top-Picks ">
             <div className="homeRecipeSlider">
               {categories.map(category => {
                 return <Category category={category} />
@@ -54,7 +90,7 @@ class Browse extends Component {
             </div>
           </div>
         </div>
-        <div className="center-home-options">
+        <div className="center-home-options big-view">
           <div className="top-Picks">
             <h2 className="slider">Top Picks!</h2>
             <div className="homeRecipeSlider">
@@ -64,7 +100,7 @@ class Browse extends Component {
             </div>
           </div>
         </div>
-        <div className="center-home-options">
+        <div className="center-home-options big-view">
           <div className="country-top-Picks">
             <h2 className="slider">A Taste From Another Land!</h2>
             <div className="wrap-country-top-picks ">

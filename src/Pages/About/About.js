@@ -9,7 +9,7 @@ class About extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      InspirationShown: 'Inspiration'
+      selected: 'Inspiration'
     }
   }
   componentDidMount = () => {
@@ -34,13 +34,13 @@ class About extends Component {
                     <div className="secondTearHeader small-view">
                       <h5
                         className={`about ${
-                          this.state.InspirationShown == 'Inspiration'
+                          this.state.selected == 'Inspiration'
                             ? 'whiteCurrentPage'
                             : 'white'
                         }`}
                         onClick={() => {
                           this.setState({
-                            InspirationShown: 'Inspiration'
+                            selected: 'Inspiration'
                           })
                         }}
                       >
@@ -48,13 +48,13 @@ class About extends Component {
                       </h5>
                       <h5
                         className={`about ${
-                          this.state.InspirationShown == 'thanks'
+                          this.state.selected == 'thanks'
                             ? 'whiteCurrentPage'
                             : 'white'
                         }`}
                         onClick={() => {
                           this.setState({
-                            InspirationShown: 'thanks'
+                            selected: 'thanks'
                           })
                         }}
                       >
@@ -62,13 +62,13 @@ class About extends Component {
                       </h5>
                       <h5
                         className={`about ${
-                          this.state.InspirationShown == 'HappyOrIssues'
+                          this.state.selected == 'HappyOrIssues'
                             ? 'whiteCurrentPage'
                             : 'white'
                         }`}
                         onClick={() => {
                           this.setState({
-                            InspirationShown: 'HappyOrIssues'
+                            selected: 'HappyOrIssues'
                           })
                         }}
                       >
@@ -81,7 +81,7 @@ class About extends Component {
                   </nav>
                 </div>
                 <div className="aboutPageSpacing " />
-                {this.state.InspirationShown == 'Inspiration' ? (
+                {this.state.selected == 'Inspiration' ? (
                   <div className="aboutParagraph small-view">
                     <h2 className="aboutInspiration">Inspiration</h2>
                     <p className="about aboutInspiration ">
@@ -103,7 +103,7 @@ class About extends Component {
                     </p>
                     <p className="about"> -Blessings-</p>
                   </div>
-                ) : this.state.InspirationShown == 'thanks' ? (
+                ) : this.state.selected == 'thanks' ? (
                   <div className="aboutParagraph small-view">
                     <h2 className="aboutInspiration">Special Thanks!</h2>
                     <p className="about">
