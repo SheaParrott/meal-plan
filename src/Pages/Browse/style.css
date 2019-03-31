@@ -26,11 +26,11 @@ div.the-country-slider {
   justify-content: space-between;
 }
 div.slider {
-  margin: 0 0 5px 0;
+  margin: 5px;
   height: 285px;
-  width: 280px;
+  width: 270px;
   border: 1.5px solid #b3b4b48c;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   background-color: #ffffffa6;
   display: flex;
@@ -104,7 +104,7 @@ h5.slider {
     width: 355px;
   }
   div.slider {
-    width: 335px;
+    width: 322px;
     height: 300px;
   }
   img.slider {
@@ -129,7 +129,7 @@ h5.slider {
     width: 380px;
   }
   div.slider {
-    width: 360px;
+    width: 347px;
     height: 310px;
   }
   img.slider {
@@ -172,6 +172,7 @@ h5.slider {
     width: 230px;
     height: 240px;
     margin: 5px 5px 15px 5px;
+    border-radius: 5px;
   }
   img.slider {
     width: 175px;
