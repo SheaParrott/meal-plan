@@ -22,7 +22,7 @@ class About extends Component {
         <div className="no-shaded-bg">
           <div className="single-view-page">
             <div className="default">
-              <div className=" aboutPage">
+              <div className=" aboutPage background-added   defaultHeight">
                 <div>
                   <nav>
                     <h1 className="basicHeaderPlus">Meal Plan</h1>
@@ -75,8 +75,8 @@ class About extends Component {
                         HAPPY / ISSUES
                       </h5>
                     </div>
-                    <div className="secondTearHeader">
-                      <h5 className="about big-view">THANKS FOR VISITING!</h5>
+                    <div className="secondTearHeader big-view">
+                      <h5 className="about ">THANKS FOR VISITING!</h5>
                     </div>
                   </nav>
                 </div>
@@ -206,7 +206,7 @@ class About extends Component {
                     </div>
                   </main>
                 </section>
-                <img className="home mobile-tablet" src={front} alt="cover" />
+                {/* <img className="home mobile-tablet" src={front} alt="cover" /> */}
               </div>
               <Footer />
             </div>

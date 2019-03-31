@@ -67,8 +67,8 @@ img.resume:hover {
   font-weight: 700;
   padding: 8px;
   color: white;
-  margin: 80px 0px 18px 0px;
-  width: 280px;
+  margin: 70px 0px 18px 0px;
+  width: 271px;
 }
 .white-creator {
   color: #ffffff;
@@ -84,8 +84,8 @@ img.resume:hover {
     width: 360px;
   }
   .main-creator {
-    margin: 75px 0px 18px 0px;
-    width: 330px;
+    margin: 70px 0px 18px 0px;
+    width: 326px;
   }
 }
 @media (min-width: 411px) {
@@ -93,23 +93,21 @@ img.resume:hover {
     width: 400px;
   }
   .main-creator {
-    margin: 75px 15px 18px 15px;
-    /* not sure why this is a must now............. */
-    width: 360px;
+    width: 362px;
   }
 }
 @media (min-width: 600px) {
   .main-creator {
     padding: 25px;
     margin: 30px 40px;
-    margin: 95px 0px 30px 0px;
-    width: 500px;
+    margin: 90px 0px 30px 0px;
+    width: 468px;
   }
 }
 @media (min-width: 760px) {
   .main-creator {
     text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
-    width: 680px;
+    width: 555px;
   }
   .widthbig {
     width: 450px;
@@ -145,8 +143,8 @@ img.resume:hover {
 
 @media (min-width: 999px) {
   .main-creator {
-    margin: 130px 0px 65px 0px;
-    width: 800px;
+    margin: 125px 0px 65px 0px;
+    width: 711px;
   }
   .widthbig {
     width: 480px;
@@ -186,7 +184,7 @@ img.resume:hover {
     text-shadow: none;
     font-weight: 700;
     margin: 30px 0px 0px 0px;
-    width: 1050px;
+    width: 1070px;
     border: 1.5px solid #b3b4b48c;
     background-color: #ffffffc5;
     border-radius: 10px;

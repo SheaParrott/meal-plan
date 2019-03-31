@@ -88,11 +88,11 @@ class AdvancedSearch extends Component {
             )}
 
             {this.props.browse ? (
-              <section>
+              <section className="small-view">
                 <div className="centerLine">
                   <div className="line" />
                 </div>
-                <div className="secondTearHeader small-view">
+                <div className="secondTearHeader">
                   <h5
                     className={`about ${
                       this.props.selected == 'topPicks'
