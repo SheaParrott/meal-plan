@@ -67,7 +67,8 @@ img.resume:hover {
   font-weight: 700;
   padding: 8px;
   color: white;
-  margin: 80px 15px 18px 15px;
+  margin: 80px 0px 18px 0px;
+  width: 280px;
 }
 .white-creator {
   color: #ffffff;
@@ -83,25 +84,32 @@ img.resume:hover {
     width: 360px;
   }
   .main-creator {
-    margin: 75px 15px 18px 15px;
+    margin: 75px 0px 18px 0px;
+    width: 330px;
   }
 }
 @media (min-width: 411px) {
   .widthbig {
     width: 400px;
   }
+  .main-creator {
+    margin: 75px 15px 18px 15px;
+    /* not sure why this is a must now............. */
+    width: 360px;
+  }
 }
 @media (min-width: 600px) {
   .main-creator {
     padding: 25px;
     margin: 30px 40px;
-    margin: 95px 40px 30px 40px;
+    margin: 95px 0px 30px 0px;
+    width: 500px;
   }
 }
 @media (min-width: 760px) {
   .main-creator {
-    margin: 95px 80px 30px 80px;
     text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
+    width: 680px;
   }
   .widthbig {
     width: 450px;
@@ -137,7 +145,8 @@ img.resume:hover {
 
 @media (min-width: 999px) {
   .main-creator {
-    margin: 130px 130px 65px 130px;
+    margin: 130px 0px 65px 0px;
+    width: 800px;
   }
   .widthbig {
     width: 480px;
