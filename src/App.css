@@ -137,14 +137,12 @@ footer {
 }
 .footerButton,
 .homeButton {
-  font-size: 1.1rem;
+  font-size: 0.93rem;
 }
 .defaultHeight {
   min-height: 100vh;
 }
-.big-view {
-  display: none;
-}
+
 .background-added {
   background-image: url(./assets/front.jpg);
   background-size: cover;
@@ -180,6 +178,9 @@ img.home {
 .source:hover {
   cursor: pointer;
   color: #444a5ac7;
+}
+.big-view {
+  display: none;
 }
 /* sources end*/
 @media (min-width: 375px) {

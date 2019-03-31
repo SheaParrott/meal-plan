@@ -5,6 +5,9 @@ import HomeRecipe from '../../Components/HomeRecipe'
 import Category from '../../Components/Category'
 import country from '../../Country'
 import TasteOfCountries from '../../Components/TasteOfCountries'
+import './style.css'
+import AdvancedSearch from '../../Components/AdvancedSearch'
+import Footer from '../../Components/Footer'
 
 class Browse extends Component {
   constructor(props) {
@@ -35,9 +38,15 @@ class Browse extends Component {
   }
   render() {
     return (
-      <div className="big-view">
+      <div>
+        <section className="small-view">
+          <AdvancedSearch browsePage={true} />
+
+          <div className="spacingFromNav" />
+        </section>
+
         <div className="center-home-options">
-          <div className="top-Picks">
+          <div className="top-Picks big-view">
             <div className="homeRecipeSlider">
               {categories.map(category => {
                 return <Category category={category} />
@@ -65,6 +74,9 @@ class Browse extends Component {
             </div>
           </div>
         </div>
+        <section className="small-view">
+          <Footer className="small-view" />
+        </section>
       </div>
     )
   }

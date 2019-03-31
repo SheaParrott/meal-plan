@@ -14,6 +14,19 @@ class Footer extends Component {
             Home
           </p>
         </Link>
+        <div className="small-view">
+          <Link to="/browse">
+            <p
+              className={`footerButton ${
+                window.location.pathname === '/browse'
+                  ? 'whiteCurrentPage'
+                  : 'white'
+              }`}
+            >
+              Browse
+            </p>
+          </Link>
+        </div>
         <Link to="/about">
           <p
             className={`footerButton ${

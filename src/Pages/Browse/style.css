@@ -1,0 +1,136 @@
+.center-home-options {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 5px 0;
+}
+.top-Picks {
+  width: 295px;
+  background-color: #ffffffc5;
+  padding: 0px;
+}
+
+div.the-country-slider {
+  margin: 5px;
+  height: 285px;
+  width: 235px;
+  border: 1.5px solid #b3b4b48c;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ffffff2f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+div.slider {
+  margin: 5px;
+  height: 285px;
+  min-width: 270px;
+  border: 1.5px solid #b3b4b48c;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ffffffa6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.country-top-Picks {
+  width: 295px;
+  background-color: #ffffffc5;
+}
+.wrap-country-top-picks {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.country-container {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid #b3b4b48c;
+  background-color: #ffffff77;
+  border-radius: 10px;
+  padding: 10px;
+  align-items: center;
+}
+
+.country-slider {
+  color: #92ca64;
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+.seeMore {
+  color: #92ca64;
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+.green:hover {
+  color: #a8e973;
+}
+div.country-homeRecipeSlider {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  /* changed */
+  flex-wrap: wrap;
+  /*  */
+}
+img.slider {
+  width: 227px;
+  border-radius: 3px;
+}
+img.the-country-slider {
+  width: 227px;
+  border-radius: 3px;
+}
+
+@media (min-width: 1280px) {
+  /*  */
+  img.home-category {
+    width: 70px;
+    border-radius: 50%;
+  }
+  .top-Picks {
+    width: 1050px;
+    border: 1.5px solid #b3b4b48c;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  h2.slider {
+    color: #92ca64;
+    font-weight: 900;
+    text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
+    padding: 5px;
+  }
+
+  div.the-country-slider {
+    width: 215px;
+  }
+  div.slider {
+    min-width: 228px;
+  }
+
+  .country-top-Picks {
+    width: 1050px;
+    border: 1.5px solid #b3b4b48c;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .country-container {
+    margin: 5px 0;
+  }
+  img.slider {
+    width: 224px;
+  }
+  img.the-country-slider {
+    width: 210px;
+  }
+  .homeRecipeSlider {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+}

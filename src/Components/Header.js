@@ -14,6 +14,19 @@ class Header extends Component {
             HOME
           </h4>
         </Link>
+        <div className="small-view">
+          <Link to="/browse">
+            <h4
+              className={`homeButton ${
+                window.location.pathname === '/browse'
+                  ? 'whiteCurrentPage'
+                  : 'white'
+              }`}
+            >
+              BROWSE
+            </h4>
+          </Link>
+        </div>
         <Link to="/about">
           <h4
             className={`homeButton ${

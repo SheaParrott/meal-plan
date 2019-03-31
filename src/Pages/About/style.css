@@ -49,6 +49,9 @@ strong {
   text-align: center;
   font-size: 1.1rem;
 }
+.big-view {
+  display: none;
+}
 
 /* about page end */
 

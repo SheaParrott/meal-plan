@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom'
 import RecipePage from './Pages/RecipePage/RecipePage'
 import About from './Pages/About/About'
 import Results from './Pages/Results/Results'
+import Browse from './Pages/Browse/Browse'
 
 class App extends Component {
   render() {
@@ -15,6 +16,9 @@ class App extends Component {
         <Route exact path="/about" component={About} />
         <Route path="/results/:url_params" component={Results} />
         <Route path="/creator" component={Creator} />
+        <div className="small-view">
+          <Route exact path="/browse" component={Browse} />
+        </div>
         <Route path="/recipe/:uri" component={RecipePage} />
       </div>
     )
@@ -24,7 +28,7 @@ class App extends Component {
 export default App
 
 // to do:
-// [] implement a true browse page for mobile view and change current browse name to results
+// [] implement a browse page for mobile view and change current browse name to results
 // [x] implement indication on which page user is on
 // [] implement cached data
 // [x] highlight page number currently on

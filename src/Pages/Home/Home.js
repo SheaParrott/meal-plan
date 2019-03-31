@@ -31,7 +31,9 @@ class Home extends Component {
                 />
                 <img className="home mobile-tablet" src={front} alt="cover" />
                 <div className="home-spacing" />
-                <Browse />
+                <div className="big-view">
+                  <Browse />
+                </div>
               </div>
               <Footer />
             </div>
