@@ -1,5 +1,5 @@
 .browseRecipeContainer {
-  margin: 2px;
+  margin: 5px;
   border: 1.5px solid #b3b4b48c;
   border-radius: 5px;
   background-color: #ffffffa6;
@@ -38,10 +38,6 @@
   justify-content: center;
   align-items: center;
 }
-/* 
-.noResults {
-  padding-top: 110px;
-} */
 .tryAgain {
   padding: 5px;
 }
@@ -96,7 +92,6 @@ div.browse {
 
   .browseRecipeInfo {
     width: 50%;
-    /* background-color: red; */
   }
   .browse-label {
     font-size: 1.25rem;
@@ -139,7 +134,6 @@ div.browse {
     font-size: 1.9rem;
   }
   .browseRecipeContainer {
-    margin: 2px;
     width: 80vw;
   }
   .browseRecipeImage {
@@ -149,7 +143,6 @@ div.browse {
   .browseRecipeInfo {
     width: 59%;
     min-height: 150px;
-    /* background-color: red; */
   }
   .browse-label {
     font-size: 1.5rem;
@@ -163,31 +156,50 @@ div.browse {
   }
 }
 @media (min-width: 760px) {
+  .recipeBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 595px;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffffc5;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0 5px 0;
+  }
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .healthAndWarningsContainer {
+    width: 100%;
+  }
   .uppercase {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .browseRecipeContainer {
-    margin: 2px;
-    width: 80vw;
+    width: 280px;
   }
   .browseRecipeImage {
-    width: 31%;
+    margin: 20px 0 5px 0;
+    width: 240px;
   }
 
   .browseRecipeInfo {
-    width: 59%;
-    min-height: 200px;
-    /* background-color: red; */
+    width: 100%;
+    min-height: 150px;
   }
   .browse-label {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
   }
   .browse-calories {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
   .red-bg-browse,
   .green-bg-browse {
-    font-size: 1.4rem;
+    font-size: 0.8rem;
   }
   .fa-chevron-right,
   .fa-chevron-left,
@@ -196,60 +208,46 @@ div.browse {
   }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
+  .recipeBox {
+    width: 800px;
+  }
+  .browseRecipeContainer {
+    width: 375px;
+  }
   .uppercase {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 
   .browseRecipeInfo {
-    min-height: 250px;
-    /* background-color: red; */
+    min-height: 240px;
   }
   .browse-label {
-    font-size: 2.3rem;
+    font-size: 1.7rem;
   }
   .browse-calories {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   .red-bg-browse,
   .green-bg-browse {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   .fa-chevron-right,
   .fa-chevron-left,
   .pagination {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 }
 
 @media (min-width: 1280px) {
+  .recipeBox {
+    width: 1050px;
+  }
   .uppercase {
     font-size: 2rem;
   }
-  .recipeBox {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    /*  */
-    width: 1050px;
-    border: 1.5px solid #b3b4b48c;
-    background-color: #ffffffc5;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 0 5px 0;
-
-    /*  */
-  }
   .browseRecipeContainer {
-    /*  */
-    width: 340px;
-    /*  */
+    width: 335px;
     padding: 15px 0;
-  }
-  .mainContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .browseRecipeImage {
@@ -260,7 +258,6 @@ div.browse {
     width: 75%;
     margin: 0 10%;
     min-height: 150px;
-    /* background-color: red; */
   }
 
   .browse-label {

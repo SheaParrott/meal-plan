@@ -75,7 +75,7 @@ class AddOrRemoveForm extends Component {
                   placeholder="Ingredients"
                 />
                 <button className="advancedSearchButton" type="submit">
-                  Submit
+                  Add
                 </button>
               </div>
             </form>

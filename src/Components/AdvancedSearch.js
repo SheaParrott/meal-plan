@@ -55,6 +55,7 @@ class AdvancedSearch extends Component {
               className="Search"
               name="recipe"
               placeholder="Recipes"
+              value={this.props.SearchedRecipe.value}
             />
             {this.props.SearchedRecipe.value && this.state.recipeFieldError
               ? this._recipeFieldError()
@@ -146,12 +147,6 @@ class AdvancedSearch extends Component {
                 >
                   {' '}
                   <section className="advancedSearchWidth">
-                    <button
-                      className="advancedSearchButton"
-                      onClick={this.props._resetAllSearchFields}
-                    >
-                      Reset Fields
-                    </button>
                     <div className="searchOptionsForm">
                       {<AddOrRemoveForm name="Categories" showOptions={true} />}
                     </div>
@@ -206,6 +201,12 @@ class AdvancedSearch extends Component {
                         />
                       }
                     </section>
+                    <button
+                      className="advancedSearchButton"
+                      onClick={this.props._resetAllSearchFields}
+                    >
+                      Reset Fields
+                    </button>
                   </section>
                 </span>
               </div>
