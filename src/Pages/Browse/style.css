@@ -4,7 +4,10 @@
   width: 100%;
   margin: 5px 0;
 }
-
+.centering {
+  display: flex;
+  justify-content: center;
+}
 .top-Picks {
   width: 305px;
   background-color: #ffffffc5;
@@ -92,6 +95,9 @@ h5.slider {
   justify-content: space-between;
   min-height: 100vh;
 }
+.med-size {
+  display: none;
+}
 @media (min-width: 375px) {
   .top-Picks,
   .country-top-Picks {
@@ -144,15 +150,31 @@ h5.slider {
   }
 }
 @media (min-width: 600px) {
+  .recipeBox-results {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 546px;
+    border: 1.5px solid #b3b4b48c;
+    background-color: #ffffffc5;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0 5px 0;
+  }
+  .med-size {
+    display: block;
+  }
+  .top-Picks,
   .country-top-Picks {
-    width: 98vw;
+    width: 100%;
   }
   div.slider {
-    width: 270px;
+    width: 230px;
     height: 240px;
+    margin: 5px 5px 15px 5px;
   }
   img.slider {
-    width: 177px;
+    width: 175px;
   }
   h5.slider {
     font-size: 0.9rem;
@@ -173,24 +195,13 @@ h5.slider {
   }
 }
 @media (min-width: 760px) {
-  .recipeBox {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 595px;
-    border: 1.5px solid #b3b4b48c;
-    background-color: #ffffffc5;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 0 5px 0;
-  }
-  .top-Picks {
-    width: 100vw;
+  .recipeBox-results {
+    width: 712px;
   }
   div.slider {
-    width: 330px;
+    width: 315px;
     height: 310px;
-    margin: 0 0 20px 0;
+    margin: 5px 5px 15px 5px;
   }
   img.slider {
     width: 227px;
@@ -208,13 +219,16 @@ h5.slider {
   }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
+  .recipeBox-results {
+    width: 975px;
+  }
   .top-Picks {
     width: 100vw;
   }
   div.slider {
     width: 285px;
     height: 305px;
-    margin: 0 0 20px 0;
+    margin: 5px 6px 15px 6px;
   }
   img.slider {
     width: 227px;
@@ -258,7 +272,7 @@ h5.slider {
     font-size: 0.83rem;
   }
   div.the-country-slider {
-    width: 210px;
+    width: 205px;
     height: 285px;
   }
   div.slider {
@@ -274,7 +288,7 @@ h5.slider {
   }
 
   .country-container {
-    margin: 5px 0;
+    margin: 5px 5px 10px 5px;
   }
   img.slider {
     margin-top: 0px;
@@ -282,7 +296,7 @@ h5.slider {
   }
   img.the-country-slider {
     margin-top: 0px;
-    width: 210px;
+    width: 205px;
   }
   .homeRecipeSlider {
     display: flex;

@@ -58,29 +58,34 @@ class Browse extends Component {
             <div className="spacingFromNav" />
           </section>
           {/*  */}
-          <section className="small-view">
-            {this.state.selected == 'topPicks' ? (
-              <div className="center-home-options">
-                <div className="top-Picks">
-                  <div className="homeRecipeSlider">
-                    {this.state.recommended.slice(0, 6).map(recipe => {
-                      return <HomeRecipe key={recipe.uri} recipe={recipe} />
-                    })}
+          <div className="centering small-view">
+            <section>
+              {this.state.selected == 'topPicks' ? (
+                <section className="recipeBox-results">
+                  <div className="center-home-options">
+                    <div className="top-Picks">
+                      <h3 className="country-slider med-size">Top Picks!</h3>
+                      <div className="homeRecipeSlider">
+                        {this.state.recommended.slice(0, 6).map(recipe => {
+                          return <HomeRecipe key={recipe.uri} recipe={recipe} />
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              ) : (
+                <div className="center-home-options">
+                  <div className="country-top-Picks">
+                    <div className="wrap-country-top-picks ">
+                      {this.state.countries.map(TheCountry => {
+                        return <TasteOfCountries country={TheCountry} />
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div className="center-home-options">
-                <div className="country-top-Picks">
-                  <div className="wrap-country-top-picks ">
-                    {this.state.countries.map(TheCountry => {
-                      return <TasteOfCountries country={TheCountry} />
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-          </section>
+              )}
+            </section>
+          </div>
         </main>
         {/*  */}
         <section className="centerLine ">
