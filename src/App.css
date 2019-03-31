@@ -522,7 +522,7 @@ div.CategoriesBar {
     font-size: 1.55rem;
   }
   .source {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
   }
   .spacingFromNav {
     height: 90px;
@@ -654,7 +654,7 @@ div.CategoriesBar {
     margin: 3px 0;
   }
   .source {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 
   /* general end */

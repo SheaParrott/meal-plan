@@ -6,14 +6,14 @@
 }
 
 .top-Picks {
-  width: 295px;
+  width: 305px;
   background-color: #ffffffc5;
   padding: 0px;
 }
 div.the-country-slider {
-  margin: 2px 0;
+  margin: 0 0 10px 0;
   height: 285px;
-  width: 235px;
+  width: 240px;
   border: 1.5px solid #b3b4b48c;
   border-radius: 5px;
   padding: 10px;
@@ -23,9 +23,9 @@ div.the-country-slider {
   justify-content: space-between;
 }
 div.slider {
-  margin: 2px 0;
+  margin: 0 0 5px 0;
   height: 285px;
-  width: 270px;
+  width: 280px;
   border: 1.5px solid #b3b4b48c;
   border-radius: 5px;
   padding: 10px;
@@ -35,7 +35,7 @@ div.slider {
   justify-content: space-between;
 }
 .country-top-Picks {
-  width: 295px;
+  width: 305px;
   background-color: #ffffffc5;
 }
 .wrap-country-top-picks {
@@ -75,19 +75,166 @@ div.country-homeRecipeSlider {
   flex-wrap: wrap;
 }
 img.slider {
+  margin-top: 5px;
   width: 227px;
   border-radius: 3px;
 }
 img.the-country-slider {
-  width: 227px;
+  width: 233px;
   border-radius: 3px;
+}
+h5.slider {
+  font-size: 0.83rem;
+}
+.small-view-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+@media (min-width: 375px) {
+  .top-Picks,
+  .country-top-Picks {
+    width: 355px;
+  }
+  div.slider {
+    width: 335px;
+    height: 300px;
+  }
+  img.slider {
+    width: 237px;
+  }
+  h5.slider {
+    font-size: 0.95rem;
+  }
+  /*  */
+  div.the-country-slider {
+    margin: 0 0 15px 0;
+    height: 335px;
+    width: 285px;
+  }
+  img.the-country-slider {
+    width: 273px;
+  }
+}
+@media (min-width: 411px) {
+  .top-Picks,
+  .country-top-Picks {
+    width: 380px;
+  }
+  div.slider {
+    width: 360px;
+    height: 310px;
+  }
+  img.slider {
+    width: 257px;
+  }
+  h5.slider {
+    font-size: 1rem;
+  }
+  /*  */
+  div.the-country-slider {
+    margin: 0 0 20px 0;
+    height: 345px;
+    width: 295px;
+  }
+  img.the-country-slider {
+    /* fix this big view */
+    margin-top: 10px;
+    /*  */
+    width: 268px;
+  }
+}
+@media (min-width: 600px) {
+  .country-top-Picks {
+    width: 98vw;
+  }
+  div.slider {
+    width: 270px;
+    height: 240px;
+  }
+  img.slider {
+    width: 177px;
+  }
+  h5.slider {
+    font-size: 0.9rem;
+  }
+  .homeRecipeSlider {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  /*  */
+  div.the-country-slider {
+    margin: 5px 7.5px;
+    height: 300px;
+    width: 235px;
+  }
+  img.the-country-slider {
+    width: 213px;
+  }
+}
+@media (min-width: 760px) {
+  .top-Picks {
+    width: 100vw;
+  }
+  div.slider {
+    width: 330px;
+    height: 310px;
+    margin: 0 0 20px 0;
+  }
+  img.slider {
+    width: 227px;
+  }
+  h5.slider {
+    font-size: 1.1rem;
+  }
+  /*  */
+  div.the-country-slider {
+    margin: 5px 7.5px;
+    height: 300px;
+    width: 318px;
+  }
+  img.the-country-slider {
+    width: 213px;
+  }
+}
+@media (min-width: 1024px) and (min-height: 1366px) {
+  .top-Picks {
+    width: 100vw;
+  }
+  div.slider {
+    width: 285px;
+    height: 305px;
+    margin: 0 0 20px 0;
+  }
+  img.slider {
+    width: 227px;
+  }
+  h5.slider {
+    font-size: 1rem;
+  }
+  /*  */
+  div.the-country-slider {
+    margin: 5px 7.5px;
+    height: 275px;
+    width: 195px;
+  }
+  img.the-country-slider {
+    width: 173px;
+  }
 }
 
 @media (min-width: 1280px) {
+  .small-view-flex {
+    min-height: 0px;
+  }
   img.home-category {
     width: 70px;
     border-radius: 50%;
   }
+
   .top-Picks {
     width: 1050px;
     border: 1.5px solid #b3b4b48c;
@@ -100,12 +247,16 @@ img.the-country-slider {
     text-shadow: 0.5px 0.5px 0.5px #ffffff, 0 0 5px #c4c2c227;
     padding: 5px;
   }
-
+  h5.slider {
+    font-size: 0.83rem;
+  }
   div.the-country-slider {
-    width: 215px;
+    width: 210px;
+    height: 285px;
   }
   div.slider {
     width: 228px;
+    height: 295px;
   }
 
   .country-top-Picks {
@@ -119,9 +270,11 @@ img.the-country-slider {
     margin: 5px 0;
   }
   img.slider {
+    margin-top: 0px;
     width: 224px;
   }
   img.the-country-slider {
+    margin-top: 0px;
     width: 210px;
   }
   .homeRecipeSlider {
@@ -129,5 +282,6 @@ img.the-country-slider {
     align-items: center;
     justify-content: space-evenly;
     overflow: hidden;
+    flex-wrap: nowrap;
   }
 }

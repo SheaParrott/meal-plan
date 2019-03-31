@@ -46,40 +46,42 @@ class Browse extends Component {
 
   render() {
     return (
-      <div>
-        <section className="small-view">
-          <AdvancedSearch
-            browse={true}
-            selected={this.state.selected}
-            _selected={this._selected}
-          />
+      <div className="small-view-flex">
+        <main>
+          <section className="small-view">
+            <AdvancedSearch
+              browse={true}
+              selected={this.state.selected}
+              _selected={this._selected}
+            />
 
-          <div className="spacingFromNav" />
-        </section>
-        {/*  */}
-        <section className="small-view">
-          {this.state.selected == 'topPicks' ? (
-            <div className="center-home-options">
-              <div className="top-Picks">
-                <div className="homeRecipeSlider">
-                  {this.state.recommended.slice(0, 7).map(recipe => {
-                    return <HomeRecipe key={recipe.uri} recipe={recipe} />
-                  })}
+            <div className="spacingFromNav" />
+          </section>
+          {/*  */}
+          <section className="small-view">
+            {this.state.selected == 'topPicks' ? (
+              <div className="center-home-options">
+                <div className="top-Picks">
+                  <div className="homeRecipeSlider">
+                    {this.state.recommended.slice(0, 6).map(recipe => {
+                      return <HomeRecipe key={recipe.uri} recipe={recipe} />
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-          ) : (
-            <div className="center-home-options">
-              <div className="country-top-Picks">
-                <div className="wrap-country-top-picks ">
-                  {this.state.countries.map(TheCountry => {
-                    return <TasteOfCountries country={TheCountry} />
-                  })}
+            ) : (
+              <div className="center-home-options">
+                <div className="country-top-Picks">
+                  <div className="wrap-country-top-picks ">
+                    {this.state.countries.map(TheCountry => {
+                      return <TasteOfCountries country={TheCountry} />
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-        </section>
+            )}
+          </section>
+        </main>
         {/*  */}
         <section className="centerLine ">
           <div>
