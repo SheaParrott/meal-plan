@@ -243,7 +243,7 @@ class RecipePage extends Component {
                             {/* ingredients end */}
                             {/* total daily start */}
                             <div
-                              className={`recipeInfo ${
+                              className={`${
                                 this.state.displayedInfo == 'totalDaily'
                                   ? 'animated an-position'
                                   : 'animated-hide an-position'
@@ -254,9 +254,14 @@ class RecipePage extends Component {
                                   .sort()
                                   .map((key, index) => {
                                     return (
-                                      <div className="cell" key={key + index}>
+                                      <div
+                                        className="daily-cell"
+                                        key={key + index}
+                                      >
+                                        <h4 className="singleRecipeInformation">
+                                          {info.totalDaily[key].label}
+                                        </h4>
                                         <p className="singleRecipeInformation">
-                                          {info.totalDaily[key].label}:<br />{' '}
                                           {info.totalDaily[
                                             key
                                           ].quantity.toFixed(2)}
@@ -272,7 +277,7 @@ class RecipePage extends Component {
                             {/* nutrition start */}
 
                             <div
-                              className={`recipeInfo ${
+                              className={`${
                                 this.state.displayedInfo == 'Nutrition'
                                   ? 'animated an-position'
                                   : 'animated-hide an-position'
