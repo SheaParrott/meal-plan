@@ -15,9 +15,9 @@ class RecipePage extends Component {
     this.goToSingleRecipe = this.goToSingleRecipe.bind(this)
     this.state = {
       displayedInfo: 'ingredients',
-      showSubNutrition: false,
-      start: 0,
-      end: 3
+      showSubNutrition: false
+      // start: 0,
+      // end: 3
     }
   }
   componentDidMount = () => {
@@ -61,7 +61,7 @@ class RecipePage extends Component {
                                     alt={info.label}
                                   />
                                 </a>
-                                <span className="tooltiptext big-view">
+                                <span className="tooltiptext">
                                   Go To: {info.shareAs.slice(0, 50)}...
                                 </span>
                               </div>
@@ -130,18 +130,11 @@ class RecipePage extends Component {
                               </a>
                             </p>
 
-                            <div className="tooltip">
-                              <a href={info.shareAs} target="_blank">
-                                <img
-                                  className="singleViewRecipeImage"
-                                  src={info.image}
-                                  alt={info.label}
-                                />
-                              </a>
-                              <span className="tooltiptext big-view">
-                                Go To: {info.shareAs.slice(0, 50)}...
-                              </span>
-                            </div>
+                            <img
+                              className="singleViewRecipeImage"
+                              src={info.image}
+                              alt={info.label}
+                            />
 
                             <h3 className="singleRecipeFacts">
                               {(info.calories / info.yield).toFixed(0)} calories
@@ -228,68 +221,27 @@ class RecipePage extends Component {
                               Nutrition
                             </h3>
                           </div>
-
                           <div className="RecipeInfoDisplayed">
-                            {/* start of Nutrition */}
-
-                            {
-                              <div
-                                className={`nutritionNavigation ${
-                                  this.state.displayedInfo == 'Nutrition'
-                                    ? 'hidden-animated-daily'
-                                    : 'hidden-animated-hide-daily'
-                                }`}
-                              >
-                                {' '}
-                                <i
-                                  className="fas fa-chevron-left white-hv"
-                                  onClick={() => {
-                                    this.setState({
-                                      start:
-                                        this.state.start < 3
-                                          ? 0
-                                          : this.state.start - 3,
-                                      end:
-                                        this.state.start < 3
-                                          ? 3
-                                          : this.state.end - 3
-                                    })
-                                  }}
-                                />
-                                <i
-                                  className="fas fa-chevron-right white-hv"
-                                  onClick={() => {
-                                    let length = info.digest.length - 1
-                                    this.setState({
-                                      start:
-                                        length < this.state.end + 3
-                                          ? length - 3
-                                          : this.state.start + 3,
-                                      end:
-                                        length < this.state.end + 3
-                                          ? length
-                                          : this.state.end + 3
-                                    })
-                                  }}
-                                />
-                              </div>
-                            }
+                            {/* ingredients start */}
                             <div
-                              className={`recipeInfo ${
-                                this.state.displayedInfo == 'Nutrition'
-                                  ? 'hidden-animated-nutrition'
-                                  : 'hidden-animated-hide-nutrition'
+                              className={`recipeInfoIngredients scroll ${
+                                this.state.displayedInfo == 'ingredients'
+                                  ? 'hidden-animated-ingredients'
+                                  : 'hidden-animated-hide-ingredients'
                               }`}
                             >
-                              <div className="nutrition-row">
-                                {info.digest
-                                  .sort()
-                                  .slice(this.state.start, this.state.end)
-                                  .map(label => {
-                                    return <Nutrition label={label} />
-                                  })}
-                              </div>
+                              {info.ingredientLines.map((ingredient, index) => {
+                                return (
+                                  <div key={ingredient + index}>
+                                    <h4 className="recipeInformation">
+                                      {ingredient}
+                                    </h4>{' '}
+                                    <br />
+                                  </div>
+                                )
+                              })}
                             </div>
+                            {/* ingredients end */}
                             {/* total daily start */}
                             <div
                               className={`recipeInfo ${
@@ -298,113 +250,12 @@ class RecipePage extends Component {
                                   : 'hidden-animated-hide-daily'
                               }`}
                             >
-                              <div>
+                              <div className="nutrition-row scroll">
                                 {Object.keys(info.totalDaily)
                                   .sort()
-                                  .slice(
-                                    0,
-                                    Math.ceil(
-                                      Object.keys(info.totalDaily).length / 4
-                                    )
-                                  )
                                   .map((key, index) => {
                                     return (
-                                      <div
-                                        className="informationDisplayedDaily"
-                                        key={key + index}
-                                      >
-                                        <p className="singleRecipeInformation">
-                                          {info.totalDaily[key].label}:<br />{' '}
-                                          {info.totalDaily[
-                                            key
-                                          ].quantity.toFixed(2)}
-                                          {info.totalDaily[key].unit}
-                                        </p>
-                                        <br />
-                                      </div>
-                                    )
-                                  })}
-                              </div>
-
-                              <div>
-                                {Object.keys(info.totalDaily)
-                                  .sort()
-                                  .slice(
-                                    Math.floor(
-                                      Object.keys(info.totalDaily).length / 4
-                                    ),
-                                    Math.ceil(
-                                      Object.keys(info.totalDaily).length / 2
-                                    )
-                                  )
-                                  .map((key, index) => {
-                                    return (
-                                      <div
-                                        className="informationDisplayedDaily"
-                                        key={key + index}
-                                      >
-                                        <p className="singleRecipeInformation">
-                                          {info.totalDaily[key].label}:<br />{' '}
-                                          {info.totalDaily[
-                                            key
-                                          ].quantity.toFixed(2)}
-                                          {info.totalDaily[key].unit}
-                                        </p>
-                                        <br />
-                                      </div>
-                                    )
-                                  })}
-                              </div>
-                              <div>
-                                {Object.keys(info.totalDaily)
-                                  .sort()
-                                  .slice(
-                                    Math.floor(
-                                      Object.keys(info.totalDaily).length / 2
-                                    ),
-                                    Math.floor(
-                                      Object.keys(info.totalDaily).length / 2
-                                    ) +
-                                      Math.ceil(
-                                        Object.keys(info.totalDaily).length / 4
-                                      )
-                                  )
-                                  .map((key, index) => {
-                                    return (
-                                      <div
-                                        className="informationDisplayedDaily"
-                                        key={key + index}
-                                      >
-                                        <p className="singleRecipeInformation">
-                                          {info.totalDaily[key].label}:<br />{' '}
-                                          {info.totalDaily[
-                                            key
-                                          ].quantity.toFixed(2)}
-                                          {info.totalDaily[key].unit}
-                                        </p>
-                                        <br />
-                                      </div>
-                                    )
-                                  })}
-                              </div>
-                              <div>
-                                {Object.keys(info.totalDaily)
-                                  .sort()
-                                  .slice(
-                                    Math.floor(
-                                      Object.keys(info.totalDaily).length / 2
-                                    ) +
-                                      Math.ceil(
-                                        Object.keys(info.totalDaily).length / 4
-                                      ),
-                                    Object.keys(info.totalDaily).length - 1
-                                  )
-                                  .map((key, index) => {
-                                    return (
-                                      <div
-                                        className="informationDisplayedDaily"
-                                        key={key + index}
-                                      >
+                                      <div className="cell" key={key + index}>
                                         <p className="singleRecipeInformation">
                                           {info.totalDaily[key].label}:<br />{' '}
                                           {info.totalDaily[
@@ -419,27 +270,22 @@ class RecipePage extends Component {
                               </div>
                             </div>
                             {/* end of total daily */}
+                            {/* nutrition start */}
+
                             <div
-                              className={`recipeInfoIngredients ${
-                                this.state.displayedInfo == 'ingredients'
-                                  ? 'hidden-animated-ingredients'
-                                  : 'hidden-animated-hide-ingredients'
+                              className={`recipeInfo ${
+                                this.state.displayedInfo == 'Nutrition'
+                                  ? 'hidden-animated-nutrition'
+                                  : 'hidden-animated-hide-nutrition'
                               }`}
                             >
-                              {info.ingredientLines.map((ingredient, index) => {
-                                return (
-                                  <div
-                                    className="informationDisplayedIngredients"
-                                    key={ingredient + index}
-                                  >
-                                    <h4 className="recipeInformation">
-                                      {ingredient}
-                                    </h4>{' '}
-                                    <br />
-                                  </div>
-                                )
-                              })}
+                              <div className="nutrition-row scroll">
+                                {info.digest.sort().map(label => {
+                                  return <Nutrition label={label} />
+                                })}
+                              </div>
                             </div>
+                            {/* nutrition end */}
                           </div>
                         </section>
                       </div>
