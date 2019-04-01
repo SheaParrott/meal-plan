@@ -73,7 +73,7 @@ section {
 
 /* 
  */
-.hidden-animated-nav {
+.animated-nav {
   visibility: visible;
   opacity: 1;
   top: 100%;
@@ -87,7 +87,7 @@ section {
   background-image: linear-gradient(#4d5366, #444a5a);
 }
 
-.hidden-animated-hide-nav {
+.animated-hide-nav {
   visibility: hidden;
   position: absolute;
   opacity: 0;
@@ -386,12 +386,21 @@ div.CategoriesBar {
 .fa-caret-down {
   margin-right: 5px;
 }
-/* .hidden-animated {
-  display: none;
+.animated {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+  transition-delay: 0.12s, 0s;
+  transition-duration: 0.4s, 0s;
+  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 0.4);
+}
+.animated-hide {
   visibility: hidden;
-  transition: all 2s ease;
-} */
-/* sources end*/
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  transition-property: opacity, visibility;
+}
 @media (min-width: 375px) {
   .footerButton,
   .homeButton {

@@ -16,8 +16,6 @@ class RecipePage extends Component {
     this.state = {
       displayedInfo: 'ingredients',
       showSubNutrition: false
-      // start: 0,
-      // end: 3
     }
   }
   componentDidMount = () => {
@@ -221,19 +219,20 @@ class RecipePage extends Component {
                               Nutrition
                             </h3>
                           </div>
+
                           <div className="RecipeInfoDisplayed">
                             {/* ingredients start */}
                             <div
-                              className={`recipeInfoIngredients scroll ${
+                              className={` scroll ${
                                 this.state.displayedInfo == 'ingredients'
-                                  ? 'hidden-animated-ingredients'
-                                  : 'hidden-animated-hide-ingredients'
+                                  ? 'animated an-position'
+                                  : 'animated-hide an-position'
                               }`}
                             >
                               {info.ingredientLines.map((ingredient, index) => {
                                 return (
                                   <div key={ingredient + index}>
-                                    <h4 className="recipeInformation">
+                                    <h4 className="singleRecipeInformation">
                                       {ingredient}
                                     </h4>{' '}
                                     <br />
@@ -246,8 +245,8 @@ class RecipePage extends Component {
                             <div
                               className={`recipeInfo ${
                                 this.state.displayedInfo == 'totalDaily'
-                                  ? 'hidden-animated-daily'
-                                  : 'hidden-animated-hide-daily'
+                                  ? 'animated an-position'
+                                  : 'animated-hide an-position'
                               }`}
                             >
                               <div className="nutrition-row scroll">
@@ -275,8 +274,8 @@ class RecipePage extends Component {
                             <div
                               className={`recipeInfo ${
                                 this.state.displayedInfo == 'Nutrition'
-                                  ? 'hidden-animated-nutrition'
-                                  : 'hidden-animated-hide-nutrition'
+                                  ? 'animated an-position'
+                                  : 'animated-hide an-position'
                               }`}
                             >
                               <div className="nutrition-row scroll">
