@@ -6,8 +6,6 @@
 .RowImageAndWarnings {
   display: flex;
   justify-content: space-between;
-
-  /* width: 50%; */
 }
 .recipe-page-main {
   width: 290px;
@@ -17,11 +15,7 @@
   padding: 10px;
   margin: 10px 0 5px 0;
 }
-/* .singleViewRecipe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
+
 .singleViewRecipeImage {
   border-radius: 5px;
   box-shadow: 0 0 1px #000000;
@@ -33,7 +27,6 @@
 }
 .RecipeInfoContainer {
   position: relative;
-  height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -43,7 +36,7 @@
 .RecipeInfoDisplayed {
   padding: 10px 0;
   width: 260px;
-  min-height: 270px;
+  min-height: 320px;
 }
 .RecipeInfoBar {
   display: flex;
@@ -118,37 +111,46 @@ a {
 }
 .recipeInfo {
   text-align: left;
-  padding: 0 10px;
-  min-height: 100%;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* width: 100%; */
 }
-/* .recipeInfo {
-} */
+
 .nutrition-row {
   display: flex;
   justify-content: center;
   width: 300px;
 }
+.digest-cell {
+  font-size: 0.5rem;
+  width: 100px;
+}
 .recipeInfoIngredients {
   text-align: left;
   padding: 10px 0;
+  width: 100%;
+  margin-left: 10px;
 }
-.informationDisplayed {
-  /* width: 100%; */
+.informationDisplayedNutrition {
+  width: 75px;
+}
+.informationDisplayedDaily {
+  width: 70px;
 }
 .informationDisplayedIngredients {
   /* width: 100%; */
 }
 h4.singleRecipeInformation {
   font-size: 0.5rem;
-  width: 60px;
+  width: 65px;
+}
+h4.recipeInformation {
+  font-size: 0.7rem;
+  width: 100%;
 }
 p.singleRecipeInformation {
   font-size: 0.5rem;
-  width: 60px;
 }
 .nutritionArrowFlex {
   display: flex;
@@ -156,9 +158,77 @@ p.singleRecipeInformation {
   align-items: center;
   width: 235px;
 }
-.nutritionArrowFlex:hover {
-  color: #0000007e;
-  cursor: pointer;
+.nutritionNavigation {
+  width: 80%;
+  margin: 0 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.hidden-animated-nutrition {
+  visibility: visible;
+  opacity: 1;
+  top: 20%;
+  left: 0;
+  /* margin-top: 10%; */
+  /* width: 300px; */
+  position: absolute;
+  transition-delay: 0.12s, 0s;
+  transition-duration: 0.4s, 0s;
+  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 0.4);
+}
+.hidden-animated-hide-nutrition {
+  min-height: 0;
+  visibility: hidden;
+  position: absolute;
+  left: -400px;
+  opacity: 0;
+  top: -550px;
+  z-index: -1;
+  transition-property: opacity, visibility;
+}
+.hidden-animated-daily {
+  visibility: visible;
+  opacity: 1;
+  top: 11%;
+  left: 2%;
+  /* margin-top: 10%; */
+  /* width: 300px; */
+  position: absolute;
+  transition-delay: 0.12s, 0s;
+  transition-duration: 0.4s, 0s;
+  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 0.4);
+}
+.hidden-animated-hide-daily {
+  min-height: 0;
+  visibility: hidden;
+  position: absolute;
+  left: -400px;
+  opacity: 0;
+  top: -550px;
+  z-index: -1;
+  transition-property: opacity, visibility;
+}
+.hidden-animated-ingredients {
+  visibility: visible;
+  opacity: 1;
+  top: 9%;
+  left: 0;
+  /* margin-top: 10%; */
+  /* width: 300px; */
+  position: absolute;
+  transition-delay: 0.12s, 0s;
+  transition-duration: 0.4s, 0s;
+  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 0.4);
+}
+.hidden-animated-hide-ingredients {
+  min-height: 0;
+  visibility: hidden;
+  position: absolute;
+  left: -400px;
+  opacity: 0;
+  top: -550px;
+  z-index: -1;
+  transition-property: opacity, visibility;
 }
 
 @media (min-width: 375px) {

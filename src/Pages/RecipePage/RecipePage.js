@@ -16,15 +16,8 @@ class RecipePage extends Component {
     this.state = {
       displayedInfo: 'ingredients',
       showSubNutrition: false,
-      selectedLabel: {
-        daily: 0,
-        label: '',
-        schemaOrgTag: '',
-        sub: [],
-        tag: '',
-        total: 0,
-        unit: ''
-      }
+      start: 0,
+      end: 3
     }
   }
   componentDidMount = () => {
@@ -34,24 +27,6 @@ class RecipePage extends Component {
   goToSingleRecipe = event => {
     this.props.goToSingleRecipe(this.props.match.params.uri)
     window.scrollTo(0, 0)
-  }
-  _selectedLabel = event => {
-    console.log(event.target.value)
-    // console.log(
-    //   this.props.recipe.map(key => {
-    //     return Object.keys(key).filter(theKey => theKey == 'digest')
-    //   })
-    // )
-
-    let found = this.props.recipe.map(info => {
-      if (info.digest) {
-        return info.digest.filter(label => label.label == event.target.value)
-      }
-    })
-    console.log(found)
-    this.setState({
-      selectedLabel: found
-    })
   }
 
   render() {
@@ -75,7 +50,6 @@ class RecipePage extends Component {
                   {this.props.recipe.map((info, index) => {
                     return (
                       <div key={index}>
-                        {/* start */}
                         <main className="big-view">
                           <div className="centerImageAndWarnings">
                             <section className="RowImageAndWarnings">
@@ -137,7 +111,6 @@ class RecipePage extends Component {
                                 </section>
                               </div>
                             </section>
-                            {/*  */}
                           </div>
                         </main>
                         <main className="small-view">
@@ -199,7 +172,7 @@ class RecipePage extends Component {
                             </section>
                           </div>
                         </main>
-                        {/* end */}
+
                         <div className="centerLine">
                           <div className="line-recipePage" />
                         </div>
@@ -213,7 +186,9 @@ class RecipePage extends Component {
                               }
                               onClick={() => {
                                 this.setState({
-                                  displayedInfo: 'ingredients'
+                                  displayedInfo: 'ingredients',
+                                  start: 0,
+                                  end: 3
                                 })
                               }}
                             >
@@ -227,7 +202,9 @@ class RecipePage extends Component {
                               }
                               onClick={() => {
                                 this.setState({
-                                  displayedInfo: 'totalDaily'
+                                  displayedInfo: 'totalDaily',
+                                  start: 0,
+                                  end: 3
                                 })
                               }}
                             >
@@ -242,7 +219,9 @@ class RecipePage extends Component {
                               }
                               onClick={() => {
                                 this.setState({
-                                  displayedInfo: 'Nutrition'
+                                  displayedInfo: 'Nutrition',
+                                  start: 0,
+                                  end: 3
                                 })
                               }}
                             >
@@ -252,67 +231,71 @@ class RecipePage extends Component {
 
                           <div className="RecipeInfoDisplayed">
                             {/* start of Nutrition */}
-                            {/* {this.state.displayedInfo == 'Nutrition' ? ( */}
+
+                            {
+                              <div
+                                className={`nutritionNavigation ${
+                                  this.state.displayedInfo == 'Nutrition'
+                                    ? 'hidden-animated-daily'
+                                    : 'hidden-animated-hide-daily'
+                                }`}
+                              >
+                                {' '}
+                                <i
+                                  className="fas fa-chevron-left white-hv"
+                                  onClick={() => {
+                                    this.setState({
+                                      start:
+                                        this.state.start < 3
+                                          ? 0
+                                          : this.state.start - 3,
+                                      end:
+                                        this.state.start < 3
+                                          ? 3
+                                          : this.state.end - 3
+                                    })
+                                  }}
+                                />
+                                <i
+                                  className="fas fa-chevron-right white-hv"
+                                  onClick={() => {
+                                    let length = info.digest.length - 1
+                                    this.setState({
+                                      start:
+                                        length < this.state.end + 3
+                                          ? length - 3
+                                          : this.state.start + 3,
+                                      end:
+                                        length < this.state.end + 3
+                                          ? length
+                                          : this.state.end + 3
+                                    })
+                                  }}
+                                />
+                              </div>
+                            }
                             <div
                               className={`recipeInfo ${
                                 this.state.displayedInfo == 'Nutrition'
-                                  ? 'hidden-animated'
-                                  : 'hidden-animated-hide'
+                                  ? 'hidden-animated-nutrition'
+                                  : 'hidden-animated-hide-nutrition'
                               }`}
                             >
-                              <select onChange={this._selectedLabel}>
-                                {info.digest.sort().map(label => {
-                                  return (
-                                    <option value={label.label}>
-                                      {label.label}
-                                    </option>
-                                  )
-                                })}
-                              </select>
-                              <Nutrition label={this.state.selectedLabel} />
-                              {/* <div>
+                              <div className="nutrition-row">
                                 {info.digest
-                                  .slice(0, Math.ceil(info.digest.length / 4))
+                                  .sort()
+                                  .slice(this.state.start, this.state.end)
                                   .map(label => {
-                                    return (
-                                      <div
-                                        className="informationDisplayed"
-                                        key={label.label}
-                                      >
-                                        <Nutrition label={label} />
-                                      </div>
-                                    )
+                                    return <Nutrition label={label} />
                                   })}
-                              </div> */}
-                              {/* <div>
-                                {info.digest
-                                  .slice(
-                                    Math.floor(info.digest.length / 4),
-                                    info.digest.length / 2
-                                  )
-                                  .map(label => {
-                                    return (
-                                      <div
-                                        className="informationDisplayed"
-                                        key={label.label}
-                                      >
-                                        <Nutrition label={label} />
-                                      </div>
-                                    )
-                                  })}
-                              </div> */}
+                              </div>
                             </div>
-                            {/* ) : null} */}
-
-                            {/* end of Nutrition */}
-                            {/* start of totalDaily */}
-
-                            {/* {this.state.displayedInfo == 'totalDaily' ? ( */}
+                            {/* total daily start */}
                             <div
                               className={`recipeInfo ${
                                 this.state.displayedInfo == 'totalDaily'
-                                  ? 'hidden-animated'
-                                  : 'hidden-animated-hide'
+                                  ? 'hidden-animated-daily'
+                                  : 'hidden-animated-hide-daily'
                               }`}
                             >
                               <div>
@@ -327,7 +310,7 @@ class RecipePage extends Component {
                                   .map((key, index) => {
                                     return (
                                       <div
-                                        className="informationDisplayed"
+                                        className="informationDisplayedDaily"
                                         key={key + index}
                                       >
                                         <p className="singleRecipeInformation">
@@ -357,7 +340,7 @@ class RecipePage extends Component {
                                   .map((key, index) => {
                                     return (
                                       <div
-                                        className="informationDisplayed"
+                                        className="informationDisplayedDaily"
                                         key={key + index}
                                       >
                                         <p className="singleRecipeInformation">
@@ -389,7 +372,7 @@ class RecipePage extends Component {
                                   .map((key, index) => {
                                     return (
                                       <div
-                                        className="informationDisplayed"
+                                        className="informationDisplayedDaily"
                                         key={key + index}
                                       >
                                         <p className="singleRecipeInformation">
@@ -419,7 +402,7 @@ class RecipePage extends Component {
                                   .map((key, index) => {
                                     return (
                                       <div
-                                        className="informationDisplayed"
+                                        className="informationDisplayedDaily"
                                         key={key + index}
                                       >
                                         <p className="singleRecipeInformation">
@@ -435,27 +418,28 @@ class RecipePage extends Component {
                                   })}
                               </div>
                             </div>
-                            {/* ) : null} */}
-
-                            {this.state.displayedInfo == 'ingredients' ? (
-                              <div className="recipeInfoIngredients">
-                                {info.ingredientLines.map(
-                                  (ingredient, index) => {
-                                    return (
-                                      <div
-                                        className="informationDisplayedIngredients"
-                                        key={ingredient + index}
-                                      >
-                                        <h4 className="singleRecipeInformation">
-                                          {ingredient}
-                                        </h4>{' '}
-                                        <br />
-                                      </div>
-                                    )
-                                  }
-                                )}
-                              </div>
-                            ) : null}
+                            {/* end of total daily */}
+                            <div
+                              className={`recipeInfoIngredients ${
+                                this.state.displayedInfo == 'ingredients'
+                                  ? 'hidden-animated-ingredients'
+                                  : 'hidden-animated-hide-ingredients'
+                              }`}
+                            >
+                              {info.ingredientLines.map((ingredient, index) => {
+                                return (
+                                  <div
+                                    className="informationDisplayedIngredients"
+                                    key={ingredient + index}
+                                  >
+                                    <h4 className="recipeInformation">
+                                      {ingredient}
+                                    </h4>{' '}
+                                    <br />
+                                  </div>
+                                )
+                              })}
+                            </div>
                           </div>
                         </section>
                       </div>
