@@ -142,10 +142,11 @@ class AdvancedSearch extends Component {
 
                 <span
                   className={`categoriesBar ${
-                    this.state.categoriesBar ? '' : 'hidden'
+                    this.state.categoriesBar
+                      ? 'hidden-animated-nav'
+                      : 'hidden-animated-hide-nav'
                   }`}
                 >
-                  {' '}
                   <section className="advancedSearchWidth">
                     <div className="searchOptionsForm">
                       {<AddOrRemoveForm name="Categories" showOptions={true} />}

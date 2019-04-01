@@ -15,7 +15,16 @@ class RecipePage extends Component {
     this.goToSingleRecipe = this.goToSingleRecipe.bind(this)
     this.state = {
       displayedInfo: 'ingredients',
-      showSubNutrition: false
+      showSubNutrition: false,
+      selectedLabel: {
+        daily: 0,
+        label: '',
+        schemaOrgTag: '',
+        sub: [],
+        tag: '',
+        total: 0,
+        unit: ''
+      }
     }
   }
   componentDidMount = () => {
@@ -25,6 +34,24 @@ class RecipePage extends Component {
   goToSingleRecipe = event => {
     this.props.goToSingleRecipe(this.props.match.params.uri)
     window.scrollTo(0, 0)
+  }
+  _selectedLabel = event => {
+    console.log(event.target.value)
+    // console.log(
+    //   this.props.recipe.map(key => {
+    //     return Object.keys(key).filter(theKey => theKey == 'digest')
+    //   })
+    // )
+
+    let found = this.props.recipe.map(info => {
+      if (info.digest) {
+        return info.digest.filter(label => label.label == event.target.value)
+      }
+    })
+    console.log(found)
+    this.setState({
+      selectedLabel: found
+    })
   }
 
   render() {
@@ -44,7 +71,7 @@ class RecipePage extends Component {
             <div className="spacingFromNav" />
             <main className="centerRecipePage">
               <main className="recipe-page-main">
-                <div className="singleViewRecipe marginFromFooter">
+                <div className="marginFromFooter">
                   {this.props.recipe.map((info, index) => {
                     return (
                       <div key={index}>
@@ -225,101 +252,190 @@ class RecipePage extends Component {
 
                           <div className="RecipeInfoDisplayed">
                             {/* start of Nutrition */}
-                            {this.state.displayedInfo == 'Nutrition' ? (
-                              <div className="recipeInfo">
-                                <div>
-                                  {info.digest
-                                    .slice(0, Math.ceil(info.digest.length / 2))
-                                    .map(label => {
-                                      return (
-                                        <div
-                                          className="informationDisplayed"
-                                          key={label.label}
-                                        >
-                                          <Nutrition label={label} />
-                                        </div>
-                                      )
-                                    })}
-                                </div>
-                                <div>
-                                  {info.digest
-                                    .slice(
-                                      Math.floor(info.digest.length / 2),
-                                      info.digest.length - 1
+                            {/* {this.state.displayedInfo == 'Nutrition' ? ( */}
+                            <div
+                              className={`recipeInfo ${
+                                this.state.displayedInfo == 'Nutrition'
+                                  ? 'hidden-animated'
+                                  : 'hidden-animated-hide'
+                              }`}
+                            >
+                              <select onChange={this._selectedLabel}>
+                                {info.digest.sort().map(label => {
+                                  return (
+                                    <option value={label.label}>
+                                      {label.label}
+                                    </option>
+                                  )
+                                })}
+                              </select>
+                              <Nutrition label={this.state.selectedLabel} />
+                              {/* <div>
+                                {info.digest
+                                  .slice(0, Math.ceil(info.digest.length / 4))
+                                  .map(label => {
+                                    return (
+                                      <div
+                                        className="informationDisplayed"
+                                        key={label.label}
+                                      >
+                                        <Nutrition label={label} />
+                                      </div>
                                     )
-                                    .map(label => {
-                                      return (
-                                        <div
-                                          className="informationDisplayed"
-                                          key={label.label}
-                                        >
-                                          <Nutrition label={label} />
-                                        </div>
-                                      )
-                                    })}
-                                </div>
-                              </div>
-                            ) : null}
+                                  })}
+                              </div> */}
+                              {/* <div>
+                                {info.digest
+                                  .slice(
+                                    Math.floor(info.digest.length / 4),
+                                    info.digest.length / 2
+                                  )
+                                  .map(label => {
+                                    return (
+                                      <div
+                                        className="informationDisplayed"
+                                        key={label.label}
+                                      >
+                                        <Nutrition label={label} />
+                                      </div>
+                                    )
+                                  })}
+                              </div> */}
+                            </div>
+                            {/* ) : null} */}
 
                             {/* end of Nutrition */}
                             {/* start of totalDaily */}
 
-                            {this.state.displayedInfo == 'totalDaily' ? (
-                              <div className="recipeInfo">
-                                <div>
-                                  {Object.keys(info.totalDaily)
-                                    .slice(
-                                      0,
-                                      Math.ceil(
-                                        Object.keys(info.totalDaily).length / 2
-                                      )
+                            {/* {this.state.displayedInfo == 'totalDaily' ? ( */}
+                            <div
+                              className={`recipeInfo ${
+                                this.state.displayedInfo == 'totalDaily'
+                                  ? 'hidden-animated'
+                                  : 'hidden-animated-hide'
+                              }`}
+                            >
+                              <div>
+                                {Object.keys(info.totalDaily)
+                                  .sort()
+                                  .slice(
+                                    0,
+                                    Math.ceil(
+                                      Object.keys(info.totalDaily).length / 4
                                     )
-                                    .map((key, index) => {
-                                      return (
-                                        <div
-                                          className="informationDisplayed"
-                                          key={key + index}
-                                        >
-                                          <p className="singleRecipeInformation">
-                                            {info.totalDaily[key].label}:{' '}
-                                            {info.totalDaily[
-                                              key
-                                            ].quantity.toFixed(2)}{' '}
-                                            {info.totalDaily[key].unit}
-                                          </p>
-                                          <br />
-                                        </div>
-                                      )
-                                    })}
-                                </div>
-                                <div>
-                                  {Object.keys(info.totalDaily)
-                                    .slice(
-                                      Math.floor(
-                                        Object.keys(info.totalDaily).length / 2
-                                      ),
-                                      Object.keys(info.totalDaily).length - 1
+                                  )
+                                  .map((key, index) => {
+                                    return (
+                                      <div
+                                        className="informationDisplayed"
+                                        key={key + index}
+                                      >
+                                        <p className="singleRecipeInformation">
+                                          {info.totalDaily[key].label}:<br />{' '}
+                                          {info.totalDaily[
+                                            key
+                                          ].quantity.toFixed(2)}
+                                          {info.totalDaily[key].unit}
+                                        </p>
+                                        <br />
+                                      </div>
                                     )
-                                    .map((key, index) => {
-                                      return (
-                                        <div
-                                          className="informationDisplayed"
-                                          key={key + index}
-                                        >
-                                          <p className="singleRecipeInformation">
-                                            {info.totalDaily[key].label}:{' '}
-                                            {info.totalDaily[
-                                              key
-                                            ].quantity.toFixed(2)}{' '}
-                                            {info.totalDaily[key].unit}
-                                          </p>
-                                          <br />
-                                        </div>
-                                      )
-                                    })}
-                                </div>
+                                  })}
                               </div>
-                            ) : null}
+
+                              <div>
+                                {Object.keys(info.totalDaily)
+                                  .sort()
+                                  .slice(
+                                    Math.floor(
+                                      Object.keys(info.totalDaily).length / 4
+                                    ),
+                                    Math.ceil(
+                                      Object.keys(info.totalDaily).length / 2
+                                    )
+                                  )
+                                  .map((key, index) => {
+                                    return (
+                                      <div
+                                        className="informationDisplayed"
+                                        key={key + index}
+                                      >
+                                        <p className="singleRecipeInformation">
+                                          {info.totalDaily[key].label}:<br />{' '}
+                                          {info.totalDaily[
+                                            key
+                                          ].quantity.toFixed(2)}
+                                          {info.totalDaily[key].unit}
+                                        </p>
+                                        <br />
+                                      </div>
+                                    )
+                                  })}
+                              </div>
+                              <div>
+                                {Object.keys(info.totalDaily)
+                                  .sort()
+                                  .slice(
+                                    Math.floor(
+                                      Object.keys(info.totalDaily).length / 2
+                                    ),
+                                    Math.floor(
+                                      Object.keys(info.totalDaily).length / 2
+                                    ) +
+                                      Math.ceil(
+                                        Object.keys(info.totalDaily).length / 4
+                                      )
+                                  )
+                                  .map((key, index) => {
+                                    return (
+                                      <div
+                                        className="informationDisplayed"
+                                        key={key + index}
+                                      >
+                                        <p className="singleRecipeInformation">
+                                          {info.totalDaily[key].label}:<br />{' '}
+                                          {info.totalDaily[
+                                            key
+                                          ].quantity.toFixed(2)}
+                                          {info.totalDaily[key].unit}
+                                        </p>
+                                        <br />
+                                      </div>
+                                    )
+                                  })}
+                              </div>
+                              <div>
+                                {Object.keys(info.totalDaily)
+                                  .sort()
+                                  .slice(
+                                    Math.floor(
+                                      Object.keys(info.totalDaily).length / 2
+                                    ) +
+                                      Math.ceil(
+                                        Object.keys(info.totalDaily).length / 4
+                                      ),
+                                    Object.keys(info.totalDaily).length - 1
+                                  )
+                                  .map((key, index) => {
+                                    return (
+                                      <div
+                                        className="informationDisplayed"
+                                        key={key + index}
+                                      >
+                                        <p className="singleRecipeInformation">
+                                          {info.totalDaily[key].label}:<br />{' '}
+                                          {info.totalDaily[
+                                            key
+                                          ].quantity.toFixed(2)}
+                                          {info.totalDaily[key].unit}
+                                        </p>
+                                        <br />
+                                      </div>
+                                    )
+                                  })}
+                              </div>
+                            </div>
+                            {/* ) : null} */}
 
                             {this.state.displayedInfo == 'ingredients' ? (
                               <div className="recipeInfoIngredients">

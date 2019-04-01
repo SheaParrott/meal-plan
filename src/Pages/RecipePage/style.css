@@ -3,7 +3,12 @@
   display: flex;
   justify-content: center;
 }
+.RowImageAndWarnings {
+  display: flex;
+  justify-content: space-between;
 
+  /* width: 50%; */
+}
 .recipe-page-main {
   width: 290px;
   border: 1.5px solid #b3b4b48c;
@@ -12,11 +17,11 @@
   padding: 10px;
   margin: 10px 0 5px 0;
 }
-.singleViewRecipe {
+/* .singleViewRecipe {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 .singleViewRecipeImage {
   border-radius: 5px;
   box-shadow: 0 0 1px #000000;
@@ -27,6 +32,8 @@
   margin-top: 10px;
 }
 .RecipeInfoContainer {
+  position: relative;
+  height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -112,23 +119,36 @@ a {
 .recipeInfo {
   text-align: left;
   padding: 0 10px;
-  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+/* .recipeInfo {
+} */
+.nutrition-row {
+  display: flex;
+  justify-content: center;
+  width: 300px;
 }
 .recipeInfoIngredients {
   text-align: left;
   padding: 10px 0;
 }
 .informationDisplayed {
-  width: 100%;
+  /* width: 100%; */
 }
 .informationDisplayedIngredients {
-  width: 100%;
+  /* width: 100%; */
 }
 h4.singleRecipeInformation {
-  font-size: 0.9rem;
+  font-size: 0.5rem;
+  width: 60px;
 }
 p.singleRecipeInformation {
-  font-size: 0.9rem;
+  font-size: 0.5rem;
+  width: 60px;
 }
 .nutritionArrowFlex {
   display: flex;
@@ -246,11 +266,11 @@ p.singleRecipeInformation {
     font-size: 1.3rem;
     padding: 5px 36.2px;
   }
-  .recipeInfo {
+  /* .recipeInfo {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
+  } */
   .RecipeInfoDisplayed {
     width: 450px;
     min-height: 420px;

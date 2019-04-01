@@ -15,19 +15,23 @@ class ErrorMessage extends Component {
                 <div className="spacingFromNav" />
                 {this.props.singleViewRecipePage ? (
                   <div>
-                    <h2 className="uppercase noResults">
+                    <h2 className="uppercase noResults text-shadow">
                       {' '}
                       Seems we Goofed!
                       <span role="img" aria-label="goofiness emoji">
                         🙃
                       </span>
                     </h2>
-                    <h5 className="tryAgain">Please Try Again Later!</h5>
+                    <h5 className="tryAgain text-shadow">
+                      Please Try Again Later!
+                    </h5>
                   </div>
                 ) : (
                   <div>
-                    <h2 className="uppercase noResults">No Results</h2>
-                    <h5 className="tryAgain">
+                    <h2 className="uppercase noResults text-shadow">
+                      No Results
+                    </h2>
+                    <h5 className="tryAgain text-shadow">
                       Please Try Again Later, <i>Or</i> Broaden Your Search !
                     </h5>
                   </div>

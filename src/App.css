@@ -71,6 +71,51 @@ section {
   position: relative;
 }
 
+/* 
+ */
+.hidden-animated-nav {
+  visibility: visible;
+  opacity: 1;
+  top: 100%;
+  z-index: 6;
+  right: 0;
+  width: 100%;
+  position: absolute;
+  transition-delay: 0.12s, 0s;
+  transition-duration: 0.4s, 0s;
+  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 0.4);
+  background-image: linear-gradient(#4d5366, #444a5a);
+}
+
+.hidden-animated-hide-nav {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  top: 95%;
+  z-index: 0;
+  transition-property: opacity, visibility;
+}
+.hidden-animated {
+  visibility: visible;
+  opacity: 1;
+  top: 12%;
+  /* right: 0; */
+  /* width: 100%; */
+  position: absolute;
+  transition-delay: 0.12s, 0s;
+  transition-duration: 0.4s, 0s;
+  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 0.4);
+}
+.hidden-animated-hide {
+  min-height: 0;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  top: 10%;
+  z-index: 0;
+  transition-property: opacity, visibility;
+}
+
 nav {
   background-image: linear-gradient(#444a5a, #4d5366);
   color: #ffffff;
@@ -111,11 +156,11 @@ main.error {
 .line {
   height: 1px;
   background-color: #81848d;
-  width: 80vw;
+  width: 80%;
   margin: 8px 0;
 }
 .text-shadow {
-  text-shadow: 1px 1px 0px #b3b4b46e;
+  text-shadow: 1px 0.8px 0px #b3b4b46e;
 }
 
 /* .red-bg-browse {
@@ -361,6 +406,11 @@ div.CategoriesBar {
 .fa-caret-down {
   margin-right: 5px;
 }
+/* .hidden-animated {
+  display: none;
+  visibility: hidden;
+  transition: all 2s ease;
+} */
 /* sources end*/
 @media (min-width: 375px) {
   .footerButton,
