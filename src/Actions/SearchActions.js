@@ -22,7 +22,7 @@ const fillRange = count => {
 
 export function getRecipes(url_params) {
   return function action(dispatch) {
-    dispatch({ type: UPDATE_RECIPES, payload: '' })
+    dispatch({ type: UPDATE_RECIPES, payload: {} })
 
     const request = axios({
       method: 'GET',

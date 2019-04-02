@@ -47,7 +47,10 @@ class AdvancedSearch extends Component {
             <div className="centerLine">
               <div className="line" />
             </div>
-            <SearchInput />
+            <SearchInput
+              browsePage={this.props.browsePage}
+              _newSearchRecipe={this.props._newSearchRecipe}
+            />
             {this.props.browse ? (
               <section className="small-view">
                 <div className="centerLine">

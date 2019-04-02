@@ -20,9 +20,6 @@ export default function SearchReducer(state, action) {
   })
   switch (action.type) {
     case UPDATE_RECIPES:
-      if (!action.payload) {
-        return { ...state }
-      }
       return {
         ...state,
         responseStatus: action.payload.responseStatus,
