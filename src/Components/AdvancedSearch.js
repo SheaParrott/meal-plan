@@ -171,7 +171,7 @@ class AdvancedSearch extends Component {
                 >
                   <section className="advancedSearchWidth">
                     <div className="searchOptionsForm">
-                      {<AddOrRemoveForm name="Categories" showOptions={true} />}
+                      <AddOrRemoveForm name="Categories" showOptions={true} />
                     </div>
                     <section className="centerLabelBox">
                       <section className="searchOptions row">

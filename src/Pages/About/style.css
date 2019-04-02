@@ -6,29 +6,30 @@
   justify-content: space-evenly;
   padding: 5px 0;
 }
+
 .aboutInspiration {
   text-decoration: underline;
   letter-spacing: 0.5px;
   text-align: center;
 }
-.aboutParagraph,
-.thanksParagraph {
+.aboutParagraph {
   text-align: left;
   background-color: #4d5366ce;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1.5px solid #92ca649c;
   text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
   font-weight: 700;
   padding: 20px;
   color: white;
   position: absolute;
-  margin: 0 15px;
+  margin: 0 13.5px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .aboutParagraph {
-  top: 220px;
+  top: 250px;
+  /* added 30px */
 }
 
 h5.about {
@@ -120,10 +121,7 @@ strong {
     top: 240px;
     margin: 0 80px;
   }
-  .thanksParagraph {
-    top: 700px;
-    margin: 0 80px;
-  }
+
   .aboutPageSpacing {
     height: 0;
   }
@@ -145,20 +143,15 @@ strong {
     top: 275px;
     margin: 0 130px;
   }
-  .thanksParagraph {
-    top: 820px;
-    margin: 0 130px;
-  }
-  .defaultHeight {
-    min-height: 100vh;
-  }
 }
 
 @media (min-width: 1280px) {
   .aboutSpacingFromNav {
     height: 180px;
   }
-
+  .aboutPageSpacing {
+    height: 86px;
+  }
   .center-about {
     display: flex;
     justify-content: center;
@@ -172,9 +165,9 @@ strong {
   h5.about {
     font-size: 1rem;
   }
-  .aboutPage {
+  /* .aboutPage {
     height: 100vh;
-  }
+  } */
   h2.aboutInspiration {
     color: #92ca64;
     text-shadow: 0.5px 0px 0px #69db4c;

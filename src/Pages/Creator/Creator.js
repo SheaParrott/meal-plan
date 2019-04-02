@@ -16,14 +16,13 @@ class Creator extends Component {
       <div className="spash-bg">
         <div className="no-shaded-bg">
           <div className="single-view-page">
-            <div className="default background-added  defaultHeight ">
-              <div>
+            <div className="default  ">
+              <div className="defaultHeight relative background-added">
                 <AdvancedSearch creatorPage={true} />
                 <div className="creatorSpacingFromNav" />
-
                 <div className="creatorPage marginFromFooter">
                   <main className="center-home-options">
-                    <main className="main-creator">
+                    <main className="main-creator ">
                       <img
                         className="creator boxShadow"
                         src={CreatorImage}

@@ -106,9 +106,7 @@ nav {
 .spacingFromNav {
   height: 25px;
 }
-.creatorSpacingFromNav {
-  height: 145px;
-}
+
 .navSpacing {
   height: 116px;
 }
@@ -175,8 +173,9 @@ footer {
 .homeButton {
   font-size: 0.93rem;
 }
-.defaultHeight {
-  min-height: 100vh;
+
+.relative {
+  position: relative;
 }
 
 .background-added {
@@ -363,6 +362,9 @@ div.categories {
   align-items: center;
   flex-wrap: wrap;
 }
+.defaultHeight {
+  min-height: 170vh;
+}
 .displayedLabel {
   display: flex;
   align-items: center;
@@ -419,9 +421,7 @@ div.CategoriesBar {
   background-position: center;
   background-repeat: no-repeat;
 }
-.defaultHeight {
-  min-height: 170vh;
-}
+
 .fa-caret-right,
 .fa-caret-down {
   margin-right: 5px;
@@ -441,6 +441,11 @@ div.CategoriesBar {
   z-index: -1;
   transition-property: opacity, visibility;
 }
+@media (min-width: 360px) and (min-height: 640px) {
+  .defaultHeight {
+    min-height: 150vh;
+  }
+}
 @media (min-width: 375px) {
   .footerButton,
   .homeButton {
@@ -459,7 +464,9 @@ div.CategoriesBar {
   button {
     font-size: 1.2rem;
   }
-
+  .defaultHeight {
+    min-height: 150vh;
+  }
   input {
     height: 25px;
   }
@@ -485,19 +492,20 @@ div.CategoriesBar {
   input.formInput {
     width: 170px;
   }
-  .defaultHeight {
-    min-height: 170vh;
-  }
 }
 @media (min-width: 375px) and (min-height: 812px) {
   .defaultHeight {
     min-height: 120vh;
   }
 }
+
 @media (min-width: 411px) {
   .footerButton,
   .homeButton {
     font-size: 1.15rem;
+  }
+  .defaultHeight {
+    min-height: 140vh;
   }
   .spacingFromNav {
     height: 50px;
@@ -536,8 +544,16 @@ div.CategoriesBar {
   input.formInput {
     width: 190px;
   }
+}
+
+@media (min-width: 411px) and (min-height: 823px) {
   .defaultHeight {
-    min-height: 140vh;
+    min-height: 120vh;
+  }
+}
+@media (min-width: 414px) and (min-height: 736px) {
+  .defaultHeight {
+    min-height: 135vh;
   }
 }
 @media (min-width: 600px) {
@@ -626,6 +642,11 @@ div.CategoriesBar {
   .fa-angle-up {
     font-size: 2.05rem;
   }
+
+  .defaultHeight {
+    min-height: 165vh;
+  }
+
   div.categories {
     width: 178px;
   }
@@ -639,14 +660,14 @@ div.CategoriesBar {
   input.formInput {
     width: 295px;
   }
-  .defaultHeight {
-    min-height: 165vh;
-  }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   .footerButton,
   .homeButton {
     font-size: 1.55rem;
+  }
+  .defaultHeight {
+    min-height: 100vh;
   }
   .source {
     font-size: 0.8rem;
@@ -694,9 +715,6 @@ div.CategoriesBar {
   input.formInput {
     width: 300px;
   }
-  .defaultHeight {
-    min-height: 100vh;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -704,7 +722,9 @@ div.CategoriesBar {
   nav {
     width: 100vw;
   }
-
+  .creatorSpacingFromNav {
+    height: 213px;
+  }
   .footerButton,
   .homeButton {
     font-size: 1.15rem;

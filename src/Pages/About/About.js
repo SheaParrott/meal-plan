@@ -28,7 +28,7 @@ class About extends Component {
         <div className="no-shaded-bg">
           <div className="single-view-page">
             <div className="default">
-              <div className=" aboutPage background-added   defaultHeight">
+              <div className=" relative background-added   defaultHeight">
                 <div>
                   <AdvancedSearch
                     selectedParagraph={this.state.selected}
@@ -114,7 +114,7 @@ class About extends Component {
                   </p>
                   <p className="about aboutInspiration"> -Blessings-</p>
                 </div>
-                }
+
                 <div className="aboutSpacingFromNav" />
                 <section className="center-about">
                   <main className="big-view">

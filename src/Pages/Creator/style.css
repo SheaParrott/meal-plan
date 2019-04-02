@@ -24,10 +24,6 @@
 div.creatorPage {
   width: 100%;
 }
-div.header {
-  height: 100px;
-  margin: 0;
-}
 h4.Font {
   font-size: 1rem;
   z-index: -1;
@@ -55,14 +51,14 @@ img.resume:hover {
 }
 .main-creator {
   background-color: #4d5366ce;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1.5px solid #92ca649c;
   text-shadow: 0 0 5px black, 1.5px 1.5px 0.2px grey;
   font-weight: 700;
   padding: 8px;
   color: white;
-  margin: 70px 0px 18px 0px;
-  width: 271px;
+  margin: 50px 0px 18px 0px;
+  width: 274px;
 }
 .white-creator {
   color: #ffffff;
