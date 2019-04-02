@@ -217,6 +217,9 @@ a {
   .an-position {
     left: 3.3%;
   }
+  .hide-an-position {
+    left: 3.3%;
+  }
 }
 @media (min-width: 600px) {
   .recipe-page-main {
@@ -273,6 +276,9 @@ a {
   }
   .an-position {
     top: 12%;
+    left: 6%;
+  }
+  .hide-an-position {
     left: 6%;
   }
 }
@@ -374,6 +380,10 @@ a {
     top: 12%;
     left: 8%;
   }
+  .hide-an-position {
+    top: 10%;
+    left: 8%;
+  }
 }
 @media (min-width: 1280px) {
   .recipePageLine {
@@ -467,6 +477,10 @@ a {
     top: 10%;
     left: 21%;
   }
+  .hide-an-position {
+    top: 7%;
+    left: 21%;
+  }
 }
 @media (min-width: 1440px) {
   .singleRecipeLabel {
@@ -499,6 +513,9 @@ a {
     font-size: 1rem;
   }
   .an-position {
+    left: 17%;
+  }
+  .hide-an-position {
     left: 17%;
   }
 }
