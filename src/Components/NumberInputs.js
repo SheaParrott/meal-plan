@@ -85,7 +85,7 @@ class NumberInputs extends Component {
                     ? this.props.cookTime.min
                     : this.props.calories.min
                 }
-                placeholder="any"
+                placeholder="  any"
               />
               <span className="label">to</span>
             </span>
@@ -104,7 +104,7 @@ class NumberInputs extends Component {
                 ? this.props.calories.max
                 : this.props.maxIngredients.max
             }
-            placeholder="any"
+            placeholder="  any"
           />
         </div>
       </div>

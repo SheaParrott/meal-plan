@@ -48,8 +48,8 @@ class AddOrRemoveForm extends Component {
           <label>{this.props.name}: </label>
 
           {this.props.name === 'Categories' ? (
-            <div>
-              <select onChange={this._addCategory}>
+            <div className="selectWrapper">
+              <select className="selectBox" onChange={this._addCategory}>
                 <option value="">-----</option>
                 {this.props.healthLabels
                   .concat(this.props.dietLabels)
@@ -64,19 +64,24 @@ class AddOrRemoveForm extends Component {
             </div>
           ) : (
             <form onSubmit={this._addRemovedIngredients}>
-              <div>
-                <input
-                  className="formInput"
-                  onChange={this.matchLabel}
-                  name="label"
-                  type="text"
-                  list="v"
-                  autoComplete="off"
-                  placeholder="Ingredients"
-                />
-                <button className="advancedSearchButton" type="submit">
-                  Add
-                </button>
+              <div className="centerInputAndButton">
+                <div className="alignInputAndButton">
+                  <input
+                    className="formInput search-add-input"
+                    onChange={this.matchLabel}
+                    name="label"
+                    type="text"
+                    list="v"
+                    autoComplete="off"
+                    placeholder="  Ingredients"
+                  />
+                  <button
+                    className="advancedSearchButton negativeMargin"
+                    type="submit"
+                  >
+                    <i class="fas fa-plus " />
+                  </button>
+                </div>
               </div>
             </form>
           )}

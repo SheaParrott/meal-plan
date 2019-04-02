@@ -5,6 +5,7 @@ import Header from '../../Components/Header'
 import './style.css'
 import Footer from '../../Components/Footer'
 import front from '../../assets/front.jpg'
+import AdvancedSearch from '../../Components/AdvancedSearch'
 
 class Creator extends Component {
   componentDidMount = () => {
@@ -17,17 +18,7 @@ class Creator extends Component {
           <div className="single-view-page">
             <div className="default background-added  defaultHeight ">
               <div>
-                <nav>
-                  <h1>Shea Parrott</h1>
-                  <Header />
-
-                  <div className="centerLine">
-                    <div className="line" />
-                  </div>
-                  <div className="secondTearHeader">
-                    <h5 className="about">THANKS FOR VISITING!</h5>
-                  </div>
-                </nav>
+                <AdvancedSearch creatorPage={true} />
                 <div className="creatorSpacingFromNav" />
 
                 <div className="creatorPage marginFromFooter">

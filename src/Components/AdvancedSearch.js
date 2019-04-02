@@ -2,15 +2,16 @@ import React, { Component } from 'react'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 import NumberInputs from '../Components/NumberInputs'
 import { connect } from 'react-redux'
-import { SearchedRecipe } from '../Actions/SearchActions'
+import { SearchedRecipe, resetAllSearchFields } from '../Actions/SearchActions'
 import { Link } from 'react-router-dom'
 import Header from './Header'
 import history from './history'
+import SearchInput from './SearchInput'
 
 class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
-    this._SearchedRecipe = this._SearchedRecipe.bind(this)
+    this._resetAllSearchFields = this._resetAllSearchFields.bind(this)
     this.state = {
       categoriesBar: false,
       numberError: '',
@@ -32,10 +33,9 @@ class AdvancedSearch extends Component {
     })
   }
 
-  _SearchedRecipe = event => {
-    this.props._SearchedRecipe(event.target.value)
+  _resetAllSearchFields = () => {
+    this.props._resetAllSearchFields()
   }
-
   _recipeFieldError = () => {
     this.setState({ recipeFieldError: '' })
   }
@@ -49,44 +49,7 @@ class AdvancedSearch extends Component {
             <div className="centerLine">
               <div className="line" />
             </div>
-            <h6 className="red">{this.state.recipeFieldError}</h6>
-            <input
-              onChange={this._SearchedRecipe}
-              className="Search"
-              name="recipe"
-              placeholder="Recipes"
-              value={this.props.SearchedRecipe.value}
-            />
-            {this.props.SearchedRecipe.value && this.state.recipeFieldError
-              ? this._recipeFieldError()
-              : null}
-            {this.props.SearchedRecipe.value ? (
-              this.props.browsePage ? (
-                <button
-                  onClick={() => {
-                    history.push(`/results/${this.props.paramsWithPagination}`)
-                    this.props._newSearchRecipe(this.props.paramsWithPagination)
-                  }}
-                  className="advancedSearchButton"
-                >
-                  Search
-                </button>
-              ) : (
-                <Link to={`/results/${this.props.paramsWithPagination}`}>
-                  <button className="advancedSearchButton">Search</button>
-                </Link>
-              )
-            ) : (
-              <button
-                onClick={() => {
-                  this.setState({ recipeFieldError: 'Cant be empty!' })
-                }}
-                className="advancedSearchButton"
-              >
-                Search
-              </button>
-            )}
-
+            <SearchInput />
             {this.props.browse ? (
               <section className="small-view">
                 <div className="centerLine">
@@ -119,8 +82,67 @@ class AdvancedSearch extends Component {
                   </h5>
                 </div>
               </section>
+            ) : this.props.aboutPage ? (
+              <div>
+                <div className="centerLine">
+                  <div className="line" />
+                </div>
+                <div className="secondTearHeader small-view">
+                  <h5
+                    className={`about ${
+                      this.props.selectedParagraph == 'Inspiration'
+                        ? 'whiteCurrentPage'
+                        : 'white'
+                    }`}
+                    onClick={() => {
+                      this.props._selectedParagraph('Inspiration')
+                    }}
+                  >
+                    INSPIRATION
+                  </h5>
+                  <h5
+                    className={`about ${
+                      this.props.selectedParagraph == 'thanks'
+                        ? 'whiteCurrentPage'
+                        : 'white'
+                    }`}
+                    onClick={() => {
+                      this.props._selectedParagraph('thanks')
+                    }}
+                  >
+                    SPECIAL THANKS
+                  </h5>
+                  <h5
+                    className={`about ${
+                      this.props.selectedParagraph == 'HappyOrIssues'
+                        ? 'whiteCurrentPage'
+                        : 'white'
+                    }`}
+                    onClick={() => {
+                      this.props._selectedParagraph('HappyOrIssues')
+                    }}
+                  >
+                    HAPPY / ISSUES
+                  </h5>
+                </div>
+                <div className="secondTearHeader big-view">
+                  <h5 className="about ">THANKS FOR VISITING!</h5>
+                </div>
+              </div>
+            ) : this.props.creatorPage ? (
+              <div>
+                <div className="centerLine">
+                  <div className="line" />
+                </div>
+                <div className="secondTearHeader">
+                  <h5 className="about">THANKS FOR VISITING!</h5>
+                </div>
+              </div>
             ) : (
               <div>
+                <div className="centerLine">
+                  <div className="line" />
+                </div>
                 <div className="advancedSearch">
                   <div
                     className="categories white"
@@ -202,9 +224,14 @@ class AdvancedSearch extends Component {
                         />
                       }
                     </section>
+
+                    <div className="centerLine">
+                      <div className="line" />
+                    </div>
+                    <SearchInput />
                     <button
                       className="advancedSearchButton"
-                      onClick={this.props._resetAllSearchFields}
+                      onClick={this._resetAllSearchFields}
                     >
                       Reset Fields
                     </button>
@@ -220,7 +247,6 @@ class AdvancedSearch extends Component {
   }
 }
 const mapStateToProps = state => ({
-  defaultURL: state.defaultURL,
   SearchedRecipe: state.SearchedRecipe,
   calories: state.calories,
   cookTime: state.cookTime,
@@ -234,7 +260,7 @@ const mapStateToProps = state => ({
 })
 
 const mapActionsToProps = {
-  _SearchedRecipe: SearchedRecipe
+  _resetAllSearchFields: resetAllSearchFields
 }
 
 export default connect(

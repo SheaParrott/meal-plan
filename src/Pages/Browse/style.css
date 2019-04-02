@@ -224,7 +224,7 @@ h5.slider {
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   .recipeBox-results {
-    width: 975px;
+    width: 974px;
   }
   .top-Picks {
     width: 100vw;
@@ -259,7 +259,9 @@ h5.slider {
     width: 70px;
     border-radius: 50%;
   }
-
+  .creatorSpacingFromNav {
+    margin: 11.4px;
+  }
   .top-Picks {
     width: 1050px;
     border: 1.5px solid #b3b4b48c;

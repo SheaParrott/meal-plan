@@ -4,6 +4,7 @@ import Header from '../../Components/Header'
 import './style.css'
 import Footer from '../../Components/Footer'
 import { Link } from 'react-router-dom'
+import AdvancedSearch from '../../Components/AdvancedSearch'
 
 class About extends Component {
   constructor(props) {
@@ -15,6 +16,11 @@ class About extends Component {
   componentDidMount = () => {
     window.scrollTo(0, 0)
   }
+  _selectedParagraph = value => {
+    this.setState({
+      selected: value
+    })
+  }
 
   render() {
     return (
@@ -24,61 +30,11 @@ class About extends Component {
             <div className="default">
               <div className=" aboutPage background-added   defaultHeight">
                 <div>
-                  <nav>
-                    <h1 className="basicHeaderPlus">Meal Plan</h1>
-                    <Header />
-
-                    <div className="centerLine">
-                      <div className="line" />
-                    </div>
-                    <div className="secondTearHeader small-view">
-                      <h5
-                        className={`about ${
-                          this.state.selected == 'Inspiration'
-                            ? 'whiteCurrentPage'
-                            : 'white'
-                        }`}
-                        onClick={() => {
-                          this.setState({
-                            selected: 'Inspiration'
-                          })
-                        }}
-                      >
-                        INSPIRATION
-                      </h5>
-                      <h5
-                        className={`about ${
-                          this.state.selected == 'thanks'
-                            ? 'whiteCurrentPage'
-                            : 'white'
-                        }`}
-                        onClick={() => {
-                          this.setState({
-                            selected: 'thanks'
-                          })
-                        }}
-                      >
-                        SPECIAL THANKS
-                      </h5>
-                      <h5
-                        className={`about ${
-                          this.state.selected == 'HappyOrIssues'
-                            ? 'whiteCurrentPage'
-                            : 'white'
-                        }`}
-                        onClick={() => {
-                          this.setState({
-                            selected: 'HappyOrIssues'
-                          })
-                        }}
-                      >
-                        HAPPY / ISSUES
-                      </h5>
-                    </div>
-                    <div className="secondTearHeader big-view">
-                      <h5 className="about ">THANKS FOR VISITING!</h5>
-                    </div>
-                  </nav>
+                  <AdvancedSearch
+                    selectedParagraph={this.state.selected}
+                    _selectedParagraph={this._selectedParagraph}
+                    aboutPage={true}
+                  />
                 </div>
                 <div className="aboutPageSpacing " />
                 <div

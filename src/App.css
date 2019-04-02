@@ -76,14 +76,14 @@ section {
 .animated-nav {
   visibility: visible;
   opacity: 1;
-  top: 100%;
+  top: 99.5%;
   z-index: 6;
   right: 0;
   width: 100%;
   position: absolute;
   transition-delay: 0.12s, 0s;
-  transition-duration: 0.4s, 0s;
-  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 0.4);
+  transition-duration: 0.6s, 0s;
+  transition-timing-function: cubic-bezier(0.1, 0.1, 0.1, 0.3);
   background-image: linear-gradient(#4d5366, #444a5a);
 }
 
@@ -91,7 +91,7 @@ section {
   visibility: hidden;
   position: absolute;
   opacity: 0;
-  top: 95%;
+  top: 99.5%;
   z-index: 0;
   transition-property: opacity, visibility;
 }
@@ -243,22 +243,55 @@ h1 {
 label {
   font-size: 1.1rem;
 }
-input,
-button {
+/*  */
+.centerInputAndButton {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.alignInputAndButton {
+  display: flex;
+  align-items: center;
+}
+.negativeMargin {
+  margin-left: -8px;
+}
+input {
+  margin: 5px 0 5px 5px;
   font-size: 1rem;
-  border-radius: 5px;
+  z-index: 20;
+  border-radius: 10px;
+  height: 20px;
+  outline: none;
+  border: 1px solid #7a7a7a;
+}
+.search-add-input {
+  border-radius: 10px 0 0 10px;
+}
+button {
+  margin: 5px 5px 5px 0;
+  font-size: 1rem;
+  z-index: 19;
+  border-radius: 10px;
+  outline: none;
+}
+.selectWrapper {
+  border-radius: 10px;
+  display: inline-block;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+.selectBox {
+  border: 1px solid #7a7a7a;
+  outline: none;
 }
 select {
   font-size: 0.9rem;
-  height: 24px;
   width: 95px;
 }
-button {
-  margin: 10px 10px 10px 0;
-}
+/*  */
 .Search,
 input.formInput {
-  margin-right: 5px;
   width: 125px;
 }
 .advancedSearch {
@@ -272,21 +305,22 @@ button:focus {
 }
 .advancedSearchButton {
   font-weight: 700;
-  border-radius: 5px;
   outline-color: unset;
-  border: none;
+  border: 1px solid #7a7a7a;
   text-shadow: 0 0 0.5px #000000;
-  background-image: linear-gradient(#92ca64, #8ac05e);
+  /* background-image: linear-gradient(#92ca64, #8ac05e); */
+  background-color: #92ca64;
   color: #ffffff;
-  box-shadow: 0 0 3px #969595;
-  padding: 3.1px 30px;
+  /* box-shadow: 0 0 3px #969595; */
+  padding: 2px 30px;
 }
 .advancedSearchButton:hover {
-  background-image: linear-gradient(#92ca64cb, #8ac05eec);
-  color: #fffffff5;
+  background-color: #92ca64be;
+  /* background-image: linear-gradient(#92ca64cb, #8ac05eec); */
+  color: #ffffffe1;
   text-shadow: 0 0 0.5px #000000a2;
   cursor: pointer;
-  box-shadow: 0 0 3px #9695956c;
+  /* box-shadow: 0 0 3px #9695956c; */
 }
 div.categories {
   width: 145px;
@@ -373,6 +407,12 @@ div.CategoriesBar {
 .fa-angle-up {
   font-size: 1.3rem;
 }
+/* .fa-plus {
+  font-size: 0.7rem;
+}
+.fa-search {
+  font-size: 1rem;
+} */
 .background-added {
   background-image: url(./assets/front.jpg);
   background-size: cover;
@@ -418,6 +458,10 @@ div.CategoriesBar {
   input,
   button {
     font-size: 1.2rem;
+  }
+
+  input {
+    height: 25px;
   }
   select {
     font-size: 1rem;
@@ -468,6 +512,9 @@ div.CategoriesBar {
   button {
     font-size: 1.3rem;
   }
+  input {
+    height: 26px;
+  }
   select {
     height: 30px;
     width: 110px;
@@ -516,6 +563,9 @@ div.CategoriesBar {
   input,
   button {
     font-size: 1.4rem;
+  }
+  input {
+    height: 29px;
   }
   select {
     font-size: 1.05rem;
@@ -619,6 +669,9 @@ div.CategoriesBar {
   input,
   button {
     font-size: 1.25rem;
+  }
+  input {
+    height: 25px;
   }
   select {
     height: 29px;
@@ -775,6 +828,9 @@ div.CategoriesBar {
   button {
     font-size: 1rem;
   }
+  input {
+    height: 20px;
+  }
   select {
     font-size: 0.9rem;
     height: 24px;
@@ -801,9 +857,9 @@ div.CategoriesBar {
     width: 100%;
   }
 
-  .advancedSearchButton {
+  /* .advancedSearchButton {
     width: 200px;
-  }
+  } */
   nav {
     width: 100%;
   }
