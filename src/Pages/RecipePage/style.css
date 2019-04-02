@@ -132,6 +132,10 @@ a {
   top: 14%;
   left: 2%;
 }
+.hide-an-position {
+  top: 9%;
+  left: 2%;
+}
 
 @media (min-width: 375px) {
   .recipe-page-main {

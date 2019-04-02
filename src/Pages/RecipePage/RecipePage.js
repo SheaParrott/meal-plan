@@ -232,7 +232,7 @@ class RecipePage extends Component {
                               className={` scroll ${
                                 this.state.displayedInfo == 'ingredients'
                                   ? 'animated an-position'
-                                  : 'animated-hide an-position'
+                                  : 'animated-hide hide-an-position '
                               }`}
                             >
                               {info.ingredientLines.map((ingredient, index) => {
@@ -252,7 +252,7 @@ class RecipePage extends Component {
                               className={`${
                                 this.state.displayedInfo == 'totalDaily'
                                   ? 'animated an-position'
-                                  : 'animated-hide an-position'
+                                  : 'animated-hide hide-an-position '
                               }`}
                             >
                               <div className="nutrition-row scroll">
@@ -286,7 +286,7 @@ class RecipePage extends Component {
                               className={`${
                                 this.state.displayedInfo == 'Nutrition'
                                   ? 'animated an-position'
-                                  : 'animated-hide an-position'
+                                  : 'animated-hide hide-an-position '
                               }`}
                             >
                               <div className="nutrition-row scroll">
