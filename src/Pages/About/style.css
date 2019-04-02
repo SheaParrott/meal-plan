@@ -22,13 +22,15 @@
   padding: 20px;
   color: white;
   position: absolute;
-  margin: 0 13.5px;
+  /* margin: 0 13.5px; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .aboutParagraph {
-  top: 250px;
+  top: 235px;
+  left: 4.5%;
+  width: 250px;
   /* added 30px */
 }
 
@@ -47,10 +49,21 @@ strong {
 .big-view {
   display: none;
 }
-
+@media (min-width: 360px) {
+  .aboutParagraph {
+    left: 9.5%;
+  }
+}
 @media (min-width: 375px) {
+  .aboutParagraph {
+    top: 250px;
+    left: 4%;
+    width: 302px;
+    /* added 30px */
+  }
   h5.about {
     font-size: 0.8rem;
+    padding-bottom: 20px;
   }
   .aboutInspiration {
     font-size: 1.5rem;
@@ -67,8 +80,15 @@ strong {
 }
 
 @media (min-width: 411px) {
+  .aboutParagraph {
+    top: 260px;
+    left: 5%;
+    width: 327px;
+    /* added 30px */
+  }
   h5.about {
     font-size: 0.9rem;
+    padding-bottom: 20.1px;
   }
   .aboutInspiration {
     font-size: 1.7rem;
@@ -80,9 +100,21 @@ strong {
     font-size: 1.3rem;
   }
 }
+@media (min-width: 414px) {
+  .aboutParagraph {
+    left: 5.3%;
+  }
+}
 @media (min-width: 600px) {
+  .aboutParagraph {
+    top: 270px;
+    left: 2.6%;
+    width: 526px;
+    /* added 30px */
+  }
   h5.about {
     font-size: 1.15rem;
+    padding-bottom: 19.2px;
   }
   .aboutInspiration {
     font-size: 1.85rem;
@@ -93,19 +125,21 @@ strong {
   strong {
     font-size: 1.45rem;
   }
-  .aboutParagraph {
-    padding: 25px;
-    top: 240px;
-    margin: 0 40px;
-  }
 
   .aboutPageSpacing {
     height: 50px;
   }
 }
 @media (min-width: 760px) {
+  .aboutParagraph {
+    top: 275px;
+    left: 2.2%;
+    width: 692px;
+    /* added 30px */
+  }
   h5.about {
     font-size: 1.25rem;
+    padding-bottom: 25px;
   }
   .aboutInspiration {
     font-size: 1.95rem;
@@ -116,19 +150,21 @@ strong {
   strong {
     font-size: 1.55rem;
   }
-  .aboutParagraph {
-    padding: 25px;
-    top: 240px;
-    margin: 0 80px;
-  }
 
   .aboutPageSpacing {
     height: 0;
   }
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
+  .aboutParagraph {
+    top: 285px;
+    left: 1.4%;
+    width: 954px;
+    /* added 30px */
+  }
   h5.about {
     font-size: 1.55rem;
+    padding-bottom: 30.5px;
   }
   .aboutInspiration {
     font-size: 2.25rem;
@@ -138,10 +174,6 @@ strong {
   }
   strong {
     font-size: 1.85rem;
-  }
-  .aboutParagraph {
-    top: 275px;
-    margin: 0 130px;
   }
 }
 
@@ -164,6 +196,7 @@ strong {
   }
   h5.about {
     font-size: 1rem;
+    padding-bottom: 15px;
   }
   /* .aboutPage {
     height: 100vh;

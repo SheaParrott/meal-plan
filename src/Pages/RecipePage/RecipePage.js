@@ -47,7 +47,7 @@ class RecipePage extends Component {
                 <div className="marginFromFooter">
                   {this.props.recipe.map((info, index) => {
                     return (
-                      <div key={index}>
+                      <div key={index + 200}>
                         <main className="big-view">
                           <div className="centerImageAndWarnings">
                             <section className="RowImageAndWarnings">
@@ -89,18 +89,24 @@ class RecipePage extends Component {
                                 </h3>
                                 <section className="singleViewRecipeHealthAndWarnings">
                                   <div className="healthAndWarningsContainer-recipe">
-                                    {info.cautions.map(caution => {
+                                    {info.cautions.map((caution, index) => {
                                       return (
-                                        <p key={caution} className="red-bg">
+                                        <p
+                                          key={index + caution}
+                                          className="red-bg"
+                                        >
                                           {caution}
                                         </p>
                                       )
                                     })}
                                   </div>
                                   <div className="healthAndWarningsContainer-recipe">
-                                    {info.healthLabels.map(label => {
+                                    {info.healthLabels.map((label, index) => {
                                       return (
-                                        <p key={label} className="green-bg">
+                                        <p
+                                          key={label + index}
+                                          className="green-bg"
+                                        >
                                           {label}
                                         </p>
                                       )
@@ -284,8 +290,13 @@ class RecipePage extends Component {
                               }`}
                             >
                               <div className="nutrition-row scroll">
-                                {info.digest.sort().map(label => {
-                                  return <Nutrition label={label} />
+                                {info.digest.sort().map((label, index) => {
+                                  return (
+                                    <div key={index + 100}>
+                                      {' '}
+                                      <Nutrition label={label} />
+                                    </div>
+                                  )
                                 })}
                               </div>
                             </div>

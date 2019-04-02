@@ -38,9 +38,9 @@ class Nutrition extends Component {
 
               <br />
               {this.props.label.sub
-                ? this.props.label.sub.map(l => {
+                ? this.props.label.sub.map((l, index) => {
                     return (
-                      <div key={l.label}>
+                      <div key={index}>
                         <h4 className="singleRecipeInformation">{l.label}</h4>
 
                         {!l.daily || !l.schemaOrgTag ? null : (

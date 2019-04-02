@@ -57,7 +57,7 @@ img.resume:hover {
   font-weight: 700;
   padding: 8px;
   color: white;
-  margin: 50px 0px 18px 0px;
+  margin: 35px 0 0 0;
   width: 274px;
 }
 .white-creator {
@@ -69,17 +69,17 @@ img.resume:hover {
   text-shadow: 0 0 2.5px #ffffffb2;
   text-decoration: underline;
 }
-@media (min-width: 360px) {
+/* @media (min-width: 360px) {
   .main-creator {
     width: 311px;
   }
-}
+} */
 @media (min-width: 375px) {
   .widthbig {
     width: 360px;
   }
   .main-creator {
-    margin: 70px 0px 18px 0px;
+    margin: 50px 0 0 0;
     width: 326px;
   }
 }
@@ -88,26 +88,22 @@ img.resume:hover {
     width: 400px;
   }
   .main-creator {
-    width: 362px;
-  }
-}
-@media (min-width: 414px) {
-  .main-creator {
-    width: 365px;
+    margin: 60px 0px 18px 0px;
+    width: 351px;
   }
 }
 @media (min-width: 600px) {
   .main-creator {
     padding: 25px;
-    margin: 30px 40px;
-    margin: 90px 0px 30px 0px;
-    width: 468px;
+    margin: 70px 0 0 0;
+    width: 516px;
   }
 }
 @media (min-width: 760px) {
   .main-creator {
+    margin: 75px 0 0 0;
     text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
-    width: 555px;
+    width: 682px;
   }
   .widthbig {
     width: 450px;
@@ -143,8 +139,8 @@ img.resume:hover {
 
 @media (min-width: 999px) {
   .main-creator {
-    margin: 125px 0px 65px 0px;
-    width: 711px;
+    margin: 85px 0 0 0;
+    width: 944px;
   }
   .widthbig {
     width: 480px;
@@ -180,7 +176,7 @@ img.resume:hover {
   .main-creator {
     text-shadow: none;
     font-weight: 700;
-    margin: 30px 0px 0px 0px;
+    margin: 30px 0 0 0;
     width: 1070px;
     border: 1.5px solid #b3b4b48c;
     background-color: #ffffffc5;

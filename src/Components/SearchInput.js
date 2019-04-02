@@ -43,12 +43,12 @@ class SearchInput extends Component {
                   }}
                   className="advancedSearchButton negativeMargin"
                 >
-                  <i class="fas fa-search" />
+                  <i className="fas fa-search" />
                 </button>
               ) : (
                 <Link to={`/results/${this.props.paramsWithPagination}`}>
                   <button className="advancedSearchButton negativeMargin">
-                    <i class="fas fa-search" />
+                    <i className="fas fa-search" />
                   </button>
                 </Link>
               )
@@ -59,7 +59,7 @@ class SearchInput extends Component {
                 }}
                 className="advancedSearchButton negativeMargin"
               >
-                <i class="fas fa-search" />
+                <i className="fas fa-search" />
               </button>
             )}
           </div>

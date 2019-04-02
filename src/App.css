@@ -363,7 +363,7 @@ div.categories {
   flex-wrap: wrap;
 }
 .defaultHeight {
-  min-height: 170vh;
+  min-height: 160vh;
 }
 .displayedLabel {
   display: flex;
@@ -441,9 +441,30 @@ div.CategoriesBar {
   z-index: -1;
   transition-property: opacity, visibility;
 }
+.aboutParagraph {
+  text-align: left;
+  background-color: #4d5366ce;
+  border-radius: 10px;
+  border: 1.5px solid #92ca649c;
+  text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
+  font-weight: 700;
+  padding: 20px;
+  color: white;
+  position: absolute;
+  /* margin: 0 13.5px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aboutParagraph {
+  top: 235px;
+  left: 4.5%;
+  width: 250px;
+  /* added 30px */
+}
 @media (min-width: 360px) and (min-height: 640px) {
   .defaultHeight {
-    min-height: 150vh;
+    min-height: 143vh;
   }
 }
 @media (min-width: 375px) {
@@ -465,7 +486,7 @@ div.CategoriesBar {
     font-size: 1.2rem;
   }
   .defaultHeight {
-    min-height: 150vh;
+    min-height: 140vh;
   }
   input {
     height: 25px;
@@ -495,7 +516,7 @@ div.CategoriesBar {
 }
 @media (min-width: 375px) and (min-height: 812px) {
   .defaultHeight {
-    min-height: 120vh;
+    min-height: 115vh;
   }
 }
 
@@ -505,7 +526,7 @@ div.CategoriesBar {
     font-size: 1.15rem;
   }
   .defaultHeight {
-    min-height: 140vh;
+    min-height: 131vh;
   }
   .spacingFromNav {
     height: 50px;
@@ -548,15 +569,21 @@ div.CategoriesBar {
 
 @media (min-width: 411px) and (min-height: 823px) {
   .defaultHeight {
-    min-height: 120vh;
+    min-height: 118vh;
   }
 }
 @media (min-width: 414px) and (min-height: 736px) {
   .defaultHeight {
-    min-height: 135vh;
+    min-height: 130vh;
   }
 }
 @media (min-width: 600px) {
+  .spacingFromNav {
+    height: 60px;
+  }
+  .defaultHeight {
+    min-height: 125vh;
+  }
   .footerButton,
   .homeButton {
     font-size: 1.4rem;
@@ -644,7 +671,7 @@ div.CategoriesBar {
   }
 
   .defaultHeight {
-    min-height: 165vh;
+    min-height: 161vh;
   }
 
   div.categories {
@@ -729,17 +756,13 @@ div.CategoriesBar {
   .homeButton {
     font-size: 1.15rem;
   }
-  /* header end */
-  /* general start */
+
   .big-view {
     display: block;
   }
-  /* .line {
-    height: 1px;
-    background-color: #81848d;
-    width: 49vw;
-    margin: 10px 0;
-  } */
+  .defaultHeight {
+    min-height: 115vh;
+  }
   .spash-bg {
     background-image: url(./assets/front.jpg);
     background-repeat: no-repeat;
@@ -772,20 +795,13 @@ div.CategoriesBar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background opacity on big screen */
-    /* background-color: #ffffffe1; */
+
     width: 100vw;
     position: relative;
     z-index: 3;
     box-shadow: 0 0 20px black, 0 0 10px #777777b6;
   }
-  /* .shaded-bg-lighter {
-    display: flex;
-    justify-content: center;
-    background-color: #ffffffea;
-    width: 100vw;
-    z-index: 1;
-  } */
+
   .mobile-tablet {
     display: none;
   }
@@ -810,8 +826,6 @@ div.CategoriesBar {
     font-size: 0.65rem;
   }
 
-  /* general end */
-  /* home start */
   .CaloriesAndCookTime {
     width: 540px;
   }
@@ -877,9 +891,6 @@ div.CategoriesBar {
     width: 100%;
   }
 
-  /* .advancedSearchButton {
-    width: 200px;
-  } */
   nav {
     width: 100%;
   }
@@ -887,18 +898,3 @@ div.CategoriesBar {
     background-image: none;
   }
 }
-
-/* @media (min-width: 375px) {
-}
-@media (min-width: 411px) {
-}
-@media (min-width: 600px) {
-}
-@media (min-width: 760px) {
-}
-@media (min-width: 1024px) and (min-height: 1366px) {
-}
-
-@media (min-width: 1280px) {
-  
-} */

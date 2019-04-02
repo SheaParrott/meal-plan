@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import AddOrRemoveForm from '../Components/AddOrRemoveForm'
 import NumberInputs from '../Components/NumberInputs'
 import { connect } from 'react-redux'
-import { SearchedRecipe, resetAllSearchFields } from '../Actions/SearchActions'
-import { Link } from 'react-router-dom'
+import { resetAllSearchFields } from '../Actions/SearchActions'
 import Header from './Header'
-import history from './history'
 import SearchInput from './SearchInput'
 
 class AdvancedSearch extends Component {

@@ -79,7 +79,7 @@ class AddOrRemoveForm extends Component {
                     className="advancedSearchButton negativeMargin"
                     type="submit"
                   >
-                    <i class="fas fa-plus " />
+                    <i className="fas fa-plus " />
                   </button>
                 </div>
               </div>
