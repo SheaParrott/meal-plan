@@ -227,11 +227,14 @@ class AdvancedSearch extends Component {
                       <div className="line" />
                     </div>
                     <SearchInput />
+                    <div className="centerLine">
+                      <div className="line" />
+                    </div>
                     <button
-                      className="advancedSearchButton"
+                      className="advancedSearchButton reset"
                       onClick={this._resetAllSearchFields}
                     >
-                      Reset Fields
+                      RESET FIELDS
                     </button>
                   </section>
                 </span>
