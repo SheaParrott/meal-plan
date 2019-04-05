@@ -104,7 +104,7 @@ nav {
   width: 100vw;
 }
 .spacingFromNav {
-  height: 25px;
+  height: 45px;
 }
 
 .navSpacing {
@@ -473,7 +473,7 @@ div.CategoriesBar {
     font-size: 1rem;
   }
   .spacingFromNav {
-    height: 40px;
+    height: 60px;
   }
   label {
     font-size: 1.2rem;
@@ -529,7 +529,7 @@ div.CategoriesBar {
     min-height: 131vh;
   }
   .spacingFromNav {
-    height: 50px;
+    height: 70px;
   }
   label {
     font-size: 1.3rem;
@@ -579,7 +579,7 @@ div.CategoriesBar {
 }
 @media (min-width: 600px) {
   .spacingFromNav {
-    height: 60px;
+    height: 80px;
   }
   .defaultHeight {
     min-height: 125vh;
@@ -642,7 +642,7 @@ div.CategoriesBar {
     font-size: 0.7rem;
   }
   .spacingFromNav {
-    height: 65px;
+    height: 85px;
   }
   .CaloriesAndCookTime {
     justify-content: space-between;
@@ -700,7 +700,7 @@ div.CategoriesBar {
     font-size: 0.8rem;
   }
   .spacingFromNav {
-    height: 75px;
+    height: 95px;
   }
   .CaloriesAndCookTime {
     width: 510px;

@@ -57,7 +57,7 @@ img.resume:hover {
   font-weight: 700;
   padding: 8px;
   color: white;
-  margin: 35px 0 0 0;
+  margin: 55px 0 0 0;
   width: 274px;
 }
 .white-creator {
@@ -79,7 +79,7 @@ img.resume:hover {
     width: 360px;
   }
   .main-creator {
-    margin: 50px 0 0 0;
+    margin: 70px 0 0 0;
     width: 326px;
   }
 }
@@ -88,20 +88,20 @@ img.resume:hover {
     width: 400px;
   }
   .main-creator {
-    margin: 60px 0px 18px 0px;
+    margin: 80px 0px 18px 0px;
     width: 351px;
   }
 }
 @media (min-width: 600px) {
   .main-creator {
     padding: 25px;
-    margin: 70px 0 0 0;
+    margin: 90px 0 0 0;
     width: 516px;
   }
 }
 @media (min-width: 760px) {
   .main-creator {
-    margin: 75px 0 0 0;
+    margin: 95px 0 0 0;
     text-shadow: 0 0 10px black, 1.5px 1.5px 0.2px grey;
     width: 682px;
   }
@@ -139,7 +139,7 @@ img.resume:hover {
 
 @media (min-width: 999px) {
   .main-creator {
-    margin: 85px 0 0 0;
+    margin: 105px 0 0 0;
     width: 944px;
   }
   .widthbig {

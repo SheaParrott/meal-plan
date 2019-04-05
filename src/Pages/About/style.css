@@ -28,7 +28,7 @@
   align-items: center;
 }
 .aboutParagraph {
-  top: 235px;
+  top: 255px;
   left: 4.5%;
   width: 250px;
   /* added 30px */
@@ -56,7 +56,7 @@ strong {
 }
 @media (min-width: 375px) {
   .aboutParagraph {
-    top: 250px;
+    top: 270px;
     left: 4%;
     width: 302px;
     /* added 30px */
@@ -81,7 +81,7 @@ strong {
 
 @media (min-width: 411px) {
   .aboutParagraph {
-    top: 260px;
+    top: 280px;
     left: 5%;
     width: 327px;
     /* added 30px */
@@ -107,7 +107,7 @@ strong {
 }
 @media (min-width: 600px) {
   .aboutParagraph {
-    top: 270px;
+    top: 290px;
     left: 2.6%;
     width: 526px;
     /* added 30px */
@@ -132,7 +132,7 @@ strong {
 }
 @media (min-width: 760px) {
   .aboutParagraph {
-    top: 275px;
+    top: 295px;
     left: 2.2%;
     width: 692px;
     /* added 30px */
@@ -157,7 +157,7 @@ strong {
 }
 @media (min-width: 1024px) and (min-height: 1366px) {
   .aboutParagraph {
-    top: 285px;
+    top: 305px;
     left: 1.4%;
     width: 954px;
     /* added 30px */
