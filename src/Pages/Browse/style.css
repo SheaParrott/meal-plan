@@ -71,6 +71,7 @@ div.slider {
   text-shadow: 0.5px 0px 0px #69db4c;
 }
 .green:hover {
+  cursor: pointer;
   color: #a8e973;
 }
 div.country-homeRecipeSlider {

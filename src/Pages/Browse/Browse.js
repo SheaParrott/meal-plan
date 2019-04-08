@@ -95,7 +95,7 @@ class Browse extends Component {
                 <div className="homeRecipeSlider">
                   {categories.map(category => {
                     return (
-                      <div key={category.category}>
+                      <div className="Single-Category" key={category.category}>
                         <Category category={category} />
                       </div>
                     )

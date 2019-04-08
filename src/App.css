@@ -396,12 +396,10 @@ div.CategoriesBar {
 .fa-angle-up {
   font-size: 1.3rem;
 }
-/* .fa-plus {
-  font-size: 0.7rem;
+.Single-Category:hover {
+  cursor: pointer;
+  color: #000000a9;
 }
-.fa-search {
-  font-size: 1rem;
-} */
 .background-added {
   background-image: url(./assets/front.jpg);
   background-size: cover;
